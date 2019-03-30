@@ -13,8 +13,8 @@ public class SistemaInventario
     [SerializeField]
     private List<ItemInventario> herramientas = new List<ItemInventario>();
 
-   
-
+    [SerializeField]
+    private List<ItemInventario> ajolotes = new List<ItemInventario>();
 
 
     private ItemInventario selectHerramienta;
@@ -33,6 +33,7 @@ public class SistemaInventario
         recolectables.Clear();
         pasivas.Clear();
         herramientas.Clear();
+        ajolotes.Clear();
 
     }
 
@@ -55,7 +56,11 @@ public class SistemaInventario
                 pasivas.Add(item);
                 break;
 
-            
+            case ItemBase.ItemCategory.ajolotes:
+                ajolotes.Add(item);
+                break;
+
+
         }
     }
 
@@ -77,7 +82,11 @@ public class SistemaInventario
                 pasivas.Remove(item);
                 break;
 
-            
+            case ItemBase.ItemCategory.ajolotes:
+                ajolotes.Remove(item);
+                break;
+
+
 
         }
     }

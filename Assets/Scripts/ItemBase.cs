@@ -9,7 +9,8 @@ public class ItemBase : MonoBehaviour
     {
         recolectables,
         pasivas,
-        herramientas
+        herramientas,
+        ajolotes
         
     }
 
