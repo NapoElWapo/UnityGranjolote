@@ -7,12 +7,9 @@ public class ItemBase : MonoBehaviour
 {
     public enum ItemCategory
     {
-        desechos,
-        trajes,
-        orbes,
-        herramientas,
-        comida,
-        ajolotes
+        recolectables,
+        pasivas,
+        herramientas
         
     }
 

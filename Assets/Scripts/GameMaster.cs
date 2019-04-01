@@ -11,6 +11,7 @@ public static class NombreEscena
     public const string CasaN = "CasaNormal";
     public const string CasaM = "CasaMision";
     public const string CasaJ = "CasaJugador";
+    public const string Pruebas = "Pruebas";
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -42,7 +43,7 @@ public class GameMaster : MonoBehaviour
 
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.Mundo);
+        SceneManager.LoadScene(NombreEscena.Pruebas);
     }
 
     public void VolumenMusica(float newVolumen)
