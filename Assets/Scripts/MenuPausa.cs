@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MenuPausa : MonoBehaviour
 {
+    
     public static bool juegoPausado = false;
     public RectTransform opcionesPanel;
     public GameObject menuPausaUI;
@@ -13,6 +14,7 @@ public class MenuPausa : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
+        
         volumenMusicaSlider.value = GameMaster.instanciaCompartida.volumenMusica;
         volumenEfectosSlider.value = GameMaster.instanciaCompartida.volumenEfectos;
 
@@ -24,8 +26,10 @@ public class MenuPausa : MonoBehaviour
         {
             if (Cursor.visible == false)
             {
+                
                 Cursor.lockState = CursorLockMode.Confined; //Locks the mouse
                 Cursor.visible = true; // Make the cursor visable
+                
 
                 if (juegoPausado)
                 {
@@ -57,6 +61,7 @@ public class MenuPausa : MonoBehaviour
     public void GuardarYSalir()
     {
         GameMaster.instanciaCompartida.GuardarYSalir();
+        
     }
 
     void Pausa()

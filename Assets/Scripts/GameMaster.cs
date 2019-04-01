@@ -22,6 +22,7 @@ public class GameMaster : MonoBehaviour
     public float volumenMusica = 0, volumenEfectos = 0;
     public bool mostrarOpciones = false;
     public bool mostrarInventario = false;
+    public bool mostrarMochila = false;
     public bool mostrarAjolotepedia = false;
     public bool mostrarLogrosMisiones = false;
     public bool mostrarMapa = false;
