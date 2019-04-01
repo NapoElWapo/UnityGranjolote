@@ -33,7 +33,7 @@ public class MenuPrincipal : MonoBehaviour
 
     public void salir()
     {
-
+        Application.Quit();
     }
 
     public void salirOpciones()

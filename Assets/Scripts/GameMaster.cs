@@ -11,6 +11,8 @@ public static class NombreEscena
     public const string CasaN = "CasaNormal";
     public const string CasaM = "CasaMision";
     public const string CasaJ = "CasaJugador";
+    public const string Pruebas = "Pruebas";
+    public const string MenuP = "MenuPrincipal";
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -19,6 +21,11 @@ public class GameMaster : MonoBehaviour
     public static GameMaster instanciaCompartida;
     public float volumenMusica = 0, volumenEfectos = 0;
     public bool mostrarOpciones = false;
+    public bool mostrarInventario = false;
+    public bool mostrarMochila = false;
+    public bool mostrarAjolotepedia = false;
+    public bool mostrarLogrosMisiones = false;
+    public bool mostrarMapa = false;
 
     public SistemaInventario inventario;
 
@@ -42,7 +49,12 @@ public class GameMaster : MonoBehaviour
 
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.Mundo);
+        SceneManager.LoadScene(NombreEscena.Pruebas);
+    }
+
+    public void GuardarYSalir()
+    {
+        SceneManager.LoadScene(NombreEscena.MenuP);
     }
 
     public void VolumenMusica(float newVolumen)
