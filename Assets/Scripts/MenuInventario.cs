@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityStandardAssets.Characters.FirstPerson;
 public class MenuInventario : MonoBehaviour
 {
     public RectTransform mochila,ajolotepedia,logrosMisiones,mapa;
@@ -10,17 +10,27 @@ public class MenuInventario : MonoBehaviour
     public GameObject InventarioUI;
     void Update()
     {
-        if (Input.GetButtonDown("e"))
+        if (Input.GetButtonDown("i"))
         {
             if (Cursor.visible == false)
             {
 
                 Cursor.lockState = CursorLockMode.Confined; //Locks the mouse
                 Cursor.visible = true; // Make the cursor visable
-
+                GameMaster.instanciaCompartida.mostrarMochila = true;
+                GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
+                GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
+                GameMaster.instanciaCompartida.mostrarMapa = false;
+                mapa.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMapa);
+                mochila.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMochila);
+                ajolotepedia.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarAjolotepedia);
+                logrosMisiones.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarLogrosMisiones);
 
                 if (menuCerrado)
                 {
+                    var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+                    mouseLook.XSensitivity = 2F;
+                    mouseLook.YSensitivity = 2F;
                     ToggleInventario();
                     InventarioUI.SetActive(false);
                     Time.timeScale = 1f;
@@ -28,6 +38,9 @@ public class MenuInventario : MonoBehaviour
                 }
                 else
                 {
+                    var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+                    mouseLook.XSensitivity = 0.0F;
+                    mouseLook.YSensitivity = 0.0F;
                     InventarioUI.SetActive(true);
                     Time.timeScale = 0f;
                     menuCerrado = true;

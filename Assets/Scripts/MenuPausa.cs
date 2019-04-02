@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class MenuPausa : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class MenuPausa : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        
+       
         volumenMusicaSlider.value = GameMaster.instanciaCompartida.volumenMusica;
         volumenEfectosSlider.value = GameMaster.instanciaCompartida.volumenEfectos;
 
@@ -56,6 +57,9 @@ public class MenuPausa : MonoBehaviour
         menuPausaUI.SetActive(false);
         Time.timeScale = 1f;
         juegoPausado = false;
+        var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+        mouseLook.XSensitivity = 2F;
+        mouseLook.YSensitivity = 2F;
     }
 
     public void GuardarYSalir()
@@ -69,6 +73,9 @@ public class MenuPausa : MonoBehaviour
         menuPausaUI.SetActive(true);
         Time.timeScale = 0.0f;
         juegoPausado = true;
+        var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+        mouseLook.XSensitivity = 0.0F;
+        mouseLook.YSensitivity = 0.0F;
     }
 
     public void opciones()
@@ -85,8 +92,8 @@ public class MenuPausa : MonoBehaviour
     {
         GameMaster.instanciaCompartida.mostrarOpciones = !GameMaster.instanciaCompartida.mostrarOpciones;
         opcionesPanel.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarOpciones);
-        Cursor.lockState = CursorLockMode.None; //Locks the mouse
-        Cursor.visible = true; // Make the cursor visable
+        Cursor.lockState = CursorLockMode.Confined; //Locks the mouse
+        Cursor.visible = true; // Make the cursor visable  
     }
 
 
