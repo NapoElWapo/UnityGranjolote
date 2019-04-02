@@ -44,6 +44,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public int stamina;
         public int staminaStart;
 
+        public MouseLook MouseLook { get { return m_MouseLook; } }
+
         // Use this for initialization
         private void Start()
         {

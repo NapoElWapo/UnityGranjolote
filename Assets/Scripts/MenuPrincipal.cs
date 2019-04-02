@@ -55,6 +55,8 @@ public class MenuPrincipal : MonoBehaviour
     {
         GameMaster.instanciaCompartida.mostrarOpciones = !GameMaster.instanciaCompartida.mostrarOpciones;
         opcionesPanel.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarOpciones);
+        Cursor.lockState = CursorLockMode.None; //Locks the mouse
+        Cursor.visible = true; // Make the cursor visable
     }
     
 }
