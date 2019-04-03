@@ -8,9 +8,11 @@ public class PatrullaAjolote : MonoBehaviour
 
     public static bool harto, movimiento, asustado;
 
-    public float velocidad = 5f;
-    public float cambioDireccion = 1f;
-    public float maxCambio = 30f;
+    public float velocidad = 2f;
+    public float velocidadAsustado = 7f;
+    public float cambioDireccion = 0.5f;
+    public float maxCambio = 180f;
+    public float tiempoHarto = 6f;
 
     Animator ajoloteAnimator;
 
@@ -23,6 +25,8 @@ public class PatrullaAjolote : MonoBehaviour
     {
         ajoloteAnimator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
+        SphereCollider sphereCollider = gameObject.GetComponent<SphereCollider>();
+        sphereCollider.isTrigger = true;
 
         direccion = Random.Range(0, 360);
         transform.eulerAngles = new Vector3(0, direccion, 0);
@@ -40,7 +44,21 @@ public class PatrullaAjolote : MonoBehaviour
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
             Vector3 adelante = transform.TransformDirection(Vector3.forward);
             controller.SimpleMove(adelante * velocidad);
+
+
         }
+        else if(harto)
+        {
+            ajoloteAnimator.SetBool(Asustado, true);
+            ajoloteAnimator.SetBool(Movimiento, true);
+            transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
+            Vector3 adelante = transform.TransformDirection(Vector3.forward);
+            controller.SimpleMove(adelante * velocidad);
+            StartCoroutine(Delay());
+        }
+
+
+        
         
     }
 
@@ -53,6 +71,12 @@ public class PatrullaAjolote : MonoBehaviour
         }
     }
 
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(tiempoHarto);
+        Destroy(gameObject);
+    }
+
     void NuevaDireccionRutina()
     {
         float piso = transform.eulerAngles.y - maxCambio;
@@ -60,4 +84,17 @@ public class PatrullaAjolote : MonoBehaviour
         direccion = Random.Range(piso, techo);
         rotacion = new Vector3(0, direccion, 0);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Player")
+        {
+            velocidad = velocidadAsustado;
+            harto = true;
+            //ajoloteAnimator.Play("Armature|correr");
+            Debug.Log("Triggerea");
+        }
+    }
+
+
 }

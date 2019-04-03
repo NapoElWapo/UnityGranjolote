@@ -14,13 +14,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Asustado
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -51,9 +51,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.061764617
   m_TransitionOffset: 0
-  m_ExitTime: 0.9
+  m_ExitTime: 0.11673152
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -117,7 +117,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Armature|caminar
-  m_Speed: 5
+  m_Speed: 7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101581214862004894}
@@ -145,7 +145,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Armature|correr
-  m_Speed: 5
+  m_Speed: 7
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -171,7 +171,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Armature|Quieto
-  m_Speed: 5
+  m_Speed: 7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101515040202486786}
@@ -208,7 +208,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102825598296538852}
+  m_DefaultState: {fileID: 0}
 --- !u!1107 &1107693684207480872
 AnimatorStateMachine:
   serializedVersion: 5
@@ -226,7 +226,7 @@ AnimatorStateMachine:
     m_Position: {x: 276, y: 192, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102679567551282470}
-    m_Position: {x: 600, y: 192, z: 0}
+    m_Position: {x: 588, y: 192, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
