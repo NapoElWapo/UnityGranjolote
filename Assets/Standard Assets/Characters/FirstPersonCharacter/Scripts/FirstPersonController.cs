@@ -43,6 +43,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
         public int stamina;
         public int staminaStart;
+	public int health;
+	public int maxHealth;
+	public bool dead = false;
+	public string levelToLoad;
 
         public MouseLook MouseLook { get { return m_MouseLook; } }
 
@@ -61,6 +65,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
             stamina = 100;
             staminaStart = stamina - 1;
+	    maxHealth = 100;
+	    health = maxHealth;
         }
 
 
@@ -129,6 +135,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     stamina = stamina + 1;
                 }
             }
+	    
+	    //void CheckHealth()
+		//{
+			if(health >= maxHealth)
+			{	
+				health = maxHealth;
+			}
+			if(health <= 0)
+			{	health = 0;
+				dead = true;
+				Debug.Log("Moriste");
+				Application.LoadLevel(levelToLoad);
+				health = 100;
+				dead = false;
+			}
+		//}
 
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
