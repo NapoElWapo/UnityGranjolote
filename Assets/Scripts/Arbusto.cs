@@ -27,11 +27,11 @@ public class Arbusto : MonoBehaviour
             Debug.Log("Si colisiona");
         }
     }
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             m_animator.Play("Efecto");
         }
-    }*/
+    }
 }

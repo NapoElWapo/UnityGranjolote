@@ -8,25 +8,27 @@ public class MenuInventario : MonoBehaviour
     public RectTransform mochila,ajolotepedia,logrosMisiones,mapa;
     public static bool menuCerrado = false;
     public GameObject InventarioUI;
+
+
     void Update()
     {
         if (Input.GetButtonDown("i"))
         {
-            if (Cursor.visible == false)
-            {
 
-                Cursor.lockState = CursorLockMode.Confined; //Locks the mouse
+
+                Cursor.lockState = CursorLockMode.None; //Locks the mouse
                 Cursor.visible = true; // Make the cursor visable
-                GameMaster.instanciaCompartida.mostrarMochila = true;
-                GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
-                GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
-                GameMaster.instanciaCompartida.mostrarMapa = false;
-                mapa.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMapa);
-                mochila.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMochila);
-                ajolotepedia.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarAjolotepedia);
-                logrosMisiones.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarLogrosMisiones);
+            GameMaster.instanciaCompartida.mostrarMochila = true;
+            GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
+            GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
+            GameMaster.instanciaCompartida.mostrarMapa = false;
+            mapa.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMapa);
+            mochila.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMochila);
+            ajolotepedia.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarAjolotepedia);
+            logrosMisiones.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarLogrosMisiones);
 
-                if (menuCerrado)
+
+            if (menuCerrado)
                 {
                     var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
                     mouseLook.XSensitivity = 2F;
@@ -45,7 +47,7 @@ public class MenuInventario : MonoBehaviour
                     Time.timeScale = 0f;
                     menuCerrado = true;
                 }
-            }
+            
         }
     }
 
