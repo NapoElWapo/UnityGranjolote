@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
-/*public class Calor : MonoBehaviour
+
+public class Calor : MonoBehaviour
 {
-	private void OnCollisionStay(Collision collision)
-	{	if(collision.gameObject.CompareTag("Player"))
+
+	void OnCollisionStay(Collision collision)
+	{	
+		if(collision.gameObject.CompareTag("Player"))
 		{
-			health = health-10;
+			GetComponent<FirstPersonController>().health = GetComponent<FirstPersonController>().health-10;
+			Debug.Log("Eo");
 		}
 	}
-}*/
+}
