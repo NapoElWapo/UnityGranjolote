@@ -58,6 +58,8 @@ public class MenuInventario : MonoBehaviour
 
     public void Mochila()
     {
+        Cursor.lockState = CursorLockMode.None; //Locks the mouse
+        Cursor.visible = true; // Make the cursor visable
         GameMaster.instanciaCompartida.mostrarMochila = true;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
@@ -70,6 +72,8 @@ public class MenuInventario : MonoBehaviour
 
     public void Ajolotepedia()
     {
+        Cursor.lockState = CursorLockMode.None; //Locks the mouse
+        Cursor.visible = true; // Make the cursor visable
         GameMaster.instanciaCompartida.mostrarMochila = false;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = true;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
@@ -82,6 +86,8 @@ public class MenuInventario : MonoBehaviour
 
     public void LogrosMisiones()
     {
+        Cursor.lockState = CursorLockMode.None; //Locks the mouse
+        Cursor.visible = true; // Make the cursor visable
         GameMaster.instanciaCompartida.mostrarMochila = false;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = true;
@@ -94,6 +100,8 @@ public class MenuInventario : MonoBehaviour
 
     public void Mapa()
     {
+        Cursor.lockState = CursorLockMode.None; //Locks the mouse
+        Cursor.visible = true; // Make the cursor visable
         GameMaster.instanciaCompartida.mostrarMochila = false;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
