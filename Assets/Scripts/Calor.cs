@@ -6,13 +6,35 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Calor : MonoBehaviour
 {
+    public int vida;
+    
 
-	void OnCollisionStay(Collision collision)
+
+    void Start()
+    {
+        vida = GetComponent<FirstPersonController>().health;
+    }
+    private void OnCollisionStay(Collision collision)
 	{	
 		if(collision.gameObject.CompareTag("Player"))
 		{
-			GetComponent<FirstPersonController>().health = GetComponent<FirstPersonController>().health-10;
+            vida = vida - 10;
 			Debug.Log("Eo");
 		}
+
 	}
+
+
+    /*void Update()
+	{
+		void OnCollisionStay(Collision collision)
+		{	
+			if(collision.gameObject.CompareTag("Player"))
+			{
+				GetComponent<FirstPersonController>().health = GetComponent<FirstPersonController>().health-10;
+				Debug.Log("Eo");
+			}
+		}
+	}*/
+    
 }
