@@ -6,7 +6,7 @@ public class PatrullaAjolote : MonoBehaviour
 {
     public string Movimiento, Asustado;
 
-    public static bool harto, movimiento, asustado;
+    public bool harto, movimiento, asustado;
 
     public float velocidad = 2f;
     public float velocidadAsustado = 7f;
@@ -74,23 +74,25 @@ public class PatrullaAjolote : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(tiempoHarto);
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 
     void NuevaDireccionRutina()
     {
+
         float piso = transform.eulerAngles.y - maxCambio;
         float techo = transform.eulerAngles.y + maxCambio;
         direccion = Random.Range(piso, techo);
         rotacion = new Vector3(0, direccion, 0);
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag=="Player")
         {
-            velocidad = velocidadAsustado;
-            harto = true;
+            this.velocidad = velocidadAsustado;
+            this.harto = true;
             //ajoloteAnimator.Play("Armature|correr");
             Debug.Log("Triggerea");
         }
