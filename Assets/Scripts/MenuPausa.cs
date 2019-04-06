@@ -27,10 +27,11 @@ public class MenuPausa : MonoBehaviour
         {
             if (Cursor.visible == false)
             {
+
+                Cursor.lockState = CursorLockMode.None;
                 
-                Cursor.lockState = CursorLockMode.Confined; //Locks the mouse
-                Cursor.visible = true; // Make the cursor visable
-                
+                Cursor.visible = true;
+
 
                 if (juegoPausado)
                 {
@@ -54,6 +55,7 @@ public class MenuPausa : MonoBehaviour
     }
     public void Renaudar()
     {
+        var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
         menuPausaUI.SetActive(false);
         Time.timeScale = 1f;
         juegoPausado = false;
@@ -70,6 +72,7 @@ public class MenuPausa : MonoBehaviour
 
     void Pausa()
     {
+        var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
         menuPausaUI.SetActive(true);
         Time.timeScale = 0.0f;
         juegoPausado = true;
@@ -92,8 +95,7 @@ public class MenuPausa : MonoBehaviour
     {
         GameMaster.instanciaCompartida.mostrarOpciones = !GameMaster.instanciaCompartida.mostrarOpciones;
         opcionesPanel.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarOpciones);
-        Cursor.lockState = CursorLockMode.Confined; //Locks the mouse
-        Cursor.visible = true; // Make the cursor visable  
+        
     }
 
 

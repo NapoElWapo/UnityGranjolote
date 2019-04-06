@@ -15,9 +15,10 @@ public class MenuInventario : MonoBehaviour
         if (Input.GetButtonDown("i"))
         {
 
+            Cursor.lockState = CursorLockMode.None;
+            
+            Cursor.visible = true;
 
-                Cursor.lockState = CursorLockMode.None; //Locks the mouse
-                Cursor.visible = true; // Make the cursor visable
             GameMaster.instanciaCompartida.mostrarMochila = true;
             GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
             GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
@@ -30,7 +31,9 @@ public class MenuInventario : MonoBehaviour
 
             if (menuCerrado)
                 {
-                    var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+                
+                var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
+                var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
                     mouseLook.XSensitivity = 2F;
                     mouseLook.YSensitivity = 2F;
                     ToggleInventario();
@@ -40,7 +43,9 @@ public class MenuInventario : MonoBehaviour
                 }
                 else
                 {
-                    var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+                
+                var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
+                var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
                     mouseLook.XSensitivity = 0.0F;
                     mouseLook.YSensitivity = 0.0F;
                     InventarioUI.SetActive(true);
@@ -53,13 +58,13 @@ public class MenuInventario : MonoBehaviour
 
     public void Inventario()
     {
+        
         ToggleInventario();
     }
 
     public void Mochila()
     {
-        Cursor.lockState = CursorLockMode.None; //Locks the mouse
-        Cursor.visible = true; // Make the cursor visable
+        
         GameMaster.instanciaCompartida.mostrarMochila = true;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
@@ -72,8 +77,7 @@ public class MenuInventario : MonoBehaviour
 
     public void Ajolotepedia()
     {
-        Cursor.lockState = CursorLockMode.None; //Locks the mouse
-        Cursor.visible = true; // Make the cursor visable
+        
         GameMaster.instanciaCompartida.mostrarMochila = false;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = true;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
@@ -86,8 +90,7 @@ public class MenuInventario : MonoBehaviour
 
     public void LogrosMisiones()
     {
-        Cursor.lockState = CursorLockMode.None; //Locks the mouse
-        Cursor.visible = true; // Make the cursor visable
+        
         GameMaster.instanciaCompartida.mostrarMochila = false;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = true;
@@ -100,8 +103,7 @@ public class MenuInventario : MonoBehaviour
 
     public void Mapa()
     {
-        Cursor.lockState = CursorLockMode.None; //Locks the mouse
-        Cursor.visible = true; // Make the cursor visable
+        
         GameMaster.instanciaCompartida.mostrarMochila = false;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
@@ -114,8 +116,12 @@ public class MenuInventario : MonoBehaviour
 
     public void ToggleInventario()
     {
-        GameMaster.instanciaCompartida.mostrarInventario = !GameMaster.instanciaCompartida.mostrarInventario;
+        
+
+            
+            GameMaster.instanciaCompartida.mostrarInventario = !GameMaster.instanciaCompartida.mostrarInventario;
         InventarioUI.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarInventario);
+        
     }
 
 
