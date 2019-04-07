@@ -11,7 +11,7 @@ using System;
 public class slot
 {
     public string slot_name;
-    public Image slot_img;
+    public Sprite slot_img;
     public Text slot_stack;
 }
 
