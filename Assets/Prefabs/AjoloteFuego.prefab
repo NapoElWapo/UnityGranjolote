@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5470905984373730739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5470905984373730740}
+  - component: {fileID: 5470905984373730743}
+  - component: {fileID: 5470905984373730742}
+  - component: {fileID: 5470905984373730737}
+  - component: {fileID: 5470905984373730736}
+  m_Layer: 0
+  m_Name: AjoloteFuego
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5470905984373730740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470905984373730739}
+  m_LocalRotation: {x: -0.5000001, y: -0.5, z: -0.5, w: 0.49999994}
+  m_LocalPosition: {x: -0.024811218, y: -0.006406927, z: -0.0008087187}
+  m_LocalScale: {x: 0.01477969, y: 0.014779694, z: 0.014779691}
+  m_Children:
+  - {fileID: 5470905984166925827}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &5470905984373730743
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470905984373730739}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5470905984373730742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470905984373730739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a734512176be4744af0ab476659a02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Movimiento: Movimiento
+  Asustado: Asustado
+  harto: 0
+  movimiento: 0
+  asustado: 0
+  velocidad: 2
+  velocidadAsustado: 5
+  cambioDireccion: 0.3
+  maxCambio: 180
+  tiempoHarto: 4
+--- !u!95 &5470905984373730737
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470905984373730739}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 705d8d5bbe525e742bbba2d221723a14, type: 3}
+  m_Controller: {fileID: 9100000, guid: ff1afdc202667f3448b922ed86ec920b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &5470905984373730736
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470905984373730739}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 35
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &5470905984166792323
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5470905984373730740}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_Name
+      value: AjoloteFuego
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aef884f7a6e40cd41a51652a1c4a47f7, type: 2}
+    - target: {fileID: 13700000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: aef884f7a6e40cd41a51652a1c4a47f7, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 240051b5ecc220449ba2932ebb416782, type: 3}
+--- !u!4 &5470905984166925827 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 240051b5ecc220449ba2932ebb416782,
+    type: 3}
+  m_PrefabInstance: {fileID: 5470905984166792323}
+  m_PrefabAsset: {fileID: 0}

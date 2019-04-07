@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4354111485687829452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4354111485687829455}
+  - component: {fileID: 4354111485687829451}
+  - component: {fileID: 4354111485687829448}
+  - component: {fileID: 4354111485687829449}
+  - component: {fileID: 4354111485687829454}
+  m_Layer: 0
+  m_Name: AjoloteHielo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4354111485687829455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354111485687829452}
+  m_LocalRotation: {x: -0.5000001, y: -0.5, z: -0.5, w: 0.49999994}
+  m_LocalPosition: {x: -0.025, y: -1.556, z: -0.279}
+  m_LocalScale: {x: 0.01477969, y: 0.014779694, z: 0.014779691}
+  m_Children:
+  - {fileID: 4354111484809711726}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &4354111485687829451
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354111485687829452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &4354111485687829448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354111485687829452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a734512176be4744af0ab476659a02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Movimiento: Movimiento
+  Asustado: Asustado
+  harto: 0
+  movimiento: 0
+  asustado: 0
+  velocidad: 4
+  velocidadAsustado: 9
+  cambioDireccion: 0.3
+  maxCambio: 180
+  tiempoHarto: 5
+--- !u!95 &4354111485687829449
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354111485687829452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 705d8d5bbe525e742bbba2d221723a14, type: 3}
+  m_Controller: {fileID: 9100000, guid: ff1afdc202667f3448b922ed86ec920b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &4354111485687829454
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354111485687829452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 35
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &4354111484810103534
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4354111485687829455}
+    m_Modifications:
+    - target: {fileID: 100000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_Name
+      value: AjoloteHielo
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 393a1e0b724cfbe4eba82c21f085008b, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37, type: 3}
+--- !u!4 &4354111484809711726 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: a18bdb91bd5bf824585ff7dc7ee5ac37,
+    type: 3}
+  m_PrefabInstance: {fileID: 4354111484810103534}
+  m_PrefabAsset: {fileID: 0}
