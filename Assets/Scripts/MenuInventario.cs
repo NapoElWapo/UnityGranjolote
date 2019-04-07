@@ -13,6 +13,8 @@ public class slot
     public string slot_name;
     public Sprite slot_img;
     public Text slot_stack;
+    public bool stackeable;
+    public int maxStack;
 }
 
 
