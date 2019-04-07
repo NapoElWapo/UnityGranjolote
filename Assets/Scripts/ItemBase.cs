@@ -11,14 +11,25 @@ public class ItemBase : MonoBehaviour
         pasivas,
         herramientas,
         ajolotes
-        
+
     }
+
+
+    [SerializeField]
+    public ItemCategory item_category;
+
+    public Texture2D inventory_decal;
 
     [SerializeField]
     private string name;
 
     [SerializeField]
     private string descripcion;
+
+
+
+    
+    
 
     public string Name
     {
@@ -33,4 +44,6 @@ public class ItemBase : MonoBehaviour
         set { descripcion = value; }
 
     }
+
+   
 }

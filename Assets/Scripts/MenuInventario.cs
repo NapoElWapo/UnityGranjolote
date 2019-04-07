@@ -3,11 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
+using System;
+
+
+
+[Serializable]
+public class slot
+{
+    public string slot_name;
+    public Image slot_img;
+    public Text slot_stack;
+}
+
+
 public class MenuInventario : MonoBehaviour
 {
-    public RectTransform mochila,ajolotepedia,logrosMisiones,mapa;
+    public RectTransform mochila, ajolotepedia, logrosMisiones, mapa;
     public static bool menuCerrado = false;
     public GameObject InventarioUI;
+    public slot[] ajolotes,coleccionables,herramientas,pasivas;
+
+
+    //Clases para cada tipo de botones del inventario -añadidos
+
+
+
+
+
+
 
 
     void Update()
@@ -124,6 +147,11 @@ public class MenuInventario : MonoBehaviour
         
     }
 
+    //saul añadidos 
+    public void Actualizar_ValoresItems()
+    {
 
+
+    }
     
 }
