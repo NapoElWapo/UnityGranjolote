@@ -7,7 +7,6 @@ using UnityEngine;
 public class PlayerInventoryInteraction : MonoBehaviour
 {
     //Este script lanza un rayo desde el centro de la pantalla
-    public GameMaster controlador_juego;
     public Camera MainCamera;
     //54ul
     
@@ -25,7 +24,6 @@ public class PlayerInventoryInteraction : MonoBehaviour
     {
         //   controlador_juego = GetComponent<GameMaster>();
         MainCamera = this.GetComponent<Camera>();
-        controlador_juego = FindObjectOfType<GameMaster>();
     }
 
     // Update is called once per frame
@@ -44,9 +42,10 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     Debug.Log(colision_rayo.transform.tag);
                     if(colision_rayo.transform.tag == fetch_Tag)
                 {
-
                     current_selected_obj = colision_rayo.transform.gameObject;
 
+                    //load to the store mangaer and refresh the UI
+                    GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj.GetComponent<ItemInventario>());
                 }
 
             }

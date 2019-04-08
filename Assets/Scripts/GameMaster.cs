@@ -28,7 +28,7 @@ public class GameMaster : MonoBehaviour
     public bool mostrarMapa = false;
 
     public SistemaInventario inventario;
-
+   public MenuInventario GUI_controlador;
     // Start is called before the first frame update
 
     private void Awake()
@@ -67,6 +67,14 @@ public class GameMaster : MonoBehaviour
     {
         volumenEfectos = newVolumen;
     }
+
+   public void SetUI(MenuInventario other)
+    {
+
+        GUI_controlador = other;
+    }
+
+ 
 
     void Start()
     {

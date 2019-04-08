@@ -11,14 +11,12 @@ public class ItemBase : MonoBehaviour
         pasivas,
         herramientas,
         ajolotes
-
     }
 
 
-    [SerializeField]
-    public ItemCategory item_category;
 
-    public Texture2D inventory_decal;
+
+    public Sprite inventory_decal;
 
     [SerializeField]
     private string name;

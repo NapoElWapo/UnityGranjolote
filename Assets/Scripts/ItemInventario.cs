@@ -8,8 +8,21 @@ public class ItemInventario : ItemBase
     [SerializeField]
     private ItemCategory category;
 
+
     [SerializeField]
     private float valor;
+
+
+
+
+
+    [Header("Configuracion base")]
+
+    [SerializeField]
+    public bool stackeable;
+
+    [SerializeField]
+    public int maxStack;
 
     public ItemCategory Category
     {

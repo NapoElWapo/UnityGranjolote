@@ -4,8 +4,9 @@ using UnityEngine;
 [System.Serializable]
 public class SistemaInventario 
 {
+
     [SerializeField]
-    private List<ItemInventario> recolectables = new List<ItemInventario>();
+    public List<ItemInventario> recolectables = new List<ItemInventario>();
 
     [SerializeField]
     private List<ItemInventario> pasivas = new List<ItemInventario>();
@@ -27,8 +28,14 @@ public class SistemaInventario
 
     }
 
-
+  
     public SistemaInventario()
+    {
+        global_clear();
+    
+    }
+
+    public void global_clear()
     {
         recolectables.Clear();
         pasivas.Clear();
@@ -36,7 +43,6 @@ public class SistemaInventario
         ajolotes.Clear();
 
     }
-
     public void AddItem(ItemInventario item)
     {
         switch(item.Category)
@@ -46,22 +52,30 @@ public class SistemaInventario
 
             case ItemBase.ItemCategory.recolectables:
                 recolectables.Add(item);
+                GameMaster.instanciaCompartida.GUI_controlador.actualizar_recolectables(item);
                 break;
 
             case ItemBase.ItemCategory.herramientas:
                 herramientas.Add(item);
+
+                GameMaster.instanciaCompartida.GUI_controlador.actualizar_herramientas(item);
                 break;
 
             case ItemBase.ItemCategory.pasivas:
                 pasivas.Add(item);
+
+
+                GameMaster.instanciaCompartida.GUI_controlador.actualizar_pasivas(item);
                 break;
 
             case ItemBase.ItemCategory.ajolotes:
                 ajolotes.Add(item);
+                GameMaster.instanciaCompartida.GUI_controlador.actualizar_ajolotes(item);
                 break;
 
 
         }
+       
     }
 
     public void RemoveItem(ItemInventario item)
@@ -90,4 +104,5 @@ public class SistemaInventario
 
         }
     }
+
 }
