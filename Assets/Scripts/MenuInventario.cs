@@ -171,7 +171,7 @@ public class MenuInventario : MonoBehaviour
 
         foreach (var iterador_ui_coleccionables in coleccionables)
         {
-            if (iterador_ui_coleccionables.slot_name == "Slot1" && last_entry.name == "OrbeFuego") // el slot 1 de la UI sera para coleccionables de tipo orbe por ejemplo
+            if (iterador_ui_coleccionables.slot_name == "Slot0" && last_entry.name == "OrbeFuego") // el slot 1 de la UI sera para coleccionables de tipo orbe por ejemplo
             {
                 iterador_ui_coleccionables.slot_ui_img.overrideSprite = last_entry.inventory_decal;
                 iterador_ui_coleccionables.slot_stack.text = GameMaster.instanciaCompartida.inventario.recolectables.Count.ToString();

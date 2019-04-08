@@ -32,9 +32,9 @@ public class PlayerInventoryInteraction : MonoBehaviour
         RaycastHit colision_rayo;
         Ray rayo = MainCamera.ScreenPointToRay(new Vector3(Screen.width/2,Screen.height/2 , 0)); //Optimizar screen w,h
         Debug.DrawRay(rayo.origin, rayo.direction* range);
-        if (Input.GetKeyDown(key_to_refresh))
+        if (Input.GetButtonDown("e"))
         {
-
+            Debug.Log("pew");
             if (Physics.Raycast(rayo, out colision_rayo, range))
             {
 
@@ -43,6 +43,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     if(colision_rayo.transform.tag == fetch_Tag)
                 {
                     current_selected_obj = colision_rayo.transform.gameObject;
+                    current_selected_obj.SetActive(false);
 
                     //load to the store mangaer and refresh the UI
                     GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj.GetComponent<ItemInventario>());

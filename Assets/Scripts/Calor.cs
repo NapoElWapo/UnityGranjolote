@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
-
 public class Calor : MonoBehaviour
-{ 
-
+{
+    public FirstPersonController vida;
+   
     void Start()
     {
         
@@ -16,8 +16,10 @@ public class Calor : MonoBehaviour
 		if(collision.gameObject.CompareTag("Player"))
 		{
 
-            Debug.Log("Eo");
-		}
+            GameObject Jugador = GameObject.FindWithTag("Player");
+            FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
+            playerScript.health -= 1;
+        }
 
 	}
 

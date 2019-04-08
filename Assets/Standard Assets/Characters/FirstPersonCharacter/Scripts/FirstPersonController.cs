@@ -44,10 +44,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
         public int stamina;
         public int staminaStart;
-	public int health;
-	public int maxHealth;
-	public bool dead = false;
-	public string levelToLoad;
+	    public int health;
+	    public int maxHealth;
+	    public bool dead = false;
+	    public string levelToLoad;
 
         public MouseLook MouseLook { get { return m_MouseLook; } }
 
@@ -70,7 +70,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 	    health = maxHealth;
         }
 
-
+        
         // Update is called once per frame
         private void Update()
         {
