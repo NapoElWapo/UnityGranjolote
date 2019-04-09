@@ -44,8 +44,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
         public int stamina;
         public int staminaStart;
-	    public int health;
-	    public int maxHealth;
+	    public float health;
+	    public float maxHealth;
 	    public bool dead = false;
 	    public string levelToLoad;
 
@@ -66,8 +66,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
             stamina = 100;
             staminaStart = stamina - 1;
-	    maxHealth = 100;
-	    health = maxHealth;
+	        maxHealth = 100.00;
+	        health = maxHealth;
         }
 
         

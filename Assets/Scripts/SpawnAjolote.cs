@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SpawnAjolote : MonoBehaviour
 {
-    public GameObject ajolote;
+    public GameObject ajolote, ajoloteDorado;
     public float tiempoSpawn = 15f;
-    public int porcentajeSpawn = 30;
-    public int Spawnea;
+    public int porcentajeSpawn = 30, porcentajeDorado = 10;
+    public int Spawnea, SpawnDorado;
     public Transform[] spawnPoints;
 
     void Start()
@@ -21,7 +21,15 @@ public class SpawnAjolote : MonoBehaviour
         Spawnea = Random.Range(1, 100);
         if (Spawnea <= porcentajeSpawn)
         {
-            Instantiate(ajolote, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            SpawnDorado = Random.Range(1, 100);
+            if (SpawnDorado<=porcentajeDorado)
+            {
+                Instantiate(ajoloteDorado, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            }
+            else
+            {
+                Instantiate(ajolote, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            }
         }
     }
 

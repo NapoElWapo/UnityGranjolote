@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427135, b: 0.56452316, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2939,9 +2939,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ajolote: {fileID: 9170133037535178481, guid: cdacab59cf3631249bf61d11611c1986, type: 3}
-  tiempoSpawn: 15
+  ajoloteDorado: {fileID: 2230911047828784416, guid: 3f9aeffddb12ce741ba1126e2fcf30d5,
+    type: 3}
+  tiempoSpawn: 3
   porcentajeSpawn: 30
+  porcentajeDorado: 10
   Spawnea: 0
+  SpawnDorado: 0
   spawnPoints:
   - {fileID: 100450582}
 --- !u!4 &607774793
@@ -3954,7 +3958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &838814806
 Transform:
   m_ObjectHideFlags: 0

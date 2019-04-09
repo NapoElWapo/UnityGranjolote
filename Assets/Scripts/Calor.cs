@@ -18,7 +18,7 @@ public class Calor : MonoBehaviour
 
             GameObject Jugador = GameObject.FindWithTag("Player");
             FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
-            playerScript.health -= 1;
+            playerScript.health -= .2;
         }
 
 	}
