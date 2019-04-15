@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.003995701, g: 0.00021792622, b: 0.000000051515347,
+  m_IndirectSpecularColor: {r: 0.003995703, g: 0.00021792634, b: 0.000000051515347,
     a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -113,64 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1144842
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1144843}
-  - component: {fileID: 1144845}
-  - component: {fileID: 1144844}
-  m_Layer: 0
-  m_Name: Puerta1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1144843
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144842}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1011, y: -0.0191, z: 0.00306}
-  m_LocalScale: {x: 0.029519664, y: 0.05690278, z: -0.0025468646}
-  m_Children: []
-  m_Father: {fileID: 2007924781}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1144844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa4e31d1e9b882d4b88c965a510fae43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelToLoad: CasaIP1
---- !u!65 &1144845
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144842}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1165903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4693865921042476731, guid: f1133f531f45b6b4eb67f770f5600bfe,
@@ -1349,11 +1291,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1423,6 +1360,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -1513,6 +1455,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1902364934}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &67622835
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1837160578}
+    m_Modifications:
+    - target: {fileID: 8310988083999927304, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_Name
+      value: Puerta 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0975
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0131
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0059
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927306, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: doorNumber
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b91f5765b785e9542be4f3d35a1fb775, type: 3}
 --- !u!4 &70503022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4693865921042476731, guid: f1133f531f45b6b4eb67f770f5600bfe,
@@ -1960,6 +1976,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1430529888}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &92471220
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2007924781}
+    m_Modifications:
+    - target: {fileID: 8310988083999927304, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_Name
+      value: Puerta 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0975
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0131
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0059
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927306, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: doorNumber
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b91f5765b785e9542be4f3d35a1fb775, type: 3}
 --- !u!4 &93099115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4693865921042476731, guid: f1133f531f45b6b4eb67f770f5600bfe,
@@ -2511,11 +2601,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2585,6 +2670,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -3035,11 +3125,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (30)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3109,6 +3194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (30)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -3200,11 +3290,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (26)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3274,6 +3359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (26)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -3392,11 +3482,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3466,6 +3551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -4396,11 +4486,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (60)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4456,6 +4541,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -19.875
       objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (60)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
 --- !u!1001 &174975165
@@ -4465,11 +4555,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4539,6 +4624,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -4768,11 +4858,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (11)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4837,6 +4922,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 292.5584
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -4948,11 +5038,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (42)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5022,6 +5107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (42)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -5353,11 +5443,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (51)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5427,6 +5512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (51)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -5662,11 +5752,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5736,6 +5821,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -6133,11 +6223,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6208,6 +6293,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 664.05896
       objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
 --- !u!1 &249165817
@@ -6277,8 +6367,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249165817}
-  m_LocalRotation: {x: -0.044718377, y: 0.33129287, z: 0.01572079, w: 0.94233656}
-  m_LocalPosition: {x: -166.98756, y: -101.40156, z: -209.99153}
+  m_LocalRotation: {x: 0.23423322, y: 0.227019, z: 0.056352556, w: -0.9436216}
+  m_LocalPosition: {x: -161.85483, y: -95.38175, z: -176.0365}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6300,11 +6390,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (44)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6374,6 +6459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (44)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -6669,11 +6759,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6743,6 +6828,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -7029,11 +7119,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (16)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7103,6 +7188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -7487,11 +7577,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7556,6 +7641,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 292.5584
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -7949,11 +8039,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8023,6 +8108,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -8181,11 +8271,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (54)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8250,6 +8335,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 292.55835
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (54)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -8485,11 +8575,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (25)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8559,6 +8644,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (25)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -9566,11 +9656,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (29)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9640,6 +9725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (29)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -9741,11 +9831,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9815,6 +9900,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -10590,11 +10680,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10664,6 +10749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0587
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -11439,11 +11529,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (59)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11508,6 +11593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (59)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -11655,11 +11745,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (21)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11729,6 +11814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0587
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (21)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -12030,11 +12120,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12105,6 +12190,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 664.05896
       objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (5)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
 --- !u!4 &450804866 stripped
@@ -12120,11 +12210,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (17)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12194,6 +12279,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -12446,11 +12536,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (20)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12520,6 +12605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (20)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -12745,11 +12835,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (13)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12819,6 +12904,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05914
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -13242,11 +13332,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (24)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13316,6 +13401,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (24)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -14460,11 +14550,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (57)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14534,6 +14619,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (57)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -15277,11 +15367,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15346,6 +15431,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 292.55832
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -15915,11 +16005,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (58)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15974,6 +16059,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 165.061
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (58)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -16188,6 +16278,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412adacd363c2174584da49f78d7c546, type: 3}
+--- !u!1 &629633833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 629633834}
+  - component: {fileID: 629633835}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &629633834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629633833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &629633835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629633833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c44c5e3a72fda409ee275c485ed014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1918286953}
+  doorArray: []
+  currentDoorNumber: 0
 --- !u!4 &634879227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7243139318530681066, guid: 88a6459534892e346879fce00a487488,
@@ -16437,11 +16573,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16511,6 +16642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -16602,11 +16738,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (34)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16676,6 +16807,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (34)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -16813,11 +16949,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16887,6 +17018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -16994,11 +17130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (14)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17068,6 +17199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -18731,6 +18867,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1894402193}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &758261938
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1643304517}
+    m_Modifications:
+    - target: {fileID: 8310988083999927304, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_Name
+      value: Puerta 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00627
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310988083999927305, guid: b91f5765b785e9542be4f3d35a1fb775,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b91f5765b785e9542be4f3d35a1fb775, type: 3}
 --- !u!4 &760003528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 606921582, guid: d7b70af96d0912345a0c73d6d839883e,
@@ -18762,11 +18967,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (53)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18836,6 +19036,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0587
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (53)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -18933,11 +19138,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (46)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19007,6 +19207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (46)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -19098,11 +19303,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (19)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19172,6 +19372,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (19)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -19728,11 +19933,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (14)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19802,6 +20002,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -20731,11 +20936,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20805,6 +21005,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -21584,11 +21789,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (12)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21658,6 +21858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -22232,11 +22437,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (13)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22306,6 +22506,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -22480,11 +22685,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22555,6 +22755,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 664.05896
       objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (6)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
 --- !u!4 &888918387 stripped
@@ -22570,11 +22775,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (38)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22644,6 +22844,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (38)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -23126,11 +23331,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (55)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23200,6 +23400,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (55)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -23459,11 +23664,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (15)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23533,6 +23733,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -23963,11 +24168,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (16)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24037,6 +24237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -24137,11 +24342,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (12)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24201,6 +24401,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0587
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -24906,11 +25111,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24980,6 +25180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -25422,11 +25627,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25496,6 +25696,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -25776,11 +25981,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (47)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25850,6 +26050,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (47)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -26599,11 +26804,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (52)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26673,6 +26873,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (52)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -27548,11 +27753,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (36)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27622,6 +27822,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (36)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -30575,11 +30780,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (45)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30639,6 +30839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 292.55844
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (45)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -30892,11 +31097,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (32)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30961,6 +31161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 292.5584
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (32)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -31149,11 +31354,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (50)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31223,6 +31423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (50)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -31611,11 +31816,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (56)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31681,6 +31881,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 292.55847
       objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (56)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
 --- !u!4 &1289944739 stripped
@@ -31696,11 +31901,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (15)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31770,6 +31970,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -32309,11 +32514,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32378,6 +32578,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -32712,64 +32917,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97cebcae0ac41324ba649989ee95dd66, type: 3}
---- !u!1 &1339630335
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1339630336}
-  - component: {fileID: 1339630338}
-  - component: {fileID: 1339630337}
-  m_Layer: 0
-  m_Name: Puerta2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1339630336
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339630335}
-  m_LocalRotation: {x: 3.5527137e-15, y: 0.0052390695, z: -0, w: 0.9999863}
-  m_LocalPosition: {x: 0.1008, y: -0.013199998, z: 0.002370009}
-  m_LocalScale: {x: 0.028647747, y: 0.05323177, z: -0.0033235713}
-  m_Children: []
-  m_Father: {fileID: 1837160578}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0.6, z: 0}
---- !u!114 &1339630337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339630335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa4e31d1e9b882d4b88c965a510fae43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelToLoad: CasaIPM
---- !u!65 &1339630338
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339630335}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1344764795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1500562167, guid: 412adacd363c2174584da49f78d7c546,
@@ -33728,11 +33875,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (48)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33803,6 +33945,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 664.0591
       objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (48)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
 --- !u!4 &1379256240 stripped
@@ -33824,11 +33971,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33898,6 +34040,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -33983,11 +34130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (49)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34057,6 +34199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (49)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -36015,11 +36162,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (33)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36089,6 +36231,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (33)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -37374,11 +37521,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (41)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37448,6 +37590,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (41)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -37555,11 +37702,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37629,6 +37771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -39190,11 +39337,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39249,6 +39391,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 140.796
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -39707,11 +39854,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39781,6 +39923,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -40127,11 +40274,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (37)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40186,6 +40328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 20.958
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (37)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -41393,11 +41540,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (40)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41467,6 +41609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (40)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -41879,11 +42026,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (23)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41953,6 +42095,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (23)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -44190,11 +44337,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (43)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44264,6 +44406,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (43)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -44343,11 +44490,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (18)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44417,6 +44559,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (18)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -44970,11 +45117,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45045,6 +45187,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 664.0586
       objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (10)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
 --- !u!4 &1814660841 stripped
@@ -45072,11 +45219,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (17)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45146,6 +45288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -45373,11 +45520,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (39)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45447,6 +45589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (39)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -45665,11 +45812,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (35)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45739,6 +45881,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (35)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -45896,11 +46043,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45970,6 +46112,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -46513,11 +46660,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (31)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46587,6 +46729,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (31)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -47349,11 +47496,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (27)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47424,8 +47566,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 664.0586
       objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (27)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
+--- !u!1 &1918286953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1963833038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1921705020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47433,11 +47586,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (11)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47508,6 +47656,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 664.05896
       objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (11)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
 --- !u!4 &1923768354 stripped
@@ -47523,11 +47676,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47597,6 +47745,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -47745,11 +47898,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47819,6 +47967,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -48451,11 +48604,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (28)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48525,6 +48673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.0586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (28)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -51330,64 +51483,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1133f531f45b6b4eb67f770f5600bfe, type: 3}
---- !u!1 &2075546460
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2075546461}
-  - component: {fileID: 2075546463}
-  - component: {fileID: 2075546462}
-  m_Layer: 0
-  m_Name: Puerta
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2075546461
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075546460}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0975, y: -0.0131, z: 0.00184}
-  m_LocalScale: {x: 0.029497897, y: 0.043292306, z: -0.0045712865}
-  m_Children: []
-  m_Father: {fileID: 1643304517}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2075546462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075546460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa4e31d1e9b882d4b88c965a510fae43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelToLoad: CasaIP
---- !u!65 &2075546463
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075546460}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2077189040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51893,11 +51988,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983535377}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51967,6 +52057,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 664.05896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -52766,8 +52861,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144902980}
-  m_LocalRotation: {x: -0.044718377, y: 0.33129287, z: 0.01572079, w: 0.94233656}
-  m_LocalPosition: {x: -169.06464, y: -42.085773, z: -210.12558}
+  m_LocalRotation: {x: 0.23423322, y: 0.227019, z: 0.056352556, w: -0.9436216}
+  m_LocalPosition: {x: -162.25195, y: -68.72467, z: -176.06212}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52795,11 +52890,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB (22)
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -52864,6 +52954,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 292.55832
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB (22)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
@@ -53252,11 +53347,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488460942}
     m_Modifications:
-    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
-        type: 3}
-      propertyPath: m_Name
-      value: ArbolB
-      objectReference: {fileID: 0}
     - target: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -53311,6 +53401,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 53.320004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960150842649866311, guid: cd666f70fedd4f84590756c222dcbc30,
+        type: 3}
+      propertyPath: m_Name
+      value: ArbolB
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd666f70fedd4f84590756c222dcbc30, type: 3}
