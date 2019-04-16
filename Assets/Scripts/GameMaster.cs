@@ -27,6 +27,13 @@ public class GameMaster : MonoBehaviour
     public bool mostrarLogrosMisiones = false;
     public bool mostrarMapa = false;
 
+    /*public bool FPSController = true;
+    public bool FPSController1 = false;
+    public bool FPSController2 = false;
+    public bool FPSController3 = false;
+    public bool FPSController4 = false;
+    public bool FPSController5 = false;*/
+
     public SistemaInventario inventario;
    public MenuInventario GUI_controlador;
     // Start is called before the first frame update
@@ -49,7 +56,7 @@ public class GameMaster : MonoBehaviour
 
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.Pruebas);
+        SceneManager.LoadScene(NombreEscena.Mundo);
     }
 
     public void GuardarYSalir()
