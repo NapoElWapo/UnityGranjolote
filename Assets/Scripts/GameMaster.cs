@@ -8,9 +8,10 @@ public static class NombreEscena
 {
     public const string Mundo = "OverWorld";
     public const string Hospital = "Hospital";
-    public const string CasaN = "CasaNormal";
-    public const string CasaM = "CasaMision";
-    public const string CasaJ = "CasaJugador";
+    public const string CasaN = "CasaIP";
+    public const string CasaN2 = "CasaIP1";
+    public const string CasaM = "CasaIPM";
+    public const string CasaJ = "CasaIJ";
     public const string Pruebas = "Pruebas";
     public const string MenuP = "MenuPrincipal";
 }
@@ -26,13 +27,12 @@ public class GameMaster : MonoBehaviour
     public bool mostrarAjolotepedia = false;
     public bool mostrarLogrosMisiones = false;
     public bool mostrarMapa = false;
+   
+    public GameObject Jugador;
+    public GameObject Puerta;
 
-    /*public bool FPSController = true;
-    public bool FPSController1 = false;
-    public bool FPSController2 = false;
-    public bool FPSController3 = false;
-    public bool FPSController4 = false;
-    public bool FPSController5 = false;*/
+    
+    public int nivelanterior=0;
 
     public SistemaInventario inventario;
    public MenuInventario GUI_controlador;
@@ -40,6 +40,7 @@ public class GameMaster : MonoBehaviour
 
     private void Awake()
     {
+
         if(instanciaCompartida==null)
         {
             instanciaCompartida = this;
@@ -52,16 +53,61 @@ public class GameMaster : MonoBehaviour
         DontDestroyOnLoad(this);
 
         VolumenMusica(instanciaCompartida.GetComponent<AudioSource>().volume);
+       
+    }
+
+    void OnLevelWasLoaded(int level)
+    {
+
+        
+        if(nivelanterior==4)//si la ultima casa fue la CasaIP hace esto
+        {
+            
+            Jugador = GameObject.FindWithTag("Player");//encuentra al jugador
+            Puerta = GameObject.FindWithTag("Puerta1");//decide de cual puerta salio y agarra su collider
+            Jugador.SetActive(false);
+            Jugador.transform.position = Puerta.transform.position;//le da la posicion del jugador la misma que el collider
+            Jugador.SetActive(true);
+            
+        }
+        
     }
 
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.Mundo);
+        SceneManager.LoadScene(NombreEscena.Pruebas);
     }
 
     public void GuardarYSalir()
     {
         SceneManager.LoadScene(NombreEscena.MenuP);
+    }
+
+    public void Casa1()
+    {
+        SceneManager.LoadScene(NombreEscena.CasaN);
+    }
+
+    public void Casa2()
+    {
+        SceneManager.LoadScene(NombreEscena.CasaN2);
+    }
+
+    public void CasaM()
+    {
+        SceneManager.LoadScene(NombreEscena.CasaM);
+    }
+
+    public void CasaJugador()
+    {
+        SceneManager.LoadScene(NombreEscena.CasaJ);
+    }
+
+    
+
+    public void CasaHospital()
+    {
+        SceneManager.LoadScene(NombreEscena.Hospital);
     }
 
     public void VolumenMusica(float newVolumen)
@@ -81,16 +127,9 @@ public class GameMaster : MonoBehaviour
         GUI_controlador = other;
     }
 
- 
-
-    void Start()
-    {
-        
-    }
+    
+    
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

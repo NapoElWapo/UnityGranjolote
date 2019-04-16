@@ -444,6 +444,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 84578a04e28c9844a810496313524596, type: 3}
+      propertyPath: m_TagString
+      value: PP1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 84578a04e28c9844a810496313524596, type: 3}
       propertyPath: m_LocalPosition.x
       value: 253.3
@@ -651,8 +655,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1805964766, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 663036122}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+--- !u!20 &663036122 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 663036121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &694671348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: dd04dcdd909a8f942afe83c6b1d7cdd1,

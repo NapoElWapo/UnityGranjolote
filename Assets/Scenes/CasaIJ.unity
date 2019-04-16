@@ -521,6 +521,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 84578a04e28c9844a810496313524596, type: 3}
+      propertyPath: m_TagString
+      value: PP1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 84578a04e28c9844a810496313524596, type: 3}
       propertyPath: m_LocalPosition.x
       value: 253.3
@@ -747,8 +751,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1805964766, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 663036124}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+--- !u!1 &663036122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 663036121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &663036123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663036122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a5a381217922346a7cb310ec70c4d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
+  fetch_Tag: Item
+  puertac1: Puerta1
+  puertac2: Puerta2
+  puertacm: Puertam
+  puertach: PuertaH
+  puertacj: PuertaJ
+  puertar: PP1
+  range: 4
+  key_to_refresh: 101
+  current_selected_obj: {fileID: 0}
+--- !u!20 &663036124 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 663036121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &694671348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: dd04dcdd909a8f942afe83c6b1d7cdd1,

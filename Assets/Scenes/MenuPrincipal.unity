@@ -753,14 +753,18 @@ MonoBehaviour:
   volumenEfectos: 0
   mostrarOpciones: 0
   mostrarInventario: 0
+  mostrarMochila: 0
   mostrarAjolotepedia: 0
   mostrarLogrosMisiones: 0
   mostrarMapa: 0
+  Jugador: {fileID: 0}
+  nivelanterior: 0
   inventario:
     recolectables: []
     pasivas: []
     herramientas: []
     ajolotes: []
+  GUI_controlador: {fileID: 0}
 --- !u!4 &884785228
 Transform:
   m_ObjectHideFlags: 0
@@ -1520,6 +1524,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PanelOpciones
       objectReference: {fileID: 0}
+    - target: {fileID: 6252206718467933941, guid: c755f8d2cd812c14582e522e9397b9f9,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1762561256}
     - target: {fileID: 6252206718914692368, guid: c755f8d2cd812c14582e522e9397b9f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1626,11 +1635,6 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6252206720101648846, guid: c755f8d2cd812c14582e522e9397b9f9,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1762561256}
-    - target: {fileID: 6252206718467933941, guid: c755f8d2cd812c14582e522e9397b9f9,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
