@@ -14,7 +14,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public string fetch_Tag = "Item";
     public string puertac1 = "Puerta1";
     public string puertac2 = "Puerta2";
-    public string puertacm = "PuertaM";
+    public string puertacm = "PuertaM1";
     public string puertach = "PuertaH";
     public string puertacj = "PuertaJ";
     public string puertac11 = "PP1";//Tag de la puerta en la escena CasaIP (debes de crear las demas)
@@ -60,29 +60,29 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 else if (colision_rayo.transform.tag == puertac1)
                 {
                     GameMaster.instanciaCompartida.Casa1();
-                    GameMaster.instanciaCompartida.nivelanterior = 2;//el 2 equivale a la escena de pruebas, cambiar el numero para que sea overworld
+                    GameMaster.instanciaCompartida.nivelanterior = 1;//el 2 equivale a la escena de pruebas, cambiar el numero para que sea overworld
                 }
                 else if (colision_rayo.transform.tag == puertac2)
                 {
                     GameMaster.instanciaCompartida.Casa2();
-                    GameMaster.instanciaCompartida.nivelanterior = 2;//cambio a overworld
+                    GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
 
                 }
                 else if (colision_rayo.transform.tag == puertacm)
                 {
-                    GameMaster.instanciaCompartida.CasaM();
-                    GameMaster.instanciaCompartida.nivelanterior = 2;//cambio a overworld
+                    GameMaster.instanciaCompartida.CasaMision();
+                    GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
                 }
                 else if (colision_rayo.transform.tag == puertach)
                 {
                     GameMaster.instanciaCompartida.CasaHospital();
-                    GameMaster.instanciaCompartida.nivelanterior = 2;//cambio a overworld
+                    GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
 
                 }
                 else if (colision_rayo.transform.tag == puertacj)
                 {
                     GameMaster.instanciaCompartida.CasaJugador();
-                    GameMaster.instanciaCompartida.nivelanterior = 2;//cambio a overworld
+                    GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
 
                 }
                 else if (colision_rayo.transform.tag == puertac11)//puerta de la CasaIP
