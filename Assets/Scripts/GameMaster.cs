@@ -30,6 +30,7 @@ public class GameMaster : MonoBehaviour
    
     public GameObject Jugador;
     public GameObject Puerta;
+    //public GameObject Letrero;
 
     
     public int nivelanterior=0;
