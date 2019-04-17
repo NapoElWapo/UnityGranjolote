@@ -88,7 +88,7 @@ public class GameMaster : MonoBehaviour
         if (nivelanterior == 6)
         {
             Jugador = GameObject.FindWithTag("Player");
-            Puerta = GameObject.FindWithTag("PuertaM");
+            Puerta = GameObject.FindWithTag("PuertaM1");
             Jugador.SetActive(false);
             Jugador.transform.position = Puerta.transform.position;
             Jugador.SetActive(true);
@@ -105,7 +105,7 @@ public class GameMaster : MonoBehaviour
     }
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.Pruebas);
+        SceneManager.LoadScene(NombreEscena.Mundo);
     }
 
     public void GuardarYSalir()
@@ -123,7 +123,7 @@ public class GameMaster : MonoBehaviour
         SceneManager.LoadScene(NombreEscena.CasaN2);
     }
 
-    public void CasaM()
+    public void CasaMision()
     {
         SceneManager.LoadScene(NombreEscena.CasaM);
     }
