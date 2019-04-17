@@ -53,26 +53,55 @@ public class GameMaster : MonoBehaviour
         DontDestroyOnLoad(this);
 
         VolumenMusica(instanciaCompartida.GetComponent<AudioSource>().volume);
-       
     }
 
     void OnLevelWasLoaded(int level)
     {
 
-        
-        if(nivelanterior==4)//si la ultima casa fue la CasaIP hace esto
+        if (nivelanterior == 3)
         {
-            
+            Jugador = GameObject.FindWithTag("Player");
+            Puerta = GameObject.FindWithTag("PuertaH");
+            Jugador.SetActive(false);
+            Jugador.transform.position = Puerta.transform.position;
+            Jugador.SetActive(true);
+        }
+        if (nivelanterior == 4)//si la ultima casa fue la CasaIP hace esto
+        {
+
             Jugador = GameObject.FindWithTag("Player");//encuentra al jugador
             Puerta = GameObject.FindWithTag("Puerta1");//decide de cual puerta salio y agarra su collider
             Jugador.SetActive(false);
             Jugador.transform.position = Puerta.transform.position;//le da la posicion del jugador la misma que el collider
             Jugador.SetActive(true);
-            
-        }
-        
-    }
 
+        }
+        if(nivelanterior == 5)
+        {
+            Jugador = GameObject.FindWithTag("Player");
+            Puerta = GameObject.FindWithTag("Puerta2");
+            Jugador.SetActive(false);
+            Jugador.transform.position = Puerta.transform.position;
+            Jugador.SetActive(true);
+        }
+        if (nivelanterior == 6)
+        {
+            Jugador = GameObject.FindWithTag("Player");
+            Puerta = GameObject.FindWithTag("PuertaM");
+            Jugador.SetActive(false);
+            Jugador.transform.position = Puerta.transform.position;
+            Jugador.SetActive(true);
+        }
+        if (nivelanterior == 7)
+        {
+            Jugador = GameObject.FindWithTag("Player");
+            Puerta = GameObject.FindWithTag("PuertaJ");
+            Jugador.SetActive(false);
+            Jugador.transform.position = Puerta.transform.position;
+            Jugador.SetActive(true);
+        }
+
+    }
     public void Jugar()
     {
         SceneManager.LoadScene(NombreEscena.Pruebas);
@@ -102,9 +131,6 @@ public class GameMaster : MonoBehaviour
     {
         SceneManager.LoadScene(NombreEscena.CasaJ);
     }
-
-    
-
     public void CasaHospital()
     {
         SceneManager.LoadScene(NombreEscena.Hospital);
@@ -126,10 +152,4 @@ public class GameMaster : MonoBehaviour
 
         GUI_controlador = other;
     }
-
-    
-    
-
-    // Update is called once per frame
-   
 }
