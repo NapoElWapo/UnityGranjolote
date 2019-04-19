@@ -12,6 +12,8 @@ public class PlayerInventoryInteraction : MonoBehaviour
     
     [Header("Propiedades")]
     public string fetch_Tag = "Item";
+    public string letrero = "Letrero";
+    public string tienda = "Tienda";
     public string puertac1 = "Puerta1";
     public string puertac2 = "Puerta2";
     public string puertacm = "PuertaM1";
@@ -26,6 +28,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public float range = 4;
     public KeyCode key_to_refresh = KeyCode.E;
     public GameObject current_selected_obj; //Deberia de ser un item base
+    public GameObject Letrero;
 
 
 
@@ -35,6 +38,8 @@ public class PlayerInventoryInteraction : MonoBehaviour
     {
         //   controlador_juego = GetComponent<GameMaster>();
         MainCamera = this.GetComponent<Camera>();
+        Letrero = GameObject.FindWithTag("Letrero");
+        Letrero.SetActive(false);
     }
 
     // Update is called once per frame
@@ -57,6 +62,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     //load to the store mangaer and refresh the UI
                     GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj.GetComponent<ItemInventario>());
                 }
+
                 else if (colision_rayo.transform.tag == puertac1)
                 {
                     GameMaster.instanciaCompartida.Casa1();
@@ -115,6 +121,23 @@ public class PlayerInventoryInteraction : MonoBehaviour
                    
             }
                 
+        }
+        if (Physics.Raycast(rayo, out colision_rayo, range))
+        {
+            if (colision_rayo.transform.tag == tienda)
+            {
+                void OnTriggerStay()
+                {
+                    Letrero = GameObject.FindWithTag("Letrero");
+                    Letrero.SetActive(true);
+                }
+                void OnTriggerExit()
+                {
+                    Letrero = GameObject.FindWithTag("Letrero");
+                    Letrero.SetActive(false);
+                }
+            }
+            
         }
     }
 }
