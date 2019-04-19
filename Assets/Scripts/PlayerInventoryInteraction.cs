@@ -16,7 +16,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public string tienda = "Tienda";
     public string puertac1 = "Puerta1";
     public string puertac2 = "Puerta2";
-    public string puertacm = "PuertaM1";
+    public string puertam = "PuertaM1";
     public string puertach = "PuertaH";
     public string puertacj = "PuertaJ";
     public string puertac11 = "PP1";//Tag de la puerta en la escena CasaIP (debes de crear las demas)
@@ -74,7 +74,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
 
                 }
-                else if (colision_rayo.transform.tag == puertacm)
+                else if (colision_rayo.transform.tag == puertam)
                 {
                     GameMaster.instanciaCompartida.CasaMision();
                     GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
