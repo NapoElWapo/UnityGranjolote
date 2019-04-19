@@ -72,6 +72,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 {
                     GameMaster.instanciaCompartida.CasaMision();
                     GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
+
                 }
                 else if (colision_rayo.transform.tag == puertach)
                 {
@@ -111,10 +112,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     GameMaster.instanciaCompartida.Jugar();
                     GameMaster.instanciaCompartida.nivelanterior = 7;
                 }
-                    //puerta de la casaIP1
-                    //puerta de la casaIPM
-                    //etc...
-
+                   
             }
                 
         }
