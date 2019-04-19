@@ -5,7 +5,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Calor : MonoBehaviour
 {
-    public FirstPersonController vida;
+    
    
     void Start()
     {

@@ -30,14 +30,17 @@ public class GameMaster : MonoBehaviour
    
     public GameObject Jugador;
     public GameObject Puerta;
-    //public GameObject Letrero;
+   
 
     
     public int nivelanterior=0;
 
     public SistemaInventario inventario;
    public MenuInventario GUI_controlador;
-    // Start is called before the first frame update
+
+    //sistema de reloj + gamemaster
+    public int hora=20;
+    public float minuto;
 
     private void Awake()
     {
@@ -153,4 +156,23 @@ public class GameMaster : MonoBehaviour
 
         GUI_controlador = other;
     }
+
+    void Update()
+    {
+        minuto += Time.deltaTime;
+
+        if (minuto >= 60)
+        {
+            hora = hora + 1;
+            minuto = 0;
+
+        }
+
+        if (hora > 23)
+        {
+            hora = 0;
+        }
+    }
+
 }
+
