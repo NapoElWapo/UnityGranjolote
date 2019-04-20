@@ -10,6 +10,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public Camera MainCamera;
     //54ul
     
+
     [Header("Propiedades")]
     public string fetch_Tag = "Item";
     public string letrero = "Letrero";
@@ -25,7 +26,12 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public string puertachh = "PPH";
     public string puertacjj = "PPJ";
     public string cama = "Cama";
-  
+
+    public Incubadora incu;
+    public string incubadora1 = "Incubadora1";
+    public string incubadora2 = "Incubadora2";
+    public string incubadora3 = "Incubadora3";
+
     public float range = 4;
     public KeyCode key_to_refresh = KeyCode.E;
     public GameObject current_selected_obj; //Deberia de ser un item base
@@ -123,13 +129,45 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 //cama con cambio de horario
                 else if (colision_rayo.transform.tag == cama)
                 {
-                    
-                    if (GameMaster.instanciaCompartida.hora >=18 || GameMaster.instanciaCompartida.hora <= 6)
+
+
+                    if (GameMaster.instanciaCompartida.hora >= 18)
                     {
-                       
+                        GameMaster.instanciaCompartida.cambioTotal = ((((24f - GameMaster.instanciaCompartida.hora) + 6f) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
                         GameMaster.instanciaCompartida.hora = 6;
                         GameMaster.instanciaCompartida.minuto = 0f;
                     }
+                    else if (GameMaster.instanciaCompartida.hora <= 6)
+                    {
+                        GameMaster.instanciaCompartida.cambioTotal = (((6f - GameMaster.instanciaCompartida.hora) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
+                        GameMaster.instanciaCompartida.hora = 6;
+                        GameMaster.instanciaCompartida.minuto = 0f;
+
+                    }
+
+
+                }
+
+                //Abrir Incubadoras
+                else if (colision_rayo.transform.tag == incubadora1)
+                {
+
+                    incu.Incubadora1();
+                    incu.ToggleIncubadora();
+                }
+                else if (colision_rayo.transform.tag == incubadora2)
+                {
+                    
+                    incu.Incubadora2();
+                    incu.ToggleIncubadora();
+
+                }
+                else if (colision_rayo.transform.tag == incubadora3)
+                {
+                    
+                    incu.Incubadora3();
+                    incu.ToggleIncubadora();
+
                 }
             }
                 
