@@ -39,8 +39,8 @@ public class GameMaster : MonoBehaviour
 
     public GameObject Jugador;
     public GameObject Puerta;
-   
 
+    public int dinero=1000;
     
     public int nivelanterior=0;
 
@@ -119,36 +119,45 @@ public class GameMaster : MonoBehaviour
     }
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.Mundo);
+        SceneManager.LoadScene(NombreEscena.Pruebas);
+        Jugador.SetActive(true);
     }
 
     public void GuardarYSalir()
     {
         SceneManager.LoadScene(NombreEscena.MenuP);
+        
     }
 
     public void Casa1()
     {
         SceneManager.LoadScene(NombreEscena.CasaN);
+        
     }
 
     public void Casa2()
     {
         SceneManager.LoadScene(NombreEscena.CasaN2);
+        
     }
 
     public void CasaMision()
     {
         SceneManager.LoadScene(NombreEscena.CasaM);
+        
     }
 
     public void CasaJugador()
     {
         SceneManager.LoadScene(NombreEscena.CasaJ);
+        
     }
     public void CasaHospital()
     {
         SceneManager.LoadScene(NombreEscena.Hospital);
+        
+
+
     }
 
     public void VolumenMusica(float newVolumen)

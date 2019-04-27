@@ -22,6 +22,8 @@ public class MenuInventario : MonoBehaviour
     public RectTransform mochila, ajolotepedia, logrosMisiones, mapa;
     public static bool menuCerrado = false;
     public GameObject inventario_ui;
+    public int dinero;
+    public Text uiDinero;
 
     //Estas son las preterminadas configuradas en el editor (cambiar esto para beneficio muto)
     public slot[] ajolotes, coleccionables, herramientas, pasivas;
@@ -40,6 +42,8 @@ public class MenuInventario : MonoBehaviour
     private void Start()
     {
         GameMaster.instanciaCompartida.SetUI(this);
+
+        uiDinero.text = "Oro : " + GameMaster.instanciaCompartida.dinero;
     }
 
 
@@ -109,6 +113,7 @@ public class MenuInventario : MonoBehaviour
         mochila.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMochila);
         ajolotepedia.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarAjolotepedia);
         logrosMisiones.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarLogrosMisiones);
+        
     }
 
     public void Ajolotepedia()

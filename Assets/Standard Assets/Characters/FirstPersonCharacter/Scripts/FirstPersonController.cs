@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
@@ -46,8 +47,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public int staminaStart;
 	    public int health;
 	    public int maxHealth;
-	    public bool dead = false;
+	   
 	    public string levelToLoad;
+      
 
         public MouseLook MouseLook { get { return m_MouseLook; } }
 
@@ -145,11 +147,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			}
 			if(health <= 0)
 			{	health = 0;
-				dead = true;
+				
 				Debug.Log("Moriste");
-				Application.LoadLevel(levelToLoad);
-				health = 100;
-				dead = false;
+                
+                SceneManager.LoadScene(3);
+                health = 100;
+				
 			}
 		//}
 
