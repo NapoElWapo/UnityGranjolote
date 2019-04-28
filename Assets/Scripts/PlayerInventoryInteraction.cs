@@ -35,7 +35,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public float range = 4;
     public KeyCode key_to_refresh = KeyCode.E;
     public GameObject current_selected_obj; //Deberia de ser un item base
-    public GameObject Letrero;
+   // public GameObject Letrero;
 
 
 
@@ -45,8 +45,8 @@ public class PlayerInventoryInteraction : MonoBehaviour
     {
         //   controlador_juego = GetComponent<GameMaster>();
         MainCamera = this.GetComponent<Camera>();
-        Letrero = GameObject.FindWithTag("Letrero");
-        Letrero.SetActive(false);
+      //  Letrero = GameObject.FindWithTag("Letrero");
+      ///  Letrero.SetActive(false);
     }
 
     // Update is called once per frame

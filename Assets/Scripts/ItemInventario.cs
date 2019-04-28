@@ -1,40 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ItemInventoryTypeDef;
+
 
 [System.Serializable]
 public class ItemInventario : ItemBase
 {
     [SerializeField]
-    private ItemCategory category;
+    public ItemCategory Category;
 
 
     [SerializeField]
-    private float valor;
-
-
-
-
-
+    public float stack_value;
     [Header("Configuracion base")]
-
     [SerializeField]
     public bool stackeable;
 
     [SerializeField]
     public int maxStack;
 
-    public ItemCategory Category
-    {
-        get { return category; }
-        set { category = value; }
 
-    }
 
-    public float Valor
-    {
-        get { return valor; }
-        set { valor = value; }
-
-    }
 }
