@@ -12,23 +12,23 @@ public class PlayerInventoryInteraction : MonoBehaviour
     
     [Header("Propiedades")]
     public string fetch_Tag = "Item";
-    public string letrero = "Letrero";
-    public string tienda = "Tienda";
     public string puertac1 = "Puerta1";
     public string puertac2 = "Puerta2";
     public string puertam = "PuertaM1";
     public string puertach = "PuertaH";
     public string puertacj = "PuertaJ";
-    public string puertac11 = "PP1";//Tag de la puerta en la escena CasaIP (debes de crear las demas)
+    public string puertac11 = "PP1";
     public string puertac22 = "PP2";
     public string puertacmm = "PPM";
     public string puertachh = "PPH";
     public string puertacjj = "PPJ";
+    public string npc = "NPC";
   
     public float range = 4;
     public KeyCode key_to_refresh = KeyCode.E;
     public GameObject current_selected_obj; //Deberia de ser un item base
-    public GameObject Letrero;
+    public GameObject triggernpc;
+
 
 
 
@@ -38,22 +38,20 @@ public class PlayerInventoryInteraction : MonoBehaviour
     {
         //   controlador_juego = GetComponent<GameMaster>();
         MainCamera = this.GetComponent<Camera>();
-        Letrero = GameObject.FindWithTag("Letrero");
-        Letrero.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit colision_rayo;
-        Ray rayo = MainCamera.ScreenPointToRay(new Vector3(Screen.width/2,Screen.height/2 , 0)); //Optimizar screen w,h
-        Debug.DrawRay(rayo.origin, rayo.direction* range);
+        Ray rayo = MainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)); //Optimizar screen w,h
+        Debug.DrawRay(rayo.origin, rayo.direction * range);
         if (Input.GetButtonDown("e"))
         {
             Debug.Log("pew");
             if (Physics.Raycast(rayo, out colision_rayo, range))
             {
-                    Debug.Log(colision_rayo.transform.tag);
+                Debug.Log(colision_rayo.transform.tag);
                 if (colision_rayo.transform.tag == fetch_Tag)
                 {
                     current_selected_obj = colision_rayo.transform.gameObject;
@@ -118,26 +116,17 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     GameMaster.instanciaCompartida.Jugar();
                     GameMaster.instanciaCompartida.nivelanterior = 7;
                 }
-                   
             }
-                
         }
         if (Physics.Raycast(rayo, out colision_rayo, range))
         {
-            if (colision_rayo.transform.tag == tienda)
+            if (colision_rayo.transform.tag == npc)
             {
-                void OnTriggerStay()
-                {
-                    Letrero = GameObject.FindWithTag("Letrero");
-                    Letrero.SetActive(true);
-                }
-                void OnTriggerExit()
-                {
-                    Letrero = GameObject.FindWithTag("Letrero");
-                    Letrero.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.E))
+                { 
+                Debug.Log("It's dangerous to go alone! Take this.");
                 }
             }
-            
         }
     }
 }

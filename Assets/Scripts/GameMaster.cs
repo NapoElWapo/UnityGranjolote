@@ -30,7 +30,6 @@ public class GameMaster : MonoBehaviour
    
     public GameObject Jugador;
     public GameObject Puerta;
-    //public GameObject Letrero;
 
     
     public int nivelanterior=0;
@@ -105,7 +104,7 @@ public class GameMaster : MonoBehaviour
     }
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.Mundo);
+        SceneManager.LoadScene(NombreEscena.Pruebas);
     }
 
     public void GuardarYSalir()
