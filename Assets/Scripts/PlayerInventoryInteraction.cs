@@ -10,13 +10,14 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public Camera MainCamera;
     //54ul
     
+
     [Header("Propiedades")]
     public string fetch_Tag = "Item";
     public string letrero = "Letrero";
     public string tienda = "Tienda";
     public string puertac1 = "Puerta1";
     public string puertac2 = "Puerta2";
-    public string puertacm = "PuertaM1";
+    public string puertam = "PuertaM1";
     public string puertach = "PuertaH";
     public string puertacj = "PuertaJ";
     public string puertac11 = "PP1";//Tag de la puerta en la escena CasaIP (debes de crear las demas)
@@ -24,11 +25,17 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public string puertacmm = "PPM";
     public string puertachh = "PPH";
     public string puertacjj = "PPJ";
-  
+    public string cama = "Cama";
+
+    public Incubadora incu;
+    public string incubadora1 = "Incubadora1";
+    public string incubadora2 = "Incubadora2";
+    public string incubadora3 = "Incubadora3";
+
     public float range = 4;
     public KeyCode key_to_refresh = KeyCode.E;
     public GameObject current_selected_obj; //Deberia de ser un item base
-    public GameObject Letrero;
+   // public GameObject Letrero;
 
 
 
@@ -38,8 +45,8 @@ public class PlayerInventoryInteraction : MonoBehaviour
     {
         //   controlador_juego = GetComponent<GameMaster>();
         MainCamera = this.GetComponent<Camera>();
-        Letrero = GameObject.FindWithTag("Letrero");
-        Letrero.SetActive(false);
+      //  Letrero = GameObject.FindWithTag("Letrero");
+      ///  Letrero.SetActive(false);
     }
 
     // Update is called once per frame
@@ -63,6 +70,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj.GetComponent<ItemInventario>());
                 }
 
+                //interacciones de puertas
                 else if (colision_rayo.transform.tag == puertac1)
                 {
                     GameMaster.instanciaCompartida.Casa1();
@@ -74,10 +82,11 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
 
                 }
-                else if (colision_rayo.transform.tag == puertacm)
+                else if (colision_rayo.transform.tag == puertam)
                 {
                     GameMaster.instanciaCompartida.CasaMision();
                     GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
+
                 }
                 else if (colision_rayo.transform.tag == puertach)
                 {
@@ -117,29 +126,52 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     GameMaster.instanciaCompartida.Jugar();
                     GameMaster.instanciaCompartida.nivelanterior = 7;
                 }
-                    //puerta de la casaIP1
-                    //puerta de la casaIPM
-                    //etc...
+                //cama con cambio de horario
+                else if (colision_rayo.transform.tag == cama)
+                {
 
+
+                    if (GameMaster.instanciaCompartida.hora >= 18)
+                    {
+                        GameMaster.instanciaCompartida.cambioTotal = ((((24f - GameMaster.instanciaCompartida.hora) + 6f) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
+                        GameMaster.instanciaCompartida.hora = 6;
+                        GameMaster.instanciaCompartida.minuto = 0f;
+                    }
+                    else if (GameMaster.instanciaCompartida.hora <= 6)
+                    {
+                        GameMaster.instanciaCompartida.cambioTotal = (((6f - GameMaster.instanciaCompartida.hora) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
+                        GameMaster.instanciaCompartida.hora = 6;
+                        GameMaster.instanciaCompartida.minuto = 0f;
+
+                    }
+
+
+                }
+
+                //Abrir Incubadoras
+                else if (colision_rayo.transform.tag == incubadora1)
+                {
+
+                    incu.Incubadora1();
+                    incu.ToggleIncubadora();
+                }
+                else if (colision_rayo.transform.tag == incubadora2)
+                {
+                    
+                    incu.Incubadora2();
+                    incu.ToggleIncubadora();
+
+                }
+                else if (colision_rayo.transform.tag == incubadora3)
+                {
+                    
+                    incu.Incubadora3();
+                    incu.ToggleIncubadora();
+
+                }
             }
                 
         }
-        if (Physics.Raycast(rayo, out colision_rayo, range))
-        {
-            if (colision_rayo.transform.tag == tienda)
-            {
-                void OnTriggerStay()
-                {
-                    Letrero = GameObject.FindWithTag("Letrero");
-                    Letrero.SetActive(true);
-                }
-                void OnTriggerExit()
-                {
-                    Letrero = GameObject.FindWithTag("Letrero");
-                    Letrero.SetActive(false);
-                }
-            }
-            
-        }
+        
     }
 }

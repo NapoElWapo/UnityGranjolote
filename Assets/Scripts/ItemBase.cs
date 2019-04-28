@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class ItemBase : MonoBehaviour
+
+
+
+namespace ItemInventoryTypeDef
 {
+
     public enum ItemCategory
     {
+        none,
         recolectables,
         pasivas,
         herramientas,
@@ -14,6 +18,13 @@ public class ItemBase : MonoBehaviour
     }
 
 
+}
+
+
+[System.Serializable]
+public class ItemBase : MonoBehaviour
+{
+    
 
 
     public Sprite inventory_decal;
