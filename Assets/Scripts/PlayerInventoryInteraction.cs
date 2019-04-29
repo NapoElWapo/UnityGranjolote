@@ -22,6 +22,14 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public string puertacmm = "PPM";
     public string puertachh = "PPH";
     public string puertacjj = "PPJ";
+
+    public string cama = "Cama";
+
+    public Incubadora incu;
+    public string incubadora1 = "Incubadora1";
+    public string incubadora2 = "Incubadora2";
+    public string incubadora3 = "Incubadora3";
+
     public string npc = "NPC";
   
     public float range = 4;
@@ -113,17 +121,61 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     GameMaster.instanciaCompartida.Jugar();
                     GameMaster.instanciaCompartida.nivelanterior = 7;
                 }
-            }
-        }
-        if (Physics.Raycast(rayo, out colision_rayo, range))
-        {
-            if (colision_rayo.transform.tag == npc)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                { 
-                Debug.Log("It's dangerous to go alone! Take this.");
+                else if (colision_rayo.transform.tag == cama)
+                {
+
+
+                    if (GameMaster.instanciaCompartida.hora >= 18)
+                    {
+                        GameMaster.instanciaCompartida.cambioTotal = ((((24f - GameMaster.instanciaCompartida.hora) + 6f) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
+                        GameMaster.instanciaCompartida.hora = 6;
+                        GameMaster.instanciaCompartida.minuto = 0f;
+                    }
+                    else if (GameMaster.instanciaCompartida.hora <= 6)
+                    {
+                        GameMaster.instanciaCompartida.cambioTotal = (((6f - GameMaster.instanciaCompartida.hora) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
+                        GameMaster.instanciaCompartida.hora = 6;
+                        GameMaster.instanciaCompartida.minuto = 0f;
+
+                    }
+
+
                 }
+
+                //Abrir Incubadoras
+                else if (colision_rayo.transform.tag == incubadora1)
+                {
+
+                    incu.Incubadora1();
+                    incu.ToggleIncubadora();
+                }
+                else if (colision_rayo.transform.tag == incubadora2)
+                {
+
+                    incu.Incubadora2();
+                    incu.ToggleIncubadora();
+
+                }
+                else if (colision_rayo.transform.tag == incubadora3)
+                {
+
+                    incu.Incubadora3();
+                    incu.ToggleIncubadora();
+
+                }
+                else if (Physics.Raycast(rayo, out colision_rayo, range))
+                {
+                    if (colision_rayo.transform.tag == npc)
+                    {
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            Debug.Log("It's dangerous to go alone! Take this.");
+                        }
+                    }
+                }
+
             }
         }
+        
     }
 }
