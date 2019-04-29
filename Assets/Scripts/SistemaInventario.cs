@@ -48,33 +48,37 @@ public class SistemaInventario
 
 
     //Agrega un elemento del inventario y si ya existe aumenta el stack del elemento de la lista 
-    public void AddItem(ItemInventario item)
+    public bool AddItem(ItemInventario item)
     {
         switch (item.Category)
         {
 
             case ItemCategory.recolectables:
-
-
-
                 //desde aqui se maneja la logica si es que exite o no el objeto
                 if (recolectables.Contains(item))
                 {
-                    recolectables.Find(x => x.Name == item.Name).stack_value += item.stack_value;
-                    GameMaster.instanciaCompartida.GUI_controlador.actualizar_recolectables(item);
+                    if (item.Stackeble)
+                    { 
+                    Debug.Log("updating slot..");
+                    var tmp_obj = recolectables.Find(x => x.Nombre.Contains(item.Nombre) );
 
+                    //
+                    tmp_obj.Stack_value += item.Stack_value;
+                    if (tmp_obj.Stack_value > item.MaxStack) 
+                        return true;
+
+                    GameMaster.instanciaCompartida.GUI_controlador.actualizar_recolectables(tmp_obj);
+                    Debug.Log("objeto actualizado desde invetory sistem"+ tmp_obj.ToString());
+                    return false;
+                    }
+                    else
+                    return true;
                 }
                 else
                 {
-                    recolectables.Add(item);
+                    recolectables.Add(item);//se agrega si no existe
                     GameMaster.instanciaCompartida.GUI_controlador.insertar_recolectables(item);
                 }
-
-
-
-
-
-
                 break;
 
             case ItemCategory.herramientas:
@@ -97,6 +101,8 @@ public class SistemaInventario
 
 
         }
+
+        return false;
        
     }
 

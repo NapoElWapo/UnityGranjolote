@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
+//de aqui se eliminaron la clase, y aqui quedo solito la definicion de los tipos
+//considerar eliminar este archivo y mover itemInventoryTypeDef a itemInventario
 
 namespace ItemInventoryTypeDef
 {
@@ -16,43 +16,6 @@ namespace ItemInventoryTypeDef
         herramientas,
         ajolotes
     }
-
-
 }
 
 
-[System.Serializable]
-public class ItemBase : MonoBehaviour
-{
-    
-
-
-    public Sprite inventory_decal;
-
-    [SerializeField]
-    private string name;
-
-    [SerializeField]
-    private string descripcion;
-
-
-
-    
-    
-
-    public string Name
-    {
-        get { return name; }
-        set { name = value; }
-
-    }
-
-    public string Descripcion
-    {
-        get { return descripcion; }
-        set { descripcion = value; }
-
-    }
-
-   
-}

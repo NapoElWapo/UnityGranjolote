@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1184236209}
   - component: {fileID: 3882688435689134991}
-  - component: {fileID: 6810900664262538245}
+  - component: {fileID: 1442998362354002141}
   m_Layer: 0
   m_Name: OrbeNube
   m_TagString: Item
@@ -48,7 +48,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.0028949
   m_Center: {x: 0, y: 1.0318666, z: 0}
---- !u!114 &6810900664262538245
+--- !u!114 &1442998362354002141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,13 +57,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1184236208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6b1980858c792a4b800d89a2de2fdb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 107d0bd93fcf1eb449dc62762d9425e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item_category: 0
-  inventory_decal: {fileID: 0}
-  name: 
-  descripcion: 
+  Inventory_Decal: {fileID: 21300000, guid: e75f1aa8dee75484d971f69bea33fd75, type: 3}
+  Nombre: OrbeNube
+  Descripcion: sdgshdjgdfgsdf
+  Category: 1
+  Stack_value: 1
+  Stackeble: 1
+  MaxStack: 5
 --- !u!1 &1233980983
 GameObject:
   m_ObjectHideFlags: 0

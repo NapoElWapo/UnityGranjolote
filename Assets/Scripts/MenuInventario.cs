@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 using System;
 using SlotTipos;
+
 
 
 [System.Serializable]
@@ -19,6 +23,12 @@ public class slot
         Is_used = isused;
     }
 
+    public slot(ItemInventoryTypeDef.ItemCategory slot_type_item,string real_obj_name)
+    {
+        item_inside_type = slot_type_item;
+        RealItemName = real_obj_name;
+    }
+
     public string Slot_name;
    
     public Text Slot_stack;
@@ -30,6 +40,21 @@ public class slot
     public bool Is_used;
 }
 
+
+//EN DESUSO
+public class slotComparer : Comparer<slot>
+{
+
+    public override int Compare(slot x, slot y)
+    {
+
+        if (x.item_inside_type == y.item_inside_type && x.RealItemName == y.RealItemName)
+            return 1;
+        else
+            return 0;
+    }
+
+}
 
 public class MenuInventario : MonoBehaviour
 {
@@ -51,6 +76,7 @@ public class MenuInventario : MonoBehaviour
     [SerializeField]
     public List<slot> pasivas = new List<slot>();
 
+    public slotComparer SeekForCategory = new slotComparer();
 
     public string EnumerationName = "Slot";
     public string SlotImageName = "SpriteImage";
@@ -83,7 +109,7 @@ public class MenuInventario : MonoBehaviour
                 case SlotObjType.Coleccionables:
                     coleccionables.Add(new slot(EnumerationName + (++indice_c).ToString(),
                        iterador_ajolotes.gameObject.GetComponentInChildren<Text>(true),
-                       iterador_ajolotes.gameObject.GetComponentInChildren<Image>(true)
+                       iterador_ajolotes.transform.Find(SlotImageName).GetComponent<Image>()
                        , false));
 
                     break;
@@ -220,45 +246,55 @@ public class MenuInventario : MonoBehaviour
     public void insertar_recolectables(ItemInventario last_entry)
     {
             //si no se encontro un objeto lo metemos como nuevo
-            foreach (var iterador in ajolotes)
+            foreach (var iterador in coleccionables)
             {
-                if (!iterador.Is_used)
+                if (!iterador.Is_used) //buscamos el primer slot libre
                 {
+                //Asignamos el sprite de bg y ajustamos el stack
 
+                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+                iterador.Slot_stack.text = last_entry.Stack_value.ToString();
+                iterador.Is_used = true;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = last_entry.Nombre;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+    
 
-                }
+                break;
+         
             }
+        }
     }
 
     public void actualizar_recolectables(ItemInventario last_entry)
     {
-        Debug.Log("UI ITEMS REFRESHED");
         //Buscamos un slot relacionado con el mismo tipo de last entry
-      
 
-                //Vaya aqui se puede optimizar(creando funciones) pero me vale verga
-                //Buscamos un slot con el mismo nombre de objeto
-                foreach (var iterador in ajolotes)
-                {
-                    if (iterador.RealItemName == last_entry.Name && iterador.Is_used)
-                    {
-                        //aumentamos el stack del elemento de la lista y actualizamos el texto de la ui
-
-                    }
-                }
-   }
-
-        /*
-        foreach (var iterador_ui_coleccionables in coleccionables)
+        foreach (var iterador_recolectables in coleccionables)
         {
-            if (iterador_ui_coleccionables.slot_name == "Slot0" && last_entry.name == "OrbeFuego") // el slot 1 de la UI sera para coleccionables de tipo orbe por ejemplo
+            if (iterador_recolectables.RealItemName == last_entry.Nombre && iterador_recolectables.item_inside_type == last_entry.Category)
             {
-                iterador_ui_coleccionables.slot_ui_img.overrideSprite = last_entry.inventory_decal;
-                iterador_ui_coleccionables.slot_stack.text = GameMaster.instanciaCompartida.inventario.recolectables.Count.ToString();
+                iterador_recolectables.Slot_stack.text = last_entry.Stack_value.ToString();
+                Debug.Log($"ui recoletables updated name: {last_entry.Nombre}   category {last_entry.Category.ToString()} stack value :" + last_entry.Stack_value);
+                break;
             }
         }
-        */
+    }
+
+
     
+    // CODIGO PARA ITEMS STATICOS ( NO ACTUALIZADO)
+    /*
+    foreach (var iterador_ui_coleccionables in coleccionables)
+    {
+        if (iterador_ui_coleccionables.slot_name == "Slot0" && last_entry.name == "OrbeFuego") // el slot 1 de la UI sera para coleccionables de tipo orbe por ejemplo
+        {
+            iterador_ui_coleccionables.slot_ui_img.overrideSprite = last_entry.inventory_decal;
+            iterador_ui_coleccionables.slot_stack.text = GameMaster.instanciaCompartida.inventario.recolectables.Count.ToString();
+        }
+    }
+    */
+
 
 
 

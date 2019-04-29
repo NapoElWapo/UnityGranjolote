@@ -2,24 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ItemInventoryTypeDef;
-
+using System;
 
 [System.Serializable]
-public class ItemInventario : ItemBase
+public class ItemInventario :MonoBehaviour, IEquatable<ItemInventario>
 {
+    [Header("Configuracion del item")]
+    public Sprite Inventory_Decal;
+    [SerializeField]
+    public string Nombre;
+    [SerializeField]
+    public string Descripcion;
     [SerializeField]
     public ItemCategory Category;
-
-
+    [Header("Configuracion del contenido")]
     [SerializeField]
-    public float stack_value;
-    [Header("Configuracion base")]
+    public uint Stack_value=1;
     [SerializeField]
-    public bool stackeable;
-
+    public bool Stackeble;
     [SerializeField]
-    public int maxStack;
+    public int MaxStack;
 
-
-
+    public bool Equals(ItemInventario other)
+    {
+       return this.Nombre.Contains(other.Nombre);
+    }
 }
+
+
+
+
+
+
+

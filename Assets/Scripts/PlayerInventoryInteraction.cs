@@ -60,14 +60,11 @@ public class PlayerInventoryInteraction : MonoBehaviour
             Debug.Log("pew");
             if (Physics.Raycast(rayo, out colision_rayo, range))
             {
-                    Debug.Log(colision_rayo.transform.tag);
+                 //   Debug.Log(colision_rayo.transform.tag);
                 if (colision_rayo.transform.tag == fetch_Tag)
                 {
                     current_selected_obj = colision_rayo.transform.gameObject;
-                    current_selected_obj.SetActive(false);
-
-                    //load to the store mangaer and refresh the UI
-                    GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj.GetComponent<ItemInventario>());
+                    current_selected_obj.SetActive(GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>()));
                 }
 
                 //interacciones de puertas
