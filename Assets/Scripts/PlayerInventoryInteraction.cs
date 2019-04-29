@@ -10,32 +10,25 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public Camera MainCamera;
     //54ul
     
-
     [Header("Propiedades")]
     public string fetch_Tag = "Item";
-    public string letrero = "Letrero";
-    public string tienda = "Tienda";
     public string puertac1 = "Puerta1";
     public string puertac2 = "Puerta2";
     public string puertam = "PuertaM1";
     public string puertach = "PuertaH";
     public string puertacj = "PuertaJ";
-    public string puertac11 = "PP1";//Tag de la puerta en la escena CasaIP (debes de crear las demas)
+    public string puertac11 = "PP1";
     public string puertac22 = "PP2";
     public string puertacmm = "PPM";
     public string puertachh = "PPH";
     public string puertacjj = "PPJ";
-    public string cama = "Cama";
-
-    public Incubadora incu;
-    public string incubadora1 = "Incubadora1";
-    public string incubadora2 = "Incubadora2";
-    public string incubadora3 = "Incubadora3";
-
+    public string npc = "NPC";
+  
     public float range = 4;
     public KeyCode key_to_refresh = KeyCode.E;
     public GameObject current_selected_obj; //Deberia de ser un item base
-   // public GameObject Letrero;
+    public GameObject triggernpc;
+
 
 
 
@@ -45,16 +38,14 @@ public class PlayerInventoryInteraction : MonoBehaviour
     {
         //   controlador_juego = GetComponent<GameMaster>();
         MainCamera = this.GetComponent<Camera>();
-      //  Letrero = GameObject.FindWithTag("Letrero");
-      ///  Letrero.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit colision_rayo;
-        Ray rayo = MainCamera.ScreenPointToRay(new Vector3(Screen.width/2,Screen.height/2 , 0)); //Optimizar screen w,h
-        Debug.DrawRay(rayo.origin, rayo.direction* range);
+        Ray rayo = MainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)); //Optimizar screen w,h
+        Debug.DrawRay(rayo.origin, rayo.direction * range);
         if (Input.GetButtonDown("e"))
         {
             Debug.Log("pew");
@@ -67,7 +58,6 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     current_selected_obj.SetActive(GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>()));
                 }
 
-                //interacciones de puertas
                 else if (colision_rayo.transform.tag == puertac1)
                 {
                     GameMaster.instanciaCompartida.Casa1();
@@ -123,52 +113,17 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     GameMaster.instanciaCompartida.Jugar();
                     GameMaster.instanciaCompartida.nivelanterior = 7;
                 }
-                //cama con cambio de horario
-                else if (colision_rayo.transform.tag == cama)
-                {
-
-
-                    if (GameMaster.instanciaCompartida.hora >= 18)
-                    {
-                        GameMaster.instanciaCompartida.cambioTotal = ((((24f - GameMaster.instanciaCompartida.hora) + 6f) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
-                        GameMaster.instanciaCompartida.hora = 6;
-                        GameMaster.instanciaCompartida.minuto = 0f;
-                    }
-                    else if (GameMaster.instanciaCompartida.hora <= 6)
-                    {
-                        GameMaster.instanciaCompartida.cambioTotal = (((6f - GameMaster.instanciaCompartida.hora) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
-                        GameMaster.instanciaCompartida.hora = 6;
-                        GameMaster.instanciaCompartida.minuto = 0f;
-
-                    }
-
-
-                }
-
-                //Abrir Incubadoras
-                else if (colision_rayo.transform.tag == incubadora1)
-                {
-
-                    incu.Incubadora1();
-                    incu.ToggleIncubadora();
-                }
-                else if (colision_rayo.transform.tag == incubadora2)
-                {
-                    
-                    incu.Incubadora2();
-                    incu.ToggleIncubadora();
-
-                }
-                else if (colision_rayo.transform.tag == incubadora3)
-                {
-                    
-                    incu.Incubadora3();
-                    incu.ToggleIncubadora();
-
+            }
+        }
+        if (Physics.Raycast(rayo, out colision_rayo, range))
+        {
+            if (colision_rayo.transform.tag == npc)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                { 
+                Debug.Log("It's dangerous to go alone! Take this.");
                 }
             }
-                
         }
-        
     }
 }

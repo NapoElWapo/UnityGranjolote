@@ -27,31 +27,16 @@ public class GameMaster : MonoBehaviour
     public bool mostrarAjolotepedia = false;
     public bool mostrarLogrosMisiones = false;
     public bool mostrarMapa = false;
-
-    //interfaz de incubadora
-    public bool mostrarIncubadoraUI = false;
-    public bool mostrarIIncubadora=false;
-    public bool mostrarAIncubadora = false;
-    public bool mostrarIncubadora1 = false;
-    public bool mostrarIncubadora2 = false;
-    public bool mostrarIncubadora3 = false;
-    
-
+   
     public GameObject Jugador;
     public GameObject Puerta;
 
-    public int dinero=1000;
     
     public int nivelanterior=0;
 
     public SistemaInventario inventario;
    public MenuInventario GUI_controlador;
-
-    //sistema de reloj + gamemaster
-    public int hora=20;
-    public float minuto;
-    public float horaActual,cambioTotal;
-    
+    // Start is called before the first frame update
 
     private void Awake()
     {
@@ -120,44 +105,35 @@ public class GameMaster : MonoBehaviour
     public void Jugar()
     {
         SceneManager.LoadScene(NombreEscena.Pruebas);
-        Jugador.SetActive(true);
     }
 
     public void GuardarYSalir()
     {
         SceneManager.LoadScene(NombreEscena.MenuP);
-        
     }
 
     public void Casa1()
     {
         SceneManager.LoadScene(NombreEscena.CasaN);
-        
     }
 
     public void Casa2()
     {
         SceneManager.LoadScene(NombreEscena.CasaN2);
-        
     }
 
     public void CasaMision()
     {
         SceneManager.LoadScene(NombreEscena.CasaM);
-        
     }
 
     public void CasaJugador()
     {
         SceneManager.LoadScene(NombreEscena.CasaJ);
-        
     }
     public void CasaHospital()
     {
         SceneManager.LoadScene(NombreEscena.Hospital);
-        
-
-
     }
 
     public void VolumenMusica(float newVolumen)
@@ -176,25 +152,4 @@ public class GameMaster : MonoBehaviour
 
         GUI_controlador = other;
     }
-
-    void Update()
-    {
-        minuto += Time.deltaTime;
-
-        if (minuto >= 60)
-        {
-            hora = hora + 1;
-            minuto = 0;
-
-        }
-
-        if (hora > 23)
-        {
-            hora = 0;
-        }
-
-        horaActual = (hora * 60) + minuto;
-    }
-
 }
-
