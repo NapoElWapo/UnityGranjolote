@@ -163,16 +163,15 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     incu.ToggleIncubadora();
 
                 }
-                else if (Physics.Raycast(rayo, out colision_rayo, range))
+                
+                else  if (colision_rayo.transform.tag == npc)
                 {
-                    if (colision_rayo.transform.tag == npc)
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
-                        if (Input.GetKeyDown(KeyCode.E))
-                        {
                             Debug.Log("It's dangerous to go alone! Take this.");
-                        }
                     }
                 }
+                
 
             }
         }

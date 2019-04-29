@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class NPC : MonoBehaviour
 {
@@ -17,9 +18,7 @@ public class NPC : MonoBehaviour
         if(textDisplay.text == sentences[index])
         {
             continueBotton.SetActive(true);
-        }
-
-            
+        }          
     }
 
     private void OnTriggerStay(Collider other)
@@ -35,22 +34,9 @@ public class NPC : MonoBehaviour
 
     IEnumerator Type()
     {
-       /* if (GameMaster.instanciaCompartida.mostrarIncubadoraUI == false)
-        {
-            var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
-            var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
-            mouseLook.XSensitivity = 2F;
-            mouseLook.YSensitivity = 2F;
-            Time.timeScale = 1f;
-        }*/
         foreach (char letter in sentences[index].ToCharArray())
         {
-            textDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
-        }
 
-      /* if (GameMaster.instanciaCompartida.mostrarIncubadoraUI == true)
-        {
             Cursor.lockState = CursorLockMode.None;
 
             Cursor.visible = true;
@@ -60,7 +46,9 @@ public class NPC : MonoBehaviour
             mouseLook.XSensitivity = 0.0F;
             mouseLook.YSensitivity = 0.0F;
             Time.timeScale = 1f;
-        }*/
+            textDisplay.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
     }
 
     public void NextSentence()
@@ -76,6 +64,11 @@ public class NPC : MonoBehaviour
         {
             textDisplay.text = "";
             continueBotton.SetActive(false);
+            var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
+            var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            mouseLook.XSensitivity = 2F;
+            mouseLook.YSensitivity = 2F;
+            Time.timeScale = 1f;
         }
     }
 }
