@@ -171,10 +171,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
                             Debug.Log("It's dangerous to go alone! Take this.");
                     }
                 }
-                
-
             }
-        }
-        
+        } 
     }
 }
