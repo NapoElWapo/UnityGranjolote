@@ -14,6 +14,7 @@ public static class NombreEscena
     public const string CasaJ = "CasaIJ";
     public const string Pruebas = "Pruebas";
     public const string MenuP = "MenuPrincipal";
+    public const string PA = "PruebasAceves";
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -116,7 +117,7 @@ public class GameMaster : MonoBehaviour
     }
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.Pruebas);
+        SceneManager.LoadScene(NombreEscena.Pruebas);//cambiar dependiendo a que escena quieres ir al darle jugar
     }
 
     public void GuardarYSalir()

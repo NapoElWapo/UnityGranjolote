@@ -131,7 +131,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
                         GameMaster.instanciaCompartida.hora = 6;
                         GameMaster.instanciaCompartida.minuto = 0f;
                     }
-                    else if (GameMaster.instanciaCompartida.hora <= 6)
+                    else if (GameMaster.instanciaCompartida.hora < 6)
                     {
                         GameMaster.instanciaCompartida.cambioTotal = (((6f - GameMaster.instanciaCompartida.hora) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
                         GameMaster.instanciaCompartida.hora = 6;
