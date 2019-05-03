@@ -20,6 +20,7 @@ public class PatrullaAjolote : MonoBehaviour
 
     float direccion;
     Vector3 rotacion;
+    private Quaternion targetRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +71,7 @@ public class PatrullaAjolote : MonoBehaviour
             StartCoroutine(Delay());
         }
     }
-
+    
     IEnumerator Vagar()
     {
         vagar = true;
@@ -118,9 +119,11 @@ public class PatrullaAjolote : MonoBehaviour
             this.velocidad = velocidadAsustado;
             this.harto = true;
             ajoloteAnimator.Play("Armature|correr");
-            Debug.Log("Triggerea");
+            //Debug.Log("Triggerea");
+        }
+        if(other.tag=="LimiteAjolote")
+        {
+            transform.RotateAround(transform.position, transform.up, 180f);
         }
     }
-
-
 }
