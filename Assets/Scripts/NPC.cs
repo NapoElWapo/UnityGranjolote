@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using TMPro;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -10,45 +11,130 @@ public class NPC : MonoBehaviour
     public string[] sentences;
     private int index;
     public float typingSpeed;
-    public bool hablando;
+    private bool hablando;
 
     public float speed;//
     private float waitTime;//
     public float startWaitTime;//
 
-    public Transform[] moveSpots;//
-    private int randomSpot;//
+    /*public Transform pos1;//
+    public Transform pos2;//
+    public Transform pos3;//
+    public Transform pos4;//*/
+
+    bool patrolWaiting;
+
+    float totalWaitTime = 3f;
+    float switchProbability = 0.2f;
+    List<Waypoint> patrolPoints;
+
+    NavMeshAgent agent;//
+    int currentPatrolIndex;
+    bool traveling;
+    bool waiting;
+    bool patrolForward;
+    float waitTimer;
+
+    
+    //private int randomSpot;//
+    public GameObject continueBotton;
 
     void Start()
     {
+        agent = this.GetComponent<NavMeshAgent>();////
+
+        if (agent != null)
+        {
+            currentPatrolIndex = 0;
+            SetDestination();
+        }
         waitTime = startWaitTime;//
-        randomSpot = Random.Range(0, moveSpots.Length);//
+        //randomSpot = Random.Range(0, moveSpots.Length);//
         hablando = false;
     }
 
-    public GameObject continueBotton;
-
-    void Update()
+    public void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);//
-
-        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)//
+        if (traveling && agent.remainingDistance <= 1.0f)
         {
-            if(waitTime <=0)//
+            traveling = false;
+
+            if (patrolWaiting)
             {
-                randomSpot = Random.Range(0, moveSpots.Length);//
-                waitTime = startWaitTime;//
+                waiting = true;
+                waitTimer = 0f;
             }
             else
             {
-                waitTime -= Time.deltaTime;//
+                ChangePatrolPoint();
+                SetDestination();
             }
         }
-        if(textDisplay.text == sentences[index])
+        if (waiting)
+        {
+            waitTimer += Time.deltaTime;
+            if (waitTimer >= totalWaitTime)
+            {
+                waiting = false;
+                ChangePatrolPoint();
+                SetDestination();
+            }
+        }
+        if (textDisplay.text == sentences[index])
         {
             continueBotton.SetActive(true);
-        }          
+        }
     }
+
+    private void SetDestination()
+    {
+        if(patrolPoints != null)
+        {
+            Vector3 targetVector = patrolPoints[currentPatrolIndex].transform.position;
+            agent.SetDestination(targetVector);
+            traveling = true;
+        }
+    }
+
+    private void ChangePatrolPoint()
+    {
+        if(UnityEngine.Random.Range(0f, 1f) <= switchProbability)
+        {
+            patrolForward = !patrolForward;
+        }
+        if(patrolForward)
+        {
+            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Count;
+        }
+        else
+        {
+            if(--currentPatrolIndex < 0)
+            {
+                currentPatrolIndex = patrolPoints.Count - 1;
+            }
+        }
+    }
+
+
+    /*private void OnTriggerEnter(Collider ruta)
+    {
+        / (ruta == GameObject.Find("MoveSpot"))
+        {
+            agent.SetDestination(pos2.position);
+        }
+        if (ruta == GameObject.Find("MoveSpot (1)"))
+        {
+            agent.SetDestination(pos3.position);
+        }
+        if (ruta == GameObject.Find("MoveSpot (2)"))
+        {
+            agent.SetDestination(pos4.position);
+        }
+        if (ruta == GameObject.Find("MoveSpot (3)"))
+        {
+            agent.SetDestination(pos1.position);
+        }
+    }*/
 
     private void OnTriggerStay(Collider other)
     {
