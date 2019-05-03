@@ -10,6 +10,7 @@ public class NPC : MonoBehaviour
     public string[] sentences;
     private int index;
     public float typingSpeed;
+    public bool hablando;
 
     public float speed;//
     private float waitTime;//
@@ -22,6 +23,7 @@ public class NPC : MonoBehaviour
     {
         waitTime = startWaitTime;//
         randomSpot = Random.Range(0, moveSpots.Length);//
+        hablando = false;
     }
 
     public GameObject continueBotton;
@@ -52,10 +54,15 @@ public class NPC : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetButtonDown("e"))
+            if (hablando == false)
             {
-                StartCoroutine (Type());
+                if (Input.GetButtonDown("e"))
+                {
+                    hablando = true;
+                    StartCoroutine (Type());
+                }
             }
+
         }
     }
 
@@ -97,6 +104,7 @@ public class NPC : MonoBehaviour
             mouseLook.YSensitivity = 2F;
             Time.timeScale = 1f;
             index = 0;
+            hablando = false;
         }
     }
 }
