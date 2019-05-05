@@ -13,7 +13,7 @@ public class PatrullaAjolote : MonoBehaviour
     public float cambioDireccion = 0.5f;
     public float maxCambio = 180f;
     public float tiempoHarto = 6f;
-
+    public int contador;
     Animator ajoloteAnimator;
     CharacterController controller;
     SphereCollider sphereCollider;
@@ -112,6 +112,8 @@ public class PatrullaAjolote : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
+       
         if(other.tag=="Player")
         {
             ajoloteAnimator.SetBool(Movimiento, true);
@@ -121,9 +123,15 @@ public class PatrullaAjolote : MonoBehaviour
             ajoloteAnimator.Play("Armature|correr");
             //Debug.Log("Triggerea");
         }
-        if(other.tag=="LimiteAjolote")
+        else if(other.tag=="LimiteAjolote" )
         {
-            transform.RotateAround(transform.position, transform.up, 180f);
+            contador = 1;
+            if(contador==1)
+            {
+                transform.RotateAround(transform.position, transform.up, 180f);
+                contador = 0;
+            }
+            
         }
     }
 }
