@@ -13,19 +13,25 @@ public class NPC : MonoBehaviour
     public float typingSpeed;
     private bool hablando;
 
-    public float speed;//
-    private float waitTime;//
-    public float startWaitTime;//
+    //public float speed;//
+    //private float waitTime;//
+    //public float startWaitTime;//
 
     /*public Transform pos1;//
     public Transform pos2;//
     public Transform pos3;//
     public Transform pos4;//*/
 
+    [SerializeField]
     bool patrolWaiting;
 
+    [SerializeField]
     float totalWaitTime = 3f;
+
+    [SerializeField]
     float switchProbability = 0.2f;
+
+    [SerializeField]
     List<Waypoint> patrolPoints;
 
     NavMeshAgent agent;//
@@ -43,12 +49,23 @@ public class NPC : MonoBehaviour
     {
         agent = this.GetComponent<NavMeshAgent>();////
 
-        if (agent != null)
+        if(agent == null)
         {
-            currentPatrolIndex = 0;
-            SetDestination();
+            Debug.LogError("El componente nav mesh component no esta agregado al " + gameObject.name);
         }
-        waitTime = startWaitTime;//
+        else
+        {
+            if(patrolPoints != null && patrolPoints.Count >= 2)
+            {
+                currentPatrolIndex = 0;
+                SetDestination();
+            }
+            else
+            {
+                Debug.Log("No hay puntos suficientes");
+            }
+        }
+        //waitTime = startWaitTime;//
         //randomSpot = Random.Range(0, moveSpots.Length);//
         hablando = false;
     }
