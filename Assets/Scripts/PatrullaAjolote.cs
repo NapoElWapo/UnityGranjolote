@@ -20,7 +20,6 @@ public class PatrullaAjolote : MonoBehaviour
 
     float direccion;
     Vector3 rotacion;
-    private Quaternion targetRotation;
 
     // Start is called before the first frame update
     void Start()
