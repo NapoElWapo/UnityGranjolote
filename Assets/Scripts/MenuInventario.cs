@@ -315,7 +315,7 @@ public class MenuInventario : MonoBehaviour
         //si no se encontro un objeto lo metemos como nuevo
         foreach (var iterador in ajolotes)
         {
-            if (!iterador.Is_used) //buscamos el primer slot libre
+            if (!iterador.Is_used ) //buscamos el primer slot libre
             {
                 //Asignamos el sprite de bg y ajustamos el stack
 
