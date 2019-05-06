@@ -17,6 +17,7 @@ public class PatrullaAjolote : MonoBehaviour
     Animator ajoloteAnimator;
     CharacterController controller;
     SphereCollider sphereCollider;
+    
 
     float direccion;
     Vector3 rotacion;
@@ -29,6 +30,7 @@ public class PatrullaAjolote : MonoBehaviour
         asustado = false;
         vagar = false;
 
+        
         ajoloteAnimator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         sphereCollider = gameObject.GetComponent<SphereCollider>();
@@ -56,15 +58,20 @@ public class PatrullaAjolote : MonoBehaviour
             StartCoroutine(NuevaDireccion());
             ajoloteAnimator.SetBool(Movimiento, true);
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
+            var rotationVector = transform.rotation.eulerAngles;
+            rotationVector.z = 0;
+            transform.rotation = Quaternion.Euler(rotationVector);
             Vector3 adelante = transform.TransformDirection(Vector3.forward);
             controller.SimpleMove(adelante * velocidad);
-            //transform.eulerAngles.z = 0;
         }
         else if(harto)
         {
             ajoloteAnimator.SetBool(Asustado, true);
             ajoloteAnimator.SetBool(Movimiento, true);
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
+            var rotationVector = transform.rotation.eulerAngles;
+            rotationVector.z = 0;
+            transform.rotation = Quaternion.Euler(rotationVector);
             Vector3 adelante = transform.TransformDirection(Vector3.forward);
             controller.SimpleMove(adelante * velocidad);
             StartCoroutine(Delay());

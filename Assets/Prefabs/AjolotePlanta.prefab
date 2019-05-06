@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9170133037535178480}
-  - component: {fileID: 9170133037535178483}
+  - component: {fileID: 1553041752338700307}
   - component: {fileID: 9170133037535178482}
   - component: {fileID: 9170133037535178493}
   - component: {fileID: 9170133037535178492}
@@ -30,13 +30,13 @@ Transform:
   m_GameObject: {fileID: 9170133037535178481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.024811, y: 0.20197, z: 0.72892}
-  m_LocalScale: {x: 0.32376343, y: 0.32376343, z: 0.32376343}
+  m_LocalScale: {x: 0.3237634, y: 0.3237634, z: 0.32376343}
   m_Children:
   - {fileID: 9170133039184368340}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &9170133037535178483
+--- !u!143 &1553041752338700307
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9170133037535178480}
     m_Modifications:
+    - target: {fileID: 100000, guid: 705d8d5bbe525e742bbba2d221723a14, type: 3}
+      propertyPath: m_Name
+      value: AjolotePlanta
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 705d8d5bbe525e742bbba2d221723a14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -173,10 +177,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 705d8d5bbe525e742bbba2d221723a14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 705d8d5bbe525e742bbba2d221723a14, type: 3}
-      propertyPath: m_Name
-      value: AjolotePlanta
       objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: 705d8d5bbe525e742bbba2d221723a14, type: 3}
       propertyPath: m_LocalRotation.x
