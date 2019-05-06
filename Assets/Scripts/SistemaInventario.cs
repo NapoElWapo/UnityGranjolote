@@ -95,8 +95,33 @@ public class SistemaInventario
                 break;
 
             case ItemCategory.ajolotes:
-                ajolotes.Add(item);
-                GameMaster.instanciaCompartida.GUI_controlador.actualizar_ajolotes(item);
+                //ajolotes.Add(item);
+                //GameMaster.instanciaCompartida.GUI_controlador.actualizar_ajolotes(item);
+                //break;
+                if (ajolotes.Contains(item))
+                {
+                    if (item.Stackeble)
+                    {
+                        Debug.Log("updating slot..");
+                        var tmp_obj = ajolotes.Find(x => x.Nombre.Contains(item.Nombre));
+
+                        //
+                        tmp_obj.Stack_value += item.Stack_value;
+                        if (tmp_obj.Stack_value > item.MaxStack)
+                            return true;
+
+                       
+                        Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());
+                        return false;
+                    }
+                    else
+                        return true;
+                }
+                else
+                {
+                    ajolotes.Add(item);//se agrega si no existe
+                    GameMaster.instanciaCompartida.GUI_controlador.insertar_ajolotes(item);
+                }
                 break;
 
 

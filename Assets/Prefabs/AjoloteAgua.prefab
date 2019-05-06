@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 6590182306021657613}
   - component: {fileID: 6590182306021657612}
   - component: {fileID: 7353790150983737366}
+  - component: {fileID: 4787897037720857230}
+  - component: {fileID: 6999210239996697467}
   m_Layer: 0
   m_Name: AjoloteAgua
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 6590182306021657614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.025, y: -0.561, z: 0.743}
-  m_LocalScale: {x: 0.026666002, y: 0.026666012, z: 0.026666004}
+  m_LocalScale: {x: 0.3237634, y: 0.3237634, z: 0.3237634}
   m_Children:
   - {fileID: 6590182305827463540}
   m_Father: {fileID: 0}
@@ -123,6 +125,38 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4787897037720857230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6590182306021657614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107d0bd93fcf1eb449dc62762d9425e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inventory_Decal: {fileID: 21300000, guid: 80ea3292f921a6647b32a00101a5b153, type: 3}
+  Nombre: AjoloteDeAgua
+  Descripcion: gluglu
+  Category: 4
+  Stack_value: 1
+  Stackeble: 0
+  MaxStack: 1
+--- !u!65 &6999210239996697467
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6590182306021657614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7269962, y: 4.14038, z: 8.253685}
+  m_Center: {x: -0.0065037305, y: 1.0701901, z: 1.1498171}
 --- !u!1001 &6590182305827863540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -332,9 +366,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6590182305827863540}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6590182305827463510 stripped
+--- !u!4 &6590182305827463506 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400034, guid: eae2f0cee06979849bab6f73de7db6a4,
+  m_CorrespondingSourceObject: {fileID: 400038, guid: eae2f0cee06979849bab6f73de7db6a4,
     type: 3}
   m_PrefabInstance: {fileID: 6590182305827863540}
   m_PrefabAsset: {fileID: 0}
@@ -428,9 +462,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6590182305827863540}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6590182305827463506 stripped
+--- !u!4 &6590182305827463510 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400038, guid: eae2f0cee06979849bab6f73de7db6a4,
+  m_CorrespondingSourceObject: {fileID: 400034, guid: eae2f0cee06979849bab6f73de7db6a4,
     type: 3}
   m_PrefabInstance: {fileID: 6590182305827863540}
   m_PrefabAsset: {fileID: 0}

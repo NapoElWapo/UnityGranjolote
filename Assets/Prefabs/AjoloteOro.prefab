@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 2230911047828784423}
   - component: {fileID: 2230911047828784422}
   - component: {fileID: 3388528905717973590}
+  - component: {fileID: 1571297032}
+  - component: {fileID: 1571297028}
   m_Layer: 0
   m_Name: AjoloteOro
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +125,38 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1571297032
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230911047828784416}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7269962, y: 4.14038, z: 8.253685}
+  m_Center: {x: -0.0065037305, y: 1.0701901, z: 1.1498171}
+--- !u!114 &1571297028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230911047828784416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107d0bd93fcf1eb449dc62762d9425e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inventory_Decal: {fileID: 21300000, guid: 5aa0382a403635c42b3ff181c6543bea, type: 3}
+  Nombre: AjoloteDeOro
+  Descripcion: ajolotedeAU
+  Category: 4
+  Stack_value: 1
+  Stackeble: 0
+  MaxStack: 0
 --- !u!1001 &2230911047463516219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -332,9 +366,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2230911047463516219}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2230911047463117465 stripped
+--- !u!4 &2230911047463117469 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400034, guid: 071f100886bb30d498ecdb15dcc9639a,
+  m_CorrespondingSourceObject: {fileID: 400038, guid: 071f100886bb30d498ecdb15dcc9639a,
     type: 3}
   m_PrefabInstance: {fileID: 2230911047463516219}
   m_PrefabAsset: {fileID: 0}
@@ -428,9 +462,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2230911047463516219}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2230911047463117469 stripped
+--- !u!4 &2230911047463117465 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400038, guid: 071f100886bb30d498ecdb15dcc9639a,
+  m_CorrespondingSourceObject: {fileID: 400034, guid: 071f100886bb30d498ecdb15dcc9639a,
     type: 3}
   m_PrefabInstance: {fileID: 2230911047463516219}
   m_PrefabAsset: {fileID: 0}

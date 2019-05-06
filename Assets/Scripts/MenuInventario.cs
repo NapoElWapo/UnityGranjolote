@@ -102,8 +102,8 @@ public class MenuInventario : MonoBehaviour
 
                     ajolotes.Add(new slot(EnumerationName + (++indice_a).ToString(),
                         null,
-                        iterador_ajolotes.GetComponentInChildren<Image>(true)
-                        ,false));
+                        iterador_ajolotes.transform.Find(SlotImageName).GetComponent<Image>()
+                        , false));
                     break;
 
                 case SlotObjType.Coleccionables:
@@ -310,15 +310,29 @@ public class MenuInventario : MonoBehaviour
     }
 
 
-    public void actualizar_ajolotes(ItemInventario last_entry)
+    public void insertar_ajolotes(ItemInventario last_entry)
     {
-
-
-
-        foreach (var iterador_ui_ajolotes in ajolotes)
+        //si no se encontro un objeto lo metemos como nuevo
+        foreach (var iterador in ajolotes)
         {
+            if (!iterador.Is_used) //buscamos el primer slot libre
+            {
+                //Asignamos el sprite de bg y ajustamos el stack
 
+                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+               
+                iterador.Is_used = true;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = last_entry.Nombre;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+
+
+                break;
+
+            }
         }
     }
+
+    
 
 }

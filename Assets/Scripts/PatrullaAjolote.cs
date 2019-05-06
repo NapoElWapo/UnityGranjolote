@@ -58,9 +58,7 @@ public class PatrullaAjolote : MonoBehaviour
             StartCoroutine(NuevaDireccion());
             ajoloteAnimator.SetBool(Movimiento, true);
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
-            var rotationVector = transform.rotation.eulerAngles;
-            rotationVector.z = 0;
-            transform.rotation = Quaternion.Euler(rotationVector);
+            
             Vector3 adelante = transform.TransformDirection(Vector3.forward);
             controller.SimpleMove(adelante * velocidad);
         }
@@ -69,13 +67,18 @@ public class PatrullaAjolote : MonoBehaviour
             ajoloteAnimator.SetBool(Asustado, true);
             ajoloteAnimator.SetBool(Movimiento, true);
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
-            var rotationVector = transform.rotation.eulerAngles;
-            rotationVector.z = 0;
-            transform.rotation = Quaternion.Euler(rotationVector);
+            
             Vector3 adelante = transform.TransformDirection(Vector3.forward);
             controller.SimpleMove(adelante * velocidad);
             StartCoroutine(Delay());
         }
+    }
+
+    void LateUpdate()
+    {
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.z = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
     
     IEnumerator Vagar()

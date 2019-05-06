@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 9170133037535178493}
   - component: {fileID: 9170133037535178492}
   - component: {fileID: 1486068220}
+  - component: {fileID: 539682081}
+  - component: {fileID: 4909858633316881981}
   m_Layer: 0
   m_Name: AjolotePlanta
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +125,38 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &539682081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170133037535178481}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7269962, y: 4.14038, z: 8.253685}
+  m_Center: {x: -0.0065037305, y: 1.0701901, z: 1.1498171}
+--- !u!114 &4909858633316881981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170133037535178481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107d0bd93fcf1eb449dc62762d9425e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inventory_Decal: {fileID: 21300000, guid: b90fbe89dcfc40145851d32000f4a32f, type: 3}
+  Nombre: AjoloteDePlanta
+  Descripcion: ajolotedeverdesin
+  Category: 4
+  Stack_value: 1
+  Stackeble: 0
+  MaxStack: 1
 --- !u!1001 &9170133039184758868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -348,9 +382,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9170133039184758868}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &9170133039184368374 stripped
+--- !u!4 &9170133039184368370 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400034, guid: 705d8d5bbe525e742bbba2d221723a14,
+  m_CorrespondingSourceObject: {fileID: 400038, guid: 705d8d5bbe525e742bbba2d221723a14,
     type: 3}
   m_PrefabInstance: {fileID: 9170133039184758868}
   m_PrefabAsset: {fileID: 0}
@@ -444,9 +478,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9170133039184758868}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &9170133039184368370 stripped
+--- !u!4 &9170133039184368374 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400038, guid: 705d8d5bbe525e742bbba2d221723a14,
+  m_CorrespondingSourceObject: {fileID: 400034, guid: 705d8d5bbe525e742bbba2d221723a14,
     type: 3}
   m_PrefabInstance: {fileID: 9170133039184758868}
   m_PrefabAsset: {fileID: 0}

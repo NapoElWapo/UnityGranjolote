@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 4354111485687829449}
   - component: {fileID: 4354111485687829454}
   - component: {fileID: 1203644960793583449}
+  - component: {fileID: 366380921}
+  - component: {fileID: 6105489237503185204}
   m_Layer: 0
   m_Name: AjoloteHielo
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4354111485687829452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.025, y: -1.556, z: -0.279}
-  m_LocalScale: {x: 0.026666002, y: 0.026666012, z: 0.026666004}
+  m_LocalScale: {x: 0.3237634, y: 0.3237634, z: 0.3237634}
   m_Children:
   - {fileID: 4354111484809711726}
   m_Father: {fileID: 0}
@@ -123,6 +125,38 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &366380921
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354111485687829452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7269962, y: 4.14038, z: 8.253685}
+  m_Center: {x: -0.0065037305, y: 1.0701901, z: 1.1498171}
+--- !u!114 &6105489237503185204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354111485687829452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107d0bd93fcf1eb449dc62762d9425e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inventory_Decal: {fileID: 21300000, guid: adbb6678bcf6c5d4c85b5948af166376, type: 3}
+  Nombre: AjoloteDeHielo
+  Descripcion: brrrrr
+  Category: 4
+  Stack_value: 1
+  Stackeble: 0
+  MaxStack: 1
 --- !u!1001 &4354111484810103534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -332,9 +366,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4354111484810103534}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4354111484809711692 stripped
+--- !u!4 &4354111484809711688 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400034, guid: a18bdb91bd5bf824585ff7dc7ee5ac37,
+  m_CorrespondingSourceObject: {fileID: 400038, guid: a18bdb91bd5bf824585ff7dc7ee5ac37,
     type: 3}
   m_PrefabInstance: {fileID: 4354111484810103534}
   m_PrefabAsset: {fileID: 0}
@@ -428,9 +462,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4354111484810103534}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4354111484809711688 stripped
+--- !u!4 &4354111484809711692 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400038, guid: a18bdb91bd5bf824585ff7dc7ee5ac37,
+  m_CorrespondingSourceObject: {fileID: 400034, guid: a18bdb91bd5bf824585ff7dc7ee5ac37,
     type: 3}
   m_PrefabInstance: {fileID: 4354111484810103534}
   m_PrefabAsset: {fileID: 0}
