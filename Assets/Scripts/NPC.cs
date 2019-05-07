@@ -132,7 +132,6 @@ public class NPC : MonoBehaviour
                     StartCoroutine (Type());
                 }
             }
-
         }
     }
 
@@ -140,7 +139,6 @@ public class NPC : MonoBehaviour
     {
         foreach (char letter in sentences[index].ToCharArray())
         {
-
             Cursor.lockState = CursorLockMode.None;
 
             Cursor.visible = true;
