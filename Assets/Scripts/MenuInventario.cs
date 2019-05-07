@@ -115,11 +115,17 @@ public class MenuInventario : MonoBehaviour
                     break;
 
                 case SlotObjType.Herramientas:
-                    //TO DO: LLENAR AQUI HERRAMIENTAS
+                    herramientas.Add(new slot(EnumerationName + (++indice_h).ToString(),
+                       null,
+                       iterador_ajolotes.transform.Find(SlotImageName).GetComponent<Image>()
+                       , false));
                     break;
 
                 case SlotObjType.Pasivas:
-                    //TO DO: LLENAR CON PASIVAS
+                    pasivas.Add(new slot(EnumerationName + (++indice_p).ToString(),
+                       null,
+                       iterador_ajolotes.transform.Find(SlotImageName).GetComponent<Image>()
+                       , false));
                     break;
             }
         }
@@ -282,33 +288,90 @@ public class MenuInventario : MonoBehaviour
     }
 
 
-    
-    // CODIGO PARA ITEMS STATICOS ( NO ACTUALIZADO)
-    /*
-    foreach (var iterador_ui_coleccionables in coleccionables)
+
+
+
+    public void insertar_herramientas(ItemInventario last_entry)
     {
-        if (iterador_ui_coleccionables.slot_name == "Slot0" && last_entry.name == "OrbeFuego") // el slot 1 de la UI sera para coleccionables de tipo orbe por ejemplo
+        //si no se encontro un objeto lo metemos como nuevo
+        foreach (var iterador in herramientas)
         {
-            iterador_ui_coleccionables.slot_ui_img.overrideSprite = last_entry.inventory_decal;
-            iterador_ui_coleccionables.slot_stack.text = GameMaster.instanciaCompartida.inventario.recolectables.Count.ToString();
+            if (iterador.Slot_name == "Slot1" && last_entry.name == "Lanza") 
+            {
+                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+                
+                iterador.Is_used = true;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = last_entry.Nombre;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+            }
+            else if (iterador.Slot_name == "Slot2" && last_entry.name == "Rastrillo") 
+            {
+                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+
+                iterador.Is_used = true;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = last_entry.Nombre;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+            }
+            else if (iterador.Slot_name == "Slot3" && last_entry.name == "AjoloteSAgua")
+            {
+                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+
+                iterador.Is_used = true;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = last_entry.Nombre;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+            }
+            else if (iterador.Slot_name == "Slot4" && last_entry.name == "AjoloteSFuego")
+            {
+                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+
+                iterador.Is_used = true;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = last_entry.Nombre;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+            }
         }
     }
-    */
 
 
 
 
-    public void actualizar_herramientas(ItemInventario last_entry)
+    public void insertar_pasivas(ItemInventario last_entry)
     {
+        foreach (var iterador in pasivas)
+        {
+            if (iterador.Slot_name == "Slot1" && last_entry.name == "AmuletoFuego") 
+            {
+                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
 
+                iterador.Is_used = true;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = last_entry.Nombre;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+            }
+            else if (iterador.Slot_name == "Slot3" && last_entry.name == "AmuletoHielo")
+            {
+                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+
+                iterador.Is_used = true;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = last_entry.Nombre;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+            }
+            else if (iterador.Slot_name == "Slot2" && last_entry.name == "AjoloteSNube")
+            {
+                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+
+                iterador.Is_used = true;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = last_entry.Nombre;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+            }
+        }
     }
-
-
-
-    public void actualizar_pasivas(ItemInventario last_entry)
-    {
-    }
-
+    
 
     public void insertar_ajolotes(ItemInventario last_entry)
     {

@@ -82,16 +82,33 @@ public class SistemaInventario
                 break;
 
             case ItemCategory.herramientas:
-                herramientas.Add(item);
 
-                GameMaster.instanciaCompartida.GUI_controlador.actualizar_herramientas(item);
+                if (herramientas.Contains(item))
+                {
+                    
+                        return true;
+                }
+                else
+                {
+                    herramientas.Add(item);//se agrega si no existe
+                    GameMaster.instanciaCompartida.GUI_controlador.insertar_herramientas(item);
+                }
                 break;
 
+
+
+
             case ItemCategory.pasivas:
-                pasivas.Add(item);
+                if (pasivas.Contains(item))
+                {
 
-
-                GameMaster.instanciaCompartida.GUI_controlador.actualizar_pasivas(item);
+                    return true;
+                }
+                else
+                {
+                    pasivas.Add(item);//se agrega si no existe
+                    GameMaster.instanciaCompartida.GUI_controlador.insertar_pasivas(item);
+                }
                 break;
 
             case ItemCategory.ajolotes:
