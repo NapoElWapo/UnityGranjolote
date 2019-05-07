@@ -13,15 +13,6 @@ public class NPC : MonoBehaviour
     public float typingSpeed;
     private bool hablando;
 
-    //public float speed;//
-    //private float waitTime;//
-    //public float startWaitTime;//
-
-    /*public Transform pos1;//
-    public Transform pos2;//
-    public Transform pos3;//
-    public Transform pos4;//*/
-
     [SerializeField]
     bool patrolWaiting;
 
@@ -34,20 +25,18 @@ public class NPC : MonoBehaviour
     [SerializeField]
     List<Waypoint> patrolPoints;
 
-    NavMeshAgent agent;//
+    NavMeshAgent agent;
     int currentPatrolIndex;
     bool traveling;
     bool waiting;
     bool patrolForward;
     float waitTimer;
 
-    
-    //private int randomSpot;//
     public GameObject continueBotton;
 
     void Start()
     {
-        agent = this.GetComponent<NavMeshAgent>();////
+        agent = this.GetComponent<NavMeshAgent>();
 
         if(agent == null)
         {
@@ -65,8 +54,6 @@ public class NPC : MonoBehaviour
                 Debug.Log("No hay puntos suficientes");
             }
         }
-        //waitTime = startWaitTime;//
-        //randomSpot = Random.Range(0, moveSpots.Length);//
         hablando = false;
     }
 
@@ -132,27 +119,6 @@ public class NPC : MonoBehaviour
         }
     }
 
-
-    /*private void OnTriggerEnter(Collider ruta)
-    {
-        / (ruta == GameObject.Find("MoveSpot"))
-        {
-            agent.SetDestination(pos2.position);
-        }
-        if (ruta == GameObject.Find("MoveSpot (1)"))
-        {
-            agent.SetDestination(pos3.position);
-        }
-        if (ruta == GameObject.Find("MoveSpot (2)"))
-        {
-            agent.SetDestination(pos4.position);
-        }
-        if (ruta == GameObject.Find("MoveSpot (3)"))
-        {
-            agent.SetDestination(pos1.position);
-        }
-    }*/
-
     private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
@@ -161,6 +127,7 @@ public class NPC : MonoBehaviour
             {
                 if (Input.GetButtonDown("e"))
                 {
+                    GetComponent<NavMeshAgent>().speed = 0f;
                     hablando = true;
                     StartCoroutine (Type());
                 }
@@ -208,6 +175,7 @@ public class NPC : MonoBehaviour
             Time.timeScale = 1f;
             index = 0;
             hablando = false;
+            GetComponent<NavMeshAgent>().speed = 5f;
         }
     }
 }
