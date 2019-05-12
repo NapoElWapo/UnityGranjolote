@@ -42,15 +42,13 @@ public class GameMaster : MonoBehaviour
 
     public GameObject Jugador;
     public GameObject Puerta;
-
     public AudioSource MusicManager;
-
     public int dinero = 1000;
     
     public int nivelanterior=0;
 
     public SistemaInventario inventario;
-    public MenuInventario GUI_controlador;
+   public MenuInventario GUI_controlador;
     // Start is called before the first frame update
 
     private void Awake()
@@ -70,7 +68,6 @@ public class GameMaster : MonoBehaviour
         MusicManager = GetComponent<AudioSource>();
         //VolumenMusica(instanciaCompartida.GetComponent<AudioSource>().volume);
         VolumenMusica(MusicManager.volume);
-        
     }
 
     void OnLevelWasLoaded(int level)
@@ -122,7 +119,7 @@ public class GameMaster : MonoBehaviour
     }
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.Pruebas);//cambiar dependiendo a que escena quieres ir al darle jugar
+        SceneManager.LoadScene(NombreEscena.Mundo);//cambiar dependiendo a que escena quieres ir al darle jugar
     }
 
     public void GuardarYSalir()
@@ -166,16 +163,6 @@ public class GameMaster : MonoBehaviour
         volumenEfectos = newVolumen;
     }
 
-    public void CambiarMusica(AudioClip musica)
-    {
-        if (MusicManager.clip.name == musica.name)
-            return;
-
-        MusicManager.Stop();
-        MusicManager.clip = musica;
-        MusicManager.Play();
-    }
-
    public void SetUI(MenuInventario other)
     {
 
@@ -199,5 +186,15 @@ public class GameMaster : MonoBehaviour
         }
 
         horaActual = (hora * 60) + minuto;
+    }
+
+    public void CambiarMusica(AudioClip musica)
+    {
+        if (MusicManager.clip.name == musica.name)
+            return;
+
+        MusicManager.Stop();
+        MusicManager.clip = musica;
+        MusicManager.Play();
     }
 }
