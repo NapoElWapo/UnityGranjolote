@@ -104,16 +104,4 @@ public class AjoloteLegIA : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-                if (Input.GetButtonDown("e"))
-                {
-
-                }
-            
-        }
-    }
 }
