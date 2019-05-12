@@ -43,14 +43,12 @@ public class GameMaster : MonoBehaviour
     public GameObject Jugador;
     public GameObject Puerta;
 
-    public AudioSource MusicManager;
-
     public int dinero = 1000;
     
     public int nivelanterior=0;
 
     public SistemaInventario inventario;
-    public MenuInventario GUI_controlador;
+   public MenuInventario GUI_controlador;
     // Start is called before the first frame update
 
     private void Awake()
@@ -67,10 +65,7 @@ public class GameMaster : MonoBehaviour
         }
         DontDestroyOnLoad(this);
 
-        MusicManager = GetComponent<AudioSource>();
-        //VolumenMusica(instanciaCompartida.GetComponent<AudioSource>().volume);
-        VolumenMusica(MusicManager.volume);
-        
+        VolumenMusica(instanciaCompartida.GetComponent<AudioSource>().volume);
     }
 
     void OnLevelWasLoaded(int level)
@@ -157,23 +152,12 @@ public class GameMaster : MonoBehaviour
     public void VolumenMusica(float newVolumen)
     {
         volumenMusica = newVolumen;
-        //instanciaCompartida.GetComponent<AudioSource>().volume = volumenMusica;
-        MusicManager.volume = volumenMusica;
+        instanciaCompartida.GetComponent<AudioSource>().volume = volumenMusica;
     }
 
     public void VolumenEfectos(float newVolumen)
     {
         volumenEfectos = newVolumen;
-    }
-
-    public void CambiarMusica(AudioClip musica)
-    {
-        if (MusicManager.clip.name == musica.name)
-            return;
-
-        MusicManager.Stop();
-        MusicManager.clip = musica;
-        MusicManager.Play();
     }
 
    public void SetUI(MenuInventario other)
