@@ -13,7 +13,7 @@ public class Alcalde : MonoBehaviour
     public float typingSpeed;
     private bool hablando;
 
-   /* [SerializeField]
+    [SerializeField]
     bool patrolWaiting;
 
     [SerializeField]
@@ -30,13 +30,13 @@ public class Alcalde : MonoBehaviour
     bool traveling;
     bool waiting;
     bool patrolForward;
-    float waitTimer;*/
+    float waitTimer;
 
     public GameObject continueBotton;
 
     void Start()
     {
-        /*agent = this.GetComponent<NavMeshAgent>();
+        agent = this.GetComponent<NavMeshAgent>();
 
         if (agent == null)
         {
@@ -53,13 +53,13 @@ public class Alcalde : MonoBehaviour
             {
                 Debug.Log("No hay puntos suficientes");
             }
-        }*/
+        }
         hablando = false;
     }
 
     public void Update()
     {
-        /*if (traveling && agent.remainingDistance <= 1.0f)
+        if (traveling && agent.remainingDistance <= 1.0f)
         {
             traveling = false;
 
@@ -83,14 +83,14 @@ public class Alcalde : MonoBehaviour
                 ChangePatrolPoint();
                 SetDestination();
             }
-        }*/
+        }
         if (textDisplay.text == sentences[index])
         {
             continueBotton.SetActive(true);
         }
     }
 
-   /* private void SetDestination()
+    private void SetDestination()
     {
         if (patrolPoints != null)
         {
@@ -117,7 +117,7 @@ public class Alcalde : MonoBehaviour
                 currentPatrolIndex = patrolPoints.Count - 1;
             }
         }
-    }*/
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -127,7 +127,7 @@ public class Alcalde : MonoBehaviour
             {
                 if (Input.GetButtonDown("e"))
                 {
-                    //GetComponent<NavMeshAgent>().speed = 0f;
+                    GetComponent<NavMeshAgent>().speed = 0f;
                     hablando = true;
                     StartCoroutine(Type());
                 }
@@ -173,7 +173,7 @@ public class Alcalde : MonoBehaviour
             Time.timeScale = 1f;
             index = 0;
             hablando = false;
-           // GetComponent<NavMeshAgent>().speed = 5f;
+            GetComponent<NavMeshAgent>().speed = 5f;
         }
     }
 }
