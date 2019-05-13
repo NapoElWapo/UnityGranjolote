@@ -5,13 +5,15 @@ using UnityEngine.AI;
 using TMPro;
 using UnityStandardAssets.Characters.FirstPerson;
 
-public class Alcalde : MonoBehaviour
+public class NPC2 : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
+    public string[] sentences2;
     private int index;
     public float typingSpeed;
     private bool hablando;
+    public bool calor;
 
     /*[SerializeField]
     bool patrolWaiting;
@@ -33,6 +35,9 @@ public class Alcalde : MonoBehaviour
     float waitTimer;*/
 
     public GameObject continueBotton;
+    public GameObject continueBottonCalor;
+    //public GameObject si;
+    //public GameObject no;
 
     void Start()
     {
@@ -59,34 +64,38 @@ public class Alcalde : MonoBehaviour
 
     public void Update()
     {
-       /* if (traveling && agent.remainingDistance <= 1.0f)
-        {
-            traveling = false;
+        /* if (traveling && agent.remainingDistance <= 1.0f)
+         {
+             traveling = false;
 
-            if (patrolWaiting)
-            {
-                waiting = true;
-                waitTimer = 0f;
-            }
-            else
-            {
-                ChangePatrolPoint();
-                SetDestination();
-            }
-        }
-        if (waiting)
-        {
-            waitTimer += Time.deltaTime;
-            if (waitTimer >= totalWaitTime)
-            {
-                waiting = false;
-                ChangePatrolPoint();
-                SetDestination();
-            }
-        }*/
+             if (patrolWaiting)
+             {
+                 waiting = true;
+                 waitTimer = 0f;
+             }
+             else
+             {
+                 ChangePatrolPoint();
+                 SetDestination();
+             }
+         }
+         if (waiting)
+         {
+             waitTimer += Time.deltaTime;
+             if (waitTimer >= totalWaitTime)
+             {
+                 waiting = false;
+                 ChangePatrolPoint();
+                 SetDestination();
+             }
+         }*/
         if (textDisplay.text == sentences[index])
         {
             continueBotton.SetActive(true);
+        }
+        if (textDisplay.text == sentences2[index])
+        {
+            continueBottonCalor.SetActive(true);
         }
     }
 
@@ -128,8 +137,16 @@ public class Alcalde : MonoBehaviour
                 if (Input.GetButtonDown("e"))
                 {
                     //GetComponent<NavMeshAgent>().speed = 0f;
-                    hablando = true;
-                    StartCoroutine(Type());
+                    if (calor == false)
+                    {
+                        hablando = true;
+                        StartCoroutine(Type());
+                    }
+                    else if (calor == true)
+                    {
+                        hablando = true;
+                        StartCoroutine(Type2());
+                    }
                 }
             }
         }
@@ -138,6 +155,24 @@ public class Alcalde : MonoBehaviour
     IEnumerator Type()
     {
         foreach (char letter in sentences[index].ToCharArray())
+        {
+            Cursor.lockState = CursorLockMode.None;
+
+            Cursor.visible = true;
+
+            var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
+            var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            mouseLook.XSensitivity = 0.0F;
+            mouseLook.YSensitivity = 0.0F;
+            Time.timeScale = 1f;
+            textDisplay.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+    }
+
+    IEnumerator Type2()
+    {
+        foreach (char letter in sentences2[index].ToCharArray())
         {
             Cursor.lockState = CursorLockMode.None;
 
@@ -166,6 +201,30 @@ public class Alcalde : MonoBehaviour
         {
             textDisplay.text = "";
             continueBotton.SetActive(false);
+            var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
+            var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            mouseLook.XSensitivity = 2F;
+            mouseLook.YSensitivity = 2F;
+            Time.timeScale = 1f;
+            index = 0;
+            hablando = false;
+            //GetComponent<NavMeshAgent>().speed = 5f;
+        }
+    }
+
+    public void NextSentence2()
+    {
+        continueBottonCalor.SetActive(false);
+        if (index < sentences.Length - 1)
+        {
+            index++;
+            textDisplay.text = "";
+            StartCoroutine(Type2());
+        }
+        else
+        {
+            textDisplay.text = "";
+            continueBottonCalor.SetActive(false);
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
             mouseLook.XSensitivity = 2F;
