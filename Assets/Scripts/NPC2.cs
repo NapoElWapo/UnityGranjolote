@@ -8,12 +8,18 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class NPC2 : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
-    public string[] sentences;
-    public string[] sentences2;
-    private int index;
     public float typingSpeed;
-    private bool hablando;
+
+    public string[] sentences;
+
+    public string[] Calor;
     public bool calor;
+
+    public string[] Frio;
+    public bool frio;
+
+    private int index;
+    private bool hablando;    
 
     /*[SerializeField]
     bool patrolWaiting;
@@ -36,6 +42,8 @@ public class NPC2 : MonoBehaviour
 
     public GameObject continueBotton;
     public GameObject continueBottonCalor;
+    public GameObject continueBottonFrio;
+
     //public GameObject si;
     //public GameObject no;
 
@@ -93,9 +101,13 @@ public class NPC2 : MonoBehaviour
         {
             continueBotton.SetActive(true);
         }
-        if (textDisplay.text == sentences2[index])
+        if (textDisplay.text == Calor[index])
         {
             continueBottonCalor.SetActive(true);
+        }
+        if (textDisplay.text == Frio[index])
+        {
+            continueBottonFrio.SetActive(true);
         }
     }
 
@@ -137,7 +149,7 @@ public class NPC2 : MonoBehaviour
                 if (Input.GetButtonDown("e"))
                 {
                     //GetComponent<NavMeshAgent>().speed = 0f;
-                    if (calor == false)
+                    if (calor == false && frio == false)
                     {
                         hablando = true;
                         StartCoroutine(Type());
@@ -145,7 +157,12 @@ public class NPC2 : MonoBehaviour
                     else if (calor == true)
                     {
                         hablando = true;
-                        StartCoroutine(Type2());
+                        StartCoroutine(TypeCalor());
+                    }
+                    else if (frio == true)
+                    {
+                        hablando = true;
+                        StartCoroutine(TypeFrio());
                     }
                 }
             }
@@ -170,9 +187,27 @@ public class NPC2 : MonoBehaviour
         }
     }
 
-    IEnumerator Type2()
+    IEnumerator TypeCalor()
     {
-        foreach (char letter in sentences2[index].ToCharArray())
+        foreach (char letter in Calor[index].ToCharArray())
+        {
+            Cursor.lockState = CursorLockMode.None;
+
+            Cursor.visible = true;
+
+            var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
+            var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            mouseLook.XSensitivity = 0.0F;
+            mouseLook.YSensitivity = 0.0F;
+            Time.timeScale = 1f;
+            textDisplay.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+    }
+
+    IEnumerator TypeFrio()
+    {
+        foreach (char letter in Frio[index].ToCharArray())
         {
             Cursor.lockState = CursorLockMode.None;
 
@@ -212,19 +247,43 @@ public class NPC2 : MonoBehaviour
         }
     }
 
-    public void NextSentence2()
+    public void NextSentenceCalor()
     {
         continueBottonCalor.SetActive(false);
         if (index < sentences.Length - 1)
         {
             index++;
             textDisplay.text = "";
-            StartCoroutine(Type2());
+            StartCoroutine(TypeCalor());
         }
         else
         {
             textDisplay.text = "";
             continueBottonCalor.SetActive(false);
+            var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
+            var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            mouseLook.XSensitivity = 2F;
+            mouseLook.YSensitivity = 2F;
+            Time.timeScale = 1f;
+            index = 0;
+            hablando = false;
+            //GetComponent<NavMeshAgent>().speed = 5f;
+        }
+    }
+
+    public void NextSentenceFrio()
+    {
+        continueBottonFrio.SetActive(false);
+        if (index < sentences.Length - 1)
+        {
+            index++;
+            textDisplay.text = "";
+            StartCoroutine(TypeFrio());
+        }
+        else
+        {
+            textDisplay.text = "";
+            continueBottonFrio.SetActive(false);
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
             mouseLook.XSensitivity = 2F;
