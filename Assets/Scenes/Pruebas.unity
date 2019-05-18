@@ -1701,6 +1701,64 @@ MonoBehaviour:
   Stack_value: 1
   Stackeble: 1
   MaxStack: 99
+--- !u!1 &283833767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 283833770}
+  - component: {fileID: 283833769}
+  - component: {fileID: 283833768}
+  m_Layer: 0
+  m_Name: MapaPrueba1 (1)
+  m_TagString: Bosque
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &283833768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283833767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232c6a338a036c4439d9a7fcd41824de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenMapa: {fileID: 1840766474}
+--- !u!65 &283833769
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283833767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.497147, y: 25.55447, z: 12.848206}
+  m_Center: {x: 24.5372, y: 12.277235, z: -2.1091003}
+--- !u!4 &283833770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283833767}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 71.3, y: -1.3, z: 316.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 82
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &288655273
 GameObject:
   m_ObjectHideFlags: 0
@@ -5131,6 +5189,64 @@ MonoBehaviour:
   Stack_value: 1
   Stackeble: 1
   MaxStack: 99
+--- !u!1 &930174295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 930174298}
+  - component: {fileID: 930174297}
+  - component: {fileID: 930174296}
+  m_Layer: 0
+  m_Name: MapaPrueba1 (4)
+  m_TagString: Pueblo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &930174296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930174295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232c6a338a036c4439d9a7fcd41824de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenMapa: {fileID: 1840766474}
+--- !u!65 &930174297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930174295}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.497147, y: 25.55447, z: 12.848206}
+  m_Center: {x: 24.5372, y: 12.277235, z: -2.1091003}
+--- !u!4 &930174298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930174295}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.3, y: -1.3, z: 272.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 85
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &937605196
 GameObject:
   m_ObjectHideFlags: 0
@@ -6148,6 +6264,64 @@ Transform:
   m_Father: {fileID: 581430841}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1089318389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089318392}
+  - component: {fileID: 1089318391}
+  - component: {fileID: 1089318390}
+  m_Layer: 0
+  m_Name: MapaPrueba1 (3)
+  m_TagString: Rocas
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1089318390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089318389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232c6a338a036c4439d9a7fcd41824de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenMapa: {fileID: 1840766474}
+--- !u!65 &1089318391
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089318389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.497147, y: 25.55447, z: 12.848206}
+  m_Center: {x: 24.5372, y: 12.277235, z: -2.1091003}
+--- !u!4 &1089318392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089318389}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.2, y: -1.3, z: 305.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 84
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1105661120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4693865921042476731, guid: f1133f531f45b6b4eb67f770f5600bfe,
@@ -6253,6 +6427,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.019612132, y: 0.019528465, z: 0.019999996}
   m_Center: {x: 0, y: 0.0000838423, z: 0}
+--- !u!1 &1127212202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1127212205}
+  - component: {fileID: 1127212204}
+  - component: {fileID: 1127212203}
+  m_Layer: 0
+  m_Name: MapaPrueba1 (2)
+  m_TagString: Cueva
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1127212203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127212202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232c6a338a036c4439d9a7fcd41824de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenMapa: {fileID: 1840766474}
+--- !u!65 &1127212204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127212202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.497147, y: 25.55447, z: 12.848206}
+  m_Center: {x: 24.5372, y: 12.277235, z: -2.1091003}
+--- !u!4 &1127212205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127212202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40.8, y: -1.3, z: 319.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 83
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1145231647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6352,6 +6584,64 @@ MonoBehaviour:
   Stack_value: 1
   Stackeble: 1
   MaxStack: 99
+--- !u!1 &1161099359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1161099362}
+  - component: {fileID: 1161099361}
+  - component: {fileID: 1161099360}
+  m_Layer: 0
+  m_Name: MapaPrueba1 (6)
+  m_TagString: Nevada
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1161099360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161099359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232c6a338a036c4439d9a7fcd41824de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenMapa: {fileID: 1840766474}
+--- !u!65 &1161099361
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161099359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.497147, y: 25.55447, z: 12.848206}
+  m_Center: {x: 24.5372, y: 12.277235, z: -2.1091003}
+--- !u!4 &1161099362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161099359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 68, y: -1.3, z: 287.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 87
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1161103377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7316,7 +7606,7 @@ GameObject:
   - component: {fileID: 1320227007}
   m_Layer: 0
   m_Name: MapaPrueba1
-  m_TagString: Bosque
+  m_TagString: Planicie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7345,8 +7635,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 42.798195, y: 25.55447, z: 35.674255}
-  m_Center: {x: 10.386677, y: 12.277235, z: 9.303925}
+  m_Size: {x: 14.497147, y: 25.55447, z: 12.848206}
+  m_Center: {x: 24.5372, y: 12.277235, z: -2.1091003}
 --- !u!4 &1320227009
 Transform:
   m_ObjectHideFlags: 0
@@ -7583,6 +7873,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 245981316}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1411548879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1411548882}
+  - component: {fileID: 1411548881}
+  - component: {fileID: 1411548880}
+  m_Layer: 0
+  m_Name: MapaPrueba1 (5)
+  m_TagString: Volcan
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1411548880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411548879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232c6a338a036c4439d9a7fcd41824de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenMapa: {fileID: 1840766474}
+--- !u!65 &1411548881
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411548879}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.497147, y: 25.55447, z: 12.848206}
+  m_Center: {x: 24.5372, y: 12.277235, z: -2.1091003}
+--- !u!4 &1411548882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411548879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.9, y: -1.3, z: 287.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 86
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431834101
 GameObject:
   m_ObjectHideFlags: 0
@@ -9365,7 +9713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647894328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 588.1868, y: -284.06757, z: -585.7943}
+  m_LocalPosition: {x: 470.42236, y: -304.14688, z: -484.57047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9487,10 +9835,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1438661532}
+  typingSpeed: 0.02
   sentences:
   - aaaaa
   - eeeee
-  typingSpeed: 0.02
   continueBotton: {fileID: 1742816246}
 --- !u!23 &1656272910
 MeshRenderer:
@@ -10311,6 +10659,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debufDrawRadius: 1
+--- !u!1 &1766474236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1766474239}
+  - component: {fileID: 1766474238}
+  - component: {fileID: 1766474237}
+  m_Layer: 0
+  m_Name: MapaPrueba1 (7)
+  m_TagString: Nube
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1766474237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766474236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232c6a338a036c4439d9a7fcd41824de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenMapa: {fileID: 1840766474}
+--- !u!65 &1766474238
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766474236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.497147, y: 25.55447, z: 12.848206}
+  m_Center: {x: 24.5372, y: 12.277235, z: -2.1091003}
+--- !u!4 &1766474239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766474236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 90.2, y: -1.3, z: 287.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 88
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1786865251
 GameObject:
   m_ObjectHideFlags: 0
@@ -10604,7 +11010,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -259, y: 46}
+  m_AnchoredPosition: {x: -257, y: 43}
   m_SizeDelta: {x: 98, y: 102}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1840766475
