@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using TMPro;
 using UnityStandardAssets.Characters.FirstPerson;
 
-public class Alcalde : MonoBehaviour
+public class Anciano : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
     public float typingSpeed;
@@ -59,31 +59,31 @@ public class Alcalde : MonoBehaviour
 
     public void Update()
     {
-       /* if (traveling && agent.remainingDistance <= 1.0f)
-        {
-            traveling = false;
+        /* if (traveling && agent.remainingDistance <= 1.0f)
+         {
+             traveling = false;
 
-            if (patrolWaiting)
-            {
-                waiting = true;
-                waitTimer = 0f;
-            }
-            else
-            {
-                ChangePatrolPoint();
-                SetDestination();
-            }
-        }
-        if (waiting)
-        {
-            waitTimer += Time.deltaTime;
-            if (waitTimer >= totalWaitTime)
-            {
-                waiting = false;
-                ChangePatrolPoint();
-                SetDestination();
-            }
-        }*/
+             if (patrolWaiting)
+             {
+                 waiting = true;
+                 waitTimer = 0f;
+             }
+             else
+             {
+                 ChangePatrolPoint();
+                 SetDestination();
+             }
+         }
+         if (waiting)
+         {
+             waitTimer += Time.deltaTime;
+             if (waitTimer >= totalWaitTime)
+             {
+                 waiting = false;
+                 ChangePatrolPoint();
+                 SetDestination();
+             }
+         }*/
         if (textDisplay.text == sentences[index])
         {
             continueBotton.SetActive(true);
