@@ -120,7 +120,7 @@ public class GameMaster : MonoBehaviour
     }
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.Pruebas);//cambiar dependiendo a que escena quieres ir al darle jugar
+        SceneManager.LoadScene(NombreEscena.PN);//cambiar dependiendo a que escena quieres ir al darle jugar
     }
 
     public void GuardarYSalir()

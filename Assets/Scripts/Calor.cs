@@ -5,8 +5,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Calor : MonoBehaviour
 {
-    
-   
+    public RectTransform imagenCalor;
+  
     void Start()
     {
         
@@ -18,6 +18,7 @@ public class Calor : MonoBehaviour
             GameObject Jugador = GameObject.FindWithTag("Player");
             FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
             playerScript.health -= 1;
+            imagenCalor.GetComponent<CanvasGroup>().alpha = 1f-( playerScript.health * .01f);
             if(playerScript.health<=0 && GameMaster.instanciaCompartida.dinero > 50)
             {
                 GameMaster.instanciaCompartida.dinero -= 50;
