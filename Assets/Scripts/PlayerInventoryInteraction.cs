@@ -145,22 +145,22 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 //Abrir Incubadoras
                 else if (colision_rayo.transform.tag == incubadora1)
                 {
-
-                    incu.Incubadora1();
                     incu.ToggleIncubadora();
+                    incu.Incubadora1();
+                    
                 }
                 else if (colision_rayo.transform.tag == incubadora2)
                 {
-
-                    incu.Incubadora2();
                     incu.ToggleIncubadora();
+                    incu.Incubadora2();
+                    
 
                 }
                 else if (colision_rayo.transform.tag == incubadora3)
                 {
-
-                    incu.Incubadora3();
                     incu.ToggleIncubadora();
+                    incu.Incubadora3();
+                    
 
                 }
                 
