@@ -16,6 +16,8 @@ public static class NombreEscena
     public const string MenuP = "MenuPrincipal";
     public const string PA = "PruebasAceves";
     public const string PN = "PruebasNapo";
+
+    public const string PL = "PruebasLuisFer";
 }
 
 [RequireComponent(typeof(AudioSource))]
