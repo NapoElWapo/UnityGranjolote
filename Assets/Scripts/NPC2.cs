@@ -116,6 +116,23 @@ public class NPC2 : MonoBehaviour
         {
             PlayerUI.SetActive(false);
         }
+        if (GameMaster.instanciaCompartida.hora >= 19)
+        {
+            totalWaitTime = 60f;
+            currentPatrolIndex = 0;
+            Vector3 targetVector = patrolPoints[currentPatrolIndex].transform.position;
+            agent.SetDestination(targetVector);
+            traveling = true;
+            if (GameMaster.instanciaCompartida.hora >= 20)
+            {
+                //this.SetActive(false);
+            }
+        }
+        else if (GameMaster.instanciaCompartida.hora >= 8)
+        {
+            totalWaitTime = 10f;
+            //this.SetActive(true);
+        }
     }
 
     private void SetDestination()
