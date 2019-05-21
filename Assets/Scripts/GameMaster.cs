@@ -15,9 +15,6 @@ public static class NombreEscena
     public const string Pruebas = "Pruebas";
     public const string MenuP = "MenuPrincipal";
     public const string PA = "PruebasAceves";
-    public const string PN = "PruebasNapo";
-
-    public const string PL = "PruebasLuisFer";
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -122,7 +119,7 @@ public class GameMaster : MonoBehaviour
     }
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.PN);//cambiar dependiendo a que escena quieres ir al darle jugar
+        SceneManager.LoadScene(NombreEscena.Pruebas);//cambiar dependiendo a que escena quieres ir al darle jugar
     }
 
     public void GuardarYSalir()
