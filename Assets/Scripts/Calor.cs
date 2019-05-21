@@ -28,7 +28,19 @@ public class Calor : MonoBehaviour
             {
                 GameMaster.instanciaCompartida.dinero = 0;
             }
-            NPC2.instanciaCalor.calor = true;
+            NPC2.instancia.calor = true;
         }
 	}
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameObject Jugador = GameObject.FindWithTag("Player");
+            FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
+            for(int i = playerScript.health; i <= 100; i++)
+            {
+                playerScript.health += 1;
+            }           
+        }
+    }
 }

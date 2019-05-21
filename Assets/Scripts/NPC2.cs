@@ -7,6 +7,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class NPC2 : MonoBehaviour
 {
+    public static NPC2 instancia;
     public TextMeshProUGUI textDisplay;
     public float typingSpeed;
 
@@ -14,7 +15,6 @@ public class NPC2 : MonoBehaviour
 
     public string[] Calor;
     public bool calor;
-    public static NPC2 instanciaCalor;
 
     public string[] Frio;
     public bool frio;
@@ -51,7 +51,7 @@ public class NPC2 : MonoBehaviour
 
     void Start()
     {
-        instanciaCalor = this;
+        instancia = this;
         agent = this.GetComponent<NavMeshAgent>();
 
         if (agent == null)

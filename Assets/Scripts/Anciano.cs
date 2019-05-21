@@ -33,6 +33,7 @@ public class Anciano : MonoBehaviour
     float waitTimer;*/
 
     public GameObject continueBotton;
+    public GameObject PlayerUI;
 
     void Start()
     {
@@ -87,6 +88,10 @@ public class Anciano : MonoBehaviour
         if (textDisplay.text == sentences[index])
         {
             continueBotton.SetActive(true);
+        }
+        if (hablando == true)
+        {
+            PlayerUI.SetActive(false);
         }
     }
 
@@ -174,6 +179,7 @@ public class Anciano : MonoBehaviour
             index = 0;
             hablando = false;
             //GetComponent<NavMeshAgent>().speed = 5f;
+            PlayerUI.SetActive(true);
         }
     }
 }

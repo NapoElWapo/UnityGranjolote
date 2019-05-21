@@ -27,8 +27,21 @@ public class Frio : MonoBehaviour
             {
                 GameMaster.instanciaCompartida.dinero = 0;
             }
+            NPC2.instancia.frio = true;
         }
 
     }
 
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameObject Jugador = GameObject.FindWithTag("Player");
+            FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
+            for (int i = playerScript.health; i <= 100; i++)
+            {
+                playerScript.health += 1;
+            }
+        }
+    }
 }
