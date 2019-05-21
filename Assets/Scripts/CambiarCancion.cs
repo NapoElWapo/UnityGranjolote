@@ -10,10 +10,13 @@ public class CambiarCancion : MonoBehaviour
     //private GameMaster GM;
 
     BoxCollider boxCollider;
+    
     // Start is called before the first frame update
     void Start()
     {
         //GM = FindObjectOfType<GameMaster>();
+      
+
 
         boxCollider = gameObject.GetComponent<BoxCollider>();
         boxCollider.isTrigger = true;
@@ -24,7 +27,8 @@ public class CambiarCancion : MonoBehaviour
         if(other.tag == "Player")
         {
             if (nuevaCancion != null)
-                GameMaster.instanciaCompartida.CambiarMusica(nuevaCancion);
+               
+            GameMaster.instanciaCompartida.CambiarMusica(nuevaCancion);
         }
     }
 }

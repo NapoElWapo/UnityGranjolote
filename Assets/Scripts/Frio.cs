@@ -5,7 +5,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Frio : MonoBehaviour
 {
-    public FirstPersonController vida;
+    public RectTransform imagenFrio;
 
     void Start()
     {
@@ -18,6 +18,15 @@ public class Frio : MonoBehaviour
             GameObject Jugador = GameObject.FindWithTag("Player");
             FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
             playerScript.health -= 1;
+            imagenFrio.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
+            if (playerScript.health <= 0 && GameMaster.instanciaCompartida.dinero > 50)
+            {
+                GameMaster.instanciaCompartida.dinero -= 50;
+            }
+            else if (playerScript.health <= 0 && GameMaster.instanciaCompartida.dinero < 50)
+            {
+                GameMaster.instanciaCompartida.dinero = 0;
+            }
         }
 
     }
