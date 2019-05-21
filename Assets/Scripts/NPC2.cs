@@ -14,6 +14,7 @@ public class NPC2 : MonoBehaviour
 
     public string[] Calor;
     public bool calor;
+    public static NPC2 instanciaCalor;
 
     public string[] Frio;
     public bool frio;
@@ -21,7 +22,7 @@ public class NPC2 : MonoBehaviour
     private int index;
     private bool hablando;    
 
-    /*[SerializeField]
+    [SerializeField]
     bool patrolWaiting;
 
     [SerializeField]
@@ -38,18 +39,20 @@ public class NPC2 : MonoBehaviour
     bool traveling;
     bool waiting;
     bool patrolForward;
-    float waitTimer;*/
+    float waitTimer;
 
     public GameObject continueBotton;
     public GameObject continueBottonCalor;
     public GameObject continueBottonFrio;
+    public GameObject PlayerUI;
 
     //public GameObject si;
     //public GameObject no;
 
     void Start()
     {
-        /*agent = this.GetComponent<NavMeshAgent>();
+        instanciaCalor = this;
+        agent = this.GetComponent<NavMeshAgent>();
 
         if (agent == null)
         {
@@ -66,13 +69,13 @@ public class NPC2 : MonoBehaviour
             {
                 Debug.Log("No hay puntos suficientes");
             }
-        }*/
+        }
         hablando = false;
     }
 
     public void Update()
     {
-        /* if (traveling && agent.remainingDistance <= 1.0f)
+        if (traveling && agent.remainingDistance <= 1.0f)
          {
              traveling = false;
 
@@ -96,7 +99,7 @@ public class NPC2 : MonoBehaviour
                  ChangePatrolPoint();
                  SetDestination();
              }
-         }*/
+         }
         if (textDisplay.text == sentences[index])
         {
             continueBotton.SetActive(true);
@@ -109,9 +112,13 @@ public class NPC2 : MonoBehaviour
         {
             continueBottonFrio.SetActive(true);
         }
+        if (hablando == true)
+        {
+            PlayerUI.SetActive(false);
+        }
     }
 
-    /*private void SetDestination()
+    private void SetDestination()
     {
         if (patrolPoints != null)
         {
@@ -138,7 +145,7 @@ public class NPC2 : MonoBehaviour
                 currentPatrolIndex = patrolPoints.Count - 1;
             }
         }
-    }*/
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -148,7 +155,7 @@ public class NPC2 : MonoBehaviour
             {
                 if (Input.GetButtonDown("e"))
                 {
-                    //GetComponent<NavMeshAgent>().speed = 0f;
+                    GetComponent<NavMeshAgent>().speed = 0f;
                     if (calor == false && frio == false)
                     {
                         hablando = true;
@@ -243,7 +250,8 @@ public class NPC2 : MonoBehaviour
             Time.timeScale = 1f;
             index = 0;
             hablando = false;
-            //GetComponent<NavMeshAgent>().speed = 5f;
+            GetComponent<NavMeshAgent>().speed = 5f;
+            PlayerUI.SetActive(true);
         }
     }
 
@@ -267,7 +275,8 @@ public class NPC2 : MonoBehaviour
             Time.timeScale = 1f;
             index = 0;
             hablando = false;
-            //GetComponent<NavMeshAgent>().speed = 5f;
+            GetComponent<NavMeshAgent>().speed = 5f;
+            PlayerUI.SetActive(true);
         }
     }
 
@@ -291,7 +300,8 @@ public class NPC2 : MonoBehaviour
             Time.timeScale = 1f;
             index = 0;
             hablando = false;
-            //GetComponent<NavMeshAgent>().speed = 5f;
+            GetComponent<NavMeshAgent>().speed = 5f;
+            PlayerUI.SetActive(true);
         }
     }
 }

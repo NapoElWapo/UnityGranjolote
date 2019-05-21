@@ -9,8 +9,9 @@ public class Calor : MonoBehaviour
   
     void Start()
     {
-        
+
     }
+
     private void OnTriggerStay(Collider collision)
 	{	
 		if(collision.gameObject.CompareTag("Player"))
@@ -27,9 +28,7 @@ public class Calor : MonoBehaviour
             {
                 GameMaster.instanciaCompartida.dinero = 0;
             }
+            NPC2.instanciaCalor.calor = true;
         }
-        
-
 	}
-
 }

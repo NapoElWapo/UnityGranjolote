@@ -8,16 +8,16 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class NPC : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
+    public float typingSpeed;
     public string[] sentences;
     private int index;
-    public float typingSpeed;
     private bool hablando;
 
     [SerializeField]
     bool patrolWaiting;
 
     [SerializeField]
-    float totalWaitTime = 3f;
+    float totalWaitTime = 10f;
 
     [SerializeField]
     float switchProbability = 0.2f;
@@ -33,6 +33,7 @@ public class NPC : MonoBehaviour
     float waitTimer;
 
     public GameObject continueBotton;
+    public GameObject PlayerUI;
 
     void Start()
     {
@@ -87,6 +88,10 @@ public class NPC : MonoBehaviour
         if (textDisplay.text == sentences[index])
         {
             continueBotton.SetActive(true);
+        }
+        if (hablando == true)
+        {
+            PlayerUI.SetActive(false);
         }
     }
 
@@ -174,6 +179,7 @@ public class NPC : MonoBehaviour
             index = 0;
             hablando = false;
             GetComponent<NavMeshAgent>().speed = 5f;
+            PlayerUI.SetActive(true);
         }
     }
 }
