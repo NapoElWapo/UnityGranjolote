@@ -7,8 +7,10 @@ public class HerramientaSeleccionada : MonoBehaviour
 {
     public RectTransform bslot1, bslot2, bslot3, bslot4;
     public Image sslot1, sslot2, sslot3, sslot4;
-    public GameObject lanza, rastrillo, ajoloteSA, ajoloteSF;
-    private int slotPosition=0;
+    public GameObject lanza, rastrillo, ajoloteSA, ajoloteSF,fuego,agua;
+    private int slotPosition = 0;
+    public int estaminaS=0, maxEstaminaS=100;
+    private bool hayFuego,hayAgua;
     MenuInventario conex;
     [SerializeField]
     slot comprobar;
@@ -23,7 +25,26 @@ public class HerramientaSeleccionada : MonoBehaviour
     void Update()
     {
         CambiarSlotActivo();
-        Debug.Log(slotPosition);
+        
+        if (hayFuego || hayAgua)
+        {
+
+
+            if (estaminaS <= 0)
+            {
+                estaminaS = 0;
+            }
+            else
+            {
+                estaminaS--;
+            }
+
+        } else if (!hayFuego&&!hayAgua) {
+                     if (estaminaS <= maxEstaminaS)
+                     {
+                         estaminaS = estaminaS + 1;
+                     }
+        }
     }
 
     private void CambiarSlotActivo()
@@ -110,7 +131,24 @@ public class HerramientaSeleccionada : MonoBehaviour
                     sslot3.sprite = comprobar.Slot_ui_img.sprite;
                     ajoloteSA.gameObject.SetActive(true);
 
+                    if (Input.GetMouseButtonDown(0) && estaminaS != 0)
+                    {
+                        agua.gameObject.SetActive(true);
+                        hayAgua = true;
+                    }
+                    else if (estaminaS == 0)
+                    {
+                        agua.gameObject.SetActive(false);
+                    }
+
+                    if (Input.GetMouseButtonUp(0))
+                    {
+                        agua.gameObject.SetActive(false);
+                        hayAgua = false;
+                    }
                 }
+                
+
                 bslot1.gameObject.SetActive(false);
                 bslot2.gameObject.SetActive(false);
                 bslot3.gameObject.SetActive(true);
@@ -132,7 +170,26 @@ public class HerramientaSeleccionada : MonoBehaviour
                     sslot4.sprite = comprobar.Slot_ui_img.sprite;
                     ajoloteSF.gameObject.SetActive(true);
 
+
+                    if (Input.GetMouseButtonDown(0) && estaminaS != 0)
+                    {
+                        fuego.gameObject.SetActive(true);
+                        hayFuego = true;
+                    }
+                    else if(estaminaS==0)
+                    {
+                        fuego.gameObject.SetActive(false);
+                    }
+
+                    if (Input.GetMouseButtonUp(0))
+                    {
+                        fuego.gameObject.SetActive(false);
+                        hayFuego = false;
+                    }
+
                 }
+
+
                 bslot1.gameObject.SetActive(false);
                 bslot2.gameObject.SetActive(false);
                 bslot3.gameObject.SetActive(false);

@@ -10,9 +10,11 @@ public class Barras : MonoBehaviour
     [SerializeField]
     private Image barra;
     public int tipoDeBarra;
+    HerramientaSeleccionada conex;
     void Start()
     {
-        
+        conex = GameObject.Find("JugadorUI").GetComponent<HerramientaSeleccionada>();
+
     }
 
     // Update is called once per frame
@@ -24,7 +26,8 @@ public class Barras : MonoBehaviour
         }
         else if(tipoDeBarra==2)
         {
-
+            ValorBarra2();
+           
         }
         
     }
@@ -34,5 +37,12 @@ public class Barras : MonoBehaviour
         GameObject Jugador = GameObject.FindWithTag("Player");
         FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
         barra.fillAmount = playerScript.stamina*.01f;
+    }
+
+    private void ValorBarra2()
+    {
+        
+
+        barra.fillAmount = conex.estaminaS * .01f;
     }
 }
