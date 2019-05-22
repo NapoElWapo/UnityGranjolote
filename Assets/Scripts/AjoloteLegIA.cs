@@ -111,9 +111,7 @@ public class AjoloteLegIA : MonoBehaviour
         {
                 if (Input.GetButtonDown("e"))
                 {
-
                 }
-            
         }
     }
 }

@@ -22,15 +22,13 @@ public class PatrullaAjolote : MonoBehaviour
     float direccion;
     Vector3 rotacion;
 
-    // Start is called before the first frame update
     void Start()
     {
         harto = false;
         movimiento = false;
         asustado = false;
         vagar = false;
-
-        
+ 
         ajoloteAnimator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         sphereCollider = gameObject.GetComponent<SphereCollider>();
@@ -40,14 +38,12 @@ public class PatrullaAjolote : MonoBehaviour
         transform.eulerAngles = new Vector3(0, direccion, 0);  
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(!vagar)
         {
             StartCoroutine(Vagar());
         }
-
         if (!harto&&!movimiento)
         {
             StopCoroutine(NuevaDireccion());
@@ -92,6 +88,7 @@ public class PatrullaAjolote : MonoBehaviour
         yield return new WaitForSeconds(tiempoCaminar);
         vagar = false;
     }
+
     IEnumerator NuevaDireccion()
     {
         while (true)
@@ -120,9 +117,7 @@ public class PatrullaAjolote : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        
-       
+    {   
         if(other.tag=="Player")
         {
             ajoloteAnimator.SetBool(Movimiento, true);

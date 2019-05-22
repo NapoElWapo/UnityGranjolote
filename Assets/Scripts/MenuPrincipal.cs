@@ -12,13 +12,6 @@ public class MenuPrincipal : MonoBehaviour
     {
         volumenMusicaSlider.value = GameMaster.instanciaCompartida.volumenMusica;
         volumenEfectosSlider.value = GameMaster.instanciaCompartida.volumenEfectos;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void jugar()
@@ -48,7 +41,6 @@ public class MenuPrincipal : MonoBehaviour
     public void VolumenEfectos()
     {
         GameMaster.instanciaCompartida.VolumenMusica(volumenEfectosSlider.value);
-
     }
 
     public void ToggleOpciones()
@@ -58,5 +50,4 @@ public class MenuPrincipal : MonoBehaviour
         Cursor.lockState = CursorLockMode.None; //Locks the mouse
         Cursor.visible = true; // Make the cursor visable
     }
-    
 }

@@ -5,20 +5,17 @@ using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class MenuPausa : MonoBehaviour
-{
-    
+{  
     public static bool juegoPausado = false;
     public RectTransform opcionesPanel;
     public GameObject menuPausaUI;
     public Slider volumenMusicaSlider;
     public Slider volumenEfectosSlider;
-    // Update is called once per frame
+
     void Start()
     {
-       
         volumenMusicaSlider.value = GameMaster.instanciaCompartida.volumenMusica;
         volumenEfectosSlider.value = GameMaster.instanciaCompartida.volumenEfectos;
-
     }
 
     void Update()
@@ -27,12 +24,8 @@ public class MenuPausa : MonoBehaviour
         {
             if (Cursor.visible == false)
             {
-
-                Cursor.lockState = CursorLockMode.None;
-                
+                Cursor.lockState = CursorLockMode.None;           
                 Cursor.visible = true;
-
-
                 if (juegoPausado)
                 {
                     Renaudar();
@@ -44,15 +37,17 @@ public class MenuPausa : MonoBehaviour
             }
         }
     }
+
     public void VolumenMusica()
     {
         GameMaster.instanciaCompartida.VolumenMusica(volumenMusicaSlider.value);
     }
+
     public void VolumenEfectos()
     {
         GameMaster.instanciaCompartida.VolumenMusica(volumenEfectosSlider.value);
-
     }
+
     public void Renaudar()
     {
         var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
@@ -66,8 +61,7 @@ public class MenuPausa : MonoBehaviour
 
     public void GuardarYSalir()
     {
-        GameMaster.instanciaCompartida.GuardarYSalir();
-        
+        GameMaster.instanciaCompartida.GuardarYSalir();   
     }
 
     void Pausa()
@@ -94,9 +88,6 @@ public class MenuPausa : MonoBehaviour
     public void ToggleOpciones()
     {
         GameMaster.instanciaCompartida.mostrarOpciones = !GameMaster.instanciaCompartida.mostrarOpciones;
-        opcionesPanel.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarOpciones);
-        
+        opcionesPanel.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarOpciones);       
     }
-
-
 }

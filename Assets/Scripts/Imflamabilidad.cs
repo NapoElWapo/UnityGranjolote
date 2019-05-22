@@ -24,23 +24,12 @@ public class Imflamabilidad : MonoBehaviour
                 Debug.Log("me quemo2");
                 StartCoroutine(Quemarse());
             }
-        }
-
-        
+        } 
     }
-
-
     IEnumerator Quemarse()
     {
         flamable.gameObject.SetActive(true);
         yield return new WaitForSeconds(5);
         objeto.gameObject.SetActive(false);
-    }
-        
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

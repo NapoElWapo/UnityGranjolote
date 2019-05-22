@@ -7,10 +7,6 @@ public class Frio : MonoBehaviour
 {
     public RectTransform imagenFrio;
 
-    void Start()
-    {
-
-    }
     private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -29,7 +25,6 @@ public class Frio : MonoBehaviour
             }
             NPC2.instancia.frio = true;
         }
-
     }
 
     private void OnTriggerExit(Collider collision)

@@ -12,10 +12,6 @@ public class Reloj : MonoBehaviour
     public Transform solTransform;
     public Transform lunaTransform;
 
-
-    
-
-
     void Start()
     {
         textClock = GetComponent<Text>();
@@ -23,11 +19,8 @@ public class Reloj : MonoBehaviour
 
     void Update()
     {
-
-
         hora = GameMaster.instanciaCompartida.hora;
-        minuto = GameMaster.instanciaCompartida.minuto;
-       
+        minuto = GameMaster.instanciaCompartida.minuto;    
 
         if (hora == 0)
         {
@@ -37,11 +30,6 @@ public class Reloj : MonoBehaviour
         {
             tiempoTotal = (hora * 60) + minuto;
         }
-
-
-
-
-
         if (minuto > 10 && hora < 10)
         {
             textClock.text = "0" + hora + ":" + (int)minuto;
@@ -58,11 +46,7 @@ public class Reloj : MonoBehaviour
         {
             textClock.text = "0" + hora + ":0" + (int)minuto;
         }
-
         solTransform.rotation = Quaternion.Euler(new Vector3((tiempoTotal * 0.25f) - 90, 0, 0));
         lunaTransform.rotation = Quaternion.Euler(new Vector3((tiempoTotal * 0.25f) + 90, 0, 0));
-
-    }
-
-  
+    } 
 }

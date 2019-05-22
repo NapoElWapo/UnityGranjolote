@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Arbusto : MonoBehaviour
 {
-
     Animator m_animator;
     
     private float ex,ey,ez,animador;
     public GameObject arbusto;
-    // Start is called before the first frame update
+
     void Start()
     {
         m_animator = GetComponent<Animator>();
@@ -22,22 +21,14 @@ public class Arbusto : MonoBehaviour
         Debug.Log(ez);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
-        {
-            
+        { 
             animador += Time.deltaTime;
 
             if (animador < 0.0666f)
             {
-                
                 arbusto.transform.localScale = new Vector3(ex * 0.9906f, ey * 0.9906f, ez * 0.9906f);
             }
             else if (animador < 0.1332f && animador > 0.0666f)
@@ -50,7 +41,6 @@ public class Arbusto : MonoBehaviour
             }
             else if (animador < 0.2664f && animador > 0.1998f)
             {
-              
                 arbusto.transform.localScale = new Vector3(ex * 0.9496f, ey * 0.9496f, ez * 0.9496f);
             }
             else if (animador < 0.333f && animador > 0.2664f)
@@ -91,7 +81,6 @@ public class Arbusto : MonoBehaviour
             }
             else if (animador < 0.9324f && animador > 0.8658f)
             {
-           
                 arbusto.transform.localScale = new Vector3(ex * 1.0078f, ey * 0.9965f, ez * 0.9965f);
             }
             else if (animador < 0.999f && animador > 0.9324f)
@@ -102,11 +91,6 @@ public class Arbusto : MonoBehaviour
             {
                 animador = 0;
             }
-
-
-
-        }
-        
-    }
-    
+        }       
+    }    
 }

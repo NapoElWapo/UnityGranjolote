@@ -1,7 +1,4 @@
-﻿
-
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,12 +6,9 @@ using UnityStandardAssets.Characters.FirstPerson;
 using System;
 using SlotTipos;
 
-
-
 [System.Serializable]
 public class slot 
 {
-
    public slot(string slotname, Text slotstack, Image slotui, bool isused)
     {
         Slot_name = slotname;
@@ -39,15 +33,11 @@ public class slot
     public string RealItemName="NotAssignedYet";
     public bool Is_used;
 }
-
-
 //EN DESUSO
 public class slotComparer : Comparer<slot>
 {
-
     public override int Compare(slot x, slot y)
     {
-
         if (x.item_inside_type == y.item_inside_type && x.RealItemName == y.RealItemName)
             return 1;
         else
@@ -111,7 +101,6 @@ public class MenuInventario : MonoBehaviour
                        iterador_ajolotes.gameObject.GetComponentInChildren<Text>(true),
                        iterador_ajolotes.transform.Find(SlotImageName).GetComponent<Image>()
                        , false));
-
                     break;
 
                 case SlotObjType.Herramientas:
@@ -137,9 +126,7 @@ public class MenuInventario : MonoBehaviour
     {
         if (Input.GetButtonDown("i"))
         {
-
             Cursor.lockState = CursorLockMode.None;
-
             Cursor.visible = true;
 
             GameMaster.instanciaCompartida.mostrarMochila = true;
@@ -150,11 +137,8 @@ public class MenuInventario : MonoBehaviour
             mochila.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMochila);
             ajolotepedia.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarAjolotepedia);
             logrosMisiones.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarLogrosMisiones);
-
-
             if (menuCerrado)
             {
-
                 var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
                 var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
                 mouseLook.XSensitivity = 2F;
@@ -166,7 +150,6 @@ public class MenuInventario : MonoBehaviour
             }
             else
             {
-
                 var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
                 var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
                 mouseLook.XSensitivity = 0.0F;
@@ -175,7 +158,6 @@ public class MenuInventario : MonoBehaviour
                 Time.timeScale = 0f;
                 menuCerrado = true;
             }
-
         }
     }
 
@@ -186,7 +168,6 @@ public class MenuInventario : MonoBehaviour
 
     public void Mochila()
     {
-
         GameMaster.instanciaCompartida.mostrarMochila = true;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
@@ -194,13 +175,11 @@ public class MenuInventario : MonoBehaviour
         mapa.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMapa);
         mochila.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMochila);
         ajolotepedia.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarAjolotepedia);
-        logrosMisiones.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarLogrosMisiones);
-        
+        logrosMisiones.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarLogrosMisiones);      
     }
 
     public void Ajolotepedia()
     {
-
         GameMaster.instanciaCompartida.mostrarMochila = false;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = true;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
@@ -213,7 +192,6 @@ public class MenuInventario : MonoBehaviour
 
     public void LogrosMisiones()
     {
-
         GameMaster.instanciaCompartida.mostrarMochila = false;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = true;
@@ -226,7 +204,6 @@ public class MenuInventario : MonoBehaviour
 
     public void Mapa()
     {
-
         GameMaster.instanciaCompartida.mostrarMochila = false;
         GameMaster.instanciaCompartida.mostrarAjolotepedia = false;
         GameMaster.instanciaCompartida.mostrarLogrosMisiones = false;
@@ -241,13 +218,7 @@ public class MenuInventario : MonoBehaviour
     {
         GameMaster.instanciaCompartida.mostrarInventario = !GameMaster.instanciaCompartida.mostrarInventario;
         inventario_ui.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarInventario);
-
     }
-
-
-     
-
-
 
     public void insertar_recolectables(ItemInventario last_entry)
     {
@@ -264,10 +235,7 @@ public class MenuInventario : MonoBehaviour
                 iterador.item_inside_type = last_entry.Category;
                 iterador.RealItemName = last_entry.Nombre;
                 Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
-    
-
-                break;
-         
+                break;       
             }
         }
     }
@@ -275,7 +243,6 @@ public class MenuInventario : MonoBehaviour
     public void actualizar_recolectables(ItemInventario last_entry)
     {
         //Buscamos un slot relacionado con el mismo tipo de last entry
-
         foreach (var iterador_recolectables in coleccionables)
         {
             if (iterador_recolectables.RealItemName == last_entry.Nombre && iterador_recolectables.item_inside_type == last_entry.Category)
@@ -286,10 +253,6 @@ public class MenuInventario : MonoBehaviour
             }
         }
     }
-
-
-
-
 
     public void insertar_herramientas(ItemInventario last_entry)
     {
@@ -335,9 +298,6 @@ public class MenuInventario : MonoBehaviour
         }
     }
 
-
-
-
     public void insertar_pasivas(ItemInventario last_entry)
     {
         foreach (var iterador in pasivas)
@@ -372,7 +332,6 @@ public class MenuInventario : MonoBehaviour
         }
     }
     
-
     public void insertar_ajolotes(ItemInventario last_entry)
     {
         //si no se encontro un objeto lo metemos como nuevo
@@ -388,14 +347,8 @@ public class MenuInventario : MonoBehaviour
                 iterador.item_inside_type = last_entry.Category;
                 iterador.RealItemName = last_entry.Nombre;
                 Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
-
-
                 break;
-
             }
         }
     }
-
-    
-
 }

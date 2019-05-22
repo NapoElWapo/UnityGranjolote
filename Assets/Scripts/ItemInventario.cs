@@ -28,10 +28,3 @@ public class ItemInventario :MonoBehaviour, IEquatable<ItemInventario>
        return this.Nombre.Contains(other.Nombre);
     }
 }
-
-
-
-
-
-
-

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AjoloteIA : MonoBehaviour
 {
-
     public float velocidad = 3f;
     public float rotacionVelocidad = 100f;
 
@@ -12,13 +11,7 @@ public class AjoloteIA : MonoBehaviour
     private bool rotaIzq = false;
     private bool rotaDer = false;
     private bool caminando = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if(vagando == false)
@@ -67,6 +60,5 @@ public class AjoloteIA : MonoBehaviour
             rotaDer = false;
         }
         vagando = false;
-
     }
 }

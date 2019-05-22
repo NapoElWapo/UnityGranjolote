@@ -6,11 +6,6 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Calor : MonoBehaviour
 {
     public RectTransform imagenCalor;
-  
-    void Start()
-    {
-
-    }
 
     private void OnTriggerStay(Collider collision)
 	{	
@@ -31,6 +26,7 @@ public class Calor : MonoBehaviour
             NPC2.instancia.calor = true;
         }
 	}
+
     private void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))

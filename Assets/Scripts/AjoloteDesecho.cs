@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class AjoloteDesecho : MonoBehaviour
 {
-
     public RectTransform boton;
-    // Start is called before the first frame update
+
     void Start()
     {
         boton = GetComponent<RectTransform>();
         StartCoroutine(GenerarDesecho());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator GenerarDesecho()
