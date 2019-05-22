@@ -9,7 +9,6 @@ public class AjoloteCriadero : MonoBehaviour
     public RectTransform ajoloteCriadero;
     public RectTransform nuevoSlot;
     int slot = 0;
-    string nombreSlot;
 
     // Start is called before the first frame update
     void Start()
