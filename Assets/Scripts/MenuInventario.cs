@@ -129,12 +129,13 @@ public class MenuInventario : MonoBehaviour
                     break;
             }
         }
-        uiDinero.text = "Oro : " + GameMaster.instanciaCompartida.dinero;
+        
         Debug.Log("inventory initialized");
     }
 
     void Update()
     {
+        uiDinero.text = "Oro : " + GameMaster.instanciaCompartida.dinero;
         if (Input.GetButtonDown("i"))
         {
 

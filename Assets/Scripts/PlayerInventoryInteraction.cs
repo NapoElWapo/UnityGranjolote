@@ -31,7 +31,10 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public string incubadora3 = "Incubadora3";
 
     public string npc = "NPC";
-  
+
+    public TiendaUI tien;
+    public string Tienda = "Tienda";
+
     public float range = 4;
     public KeyCode key_to_refresh = KeyCode.E;
     public GameObject current_selected_obj; //Deberia de ser un item base
@@ -140,6 +143,11 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     }
 
 
+                }
+                //abrir tienda
+                else if(colision_rayo.transform.tag==Tienda)
+                {
+                    tien.ToggleTienda();
                 }
 
                 //Abrir Incubadoras

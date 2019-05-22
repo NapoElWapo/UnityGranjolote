@@ -38,6 +38,8 @@ public class GameMaster : MonoBehaviour
     public bool mostrarIncubadora2 = false;
     public bool mostrarIncubadora3 = false;
 
+    public bool mostrarTiendaUI = false;
+
     public int hora = 20;
     public float minuto;
     public float horaActual, cambioTotal;
