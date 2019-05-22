@@ -6,7 +6,6 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Barras : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField]
     private Image barra;
     public int tipoDeBarra;
@@ -14,10 +13,8 @@ public class Barras : MonoBehaviour
     void Start()
     {
         conex = GameObject.Find("JugadorUI").GetComponent<HerramientaSeleccionada>();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(tipoDeBarra==1)
@@ -26,10 +23,8 @@ public class Barras : MonoBehaviour
         }
         else if(tipoDeBarra==2)
         {
-            ValorBarra2();
-           
-        }
-        
+            ValorBarra2();     
+        }  
     }
 
     private void ValorBarra()
@@ -40,9 +35,7 @@ public class Barras : MonoBehaviour
     }
 
     private void ValorBarra2()
-    {
-        
-
+    {       
         barra.fillAmount = conex.estaminaS * .01f;
     }
 }

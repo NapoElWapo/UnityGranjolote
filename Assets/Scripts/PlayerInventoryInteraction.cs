@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class PlayerInventoryInteraction : MonoBehaviour
 {
     //Este script lanza un rayo desde el centro de la pantalla
@@ -31,24 +29,21 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public string incubadora3 = "Incubadora3";
 
     public string npc = "NPC";
-  
+
+    public TiendaUI tien;
+    public string Tienda = "Tienda";
+
     public float range = 4;
     public KeyCode key_to_refresh = KeyCode.E;
     public GameObject current_selected_obj; //Deberia de ser un item base
     public GameObject triggernpc;
 
-
-
-
-    
-    // Start is called before the first frame update
     void Start()
     {
         //   controlador_juego = GetComponent<GameMaster>();
         MainCamera = this.GetComponent<Camera>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         RaycastHit colision_rayo;
@@ -65,7 +60,6 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     current_selected_obj = colision_rayo.transform.gameObject;
                     current_selected_obj.SetActive(GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>()));
                 }
-
                 else if (colision_rayo.transform.tag == puertac1)
                 {
                     GameMaster.instanciaCompartida.Casa1();
@@ -123,8 +117,6 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 }
                 else if (colision_rayo.transform.tag == cama)
                 {
-
-
                     if (GameMaster.instanciaCompartida.hora >= 18)
                     {
                         GameMaster.instanciaCompartida.cambioTotal = ((((24f - GameMaster.instanciaCompartida.hora) + 6f) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
@@ -136,34 +128,28 @@ public class PlayerInventoryInteraction : MonoBehaviour
                         GameMaster.instanciaCompartida.cambioTotal = (((6f - GameMaster.instanciaCompartida.hora) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
                         GameMaster.instanciaCompartida.hora = 6;
                         GameMaster.instanciaCompartida.minuto = 0f;
-
                     }
-
-
                 }
-
+                else if(colision_rayo.transform.tag==Tienda)
+                {
+                    tien.ToggleTienda();
+                }
                 //Abrir Incubadoras
                 else if (colision_rayo.transform.tag == incubadora1)
                 {
                     incu.ToggleIncubadora();
-                    incu.Incubadora1();
-                    
+                    incu.Incubadora1();                   
                 }
                 else if (colision_rayo.transform.tag == incubadora2)
                 {
                     incu.ToggleIncubadora();
-                    incu.Incubadora2();
-                    
-
+                    incu.Incubadora2();                   
                 }
                 else if (colision_rayo.transform.tag == incubadora3)
                 {
                     incu.ToggleIncubadora();
-                    incu.Incubadora3();
-                    
-
-                }
-                
+                    incu.Incubadora3();                    
+                }               
                 else  if (colision_rayo.transform.tag == npc)
                 {
                     if (Input.GetKeyDown(KeyCode.E))

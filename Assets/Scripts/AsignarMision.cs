@@ -6,8 +6,6 @@ public class AsignarMision : MonoBehaviour
 {
     [SerializeField]
     private Misiones[] misiones;
-
-
     //Esto nomas es para ver el funcionamiento de los componentes de misiones y eso,
     //Eliminar cuando los NPCs te puedan dar misiones
 

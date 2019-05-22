@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public static class NombreEscena
 {
     public const string Mundo = "OverWorld";
@@ -15,6 +14,8 @@ public static class NombreEscena
     public const string Pruebas = "Pruebas";
     public const string MenuP = "MenuPrincipal";
     public const string PA = "PruebasAceves";
+    public const string PN = "PruebasNapo";
+    public const string PL = "PruebasLuisFer";
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -36,6 +37,8 @@ public class GameMaster : MonoBehaviour
     public bool mostrarIncubadora2 = false;
     public bool mostrarIncubadora3 = false;
 
+    public bool mostrarTiendaUI = false;
+
     public int hora = 20;
     public float minuto;
     public float horaActual, cambioTotal;
@@ -48,8 +51,7 @@ public class GameMaster : MonoBehaviour
     public int nivelanterior=0;
 
     public SistemaInventario inventario;
-   public MenuInventario GUI_controlador;
-    // Start is called before the first frame update
+    public MenuInventario GUI_controlador;
 
     private void Awake()
     {
@@ -72,7 +74,6 @@ public class GameMaster : MonoBehaviour
 
     void OnLevelWasLoaded(int level)
     {
-
         if (nivelanterior == 3)
         {
             Jugador = GameObject.FindWithTag("Player");
@@ -115,11 +116,10 @@ public class GameMaster : MonoBehaviour
             Jugador.transform.position = Puerta.transform.position;
             Jugador.SetActive(true);
         }
-
     }
     public void Jugar()
     {
-        SceneManager.LoadScene(NombreEscena.Pruebas);//cambiar dependiendo a que escena quieres ir al darle jugar
+        SceneManager.LoadScene(NombreEscena.Mundo);//cambiar dependiendo a que escena quieres ir al darle jugar
     }
 
     public void GuardarYSalir()
@@ -165,7 +165,6 @@ public class GameMaster : MonoBehaviour
 
    public void SetUI(MenuInventario other)
     {
-
         GUI_controlador = other;
     }
 
@@ -177,7 +176,6 @@ public class GameMaster : MonoBehaviour
         {
             hora = hora + 1;
             minuto = 0;
-
         }
 
         if (hora > 23)
@@ -192,7 +190,6 @@ public class GameMaster : MonoBehaviour
     {
         if (MusicManager.clip.name == musica.name)
             return;
-
         MusicManager.Stop();
         MusicManager.clip = musica;
         MusicManager.Play();

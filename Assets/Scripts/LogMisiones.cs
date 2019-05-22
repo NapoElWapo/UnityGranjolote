@@ -30,8 +30,6 @@ public class LogMisiones : MonoBehaviour
         }
     }
 
-    
-
     public void AceptarMision(Misiones misiones)
     {
         GameObject go = Instantiate(misionPrefab,listaMision);
@@ -50,16 +48,12 @@ public class LogMisiones : MonoBehaviour
             {
                 seleccionada.MiMisionesScript.Deseleccionar();
             }
-
             string objetivos = string.Empty;
-
             foreach (Objetivo obj in misiones.MiAO)
             {
                 objetivos += obj.ElTipo + ": " + obj.LaCantidadActual + "/" + obj.Cantidad + "\n";
             }
-
             seleccionada = misiones;
-
             string titulo = misiones.ElTitulo;
             descripcionM.text = string.Format("{0}\n\n<size=12>{1}</size>\n\nObjetivos\n<size=12>{2}</size>", titulo, misiones.LaDescripcion, objetivos);
         }

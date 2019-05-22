@@ -6,7 +6,6 @@ using ItemInventoryTypeDef;
 [System.Serializable]
 public class SistemaInventario 
 {
-
     [SerializeField]
     public List<ItemInventario> recolectables = new List<ItemInventario>();
 
@@ -19,18 +18,14 @@ public class SistemaInventario
     [SerializeField]
     private List<ItemInventario> ajolotes = new List<ItemInventario>();
 
-
     private ItemInventario selectHerramienta;
-
 
     public ItemInventario SelectHerramienta
     {
         get { return selectHerramienta; }
         set { selectHerramienta = value; }
-
     }
-
-  
+ 
     public SistemaInventario()
     {
         global_clear();
@@ -46,13 +41,11 @@ public class SistemaInventario
 
     }
 
-
     //Agrega un elemento del inventario y si ya existe aumenta el stack del elemento de la lista 
     public bool AddItem(ItemInventario item)
     {
         switch (item.Category)
         {
-
             case ItemCategory.recolectables:
                 //desde aqui se maneja la logica si es que exite o no el objeto
                 if (recolectables.Contains(item))
@@ -63,7 +56,7 @@ public class SistemaInventario
                     var tmp_obj = recolectables.Find(x => x.Nombre.Contains(item.Nombre) );
 
                     //
-                    tmp_obj.Stack_value += item.Stack_value;
+                    tmp_obj.Stack_value ++;
                     if (tmp_obj.Stack_value > item.MaxStack) 
                         return true;
 
@@ -84,8 +77,7 @@ public class SistemaInventario
             case ItemCategory.herramientas:
 
                 if (herramientas.Contains(item))
-                {
-                    
+                {                   
                         return true;
                 }
                 else
@@ -94,9 +86,6 @@ public class SistemaInventario
                     GameMaster.instanciaCompartida.GUI_controlador.insertar_herramientas(item);
                 }
                 break;
-
-
-
 
             case ItemCategory.pasivas:
                 if (pasivas.Contains(item))
@@ -126,7 +115,6 @@ public class SistemaInventario
                         tmp_obj.Stack_value += item.Stack_value;
                         if (tmp_obj.Stack_value > item.MaxStack)
                             return true;
-
                        
                         Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());
                         return false;
@@ -140,30 +128,20 @@ public class SistemaInventario
                     GameMaster.instanciaCompartida.GUI_controlador.insertar_ajolotes(item);
                 }
                 break;
-
-
         }
-
-        return false;
-       
-    }
-
-         
+        return false;       
+    }       
         //Esta funcion movera del inventario del juego hacia la incubadora o otros lados
         public void MoveItemTo()
         {
 
-
         }
-
 
         //TO DO: AQUI SE NECESITA HACER TAMBIEN UNA ACTUALIZACION A LA UI para liberar el slot
         public void RemoveItem(ItemInventario item)
     {
         switch (item.Category)
         {
-            
-
             case ItemCategory.recolectables:
                 recolectables.Remove(item);
                 break;
@@ -179,10 +157,6 @@ public class SistemaInventario
             case ItemCategory.ajolotes:
                 ajolotes.Remove(item);
                 break;
-
-
-
         }
     }
-
 }

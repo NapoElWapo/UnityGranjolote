@@ -7,7 +7,6 @@ using UnityEngine;
 
 namespace ItemInventoryTypeDef
 {
-
     public enum ItemCategory
     {
         none,
@@ -17,5 +16,3 @@ namespace ItemInventoryTypeDef
         ajolotes
     }
 }
-
-

@@ -18,18 +18,14 @@ public class HerramientaSeleccionada : MonoBehaviour
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
         CambiarSlotActivo();
         
         if (hayFuego || hayAgua)
         {
-
-
             if (estaminaS <= 0)
             {
                 estaminaS = 0;
@@ -38,12 +34,13 @@ public class HerramientaSeleccionada : MonoBehaviour
             {
                 estaminaS--;
             }
-
-        } else if (!hayFuego&&!hayAgua) {
-                     if (estaminaS <= maxEstaminaS)
-                     {
-                         estaminaS = estaminaS + 1;
-                     }
+        }
+        else if (!hayFuego&&!hayAgua)
+        {
+            if (estaminaS <= maxEstaminaS)
+            {
+                estaminaS = estaminaS + 1;
+            }
         }
     }
 
@@ -70,7 +67,6 @@ public class HerramientaSeleccionada : MonoBehaviour
         switch (slotPosition)
         {
             case 0:
-
                 bslot1.gameObject.SetActive(true);
                 bslot2.gameObject.SetActive(false);
                 bslot3.gameObject.SetActive(false);
@@ -87,30 +83,15 @@ public class HerramientaSeleccionada : MonoBehaviour
                     lanza.gameObject.SetActive(true);
                     
                 }
-
-               
-
-                
-                
-
                 break;
-
             case 1:
-
-
-
                 comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot2");
 
                 if (comprobar.RealItemName == "Rastrillo")
                 {
                     sslot2.sprite = comprobar.Slot_ui_img.sprite;
                     rastrillo.gameObject.SetActive(true);
-
                 }
-
-
-
-               
                 bslot1.gameObject.SetActive(false);
                 bslot2.gameObject.SetActive(true);
                 bslot3.gameObject.SetActive(false);
@@ -121,9 +102,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                 ajoloteSF.gameObject.SetActive(false);
 
                 break;
-
             case 2:
-
                 comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot3");
 
                 if (comprobar.RealItemName == "AjoloteSAgua")
@@ -147,8 +126,6 @@ public class HerramientaSeleccionada : MonoBehaviour
                         hayAgua = false;
                     }
                 }
-                
-
                 bslot1.gameObject.SetActive(false);
                 bslot2.gameObject.SetActive(false);
                 bslot3.gameObject.SetActive(true);
@@ -159,9 +136,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                 ajoloteSF.gameObject.SetActive(false);
 
                 break;
-
             case 3:
-
                 comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot4");
                 Debug.Log(comprobar.Slot_ui_img);
 
@@ -169,7 +144,6 @@ public class HerramientaSeleccionada : MonoBehaviour
                 {
                     sslot4.sprite = comprobar.Slot_ui_img.sprite;
                     ajoloteSF.gameObject.SetActive(true);
-
 
                     if (Input.GetMouseButtonDown(0) && estaminaS != 0)
                     {
@@ -186,22 +160,15 @@ public class HerramientaSeleccionada : MonoBehaviour
                         fuego.gameObject.SetActive(false);
                         hayFuego = false;
                     }
-
                 }
-
-
                 bslot1.gameObject.SetActive(false);
                 bslot2.gameObject.SetActive(false);
                 bslot3.gameObject.SetActive(false);
                 bslot4.gameObject.SetActive(true);
                 lanza.gameObject.SetActive(false);
                 rastrillo.gameObject.SetActive(false);
-                ajoloteSA.gameObject.SetActive(false);
-                
-
-                break;
-
-            
+                ajoloteSA.gameObject.SetActive(false);              
+                break;      
         }
     }
 }

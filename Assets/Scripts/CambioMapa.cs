@@ -8,7 +8,7 @@ public class CambioMapa : MonoBehaviour
 {
     public RectTransform imagenMapa;
     BoxCollider boxCollider;
-    // Start is called before the first frame update
+
     void Start()
     {
         boxCollider = gameObject.GetComponent<BoxCollider>();
