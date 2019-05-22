@@ -56,7 +56,7 @@ public class SistemaInventario
                     var tmp_obj = recolectables.Find(x => x.Nombre.Contains(item.Nombre) );
 
                     //
-                    tmp_obj.Stack_value += item.Stack_value;
+                    tmp_obj.Stack_value ++;
                     if (tmp_obj.Stack_value > item.MaxStack) 
                         return true;
 

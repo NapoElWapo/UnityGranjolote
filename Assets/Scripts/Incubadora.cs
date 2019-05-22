@@ -87,6 +87,7 @@ public class Incubadora : MonoBehaviour
     {
         GameMaster.instanciaCompartida.mostrarIncubadoraUI = !GameMaster.instanciaCompartida.mostrarIncubadoraUI;
         incubadoraUI.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarIncubadoraUI);
+
         var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
         var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
         mouseLook.XSensitivity = 2F;
