@@ -448,7 +448,7 @@ public class MenuInventario : MonoBehaviour
                 iterador.Slot_stack.text = last_entry.Stack_value.ToString();
                 iterador.Is_used = false;
                 iterador.item_inside_type = last_entry.Category;
-                iterador.RealItemName = null;
+                iterador.RealItemName = "";
                 Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
                 break;
             }

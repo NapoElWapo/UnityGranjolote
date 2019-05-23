@@ -21,6 +21,10 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public string puertachh = "PPH";
     public string puertacjj = "PPJ";
 
+    public AjoloteCriadero criadero;
+    public string cria1 = "Criadero1";
+    public string cria2 = "Criadero2";
+
     public string cama = "Cama";
 
     public Incubadora incu;
@@ -164,6 +168,12 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 {
                     registroUI.ToggleRegistro();
                    
+                }
+
+                else if (colision_rayo.transform.tag == cria1)
+                {
+                    criadero.ToggleCriadero();
+
                 }
             }
         } 
