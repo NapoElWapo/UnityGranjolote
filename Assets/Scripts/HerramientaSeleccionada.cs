@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class HerramientaSeleccionada : MonoBehaviour
 {
@@ -9,11 +10,11 @@ public class HerramientaSeleccionada : MonoBehaviour
     public Image sslot1, sslot2, sslot3, sslot4;
     public GameObject lanza, rastrillo, ajoloteSA, ajoloteSF,fuego,agua;
     private int slotPosition = 0;
-    public int estaminaS=0, maxEstaminaS=100;
+    public int estaminaS=0, maxEstaminaS=100,nivelAgua=1,nivelFuego=1,nivelNube=1;
     private bool hayFuego,hayAgua,lanzaComprobar=false,rastrilloComprobar=false,AAComprobar=false,AFComprobar=false;
     MenuInventario conex;
     [SerializeField]
-    slot comprobar;
+    slot comprobar,nube;
     
     void Start()
     {
@@ -78,6 +79,17 @@ public class HerramientaSeleccionada : MonoBehaviour
             sslot4.sprite = comprobar.Slot_ui_img.sprite;
             
         }
+
+        nube = conex.pasivas.Find(x => x.Slot_name == "Slot2");
+        if (nube.RealItemName == "AjoloteSNube")
+        {
+            Debug.Log("yeah saltos");
+            GameObject Jugador = GameObject.FindWithTag("Player");
+            FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
+            playerScript.saltos = nivelNube;
+
+        }
+
     }
 
     private void CambiarSlotActivo()

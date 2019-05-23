@@ -49,7 +49,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 	    public float maxHealth;
         public bool dolor=false;
 	    public string levelToLoad;
-      
+        public bool dobleSalto=false;
+        public int saltos=0;
+        private int contadorSaltos;
+
+
 
         public MouseLook MouseLook { get { return m_MouseLook; } }
 
@@ -85,6 +89,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {
+                if(contadorSaltos!=saltos||saltos!=0)
+                    dobleSalto = true;
                 StartCoroutine(m_JumpBob.DoBobCycle());
                 PlayLandingSound();
                 m_MoveDir.y = 0f;
@@ -171,19 +177,34 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.z = desiredMove.z*speed;
 
 
-            if (m_CharacterController.isGrounded)
+            if (m_CharacterController.isGrounded||dobleSalto)
             {
-                m_MoveDir.y = -m_StickToGroundForce;
+                if(m_CharacterController.isGrounded)
+                {
+                    m_MoveDir.y = -m_StickToGroundForce;
+                    contadorSaltos = 0;
+                    if(saltos==0)
+                    {
+                        dobleSalto = false;
+                    }
+                }
+                
 
                 if (m_Jump)
                 {
+                    if (!m_CharacterController.isGrounded)
+                    {
+                        if(contadorSaltos==saltos||saltos==0)
+                        dobleSalto = false;
+                    }
+                    contadorSaltos++;
                     m_MoveDir.y = m_JumpSpeed;
                     PlayJumpSound();
                     m_Jump = false;
                     m_Jumping = true;
                 }
             }
-            else
+            if(!m_CharacterController.isGrounded)
             {
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
             }
