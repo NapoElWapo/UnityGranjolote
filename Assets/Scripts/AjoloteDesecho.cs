@@ -9,6 +9,7 @@ public class AjoloteDesecho : MonoBehaviour
     bool corrutina = false;
     public float tiempoDesecho;
     float tiempoPasado = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,29 +28,14 @@ public class AjoloteDesecho : MonoBehaviour
     IEnumerator GenerarDesecho()
     {
         corrutina = false;
-        //yield return new WaitForSeconds(4);
         yield return new WaitForSecondsRealtime(tiempoDesecho);
-        Debug.Log("salio popo");
-        //boton.gameObject.SetActive(false);
-        //GameObject.Find("BotonDesecho").SetActive(true);
         this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
         StopCoroutine(GenerarDesecho());
     }
 
-    /*public void sacarPopo()
-    {
-        transform.GetChild(2).gameObject.SetActive(true);
-        Debug.Log("salio popo");
-        tiempoPasado = 99;
-        funcion = false;
-    }*/
-
     public void recogerDesecho()
     {
-        //boton.gameObject.SetActive(false);
         this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
-        //StartCoroutine(GenerarDesecho());
-        //corrutina = true;
         corrutina = true;
     }
 }
