@@ -16,9 +16,6 @@ public class MinijuegoPescar : MonoBehaviour
         panelPesca = GameObject.Find("MiniPesca").GetComponent<RectTransform>();
         posInicio = pez.transform.position;
         StartCoroutine(MoverPez());
-
-
-        Debug.Log("Pesca on");
     }
 
     private void OnDisable()
@@ -35,16 +32,15 @@ public class MinijuegoPescar : MonoBehaviour
             while (Vector2.Distance(pez.transform.position, posFinal.transform.position) > 0)
             {
                 pez.transform.position = Vector2.MoveTowards(pez.transform.position, posFinal.transform.position, Time.deltaTime * vel);
-                yield return new WaitForSeconds(0.02f);
+                yield return new WaitForSecondsRealtime(0.02f);
             }
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSecondsRealtime(0.02f);
         } 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "FalloPesca")
         {
-            Debug.Log("Pez fallo");
             panelPesca.gameObject.SetActive(false);
         }
     }
@@ -53,11 +49,11 @@ public class MinijuegoPescar : MonoBehaviour
     {
         if (collision.gameObject.tag == "ExitoPesca")
         {
-            Debug.Log("Pez etzitoso");
             if (Input.GetKeyDown("e"))
             {
-                Debug.Log("Pez obtenido");
                 GameObject.Find("Pececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
+                vel = 0;
+                StartCoroutine(Delay());
             }
         }
 
@@ -65,9 +61,14 @@ public class MinijuegoPescar : MonoBehaviour
         {
             if (Input.GetKeyDown("e"))
             {
-                Debug.Log("Fallaste, crack");
                 panelPesca.gameObject.SetActive(false);
             }
         }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        panelPesca.gameObject.SetActive(false);
     }
 }
