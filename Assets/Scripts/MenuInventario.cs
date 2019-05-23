@@ -48,11 +48,14 @@ public class slotComparer : Comparer<slot>
 
 public class MenuInventario : MonoBehaviour
 {
-    public RectTransform mochila, ajolotepedia, logrosMisiones, mapa;
+    public RectTransform mochila, ajolotepedia, logrosMisiones, mapa, ajolotepediaDesconocido, ajolotepediaPlanta, ajolotepediaAgua, ajolotepediaFuego,
+         ajolotepediaHielo, ajolotepediaNube, ajolotepediaOro, ajolotepediaLegendario, ajolotepediaASA, ajolotepediaASF, ajolotepediaASN, bPlanta, bAgua, bFuego,
+         bHielo, bNube, bOro, bLegendario, bASA, bASF, bASN;
     public static bool menuCerrado = false;
     public GameObject inventario_ui;
-
-    public int dinero;
+    public bool r1 = false, r2 = false, r3 = false, r4 = false, r5 = false, r6 = false, r7 = false, r8 = false, r9 = false, r10 = false;
+    private bool vap=false, vaa = false, vaf = false, vah = false, van = false, vao = false, val = false, vasa = false, vasf = false, vasn = false,vad=false;
+    public int dinero,ajoloteActivo;
     public Text uiDinero;
 
     //Estas son las preterminadas configuradas en el editor (cambiar esto para beneficio muto)
@@ -160,6 +163,20 @@ public class MenuInventario : MonoBehaviour
                 menuCerrado = true;
             }
         }
+
+        
+        bPlanta.gameObject.SetActive(r1);
+        bAgua.gameObject.SetActive(r2);
+        bFuego.gameObject.SetActive(r3);
+        bHielo.gameObject.SetActive(r4);
+        bNube.gameObject.SetActive(r5);
+        bOro.gameObject.SetActive(r6);
+        bLegendario.gameObject.SetActive(r7);
+        bASA.gameObject.SetActive(r8);
+        bASF.gameObject.SetActive(r9);
+        bASN.gameObject.SetActive(r10);
+
+
     }
 
     public void Inventario()
@@ -350,6 +367,150 @@ public class MenuInventario : MonoBehaviour
                 Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
                 break;
             }
+        }
+    }
+
+    public void RegistrarAjolote()
+    {
+
+    }
+
+    public void ToggleDesconocido()
+    {
+        
+        
+            vad = !vad;
+            ajolotepediaDesconocido.gameObject.SetActive(vad);
+        
+    }
+
+    public void ToggleAP()
+    {
+        if(r1==true)
+        {
+            vap = !vap;
+            ajolotepediaPlanta.gameObject.SetActive(vap);
+        }
+        else
+        {
+            ToggleDesconocido();
+        }
+    }
+
+    public void ToggleAA()
+    {
+        if (r2 == true)
+        {
+            vaa = !vaa;
+            ajolotepediaAgua.gameObject.SetActive(vaa);
+        }
+        else
+        {
+            ToggleDesconocido();
+        }
+    }
+
+    public void ToggleAF()
+    {
+        if (r3 == true)
+        {
+            vaf = !vaf;
+            ajolotepediaFuego.gameObject.SetActive(vaf);
+        }
+        else
+        {
+            ToggleDesconocido();
+        }
+    }
+
+    public void ToggleAH()
+    {
+        if (r4 == true)
+        {
+            vah = !vah;
+            ajolotepediaHielo.gameObject.SetActive(vah);
+        }
+        else
+        {
+            ToggleDesconocido();
+        }
+    }
+
+    public void ToggleAN()
+    {
+        if (r5 == true)
+        {
+            van = !van;
+            ajolotepediaNube.gameObject.SetActive(van);
+        }
+        else
+        {
+            ToggleDesconocido();
+        }
+    }
+
+    public void ToggleAO()
+    {
+        if (r6 == true)
+        {
+            vao = !vao;
+            ajolotepediaOro.gameObject.SetActive(vao);
+        }
+        else
+        {
+            ToggleDesconocido();
+        }
+    }
+
+    public void ToggleAL()
+    {
+        if (r7 == true)
+        {
+            val = !val;
+            ajolotepediaLegendario.gameObject.SetActive(val);
+        }
+        else
+        {
+            ToggleDesconocido();
+        }
+    }
+
+    public void ToggleASA()
+    {
+        if (r8 == true)
+        {
+            vasa = !vasa;
+            ajolotepediaASA.gameObject.SetActive(vasa);
+        }
+        else
+        {
+            ToggleDesconocido();
+        }
+    }
+
+    public void ToggleASF()
+    {
+        if (r9 == true)
+        {
+            vasf = !vasf;
+            ajolotepediaASF.gameObject.SetActive(vasf);
+        }
+        else
+        {
+            ToggleDesconocido();
+        }
+    }
+
+    public void ToggleASN()
+    {
+        if (r10 == true)
+        {
+            vasn = !vasn;
+            ajolotepediaASN.gameObject.SetActive(vasn);
+        }
+        else
+        {
+            ToggleDesconocido();
         }
     }
 }

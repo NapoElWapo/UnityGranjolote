@@ -10,7 +10,7 @@ public class HerramientaSeleccionada : MonoBehaviour
     public GameObject lanza, rastrillo, ajoloteSA, ajoloteSF,fuego,agua;
     private int slotPosition = 0;
     public int estaminaS=0, maxEstaminaS=100;
-    private bool hayFuego,hayAgua;
+    private bool hayFuego,hayAgua,lanzaComprobar=false,rastrilloComprobar=false,AAComprobar=false,AFComprobar=false;
     MenuInventario conex;
     [SerializeField]
     slot comprobar;
@@ -42,6 +42,42 @@ public class HerramientaSeleccionada : MonoBehaviour
                 estaminaS = estaminaS + 1;
             }
         }
+
+        comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot1");
+
+        if (comprobar.RealItemName == "Lanza")
+        {
+            
+            sslot1.sprite = comprobar.Slot_ui_img.sprite;
+           
+        }
+
+        comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot2");
+
+        if (comprobar.RealItemName == "Rastrillo")
+        {
+            
+            sslot2.sprite = comprobar.Slot_ui_img.sprite;
+           
+        }
+
+        comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot3");
+
+        if (comprobar.RealItemName == "AjoloteSAgua")
+        {
+            
+            sslot3.sprite = comprobar.Slot_ui_img.sprite;
+            
+        }
+
+        comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot4");
+
+        if (comprobar.RealItemName == "AjoloteSFuego")
+        {
+           
+            sslot4.sprite = comprobar.Slot_ui_img.sprite;
+            
+        }
     }
 
     private void CambiarSlotActivo()
@@ -67,6 +103,14 @@ public class HerramientaSeleccionada : MonoBehaviour
         switch (slotPosition)
         {
             case 0:
+
+                comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot1");
+
+                if (comprobar.RealItemName == "Lanza")
+                {
+                    lanza.gameObject.SetActive(true);
+
+                }
                 bslot1.gameObject.SetActive(true);
                 bslot2.gameObject.SetActive(false);
                 bslot3.gameObject.SetActive(false);
@@ -75,21 +119,14 @@ public class HerramientaSeleccionada : MonoBehaviour
                 ajoloteSA.gameObject.SetActive(false);
                 ajoloteSF.gameObject.SetActive(false);
 
-                comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot1");
-               
-                if (comprobar.RealItemName=="Lanza")
-                {
-                    sslot1.sprite = comprobar.Slot_ui_img.sprite;
-                    lanza.gameObject.SetActive(true);
-                    
-                }
+                
+
                 break;
             case 1:
                 comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot2");
 
                 if (comprobar.RealItemName == "Rastrillo")
                 {
-                    sslot2.sprite = comprobar.Slot_ui_img.sprite;
                     rastrillo.gameObject.SetActive(true);
                 }
                 bslot1.gameObject.SetActive(false);
@@ -101,13 +138,13 @@ public class HerramientaSeleccionada : MonoBehaviour
                 ajoloteSA.gameObject.SetActive(false);
                 ajoloteSF.gameObject.SetActive(false);
 
+
                 break;
             case 2:
                 comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot3");
 
                 if (comprobar.RealItemName == "AjoloteSAgua")
                 {
-                    sslot3.sprite = comprobar.Slot_ui_img.sprite;
                     ajoloteSA.gameObject.SetActive(true);
 
                     if (Input.GetMouseButtonDown(0) && estaminaS != 0)
@@ -142,7 +179,6 @@ public class HerramientaSeleccionada : MonoBehaviour
 
                 if (comprobar.RealItemName == "AjoloteSFuego")
                 {
-                    sslot4.sprite = comprobar.Slot_ui_img.sprite;
                     ajoloteSF.gameObject.SetActive(true);
 
                     if (Input.GetMouseButtonDown(0) && estaminaS != 0)
