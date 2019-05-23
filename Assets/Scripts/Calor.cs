@@ -6,28 +6,43 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Calor : MonoBehaviour
 {
     public RectTransform imagenCalor;
-    public bool quemandose=false;
+    public bool quemandose=false,resistencia=false;
+    MenuInventario conex;
+    slot amuleto;
+
+    void Start()
+    {
+        conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
+    }
+
     private void OnTriggerStay(Collider collision)
 	{	
 		if(collision.gameObject.CompareTag("Player"))
 		{
             quemandose = true;
-            GameObject Jugador = GameObject.FindWithTag("Player");
-            FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
-            playerScript.dolor = true;
-            playerScript.health -= 1;
-            if (quemandose==true)
+            if (resistencia==false)
             {
-                imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
-            }
-            
-            if(playerScript.health<=0 && GameMaster.instanciaCompartida.dinero > 50)
-            {
-                GameMaster.instanciaCompartida.dinero -= 50;
-            }
-            else if(playerScript.health <= 0 && GameMaster.instanciaCompartida.dinero<50)
-            {
-                GameMaster.instanciaCompartida.dinero = 0;
+
+
+
+               
+                GameObject Jugador = GameObject.FindWithTag("Player");
+                FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
+                playerScript.dolor = true;
+                playerScript.health -= 1;
+                if (quemandose == true)
+                {
+                    imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
+                }
+
+                if (playerScript.health <= 0 && GameMaster.instanciaCompartida.dinero > 50)
+                {
+                    GameMaster.instanciaCompartida.dinero -= 50;
+                }
+                else if (playerScript.health <= 0 && GameMaster.instanciaCompartida.dinero < 50)
+                {
+                    GameMaster.instanciaCompartida.dinero = 0;
+                }
             }
             NPC2.instancia.calor = true;
         }
@@ -39,7 +54,7 @@ public class Calor : MonoBehaviour
         {
             GameObject Jugador = GameObject.FindWithTag("Player");
             FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
-            quemandose = false;
+           
             playerScript.dolor = false;
         }
     }
@@ -47,10 +62,23 @@ public class Calor : MonoBehaviour
     void Update()
     {
 
+        amuleto = conex.pasivas.Find(x => x.Slot_name == "Slot1");
+        if (amuleto.RealItemName == "AmuletoFuego")
+        {
+            resistencia = true;
+        }
+
         GameObject Jugador = GameObject.FindWithTag("Player");
         FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
-        if(quemandose==true)
+        if (playerScript.health >= 100)
         {
+            quemandose = false;
+        }
+
+        if (quemandose)
+        {
+
+
             imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
 
         }

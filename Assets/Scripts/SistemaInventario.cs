@@ -143,19 +143,80 @@ public class SistemaInventario
         switch (item.Category)
         {
             case ItemCategory.recolectables:
-                recolectables.Remove(item);
+                //recolectables.Remove(item);
+                if (recolectables.Contains(item))
+                {
+                    if (item.Stackeble)
+                    {
+                        Debug.Log("updating slot..");
+                        var tmp_obj = recolectables.Find(x => x.Nombre.Contains(item.Nombre));
+
+                        //
+                        tmp_obj.Stack_value--;
+                        if (tmp_obj.Stack_value < 1)
+                        {
+                            recolectables.Remove(item);
+                            GameMaster.instanciaCompartida.GUI_controlador.quitar_recolectables(tmp_obj);
+                        }
+                            
+
+                        GameMaster.instanciaCompartida.GUI_controlador.actualizar_recolectables(tmp_obj);
+
+                        Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());
+                        
+                    }
+                   
+                       
+                }
+                
                 break;
 
             case ItemCategory.herramientas:
-                herramientas.Remove(item);
+                if (herramientas.Contains(item))
+                {
+                    var tmp_obj = herramientas.Find(x => x.Nombre.Contains(item.Nombre));
+                    tmp_obj.Stack_value--;
+                    if (tmp_obj.Stack_value < 1)
+                    {
+                        herramientas.Remove(item);
+                        GameMaster.instanciaCompartida.GUI_controlador.quitar_herramientas(tmp_obj);
+                    }
+                }
                 break;
 
             case ItemCategory.pasivas:
-                pasivas.Remove(item);
+                if(pasivas.Contains(item))
+                {
+                    pasivas.Remove(item);//se agrega si no existe
+                    GameMaster.instanciaCompartida.GUI_controlador.quitar_pasivas(item);
+                }
+                
                 break;
 
             case ItemCategory.ajolotes:
-                ajolotes.Remove(item);
+                if (ajolotes.Contains(item))
+                {
+                    if (item.Stackeble)
+                    {
+                        Debug.Log("updating slot..");
+                        var tmp_obj = ajolotes.Find(x => x.Nombre.Contains(item.Nombre));
+
+                        //
+                        tmp_obj.Stack_value --;
+                        if (tmp_obj.Stack_value < 1)
+                            ajolotes.Remove(item);
+
+                        Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());
+                       
+                    }
+                    else
+                    {
+                        ajolotes.Remove(item);//se agrega si no existe
+                        GameMaster.instanciaCompartida.GUI_controlador.quitar_ajolotes(item);
+                    }
+
+                }
+               
                 break;
         }
     }

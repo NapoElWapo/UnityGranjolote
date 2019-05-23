@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class HerramientaSeleccionada : MonoBehaviour
 {
     public RectTransform bslot1, bslot2, bslot3, bslot4;
     public Image sslot1, sslot2, sslot3, sslot4;
-    public GameObject lanza, rastrillo, ajoloteSA, ajoloteSF,fuego,agua;
+    public GameObject lanza, arco,rastrillo, ajoloteSA, ajoloteSF,fuego,agua;
     private int slotPosition = 0;
-    public int estaminaS=0, maxEstaminaS=100;
+    public int estaminaS=0, maxEstaminaS=100,nivelAgua=1,nivelFuego=1,nivelNube=1;
     private bool hayFuego,hayAgua,lanzaComprobar=false,rastrilloComprobar=false,AAComprobar=false,AFComprobar=false;
     MenuInventario conex;
     [SerializeField]
-    slot comprobar;
+    slot comprobar,nube;
     
     void Start()
     {
@@ -22,7 +23,7 @@ public class HerramientaSeleccionada : MonoBehaviour
 
     void Update()
     {
-        CambiarSlotActivo();
+        
         
         if (hayFuego || hayAgua)
         {
@@ -45,12 +46,13 @@ public class HerramientaSeleccionada : MonoBehaviour
 
         comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot1");
 
-        if (comprobar.RealItemName == "Lanza")
+        if (comprobar.RealItemName == "Lanza"||comprobar.RealItemName=="Arco")
         {
             
             sslot1.sprite = comprobar.Slot_ui_img.sprite;
            
         }
+        
 
         comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot2");
 
@@ -78,6 +80,18 @@ public class HerramientaSeleccionada : MonoBehaviour
             sslot4.sprite = comprobar.Slot_ui_img.sprite;
             
         }
+
+        nube = conex.pasivas.Find(x => x.Slot_name == "Slot2");
+        if (nube.RealItemName == "AjoloteSNube")
+        {
+            
+            GameObject Jugador = GameObject.FindWithTag("Player");
+            FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
+            playerScript.saltos = nivelNube;
+
+        }
+        CambiarSlotActivo();
+
     }
 
     private void CambiarSlotActivo()
@@ -104,13 +118,7 @@ public class HerramientaSeleccionada : MonoBehaviour
         {
             case 0:
 
-                comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot1");
 
-                if (comprobar.RealItemName == "Lanza")
-                {
-                    lanza.gameObject.SetActive(true);
-
-                }
                 bslot1.gameObject.SetActive(true);
                 bslot2.gameObject.SetActive(false);
                 bslot3.gameObject.SetActive(false);
@@ -118,6 +126,21 @@ public class HerramientaSeleccionada : MonoBehaviour
                 rastrillo.gameObject.SetActive(false);
                 ajoloteSA.gameObject.SetActive(false);
                 ajoloteSF.gameObject.SetActive(false);
+                comprobar = conex.herramientas.Find(x => x.Slot_name == "Slot1");
+
+
+
+                if (comprobar.RealItemName == "Lanza")
+                {
+                    lanza.gameObject.SetActive(true);
+                    arco.gameObject.SetActive(false);
+                }
+                else if(comprobar.RealItemName == "Arco")
+                {
+                    lanza.gameObject.SetActive(false);
+                    arco.gameObject.SetActive(true);
+                }
+               
 
                 
 
@@ -137,7 +160,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                 
                 ajoloteSA.gameObject.SetActive(false);
                 ajoloteSF.gameObject.SetActive(false);
-
+                arco.gameObject.SetActive(false);
 
                 break;
             case 2:
@@ -169,7 +192,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                 bslot4.gameObject.SetActive(false);
                 lanza.gameObject.SetActive(false);
                 rastrillo.gameObject.SetActive(false);
-                
+                arco.gameObject.SetActive(false);
                 ajoloteSF.gameObject.SetActive(false);
 
                 break;
@@ -203,7 +226,8 @@ public class HerramientaSeleccionada : MonoBehaviour
                 bslot4.gameObject.SetActive(true);
                 lanza.gameObject.SetActive(false);
                 rastrillo.gameObject.SetActive(false);
-                ajoloteSA.gameObject.SetActive(false);              
+                ajoloteSA.gameObject.SetActive(false);
+                arco.gameObject.SetActive(false);
                 break;      
         }
     }
