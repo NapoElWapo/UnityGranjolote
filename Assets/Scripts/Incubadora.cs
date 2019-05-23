@@ -7,6 +7,44 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Incubadora : MonoBehaviour
 {
     public RectTransform items, ajolotesincu, incubadora1, incubadora2, incubadora3, incubadoraUI;
+    slot itemslot1, itemslot2, itemslot3, itemslot4,itemslot5,itemslot6,itemslot7,itemslot8;
+    public Image sslot1, sslot2, sslot3, sslot4,sslot5,sslot6,sslot7,sslot8;
+    public RectTransform bslot1, bslot2, bslot3, bslot4,bslot5,bslot6,bslot7,bgslot8;
+    private int slotSeleccionado=0;
+    MenuInventario conex;
+
+    void Start()
+    {
+        conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
+    }
+
+    void Update()
+    {
+        itemslot1 = conex.coleccionables.Find(x => x.Slot_name == "Slot1");
+        sslot1.sprite = itemslot1.Slot_ui_img.sprite;
+
+        itemslot2 = conex.coleccionables.Find(x => x.Slot_name == "Slot2");
+        sslot2.sprite = itemslot2.Slot_ui_img.sprite;
+
+        itemslot3 = conex.coleccionables.Find(x => x.Slot_name == "Slot3");
+        sslot3.sprite = itemslot3.Slot_ui_img.sprite;
+
+        itemslot4 = conex.coleccionables.Find(x => x.Slot_name == "Slot4");
+        sslot4.sprite = itemslot4.Slot_ui_img.sprite;
+
+        itemslot5 = conex.coleccionables.Find(x => x.Slot_name == "Slot1");
+        sslot5.sprite = itemslot5.Slot_ui_img.sprite;
+
+        itemslot6 = conex.coleccionables.Find(x => x.Slot_name == "Slot2");
+        sslot6.sprite = itemslot6.Slot_ui_img.sprite;
+
+        itemslot7 = conex.coleccionables.Find(x => x.Slot_name == "Slot3");
+        sslot7.sprite = itemslot7.Slot_ui_img.sprite;
+
+        itemslot8 = conex.coleccionables.Find(x => x.Slot_name == "Slot4");
+        sslot8.sprite = itemslot8.Slot_ui_img.sprite;
+    }
+
     public void BotonIItems()
     {
         GameMaster.instanciaCompartida.mostrarAIncubadora = true;
