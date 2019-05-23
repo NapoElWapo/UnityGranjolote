@@ -172,11 +172,25 @@ public class SistemaInventario
                 break;
 
             case ItemCategory.herramientas:
-                herramientas.Remove(item);
+                if (herramientas.Contains(item))
+                {
+                    var tmp_obj = herramientas.Find(x => x.Nombre.Contains(item.Nombre));
+                    tmp_obj.Stack_value--;
+                    if (tmp_obj.Stack_value < 1)
+                    {
+                        herramientas.Remove(item);
+                        GameMaster.instanciaCompartida.GUI_controlador.quitar_herramientas(tmp_obj);
+                    }
+                }
                 break;
 
             case ItemCategory.pasivas:
-                pasivas.Remove(item);
+                if(pasivas.Contains(item))
+                {
+                    pasivas.Remove(item);//se agrega si no existe
+                    GameMaster.instanciaCompartida.GUI_controlador.quitar_pasivas(item);
+                }
+                
                 break;
 
             case ItemCategory.ajolotes:
@@ -198,7 +212,7 @@ public class SistemaInventario
                     else
                     {
                         ajolotes.Remove(item);//se agrega si no existe
-                        GameMaster.instanciaCompartida.GUI_controlador.insertar_ajolotes(item);
+                        GameMaster.instanciaCompartida.GUI_controlador.quitar_ajolotes(item);
                     }
 
                 }
