@@ -5,10 +5,11 @@ using UnityEngine;
 public class AjoloteCriadero : MonoBehaviour
 {
     RectTransform slotActual;
-    public RectTransform ajoloteP, ajoloteA, ajoloteF, ajoloteH, ajoloteN, ajoloteD, ajoloteL;
+    public RectTransform ajoloteP, ajoloteA, ajoloteF, ajoloteH, ajoloteN, ajoloteD, ajoloteL, nuevoSlot;
     private RectTransform ajoloteActual, doradoTemp;
-    public RectTransform nuevoSlot;
+
     public GameObject botonesCriadero;
+
     int slot = 0;
 
     public void dejarAjolote()
@@ -26,10 +27,9 @@ public class AjoloteCriadero : MonoBehaviour
         Instantiate(ajoloteActual, slotActual.transform);
         slot++;
         Debug.Log("Se dejo un ajolote");
-        }
-
-        if (slot > 0)
-            botonesCriadero.gameObject.SetActive(false);
+            if (slot > 0)
+                botonesCriadero.gameObject.SetActive(false);
+        } 
     }
 
     public void recogerAjolote()
@@ -42,7 +42,10 @@ public class AjoloteCriadero : MonoBehaviour
         }
 
         if (slot == 0)
+        {
             botonesCriadero.gameObject.SetActive(true);
+            ajoloteActual = null;
+        }
     }
 
     public void CriaderoTipoPlanta()
