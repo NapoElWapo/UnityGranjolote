@@ -83,7 +83,7 @@ public class HerramientaSeleccionada : MonoBehaviour
         nube = conex.pasivas.Find(x => x.Slot_name == "Slot2");
         if (nube.RealItemName == "AjoloteSNube")
         {
-            Debug.Log("yeah saltos");
+            
             GameObject Jugador = GameObject.FindWithTag("Player");
             FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
             playerScript.saltos = nivelNube;

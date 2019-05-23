@@ -272,6 +272,25 @@ public class MenuInventario : MonoBehaviour
         }
     }
 
+    public void quitar_recolectables(ItemInventario last_entry)
+    {
+        foreach (var iterador in coleccionables)
+        {
+            if (iterador.Is_used) //buscamos el primer slot libre
+            {
+                //Asignamos el sprite de bg y ajustamos el stack
+
+                iterador.Slot_ui_img.sprite = null;
+                iterador.Slot_stack.text = last_entry.Stack_value.ToString();
+                iterador.Is_used = false;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = null;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+                break;
+            }
+        }
+    }
+
     public void insertar_herramientas(ItemInventario last_entry)
     {
         //si no se encontro un objeto lo metemos como nuevo

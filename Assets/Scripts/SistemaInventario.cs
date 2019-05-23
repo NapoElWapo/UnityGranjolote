@@ -143,7 +143,32 @@ public class SistemaInventario
         switch (item.Category)
         {
             case ItemCategory.recolectables:
-                recolectables.Remove(item);
+                //recolectables.Remove(item);
+                if (recolectables.Contains(item))
+                {
+                    if (item.Stackeble)
+                    {
+                        Debug.Log("updating slot..");
+                        var tmp_obj = recolectables.Find(x => x.Nombre.Contains(item.Nombre));
+
+                        //
+                        tmp_obj.Stack_value--;
+                        if (tmp_obj.Stack_value < 1)
+                        {
+                            recolectables.Remove(item);
+                            GameMaster.instanciaCompartida.GUI_controlador.quitar_recolectables(tmp_obj);
+                        }
+                            
+
+                        GameMaster.instanciaCompartida.GUI_controlador.actualizar_recolectables(tmp_obj);
+
+                        Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());
+                        
+                    }
+                   
+                       
+                }
+                
                 break;
 
             case ItemCategory.herramientas:
@@ -155,7 +180,29 @@ public class SistemaInventario
                 break;
 
             case ItemCategory.ajolotes:
-                ajolotes.Remove(item);
+                if (ajolotes.Contains(item))
+                {
+                    if (item.Stackeble)
+                    {
+                        Debug.Log("updating slot..");
+                        var tmp_obj = ajolotes.Find(x => x.Nombre.Contains(item.Nombre));
+
+                        //
+                        tmp_obj.Stack_value --;
+                        if (tmp_obj.Stack_value < 1)
+                            ajolotes.Remove(item);
+
+                        Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());
+                       
+                    }
+                    else
+                    {
+                        ajolotes.Remove(item);//se agrega si no existe
+                        GameMaster.instanciaCompartida.GUI_controlador.insertar_ajolotes(item);
+                    }
+
+                }
+               
                 break;
         }
     }
