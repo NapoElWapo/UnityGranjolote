@@ -5,19 +5,31 @@ using UnityEngine;
 public class AjoloteCriadero : MonoBehaviour
 {
     RectTransform slotActual;
-    public RectTransform ajoloteCriadero;
+    public RectTransform ajoloteP, ajoloteA, ajoloteF, ajoloteH, ajoloteN, ajoloteD, ajoloteL;
+    private RectTransform ajoloteActual, doradoTemp;
     public RectTransform nuevoSlot;
+    public GameObject botonesCriadero;
     int slot = 0;
 
     public void dejarAjolote()
     {
-        if(slot<10)
+        if (slot<10 && ajoloteActual == ajoloteD)
+        {
+            slotActual = GameObject.Find("AjoloteSlotC (" + slot + ")").GetComponent<RectTransform>();
+            Instantiate(ajoloteActual, slotActual.transform);
+            slot++;
+            ajoloteActual = doradoTemp;
+        }
+        else if (slot<10 && ajoloteActual != null)
         {
         slotActual = GameObject.Find("AjoloteSlotC (" + slot + ")").GetComponent<RectTransform>();
-        Instantiate(ajoloteCriadero, slotActual.transform);
+        Instantiate(ajoloteActual, slotActual.transform);
         slot++;
         Debug.Log("Se dejo un ajolote");
         }
+
+        if (slot > 0)
+            botonesCriadero.gameObject.SetActive(false);
     }
 
     public void recogerAjolote()
@@ -28,5 +40,47 @@ public class AjoloteCriadero : MonoBehaviour
         slotActual = GameObject.Find("AjoloteSlotC (" + slot + ")").GetComponent<RectTransform>();
         Destroy(GameObject.Find("AjoloteSlotC (" + slot + ")").GetComponent<RectTransform>().GetChild(2).gameObject);  
         }
+
+        if (slot == 0)
+            botonesCriadero.gameObject.SetActive(true);
+    }
+
+    public void CriaderoTipoPlanta()
+    {
+        ajoloteActual = ajoloteP;
+    }
+
+    public void CriaderoTipoAgua()
+    {
+        ajoloteActual = ajoloteA;
+    }
+
+    public void CriaderoTipoFuego()
+    {
+        ajoloteActual = ajoloteF;
+    }
+
+    public void CriaderoTipoHielo()
+    {
+        ajoloteActual = ajoloteH;
+    }
+
+    public void CriaderoTipoNube()
+    {
+        ajoloteActual = ajoloteN;
+    }
+
+    public void CriaderoTipoDorado()
+    {
+        if (ajoloteActual != ajoloteD)
+        {
+            doradoTemp = ajoloteActual;
+            ajoloteActual = ajoloteD;
+        }
+    }
+
+    public void CriaderoTipoLegendario()
+    {
+        ajoloteActual = ajoloteL;
     }
 }

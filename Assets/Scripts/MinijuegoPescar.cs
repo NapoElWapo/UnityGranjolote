@@ -4,37 +4,20 @@ using UnityEngine;
 
 public class MinijuegoPescar : MonoBehaviour
 {
-    public RectTransform pez;
-    public RectTransform posFinal;
-
-    public BoxCollider2D colliderPez, colliderFallo, colliderExito;
+    public RectTransform pez, posFinal, panelPesca;
 
     private Vector2 posInicio;
-    private float vel = 300f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private float vel = 100f;
 
     private void OnEnable()
     {
-        StartCoroutine(MoverPez());
-        colliderPez = GameObject.Find("Pececin").GetComponent<BoxCollider2D>();
-        colliderExito = GameObject.Find("ZonaExito").GetComponent<BoxCollider2D>();
-        colliderFallo = GameObject.Find("FalloPesca").GetComponent<BoxCollider2D>();
-        //colliderPez = GetComponent<BoxCollider2D>();
-        //colliderPez.isTrigger = true;
-        //colliderExito.isTrigger = false;
-        //colliderFallo.isTrigger = false;
-
+        pez = GameObject.Find("Pececin").GetComponent<RectTransform>();
+        posFinal = GameObject.Find("FalloPesca").GetComponent<RectTransform>();
+        panelPesca = GameObject.Find("MiniPesca").GetComponent<RectTransform>();
         posInicio = pez.transform.position;
+        StartCoroutine(MoverPez());
+
+
         Debug.Log("Pesca on");
     }
 
@@ -42,14 +25,13 @@ public class MinijuegoPescar : MonoBehaviour
     {
         pez.transform.position = posInicio;
         StopCoroutine(MoverPez());
-        pez.transform.position = posInicio;
     }
 
     private IEnumerator MoverPez()
     {
         while (true)
         {
-            //vel = (Random.Range(3, 10) * 100);
+            vel = (Random.Range(3, 10) * 100);
             while (Vector2.Distance(pez.transform.position, posFinal.transform.position) > 0)
             {
                 pez.transform.position = Vector2.MoveTowards(pez.transform.position, posFinal.transform.position, Time.deltaTime * vel);
@@ -60,22 +42,32 @@ public class MinijuegoPescar : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Colisiono algo");
+        if (collision.gameObject.tag == "FalloPesca")
+        {
+            Debug.Log("Pez fallo");
+            panelPesca.gameObject.SetActive(false);
+        }
+    }
 
-        if (collision.gameObject == colliderExito)
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "ExitoPesca")
         {
             Debug.Log("Pez etzitoso");
+            if (Input.GetKeyDown("e"))
+            {
+                Debug.Log("Pez obtenido");
+                GameObject.Find("Pececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
+            }
         }
 
-        if (collision.gameObject == colliderFallo)
+        else if (collision.gameObject.tag == "AguaPesca")
         {
-            pez.transform.position = posInicio;
-            Debug.Log("Pez colisiona");
-        }
-
-        else
-        {
-
+            if (Input.GetKeyDown("e"))
+            {
+                Debug.Log("Fallaste, crack");
+                panelPesca.gameObject.SetActive(false);
+            }
         }
     }
 }
