@@ -48,12 +48,14 @@ public class SistemaInventario
         {
             case ItemCategory.recolectables:
                 //desde aqui se maneja la logica si es que exite o no el objeto
+               
                 if (recolectables.Contains(item))
                 {
                     if (item.Stackeble)
-                    { 
-                    Debug.Log("updating slot..");
-                    var tmp_obj = recolectables.Find(x => x.Nombre.Contains(item.Nombre) );
+                    {
+                        var tmp_obj = recolectables.Find(x => x.Nombre.Contains(item.Nombre));
+                        Debug.Log("updating slot..");
+                    
 
                     //
                     tmp_obj.Stack_value ++;
@@ -67,7 +69,7 @@ public class SistemaInventario
                     else
                     return true;
                 }
-                else
+                else if (recolectables.Contains(item))
                 {
                     recolectables.Add(item);//se agrega si no existe
                     GameMaster.instanciaCompartida.GUI_controlador.insertar_recolectables(item);
@@ -138,7 +140,7 @@ public class SistemaInventario
         }
 
         //TO DO: AQUI SE NECESITA HACER TAMBIEN UNA ACTUALIZACION A LA UI para liberar el slot
-    public void RemoveItem(ItemInventario item)
+        public void RemoveItem(ItemInventario item)
     {
         switch (item.Category)
         {
@@ -211,9 +213,8 @@ public class SistemaInventario
                     }
                     else
                     {
-                        GameMaster.instanciaCompartida.GUI_controlador.quitar_ajolotes(item);
                         ajolotes.Remove(item);//se agrega si no existe
-                        
+                        GameMaster.instanciaCompartida.GUI_controlador.quitar_ajolotes(item);
                     }
 
                 }

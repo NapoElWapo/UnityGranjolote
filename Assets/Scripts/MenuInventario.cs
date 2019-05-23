@@ -54,14 +54,14 @@ public class MenuInventario : MonoBehaviour
     public static bool menuCerrado = false;
     public GameObject inventario_ui;
     public bool r1 = false, r2 = false, r3 = false, r4 = false, r5 = false, r6 = false, r7 = false, r8 = false, r9 = false, r10 = false;
-    private bool vap=false, vaa = false, vaf = false, vah = false, van = false, vao = false, val = false, vasa = false, vasf = false, vasn = false,vad=false;
-    public int dinero,ajoloteActivo;
+    private bool vap = false, vaa = false, vaf = false, vah = false, van = false, vao = false, val = false, vasa = false, vasf = false, vasn = false, vad = false;
+    public int dinero, ajoloteActivo;
     public Text uiDinero;
 
     //Estas son las preterminadas configuradas en el editor (cambiar esto para beneficio muto)
 
     [SerializeField]
-    public List<slot> ajolotes= new List<slot>();
+    public List<slot> ajolotes = new List<slot>();
     [SerializeField]
     public List<slot> coleccionables = new List<slot>();
     [SerializeField]
@@ -83,7 +83,7 @@ public class MenuInventario : MonoBehaviour
 
         //Buscamos los slots de la ui y los llenamos con sus tipos correspondientes
         //Lo que hace este bucle es buscar todos los objetos con el script slot id para referenciarse ellos despues
-        foreach (var iterador_ajolotes in Resources.FindObjectsOfTypeAll (typeof(SlotID)) as SlotID[])
+        foreach (var iterador_ajolotes in Resources.FindObjectsOfTypeAll(typeof(SlotID)) as SlotID[])
         {
             Debug.Log("procesando :" + iterador_ajolotes.name);
             //Les asignamos el tag correspondiente a Slot+N
@@ -121,7 +121,7 @@ public class MenuInventario : MonoBehaviour
                     break;
             }
         }
-        
+
         Debug.Log("inventory initialized");
     }
 
@@ -164,7 +164,7 @@ public class MenuInventario : MonoBehaviour
             }
         }
 
-        
+
         bPlanta.gameObject.SetActive(r1);
         bAgua.gameObject.SetActive(r2);
         bFuego.gameObject.SetActive(r3);
@@ -193,7 +193,7 @@ public class MenuInventario : MonoBehaviour
         mapa.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMapa);
         mochila.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarMochila);
         ajolotepedia.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarAjolotepedia);
-        logrosMisiones.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarLogrosMisiones);      
+        logrosMisiones.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarLogrosMisiones);
     }
 
     public void Ajolotepedia()
@@ -240,11 +240,11 @@ public class MenuInventario : MonoBehaviour
 
     public void insertar_recolectables(ItemInventario last_entry)
     {
-            //si no se encontro un objeto lo metemos como nuevo
-            foreach (var iterador in coleccionables)
+        //si no se encontro un objeto lo metemos como nuevo
+        foreach (var iterador in coleccionables)
+        {
+            if (!iterador.Is_used) //buscamos el primer slot libre
             {
-                if (!iterador.Is_used) //buscamos el primer slot libre
-                {
                 //Asignamos el sprite de bg y ajustamos el stack
 
                 iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
@@ -253,7 +253,7 @@ public class MenuInventario : MonoBehaviour
                 iterador.item_inside_type = last_entry.Category;
                 iterador.RealItemName = last_entry.Nombre;
                 Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
-                break;       
+                break;
             }
         }
     }
@@ -296,16 +296,16 @@ public class MenuInventario : MonoBehaviour
         //si no se encontro un objeto lo metemos como nuevo
         foreach (var iterador in herramientas)
         {
-            if (iterador.Slot_name == "Slot1" && last_entry.name == "Lanza") 
+            if (iterador.Slot_name == "Slot1" && last_entry.name == "Lanza")
             {
                 iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
-                
+
                 iterador.Is_used = true;
                 iterador.item_inside_type = last_entry.Category;
                 iterador.RealItemName = last_entry.Nombre;
                 Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
             }
-            else if (iterador.Slot_name == "Slot2" && last_entry.name == "Rastrillo") 
+            else if (iterador.Slot_name == "Slot2" && last_entry.name == "Rastrillo")
             {
                 iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
 
@@ -335,7 +335,7 @@ public class MenuInventario : MonoBehaviour
             else if (iterador.Slot_name == "Slot1" && last_entry.name == "Arco")
             {
                 iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
-                
+
                 iterador.Is_used = true;
                 iterador.item_inside_type = last_entry.Category;
                 iterador.RealItemName = last_entry.Nombre;
@@ -367,7 +367,7 @@ public class MenuInventario : MonoBehaviour
     {
         foreach (var iterador in pasivas)
         {
-            if (iterador.Slot_name == "Slot1" && last_entry.name == "AmuletoFuego") 
+            if (iterador.Slot_name == "Slot1" && last_entry.name == "AmuletoFuego")
             {
                 iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
 
@@ -421,12 +421,12 @@ public class MenuInventario : MonoBehaviour
         //si no se encontro un objeto lo metemos como nuevo
         foreach (var iterador in ajolotes)
         {
-            if (!iterador.Is_used ) //buscamos el primer slot libre
+            if (!iterador.Is_used) //buscamos el primer slot libre
             {
                 //Asignamos el sprite de bg y ajustamos el stack
 
                 iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
-               
+
                 iterador.Is_used = true;
                 iterador.item_inside_type = last_entry.Category;
                 iterador.RealItemName = last_entry.Nombre;
@@ -442,160 +442,167 @@ public class MenuInventario : MonoBehaviour
         {
             if (iterador.Is_used) //buscamos el primer slot libre
             {
-                //Asignamos el sprite de bg y ajustamos el stack
+                foreach (var iterador_ajolotes in ajolotes)
+                {
+                    if (iterador_ajolotes.RealItemName == last_entry.Nombre && iterador_ajolotes.item_inside_type == last_entry.Category)
+                    {
+                        iterador_ajolotes.RealItemName = null;
+                        iterador_ajolotes.Is_used = false;
+                        iterador_ajolotes.Slot_ui_img.sprite = null;
+                        iterador_ajolotes.Slot_stack.text = last_entry.Stack_value.ToString();
+                        iterador_ajolotes.item_inside_type = last_entry.Category;
 
-                iterador.Slot_ui_img.sprite = null;
-                iterador.Slot_stack.text = last_entry.Stack_value.ToString();
-                iterador.Is_used = false;
-                iterador.item_inside_type = last_entry.Category;
-                iterador.RealItemName = "";
-                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
-                break;
+                        
+                        Debug.Log($"ui recoletables updated name: {last_entry.Nombre}   category {last_entry.Category.ToString()} stack value :" + last_entry.Stack_value);
+                        break;
+                    }
+                }
             }
         }
     }
+        public void RegistrarAjolote()
+        {
 
-    public void RegistrarAjolote()
-    {
+        }
 
-    }
+        public void ToggleDesconocido()
+        {
 
-    public void ToggleDesconocido()
-    {
-        
-        
+
             vad = !vad;
             ajolotepediaDesconocido.gameObject.SetActive(vad);
-        
-    }
 
-    public void ToggleAP()
-    {
-        if(r1==true)
-        {
-            vap = !vap;
-            ajolotepediaPlanta.gameObject.SetActive(vap);
         }
-        else
-        {
-            ToggleDesconocido();
-        }
-    }
 
-    public void ToggleAA()
-    {
-        if (r2 == true)
+        public void ToggleAP()
         {
-            vaa = !vaa;
-            ajolotepediaAgua.gameObject.SetActive(vaa);
+            if (r1 == true)
+            {
+                vap = !vap;
+                ajolotepediaPlanta.gameObject.SetActive(vap);
+            }
+            else
+            {
+                ToggleDesconocido();
+            }
         }
-        else
-        {
-            ToggleDesconocido();
-        }
-    }
 
-    public void ToggleAF()
-    {
-        if (r3 == true)
+        public void ToggleAA()
         {
-            vaf = !vaf;
-            ajolotepediaFuego.gameObject.SetActive(vaf);
+            if (r2 == true)
+            {
+                vaa = !vaa;
+                ajolotepediaAgua.gameObject.SetActive(vaa);
+            }
+            else
+            {
+                ToggleDesconocido();
+            }
         }
-        else
-        {
-            ToggleDesconocido();
-        }
-    }
 
-    public void ToggleAH()
-    {
-        if (r4 == true)
+        public void ToggleAF()
         {
-            vah = !vah;
-            ajolotepediaHielo.gameObject.SetActive(vah);
+            if (r3 == true)
+            {
+                vaf = !vaf;
+                ajolotepediaFuego.gameObject.SetActive(vaf);
+            }
+            else
+            {
+                ToggleDesconocido();
+            }
         }
-        else
-        {
-            ToggleDesconocido();
-        }
-    }
 
-    public void ToggleAN()
-    {
-        if (r5 == true)
+        public void ToggleAH()
         {
-            van = !van;
-            ajolotepediaNube.gameObject.SetActive(van);
+            if (r4 == true)
+            {
+                vah = !vah;
+                ajolotepediaHielo.gameObject.SetActive(vah);
+            }
+            else
+            {
+                ToggleDesconocido();
+            }
         }
-        else
-        {
-            ToggleDesconocido();
-        }
-    }
 
-    public void ToggleAO()
-    {
-        if (r6 == true)
+        public void ToggleAN()
         {
-            vao = !vao;
-            ajolotepediaOro.gameObject.SetActive(vao);
+            if (r5 == true)
+            {
+                van = !van;
+                ajolotepediaNube.gameObject.SetActive(van);
+            }
+            else
+            {
+                ToggleDesconocido();
+            }
         }
-        else
-        {
-            ToggleDesconocido();
-        }
-    }
 
-    public void ToggleAL()
-    {
-        if (r7 == true)
+        public void ToggleAO()
         {
-            val = !val;
-            ajolotepediaLegendario.gameObject.SetActive(val);
+            if (r6 == true)
+            {
+                vao = !vao;
+                ajolotepediaOro.gameObject.SetActive(vao);
+            }
+            else
+            {
+                ToggleDesconocido();
+            }
         }
-        else
-        {
-            ToggleDesconocido();
-        }
-    }
 
-    public void ToggleASA()
-    {
-        if (r8 == true)
+        public void ToggleAL()
         {
-            vasa = !vasa;
-            ajolotepediaASA.gameObject.SetActive(vasa);
+            if (r7 == true)
+            {
+                val = !val;
+                ajolotepediaLegendario.gameObject.SetActive(val);
+            }
+            else
+            {
+                ToggleDesconocido();
+            }
         }
-        else
-        {
-            ToggleDesconocido();
-        }
-    }
 
-    public void ToggleASF()
-    {
-        if (r9 == true)
+        public void ToggleASA()
         {
-            vasf = !vasf;
-            ajolotepediaASF.gameObject.SetActive(vasf);
+            if (r8 == true)
+            {
+                vasa = !vasa;
+                ajolotepediaASA.gameObject.SetActive(vasa);
+            }
+            else
+            {
+                ToggleDesconocido();
+            }
         }
-        else
-        {
-            ToggleDesconocido();
-        }
-    }
 
-    public void ToggleASN()
-    {
-        if (r10 == true)
+        public void ToggleASF()
         {
-            vasn = !vasn;
-            ajolotepediaASN.gameObject.SetActive(vasn);
+            if (r9 == true)
+            {
+                vasf = !vasf;
+                ajolotepediaASF.gameObject.SetActive(vasf);
+            }
+            else
+            {
+                ToggleDesconocido();
+            }
         }
-        else
+
+        public void ToggleASN()
         {
-            ToggleDesconocido();
+            if (r10 == true)
+            {
+                vasn = !vasn;
+                ajolotepediaASN.gameObject.SetActive(vasn);
+            }
+            else
+            {
+                ToggleDesconocido();
+            }
         }
+
+    
     }
-}

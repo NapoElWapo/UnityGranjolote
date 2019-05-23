@@ -22,6 +22,7 @@ public class ItemInventario :MonoBehaviour, IEquatable<ItemInventario>
     public bool Stackeble;
     [SerializeField]
     public int MaxStack;
+   
 
     public bool Equals(ItemInventario other)
     {
