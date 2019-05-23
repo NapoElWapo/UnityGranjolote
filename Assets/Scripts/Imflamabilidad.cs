@@ -26,6 +26,7 @@ public class Imflamabilidad : MonoBehaviour
             }
         } 
     }
+
     IEnumerator Quemarse()
     {
         flamable.gameObject.SetActive(true);
