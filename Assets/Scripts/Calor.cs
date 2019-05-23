@@ -6,15 +6,21 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Calor : MonoBehaviour
 {
     public RectTransform imagenCalor;
-
+    public bool quemandose=false;
     private void OnTriggerStay(Collider collision)
 	{	
 		if(collision.gameObject.CompareTag("Player"))
 		{
+            quemandose = true;
             GameObject Jugador = GameObject.FindWithTag("Player");
             FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
+            playerScript.dolor = true;
             playerScript.health -= 1;
-            imagenCalor.GetComponent<CanvasGroup>().alpha = 1f-( playerScript.health * .01f);
+            if (quemandose==true)
+            {
+                imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
+            }
+            
             if(playerScript.health<=0 && GameMaster.instanciaCompartida.dinero > 50)
             {
                 GameMaster.instanciaCompartida.dinero -= 50;
@@ -27,16 +33,28 @@ public class Calor : MonoBehaviour
         }
 	}
 
-    private void OnTriggerExit(Collider collision)
+    public void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player"))
         {
             GameObject Jugador = GameObject.FindWithTag("Player");
             FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
-            for(int i = playerScript.health; i <= 100; i++)
-            {
-                playerScript.health += 1;
-            }           
+            quemandose = false;
+            playerScript.dolor = false;
         }
     }
+
+    void Update()
+    {
+
+        GameObject Jugador = GameObject.FindWithTag("Player");
+        FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
+        if(quemandose==true)
+        {
+            imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
+
+        }
+
+    }
+
 }
