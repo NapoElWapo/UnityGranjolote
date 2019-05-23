@@ -33,6 +33,9 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public TiendaUI tien;
     public string Tienda = "Tienda";
 
+    public RegistrarAjoloteUI registroUI;
+    public string Anaizador = "Analizador";
+
     public float range = 4;
     public KeyCode key_to_refresh = KeyCode.E;
     public GameObject current_selected_obj; //Deberia de ser un item base
@@ -156,6 +159,11 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     {
                             Debug.Log("It's dangerous to go alone! Take this.");
                     }
+                }
+                else if (colision_rayo.transform.tag == Anaizador)
+                {
+                    registroUI.ToggleRegistro();
+                   
                 }
             }
         } 

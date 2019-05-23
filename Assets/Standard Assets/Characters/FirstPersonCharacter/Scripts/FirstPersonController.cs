@@ -45,9 +45,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
         public int stamina;
         public int staminaStart;
-	    public int health;
-	    public int maxHealth;
-	   
+	    public float health;
+	    public float maxHealth;
+        public bool dolor=false;
 	    public string levelToLoad;
       
 
@@ -96,6 +96,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            if (dolor == false)
+            {
+
+
+               
+                for (float i = health; i <= 100; i++)
+                {
+                    health += .01f;
+                }
+            }
         }
 
 

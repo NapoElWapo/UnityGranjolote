@@ -298,7 +298,7 @@ public class MenuInventario : MonoBehaviour
             else if (iterador.Slot_name == "Slot3" && last_entry.name == "AjoloteSAgua")
             {
                 iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
-
+                r8 = true;
                 iterador.Is_used = true;
                 iterador.item_inside_type = last_entry.Category;
                 iterador.RealItemName = last_entry.Nombre;
@@ -307,7 +307,7 @@ public class MenuInventario : MonoBehaviour
             else if (iterador.Slot_name == "Slot4" && last_entry.name == "AjoloteSFuego")
             {
                 iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
-
+                r9 = true;
                 iterador.Is_used = true;
                 iterador.item_inside_type = last_entry.Category;
                 iterador.RealItemName = last_entry.Nombre;
@@ -341,7 +341,7 @@ public class MenuInventario : MonoBehaviour
             else if (iterador.Slot_name == "Slot2" && last_entry.name == "AjoloteSNube")
             {
                 iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
-
+                r10 = true;
                 iterador.Is_used = true;
                 iterador.item_inside_type = last_entry.Category;
                 iterador.RealItemName = last_entry.Nombre;
