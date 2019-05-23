@@ -14,7 +14,7 @@ public class RegistrarAjoloteUI : MonoBehaviour
     private bool ui = false;
     MenuInventario conex;
     public Text mensaje;
-    public GameObject current_selected_obj,ajoP;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -82,8 +82,7 @@ public class RegistrarAjoloteUI : MonoBehaviour
 
                 if(ajoslot1.RealItemName=="AjoloteDePlanta" && conex.r1==false)
                 {
-                    current_selected_obj = ajoP.transform.gameObject;
-                    GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
+                   
                     mensaje.text = "Nueva especie Registrada";
                     GameMaster.instanciaCompartida.dinero = GameMaster.instanciaCompartida.dinero + 100;
                     conex.r1 = true;

@@ -32,6 +32,7 @@ public class slot
     public ItemInventoryTypeDef.ItemCategory item_inside_type;// este se llenara cuando un objeto sea introducido en el slot vacio
     public string RealItemName="NotAssignedYet";
     public bool Is_used;
+
 }
 //EN DESUSO
 public class slotComparer : Comparer<slot>
@@ -73,7 +74,8 @@ public class MenuInventario : MonoBehaviour
 
     public string EnumerationName = "Slot";
     public string SlotImageName = "SpriteImage";
-
+    public bool llenoR=false,llenoA=false;
+    public int contadorA=0, contadorR=0;
     //Clases para cada tipo de botones del inventario -añadidos
     uint indice_a = 0, indice_c = 0, indice_h = 0, indice_p = 0;
 
@@ -240,22 +242,41 @@ public class MenuInventario : MonoBehaviour
 
     public void insertar_recolectables(ItemInventario last_entry)
     {
-        //si no se encontro un objeto lo metemos como nuevo
-        foreach (var iterador in coleccionables)
-        {
-            if (!iterador.Is_used) //buscamos el primer slot libre
-            {
-                //Asignamos el sprite de bg y ajustamos el stack
+        
 
-                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
-                iterador.Slot_stack.text = last_entry.Stack_value.ToString();
-                iterador.Is_used = true;
-                iterador.item_inside_type = last_entry.Category;
-                iterador.RealItemName = last_entry.Nombre;
-                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
-                break;
+
+            //si no se encontro un objeto lo metemos como nuevo
+            foreach (var iterador in coleccionables)
+            {
+                if (!iterador.Is_used) //buscamos el primer slot libre
+                {
+                //Asignamos el sprite de bg y ajustamos el stack
+                if (llenoR == false)
+                {
+                    iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+                    contadorR = 0;
+                    iterador.Is_used = true;
+                    iterador.item_inside_type = last_entry.Category;
+                    iterador.RealItemName = last_entry.Nombre;
+                    Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+                    break;
+                }
+                }
+
+                if (iterador.Is_used)
+                {
+                    contadorR++;
+                    if (contadorR >= 8)
+                    {
+                        llenoR = true;
+                    }
+                    else
+                    {
+                        llenoR = false;
+                    }
+                }
             }
-        }
+        
     }
 
     public void actualizar_recolectables(ItemInventario last_entry)
@@ -278,15 +299,20 @@ public class MenuInventario : MonoBehaviour
         {
             if (iterador.Is_used) //buscamos el primer slot libre
             {
-                //Asignamos el sprite de bg y ajustamos el stack
-
-                iterador.Slot_ui_img.sprite = null;
-                iterador.Slot_stack.text = last_entry.Stack_value.ToString();
-                iterador.Is_used = false;
-                iterador.item_inside_type = last_entry.Category;
-                iterador.RealItemName = null;
-                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
-                break;
+                foreach (var iterador_coleccionables in ajolotes)
+                {
+                    //Asignamos el sprite de bg y ajustamos el stack
+                    if (iterador_coleccionables.RealItemName == last_entry.Nombre && iterador_coleccionables.item_inside_type == last_entry.Category)
+                    {
+                        iterador.Slot_ui_img.sprite = null;
+                        iterador.Slot_stack.text = last_entry.Stack_value.ToString();
+                        iterador.Is_used = false;
+                        iterador.item_inside_type = last_entry.Category;
+                        iterador.RealItemName = null;
+                        Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+                        break;
+                    }
+                }
             }
         }
     }
@@ -419,21 +445,43 @@ public class MenuInventario : MonoBehaviour
     public void insertar_ajolotes(ItemInventario last_entry)
     {
         //si no se encontro un objeto lo metemos como nuevo
-        foreach (var iterador in ajolotes)
-        {
-            if (!iterador.Is_used) //buscamos el primer slot libre
+        
+
+
+            foreach (var iterador in ajolotes)
             {
-                //Asignamos el sprite de bg y ajustamos el stack
-
-                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
-
-                iterador.Is_used = true;
-                iterador.item_inside_type = last_entry.Category;
-                iterador.RealItemName = last_entry.Nombre;
-                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
-                break;
+                if (!iterador.Is_used) //buscamos el primer slot libre
+                {
+                contadorA = 0;
+                if (llenoA == false)
+                  {
+                    iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+                    
+                    iterador.Is_used = true;
+                    
+                    
+                    iterador.item_inside_type = last_entry.Category;
+                    iterador.RealItemName = last_entry.Nombre;
+                    Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+                    break;
+                  }
+                }
+            
+            if (iterador.Is_used)
+                {
+                    contadorA++;
+                    if (contadorA >= 4)
+                    {
+                   
+                        llenoA = true;
+                    }
+                    else
+                    {
+                        llenoA = false;
+                    }
+                }
             }
-        }
+        
     }
 
     public void quitar_ajolotes(ItemInventario last_entry)
@@ -451,7 +499,7 @@ public class MenuInventario : MonoBehaviour
                         iterador_ajolotes.Slot_ui_img.sprite = null;
                         iterador_ajolotes.Slot_stack.text = last_entry.Stack_value.ToString();
                         iterador_ajolotes.item_inside_type = last_entry.Category;
-
+                       
                         
                         Debug.Log($"ui recoletables updated name: {last_entry.Nombre}   category {last_entry.Category.ToString()} stack value :" + last_entry.Stack_value);
                         break;

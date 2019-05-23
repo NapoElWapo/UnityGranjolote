@@ -1883,7 +1883,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 78
+  m_RootOrder: 80
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &113759794
 GameObject:
@@ -2698,7 +2698,7 @@ RectTransform:
   m_Children:
   - {fileID: 929932899}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2811,7 +2811,7 @@ Transform:
   - {fileID: 1338216685}
   - {fileID: 684435985}
   m_Father: {fileID: 0}
-  m_RootOrder: 81
+  m_RootOrder: 83
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &224388034
 GameObject:
@@ -5022,7 +5022,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 70
+  m_RootOrder: 71
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &358508269 stripped
 MonoBehaviour:
@@ -7732,7 +7732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 75
+  m_RootOrder: 77
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &627318227
 GameObject:
@@ -8808,7 +8808,7 @@ MonoBehaviour:
   Descripcion: huevodefuego
   Category: 1
   Stack_value: 1
-  Stackeble: 0
+  Stackeble: 1
   MaxStack: 0
 --- !u!65 &679592545
 BoxCollider:
@@ -17060,7 +17060,7 @@ Transform:
   - {fileID: 185386008}
   - {fileID: 1851506558}
   m_Father: {fileID: 0}
-  m_RootOrder: 89
+  m_RootOrder: 91
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1031628055 stripped
 GameObject:
@@ -17149,7 +17149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 72
+  m_RootOrder: 73
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1039460220
 PrefabInstance:
@@ -22530,8 +22530,6 @@ MonoBehaviour:
   bslot4: {fileID: 898873814}
   RegistroUI: {fileID: 874995424}
   mensaje: {fileID: 1806810374}
-  current_selected_obj: {fileID: 0}
-  ajoP: {fileID: 1330140850}
 --- !u!114 &1072732003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22605,7 +22603,7 @@ RectTransform:
   m_Children:
   - {fileID: 874995424}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -23619,8 +23617,8 @@ MonoBehaviour:
   Descripcion: huevodehielo
   Category: 1
   Stack_value: 1
-  Stackeble: 0
-  MaxStack: 0
+  Stackeble: 1
+  MaxStack: 1
 --- !u!65 &1124706159
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26562,7 +26560,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 68
+  m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1330140849
 PrefabInstance:
@@ -26653,12 +26651,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdacab59cf3631249bf61d11611c1986, type: 3}
---- !u!1 &1330140850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9170133037535178481, guid: cdacab59cf3631249bf61d11611c1986,
-    type: 3}
-  m_PrefabInstance: {fileID: 1330140849}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1338216685 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4693865921042476731, guid: f1133f531f45b6b4eb67f770f5600bfe,
@@ -28689,8 +28681,8 @@ MonoBehaviour:
   Descripcion: huevoverde
   Category: 1
   Stack_value: 1
-  Stackeble: 0
-  MaxStack: 0
+  Stackeble: 1
+  MaxStack: 1
 --- !u!65 &1499004192
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28991,8 +28983,8 @@ MonoBehaviour:
   Descripcion: huevodorado
   Category: 1
   Stack_value: 1
-  Stackeble: 0
-  MaxStack: 0
+  Stackeble: 1
+  MaxStack: 1
 --- !u!65 &1516247383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32358,7 +32350,7 @@ Transform:
   - {fileID: 1399190254}
   - {fileID: 1836966485}
   m_Father: {fileID: 0}
-  m_RootOrder: 84
+  m_RootOrder: 86
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1796393106
 PrefabInstance:
@@ -36266,8 +36258,8 @@ MonoBehaviour:
   Descripcion: huevodenube
   Category: 1
   Stack_value: 1
-  Stackeble: 0
-  MaxStack: 0
+  Stackeble: 1
+  MaxStack: 1
 --- !u!65 &2078086421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42264,7 +42256,7 @@ PrefabInstance:
     - target: {fileID: 4683871824814082015, guid: 86cb7b51d5a3b6e4098f6e49b00202df,
         type: 3}
       propertyPath: m_RootOrder
-      value: 61
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 4683871824814082015, guid: 86cb7b51d5a3b6e4098f6e49b00202df,
         type: 3}
@@ -42453,7 +42445,7 @@ Transform:
   m_Children:
   - {fileID: 6837901374723032701}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5675211461198405185
 PrefabInstance:
@@ -43999,6 +43991,46 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b90fbe89dcfc40145851d32000f4a32f,
         type: 3}
+    - target: {fileID: 5129357224904798470, guid: 7a4805917b185d3429f41baee34250b8,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159180842713374441, guid: 7a4805917b185d3429f41baee34250b8,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5438054953811829462, guid: 7a4805917b185d3429f41baee34250b8,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546054312758346018, guid: 7a4805917b185d3429f41baee34250b8,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414194555279780874, guid: 7a4805917b185d3429f41baee34250b8,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255245968464686465, guid: 7a4805917b185d3429f41baee34250b8,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105368768102074036, guid: 7a4805917b185d3429f41baee34250b8,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038534338294385382, guid: 7a4805917b185d3429f41baee34250b8,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a4805917b185d3429f41baee34250b8, type: 3}
 --- !u!224 &5675211461198405186 stripped

@@ -69,11 +69,14 @@ public class SistemaInventario
                     else
                     return true;
                 }
-                else if (recolectables.Contains(item))
+                else if (GameMaster.instanciaCompartida.GUI_controlador.llenoR==false)
                 {
                     recolectables.Add(item);//se agrega si no existe
                     GameMaster.instanciaCompartida.GUI_controlador.insertar_recolectables(item);
+                    return false;
                 }
+                else
+                    return true;
                 break;
 
             case ItemCategory.herramientas:
@@ -117,18 +120,21 @@ public class SistemaInventario
                         tmp_obj.Stack_value += item.Stack_value;
                         if (tmp_obj.Stack_value > item.MaxStack)
                             return true;
-                       
+
                         Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());
                         return false;
                     }
                     else
                         return true;
                 }
-                else
+                else if (GameMaster.instanciaCompartida.GUI_controlador.llenoA == false)
                 {
                     ajolotes.Add(item);//se agrega si no existe
                     GameMaster.instanciaCompartida.GUI_controlador.insertar_ajolotes(item);
+                    return false;
                 }
+                else
+                    return true;
                 break;
         }
         return false;       
