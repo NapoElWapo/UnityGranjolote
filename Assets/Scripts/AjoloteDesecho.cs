@@ -6,9 +6,10 @@ public class AjoloteDesecho : MonoBehaviour
 {
 
     public GameObject boton;
-    bool corrutina = false;
+    public bool corrutina = false;
+    public bool resetTim = false;
     public float tiempoDesecho;
-    float tiempoPasado = 0f;
+    public float timerkk;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +20,26 @@ public class AjoloteDesecho : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (corrutina)
-        {
-            StartCoroutine(GenerarDesecho());
-        }  
+        Timer();
     }
 
+    void Timer()
+    {
+        if (resetTim)
+        {
+            timerkk = tiempoDesecho;
+            resetTim = false;
+        }
+        if (corrutina)
+        {
+            timerkk -= Time.deltaTime;
+            if (timerkk <= 0)
+            {
+                this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
+                corrutina = false;
+            }
+        }
+    }
     IEnumerator GenerarDesecho()
     {
         corrutina = false;
@@ -37,5 +52,6 @@ public class AjoloteDesecho : MonoBehaviour
     {
         this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
         corrutina = true;
+        resetTim = true;
     }
 }
