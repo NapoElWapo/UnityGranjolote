@@ -299,7 +299,7 @@ public class MenuInventario : MonoBehaviour
         {
             if (iterador.Is_used) //buscamos el primer slot libre
             {
-                foreach (var iterador_coleccionables in ajolotes)
+                foreach (var iterador_coleccionables in coleccionables)
                 {
                     //Asignamos el sprite de bg y ajustamos el stack
                     if (iterador_coleccionables.RealItemName == last_entry.Nombre && iterador_coleccionables.item_inside_type == last_entry.Category)

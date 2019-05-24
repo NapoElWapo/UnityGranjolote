@@ -161,9 +161,10 @@ public class SistemaInventario
 
                         //
                         tmp_obj.Stack_value--;
-                        if (tmp_obj.Stack_value < 1)
+                        if (tmp_obj.Stack_value <= 1)
                         {
                             recolectables.Remove(item);
+                            Debug.Log("Quitando Objeto");
                             GameMaster.instanciaCompartida.GUI_controlador.quitar_recolectables(tmp_obj);
                         }
                             
