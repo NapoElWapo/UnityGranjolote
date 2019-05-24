@@ -167,11 +167,19 @@ public class SistemaInventario
                             GameMaster.instanciaCompartida.GUI_controlador.quitar_recolectables(tmp_obj);
                         }
                             
+                           
+                            
 
                         GameMaster.instanciaCompartida.GUI_controlador.actualizar_recolectables(tmp_obj);
-
+                        
                         Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());
                         
+                    }
+                    else
+                    {
+                        var tmp_obj = recolectables.Find(x => x.Nombre.Contains(item.Nombre));
+                        recolectables.Remove(item);
+                        GameMaster.instanciaCompartida.GUI_controlador.quitar_recolectables(tmp_obj);
                     }
                    
                        
