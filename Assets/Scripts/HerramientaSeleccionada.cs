@@ -8,10 +8,10 @@ public class HerramientaSeleccionada : MonoBehaviour
 {
     public RectTransform bslot1, bslot2, bslot3, bslot4;
     public Image sslot1, sslot2, sslot3, sslot4;
-    public GameObject lanza, arco,rastrillo, ajoloteSA, ajoloteSF,fuego,agua;
+    public GameObject lanza, arco,rastrillo, ajoloteSA, ajoloteSF,fuego,agua,lanzaClick1,lanzaClick2,arcoClick,flechaClick1,flechaClick2,rastrillo1;
     private int slotPosition = 0;
     public int estaminaS=0, maxEstaminaS=100,nivelAgua=1,nivelFuego=1,nivelNube=1;
-    private bool hayFuego,hayAgua,lanzaComprobar=false,rastrilloComprobar=false,AAComprobar=false,AFComprobar=false;
+    private bool hayFuego,hayAgua,lanzaComprobar=false,rastrilloComprobar=false,AAComprobar=false,AFComprobar=false,lanzaPesaca=false,arcoPesca=false,rastrilloGusano=false;
     MenuInventario conex;
     [SerializeField]
     slot comprobar,nube;
@@ -96,6 +96,7 @@ public class HerramientaSeleccionada : MonoBehaviour
 
     private void CambiarSlotActivo()
     {
+
         if(Input.GetButtonDown("r"))
         {
             slotPosition--;
@@ -132,13 +133,40 @@ public class HerramientaSeleccionada : MonoBehaviour
 
                 if (comprobar.RealItemName == "Lanza")
                 {
-                    lanza.gameObject.SetActive(true);
-                    arco.gameObject.SetActive(false);
+                    if(lanzaPesaca==false)
+                    {
+                        lanza.gameObject.SetActive(true);
+                        arco.gameObject.SetActive(false);
+                    }
+                    
+
+
+                    if (Input.GetMouseButtonDown(1))
+                    {
+
+
+                        lanzaPesaca = true;
+                        StartCoroutine(animacionLanza());
+                        
+                    }
+
                 }
                 else if(comprobar.RealItemName == "Arco")
                 {
-                    lanza.gameObject.SetActive(false);
-                    arco.gameObject.SetActive(true);
+
+                    if (arcoPesca == false)
+                    {
+                        lanza.gameObject.SetActive(false);
+                        arco.gameObject.SetActive(true);
+                    }
+                    if (Input.GetMouseButtonDown(1))
+                    {
+
+
+                        arcoPesca = true;
+                        StartCoroutine(animacionArco());
+
+                    }
                 }
                
 
@@ -150,7 +178,20 @@ public class HerramientaSeleccionada : MonoBehaviour
 
                 if (comprobar.RealItemName == "Rastrillo")
                 {
-                    rastrillo.gameObject.SetActive(true);
+                    if(rastrilloGusano==false)
+                    {
+                        rastrillo.gameObject.SetActive(true);
+                    }
+
+                    if (Input.GetMouseButtonDown(1))
+                    {
+
+
+                        rastrilloGusano = true;
+                        StartCoroutine(animacionRastrillo());
+
+                    }
+
                 }
                 bslot1.gameObject.SetActive(false);
                 bslot2.gameObject.SetActive(true);
@@ -230,5 +271,55 @@ public class HerramientaSeleccionada : MonoBehaviour
                 arco.gameObject.SetActive(false);
                 break;      
         }
+    }
+
+    IEnumerator animacionLanza()
+    {
+        lanza.gameObject.SetActive(false);
+        lanzaClick1.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        lanzaClick1.gameObject.SetActive(false);
+        lanzaClick2.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        lanzaClick1.gameObject.SetActive(true);
+        lanzaClick2.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        lanzaClick1.gameObject.SetActive(false);
+        lanza.gameObject.SetActive(true);
+        lanzaPesaca = false;
+
+    }
+
+    IEnumerator animacionArco()
+    {
+        arco.gameObject.SetActive(false);
+        arcoClick.gameObject.SetActive(true);
+        flechaClick1.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        flechaClick1.gameObject.SetActive(false);
+        flechaClick2.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        flechaClick1.gameObject.SetActive(true);
+        flechaClick2.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        flechaClick1.gameObject.SetActive(false);
+        arcoClick.gameObject.SetActive(false);
+        arco.gameObject.SetActive(true);
+        arcoPesca = false;
+
+    }
+
+    IEnumerator animacionRastrillo()
+    {
+        rastrillo.gameObject.SetActive(false);
+        rastrillo1.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        
+        
+        rastrillo1.gameObject.SetActive(false);
+        rastrillo.gameObject.SetActive(rastrillo);
+        
+        rastrilloGusano = false;
+
     }
 }
