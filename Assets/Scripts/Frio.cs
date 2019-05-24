@@ -18,14 +18,9 @@ public class Frio : MonoBehaviour
     private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {
-           
+        {  
             if (resistencia==false)
             {
-
-
-
-                
                 GameObject Jugador = GameObject.FindWithTag("Player");
                 FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
                 playerScript.dolor = true;
@@ -44,12 +39,10 @@ public class Frio : MonoBehaviour
                 {
                     GameMaster.instanciaCompartida.dinero = 0;
                 }
-
             }
             NPC2.instancia.frio = true;
         }
     }
-
 
     public void OnTriggerExit(Collider collision)
     {
@@ -61,6 +54,7 @@ public class Frio : MonoBehaviour
             playerScript.dolor = false;
         }
     }
+
     void Update()
     {
         GameObject Jugador = GameObject.FindWithTag("Player");
@@ -70,22 +64,13 @@ public class Frio : MonoBehaviour
         {
             resistencia = true;
         }
-
         if(playerScript.health >=100)
         {
             congelandose = false;
-        }
-
-
-        
+        }     
        if(congelandose==true)
-        {
-            
+        {         
             imagenFrio.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
-        }
-            
-        
-        
-        
+        }      
     }
 }

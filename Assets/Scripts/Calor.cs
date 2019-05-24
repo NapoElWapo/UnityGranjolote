@@ -22,10 +22,6 @@ public class Calor : MonoBehaviour
             quemandose = true;
             if (resistencia==false)
             {
-
-
-
-               
                 GameObject Jugador = GameObject.FindWithTag("Player");
                 FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
                 playerScript.dolor = true;
@@ -54,35 +50,26 @@ public class Calor : MonoBehaviour
         {
             GameObject Jugador = GameObject.FindWithTag("Player");
             FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
-           
             playerScript.dolor = false;
         }
     }
 
     void Update()
     {
-
         amuleto = conex.pasivas.Find(x => x.Slot_name == "Slot1");
         if (amuleto.RealItemName == "AmuletoFuego")
         {
             resistencia = true;
         }
-
         GameObject Jugador = GameObject.FindWithTag("Player");
         FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
         if (playerScript.health >= 100)
         {
             quemandose = false;
         }
-
         if (quemandose)
         {
-
-
             imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
-
         }
-
     }
-
 }
