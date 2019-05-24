@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class MinijuegoPescar : MonoBehaviour
 {
-    public RectTransform pez, posFinal, panelPesca;
-
+    public RectTransform pez, posFinal, panelPesca,holder,pescaHolder,finalholder,pezholder;
+    public GameObject pescado, current_selected_obj;
     private Vector2 posInicio;
     private float vel;
 
     private void OnEnable()
     {
-        pez = GameObject.Find("Pececin").GetComponent<RectTransform>();
-        posFinal = GameObject.Find("FalloPesca").GetComponent<RectTransform>();
-        panelPesca = GameObject.Find("MiniPesca").GetComponent<RectTransform>();
-        posInicio = pez.transform.position;
+        pez = pezholder.GetComponent<RectTransform>();
+        posFinal = finalholder.GetComponent<RectTransform>();
+        panelPesca = pescaHolder.GetComponent<RectTransform>();
+        posInicio = holder.transform.position;
+        GameObject.Find("Pececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(true);
         StartCoroutine(MoverPez());
     }
 
@@ -49,8 +50,9 @@ public class MinijuegoPescar : MonoBehaviour
     {
         if (collision.gameObject.tag == "ExitoPesca")
         {
-            if (Input.GetKeyDown("e"))
+            if (Input.GetButtonDown("e"))
             {
+                
                 GameObject.Find("Pececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
                 vel = 0;
                 StartCoroutine(Delay());
@@ -59,7 +61,7 @@ public class MinijuegoPescar : MonoBehaviour
 
         else if (collision.gameObject.tag == "AguaPesca")
         {
-            if (Input.GetKeyDown("e"))
+            if (Input.GetButtonDown("e"))
             {
                 panelPesca.gameObject.SetActive(false);
             }
@@ -69,6 +71,8 @@ public class MinijuegoPescar : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSecondsRealtime(1.5f);
+        current_selected_obj = pescado.transform.gameObject;
+        GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
         panelPesca.gameObject.SetActive(false);
     }
 }
