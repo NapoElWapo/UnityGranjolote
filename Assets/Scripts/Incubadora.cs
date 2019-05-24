@@ -245,8 +245,11 @@ public class Incubadora : MonoBehaviour
                     incubando = true;
                     tEspera = 77f;
                 }
-               
-               
+
+                else
+                {
+                    break;
+                }
 
                 break;
 
@@ -313,6 +316,10 @@ public class Incubadora : MonoBehaviour
                     incubando = true;
                     tEspera = 77f;
                 }
+                else
+                {
+                    break;
+                }
                 break;
 
             case 3:
@@ -377,6 +384,10 @@ public class Incubadora : MonoBehaviour
                     incuO = true;
                     incubando = true;
                     tEspera = 77f;
+                }
+                else
+                {
+                    break;
                 }
                 break;
 
@@ -443,6 +454,10 @@ public class Incubadora : MonoBehaviour
                     incubando = true;
                     tEspera = 77f;
                 }
+                else
+                {
+                    break;
+                }
                 break;
 
             case 5:
@@ -508,7 +523,10 @@ public class Incubadora : MonoBehaviour
                     incubando = true;
                     tEspera = 77f;
                 }
-
+                else
+                {
+                    break;
+                }
                 break;
 
             case 6:
@@ -573,6 +591,10 @@ public class Incubadora : MonoBehaviour
                     incuO = true;
                     incubando = true;
                     tEspera = 77f;
+                }
+                else
+                {
+                    break;
                 }
                 break;
 
@@ -639,6 +661,10 @@ public class Incubadora : MonoBehaviour
                     incubando = true;
                     tEspera = 77f;
                 }
+                else
+                {
+                    break;
+                }
                 break;
 
             case 8:
@@ -703,6 +729,10 @@ public class Incubadora : MonoBehaviour
                     incuO = true;
                     incubando = true;
                     tEspera = 77f;
+                }
+                else
+                {
+                    break;
                 }
                 break;
         }
