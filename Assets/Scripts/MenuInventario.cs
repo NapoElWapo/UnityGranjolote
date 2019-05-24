@@ -51,7 +51,7 @@ public class MenuInventario : MonoBehaviour
 {
     public RectTransform mochila, ajolotepedia, logrosMisiones, mapa, ajolotepediaDesconocido, ajolotepediaPlanta, ajolotepediaAgua, ajolotepediaFuego,
          ajolotepediaHielo, ajolotepediaNube, ajolotepediaOro, ajolotepediaLegendario, ajolotepediaASA, ajolotepediaASF, ajolotepediaASN, bPlanta, bAgua, bFuego,
-         bHielo, bNube, bOro, bLegendario, bASA, bASF, bASN;
+         bHielo, bNube, bOro, bLegendario, bASA, bASF, bASN,botonComprarArco,botonComprarAmuletoFuego,botonComprarAmuletoHielo;
     public static bool menuCerrado = false;
     public GameObject inventario_ui;
     public bool r1 = false, r2 = false, r3 = false, r4 = false, r5 = false, r6 = false, r7 = false, r8 = false, r9 = false, r10 = false;
