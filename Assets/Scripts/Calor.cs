@@ -9,15 +9,17 @@ public class Calor : MonoBehaviour
     public bool quemandose=false,resistencia=false;
     MenuInventario conex;
     slot amuleto;
-
+    TiendaUI comprar;
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
+        comprar = GameObject.Find("TiendaUI").GetComponent<TiendaUI>();
     }
 
     private void OnTriggerStay(Collider collision)
-	{	
-		if(collision.gameObject.CompareTag("Player"))
+	{
+        
+        if (collision.gameObject.CompareTag("Player"))
 		{
             quemandose = true;
             if (resistencia==false)
@@ -28,6 +30,7 @@ public class Calor : MonoBehaviour
                 playerScript.health -= 1;
                 if (quemandose == true)
                 {
+                    comprar.poderComprarAF = true;
                     imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
                 }
 

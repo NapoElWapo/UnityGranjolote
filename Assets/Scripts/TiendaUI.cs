@@ -7,10 +7,10 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class TiendaUI : MonoBehaviour
 {
 
-    public RectTransform  producto1, producto2, producto3, producto4, producto5, producto6, tiendaUI;
+    public RectTransform  producto1, producto2, producto3, producto4, producto5, producto6, tiendaUI,botonComprarArco, botonComprarAmuletoFuego, botonComprarAmuletoHielo;
     private bool p1=false, p2=false, p3=false, p4=false, p5=false, p6=false,lc=false,ac=false,afc=false,ahc=false,rc=false;
     public GameObject current_selected_obj,lanza,arco,rastrillo,AF,AH, comida, cacaP, cacaA, cacaF, cacaH, cacaN, cacaO,cacaL;
-
+    public bool poderComprarArco=false, poderComprarAF=false, poderComprarAH=false;
     public int dinero;
     public Text uiDinero;
 
@@ -64,6 +64,10 @@ public class TiendaUI : MonoBehaviour
         itemslot8 = conex.coleccionables.Find(x => x.Slot_name == "Slot8");
         sslot8.sprite = itemslot8.Slot_ui_img.sprite;
         stack8.text = itemslot8.Slot_stack.text;
+
+        botonComprarArco.gameObject.SetActive(poderComprarArco);
+        botonComprarAmuletoFuego.gameObject.SetActive(poderComprarAF);
+        botonComprarAmuletoHielo.gameObject.SetActive(poderComprarAH);
     }
 
     public void Vender()

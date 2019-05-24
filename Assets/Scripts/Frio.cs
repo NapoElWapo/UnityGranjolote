@@ -9,16 +9,18 @@ public class Frio : MonoBehaviour
     public bool congelandose=false,resistencia=false;
     MenuInventario conex;
     slot amuleto;
-
+    TiendaUI comprar;
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
+        comprar = GameObject.Find("TiendaUI").GetComponent<TiendaUI>();
     }
 
     private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {  
+        {
+            
             if (resistencia==false)
             {
                 GameObject Jugador = GameObject.FindWithTag("Player");
@@ -28,6 +30,7 @@ public class Frio : MonoBehaviour
                 playerScript.health -= 1;
                 if (congelandose == true)
                 {
+                    comprar.poderComprarAH = true;
                     imagenFrio.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
                 }
                

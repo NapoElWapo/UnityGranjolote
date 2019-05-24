@@ -11,7 +11,8 @@ public class HerramientaSeleccionada : MonoBehaviour
     public GameObject lanza, arco,rastrillo, ajoloteSA, ajoloteSF,fuego,agua,lanzaClick1,lanzaClick2,arcoClick,flechaClick1,flechaClick2,rastrillo1;
     private int slotPosition = 0;
     public int estaminaS=0, maxEstaminaS=100,nivelAgua=1,nivelFuego=1,nivelNube=1;
-    private bool hayFuego,hayAgua,lanzaComprobar=false,rastrilloComprobar=false,AAComprobar=false,AFComprobar=false,lanzaPesaca=false,arcoPesca=false,rastrilloGusano=false;
+    private bool hayFuego,hayAgua,lanzaComprobar=false,rastrilloComprobar=false,AAComprobar=false,
+        AFComprobar=false,lanzaPesaca=false,arcoPesca=false,rastrilloGusano=false,usando=false;
     MenuInventario conex;
     [SerializeField]
     slot comprobar,nube;
@@ -141,10 +142,10 @@ public class HerramientaSeleccionada : MonoBehaviour
                     
 
 
-                    if (Input.GetMouseButtonDown(1))
+                    if (Input.GetMouseButtonDown(1)&&usando==false)
                     {
 
-
+                        usando = true;
                         lanzaPesaca = true;
                         StartCoroutine(animacionLanza());
                         
@@ -159,10 +160,10 @@ public class HerramientaSeleccionada : MonoBehaviour
                         lanza.gameObject.SetActive(false);
                         arco.gameObject.SetActive(true);
                     }
-                    if (Input.GetMouseButtonDown(1))
+                    if (Input.GetMouseButtonDown(1)&&usando==false)
                     {
 
-
+                        usando = true;
                         arcoPesca = true;
                         StartCoroutine(animacionArco());
 
@@ -183,10 +184,10 @@ public class HerramientaSeleccionada : MonoBehaviour
                         rastrillo.gameObject.SetActive(true);
                     }
 
-                    if (Input.GetMouseButtonDown(1))
+                    if (Input.GetMouseButtonDown(1)&&usando==false)
                     {
 
-
+                        usando = true;
                         rastrilloGusano = true;
                         StartCoroutine(animacionRastrillo());
 
@@ -287,7 +288,7 @@ public class HerramientaSeleccionada : MonoBehaviour
         lanzaClick1.gameObject.SetActive(false);
         lanza.gameObject.SetActive(true);
         lanzaPesaca = false;
-
+        usando = false;
     }
 
     IEnumerator animacionArco()
@@ -306,6 +307,7 @@ public class HerramientaSeleccionada : MonoBehaviour
         arcoClick.gameObject.SetActive(false);
         arco.gameObject.SetActive(true);
         arcoPesca = false;
+        usando = false;
 
     }
 
@@ -320,6 +322,6 @@ public class HerramientaSeleccionada : MonoBehaviour
         rastrillo.gameObject.SetActive(rastrillo);
         
         rastrilloGusano = false;
-
+        usando = false;
     }
 }

@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class MinijuegoPescaArco : MonoBehaviour
 {
-    public RectTransform pez, posFinal, panelPesca;
+    public RectTransform pez, posFinal, panelPesca, holder, pescaHolder, finalholder, pezholder,orbe,pescadin;
 
     private Vector2 posInicio;
     private float vel;
     public bool pescarOrbe;
-
+    public GameObject pescado, current_selected_obj,orbeF;
     private void OnEnable()
     {
-        pez = GameObject.Find("Pececin2").GetComponent<RectTransform>();
-        posFinal = GameObject.Find("FalloPesca2").GetComponent<RectTransform>();
-        panelPesca = GameObject.Find("MiniPescaArco").GetComponent<RectTransform>();
-        posInicio = pez.transform.position;
+        pez = pezholder.GetComponent<RectTransform>();
+        posFinal = finalholder.GetComponent<RectTransform>();
+        panelPesca = pescaHolder.GetComponent<RectTransform>();
+        posInicio = holder.transform.position;
+        pescadin.gameObject.SetActive(true);
         if (pescarOrbe)
         {
-            GameObject.Find("Pececin2").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Pececin2").GetComponent<RectTransform>().GetChild(1).gameObject.SetActive(true);
+            pescadin.gameObject.SetActive(false);
+            orbe.gameObject.SetActive(true);
             vel = 500;
         }
         StartCoroutine(MoverPez());
@@ -60,19 +61,25 @@ public class MinijuegoPescaArco : MonoBehaviour
         {
             if (!pescarOrbe)
             {
-                if (Input.GetKeyDown("e"))
+                if (Input.GetButtonDown("e"))
                 {
-                    GameObject.Find("Pececin2").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
+                    pescadin.gameObject.SetActive(false);
                     vel = 0;
+                    current_selected_obj = pescado.transform.gameObject;
+                    GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
                     StartCoroutine(Delay());
                 }
             }
             if (pescarOrbe)
             {
-                if (Input.GetKeyDown("e"))
+                if (Input.GetButtonDown("e"))
                 {
-                    GameObject.Find("Pececin2").GetComponent<RectTransform>().GetChild(1).gameObject.SetActive(false);
+                    orbe.gameObject.SetActive(false);
                     vel = 0;
+                    current_selected_obj = orbeF.transform.gameObject;
+                    
+                    GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
+                    pescarOrbe = false;
                     StartCoroutine(Delay());
                 }
             }
