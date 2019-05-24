@@ -6,13 +6,19 @@ public class PatrullaAjolote : MonoBehaviour
 {
     public string Movimiento, Asustado;
 
-    public bool harto, movimiento, asustado, vagar;
+    public bool harto, movimiento, asustado, vagar, awaEspanta, lumbreEspanta;
 
     public float velocidad = 2f;
+    public float velocidadAwado;
+    public float velocidadAlumbrado;
     public float velocidadAsustado = 7f;
+    public float velocidadAwadoAsustado;
+    public float velocidadAlumbradoAsustado;
     public float cambioDireccion = 0.5f;
     public float maxCambio = 180f;
     public float tiempoHarto = 6f;
+    public float tiempoHartoAwado;
+    public float tiempoHartoAlumbrado;
     public int contador;
     Animator ajoloteAnimator;
     CharacterController controller;
@@ -65,9 +71,10 @@ public class PatrullaAjolote : MonoBehaviour
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
             
             Vector3 adelante = transform.TransformDirection(Vector3.forward);
-            controller.SimpleMove(adelante * velocidad);
+            controller.SimpleMove(adelante * velocidadAsustado);
             StartCoroutine(Delay());
         }
+
     }
 
     void LateUpdate()
@@ -122,11 +129,29 @@ public class PatrullaAjolote : MonoBehaviour
         {
             ajoloteAnimator.SetBool(Movimiento, true);
             ajoloteAnimator.SetBool(Asustado, true);
-            this.velocidad = velocidadAsustado;
             this.harto = true;
             ajoloteAnimator.Play("Armature|correr");
             //Debug.Log("Triggerea");
         }
+
+        if(other.tag == "Agua"|| other.tag == "Agua2")
+        {
+            velocidad = velocidadAwado;
+            velocidadAsustado = velocidadAwadoAsustado;
+            tiempoHarto = tiempoHartoAwado;
+            if (awaEspanta)
+                harto = true;
+        }
+
+        if (other.tag == "Fuego" || other.tag == "Fuego")
+        {
+            velocidad = velocidadAlumbrado;
+            velocidadAsustado = velocidadAlumbradoAsustado;
+            tiempoHarto = tiempoHartoAlumbrado;
+            if (lumbreEspanta)
+                harto = true;
+        }
+
         else if(other.tag=="LimiteAjolote" )
         {
             contador = 1;
