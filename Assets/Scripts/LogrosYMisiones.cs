@@ -64,9 +64,7 @@ public class LogrosYMisiones : MonoBehaviour
     void Start()
     {
         //Se hacen las conexiones directas a las variables de los scripts
-        conexMI = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
-        conexIncu = GameObject.Find("Incubadora").GetComponent<Incubadora>();
-
+        
         //Misiones no disponibles al inicio
         m2.gameObject.SetActive(false);
         m3.gameObject.SetActive(false);
@@ -77,6 +75,9 @@ public class LogrosYMisiones : MonoBehaviour
         m8.gameObject.SetActive(false);
         m9.gameObject.SetActive(false);
         m10.gameObject.SetActive(false);
+
+        conexMI = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
+        conexIncu = GameObject.Find("Incubadora").GetComponent<Incubadora>();
 
     }
 

@@ -4710,6 +4710,8 @@ GameObject:
   - component: {fileID: 1813247415}
   - component: {fileID: 1813247414}
   - component: {fileID: 1813247411}
+  - component: {fileID: 1813247412}
+  - component: {fileID: 4045265726435000435}
   m_Layer: 0
   m_Name: Ramas
   m_TagString: Untagged
@@ -4724,14 +4726,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813247410}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 47.68, y: 1.58, z: 151.33401}
   m_LocalScale: {x: 64.41822, y: 64.41822, z: 64.41822}
   m_Children:
   - {fileID: 1630392741}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &1813247415
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4790,3 +4792,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23617381, y: 0.0477974, z: 0.20800237}
   m_Center: {x: 0.027035074, y: 0.00053093646, z: 0.06442091}
+--- !u!65 &1813247412
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813247410}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.23617381, y: 0.0477974, z: 0.20800237}
+  m_Center: {x: 0.027035074, y: 0.00053093646, z: 0.06442091}
+--- !u!114 &4045265726435000435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813247410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac7209284ef4aa449b0f817f95f0c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flamable: {fileID: 1630392740}
+  objeto: {fileID: 1813247410}
+  flamabilidad: 1

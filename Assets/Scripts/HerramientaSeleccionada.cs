@@ -32,11 +32,13 @@ public class HerramientaSeleccionada : MonoBehaviour
         {
             conexLM.MaxAgua = true;
         }
-        else if(nivelFuego==3)
+
+        if (nivelFuego==3)
         {
             conexLM.MaxFuego = true;
         }
-        else if(nivelNube==3)
+
+        if (nivelNube==3)
         {
             conexLM.MaxNube = true;
         }

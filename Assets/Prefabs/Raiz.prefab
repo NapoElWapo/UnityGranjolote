@@ -4710,6 +4710,7 @@ GameObject:
   - component: {fileID: 553237570148153060}
   - component: {fileID: 3135163073306252451}
   - component: {fileID: 4423485138909287058}
+  - component: {fileID: 7606010141094240570}
   m_Layer: 0
   m_Name: Raiz
   m_TagString: Untagged
@@ -4724,14 +4725,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6911212706056483657}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 66.25214, y: 6.043067, z: 151.2339}
   m_LocalScale: {x: 58.31061, y: 58.31061, z: 58.31061}
   m_Children:
   - {fileID: 7042599771149169994}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &553237570148153060
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4792,3 +4793,16 @@ MonoBehaviour:
   flamable: {fileID: 3234312330900352670}
   objeto: {fileID: 6911212706056483657}
   flamabilidad: 2
+--- !u!65 &7606010141094240570
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6911212706056483657}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2267623, y: 0.043823007, z: 0.1979874}
+  m_Center: {x: 0.0008404954, y: -0.007104901, z: -0.016059684}
