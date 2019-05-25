@@ -19,7 +19,7 @@ public class SistemaInventario
     private List<ItemInventario> ajolotes = new List<ItemInventario>();
 
     private ItemInventario selectHerramienta;
-
+    
     public ItemInventario SelectHerramienta
     {
         get { return selectHerramienta; }
@@ -44,6 +44,7 @@ public class SistemaInventario
     //Agrega un elemento del inventario y si ya existe aumenta el stack del elemento de la lista 
     public bool AddItem(ItemInventario item)
     {
+       
         switch (item.Category)
         {
             case ItemCategory.recolectables:
@@ -73,6 +74,7 @@ public class SistemaInventario
                 {
                     recolectables.Add(item);//se agrega si no existe
                     GameMaster.instanciaCompartida.GUI_controlador.insertar_recolectables(item);
+                    
                     return false;
                 }
                 else
@@ -89,6 +91,7 @@ public class SistemaInventario
                 {
                     herramientas.Add(item);//se agrega si no existe
                     GameMaster.instanciaCompartida.GUI_controlador.insertar_herramientas(item);
+                    
                 }
                 break;
 
@@ -102,6 +105,7 @@ public class SistemaInventario
                 {
                     pasivas.Add(item);//se agrega si no existe
                     GameMaster.instanciaCompartida.GUI_controlador.insertar_pasivas(item);
+                    
                 }
                 break;
 
@@ -131,6 +135,7 @@ public class SistemaInventario
                 {
                     ajolotes.Add(item);//se agrega si no existe
                     GameMaster.instanciaCompartida.GUI_controlador.insertar_ajolotes(item);
+                    
                     return false;
                 }
                 else
@@ -148,6 +153,8 @@ public class SistemaInventario
         //TO DO: AQUI SE NECESITA HACER TAMBIEN UNA ACTUALIZACION A LA UI para liberar el slot
         public void RemoveItem(ItemInventario item)
     {
+
+        
         switch (item.Category)
         {
             case ItemCategory.recolectables:
@@ -180,6 +187,7 @@ public class SistemaInventario
                         var tmp_obj = recolectables.Find(x => x.Nombre.Contains(item.Nombre));
                         recolectables.Remove(item);
                         GameMaster.instanciaCompartida.GUI_controlador.quitar_recolectables(tmp_obj);
+                        
                     }
                    
                        
@@ -196,6 +204,7 @@ public class SistemaInventario
                     {
                         herramientas.Remove(item);
                         GameMaster.instanciaCompartida.GUI_controlador.quitar_herramientas(tmp_obj);
+                        
                     }
                 }
                 break;
@@ -205,6 +214,7 @@ public class SistemaInventario
                 {
                     pasivas.Remove(item);//se agrega si no existe
                     GameMaster.instanciaCompartida.GUI_controlador.quitar_pasivas(item);
+                    
                 }
                 
                 break;
@@ -229,6 +239,7 @@ public class SistemaInventario
                     {
                         ajolotes.Remove(item);//se agrega si no existe
                         GameMaster.instanciaCompartida.GUI_controlador.quitar_ajolotes(item);
+                        
                     }
 
                 }
