@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -112,6 +112,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &80125781 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
+    type: 3}
+  m_PrefabInstance: {fileID: 90625444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c2221bbf357eb4ea5b8b0feedf5691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &90625444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123,6 +135,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enfermera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
+        type: 3}
+      propertyPath: textDisplay
+      value: 
+      objectReference: {fileID: 419850238}
+    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
+        type: 3}
+      propertyPath: continueBotton
+      value: 
+      objectReference: {fileID: 243405656}
+    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
+        type: 3}
+      propertyPath: PlayerUI
+      value: 
+      objectReference: {fileID: 1581854375}
+    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
+        type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: Gracias por su preferencia
       objectReference: {fileID: 0}
     - target: {fileID: 5359994014631072418, guid: f6cbc41eb7b06c84f8b125dd3a042572,
         type: 3}
@@ -320,6 +352,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &243405656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4866971760939829801, guid: 98250b17986ea2549bfa49634cb371d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1581854372}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &314418904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -500,6 +538,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a4805917b185d3429f41baee34250b8, type: 3}
+--- !u!114 &419850238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 582043363437617084, guid: 98250b17986ea2549bfa49634cb371d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1581854372}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &420258001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -696,6 +746,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlcaldeDoctor
       objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: CurarAEnlatado.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: ASA
+      value: 
+      objectReference: {fileID: 420258002}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: PlayerUI
+      value: 
+      objectReference: {fileID: 1581854375}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: textDisplay
+      value: 
+      objectReference: {fileID: 1768839914}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: continueBotton
+      value: 
+      objectReference: {fileID: 1581854373}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: CurarAEnlatado.Array.data[0]
+      value: Balgame dios
+      objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: CurarAEnlatado.Array.data[1]
+      value: que le paso a ese pobre ajolote
+      objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: CurarAEnlatado.Array.data[2]
+      value: permitemelo tantito para curarlo
+      objectReference: {fileID: 0}
     - target: {fileID: 798878318512664591, guid: c5aba06c92ed8a34d94e575a48403480,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -750,46 +840,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: CurarAEnlatado.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: ASA
-      value: 
-      objectReference: {fileID: 420258002}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: PlayerUI
-      value: 
-      objectReference: {fileID: 1581854375}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: textDisplay
-      value: 
-      objectReference: {fileID: 1581854374}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: continueBotton
-      value: 
-      objectReference: {fileID: 1581854373}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: CurarAEnlatado.Array.data[0]
-      value: Balgame dios
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: CurarAEnlatado.Array.data[1]
-      value: que le paso a ese pobre ajolote
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: CurarAEnlatado.Array.data[2]
-      value: permitemelo tantito para curarlo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5aba06c92ed8a34d94e575a48403480, type: 3}
@@ -1594,6 +1644,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reloj
       objectReference: {fileID: 0}
+    - target: {fileID: 1261142511641303510, guid: 98250b17986ea2549bfa49634cb371d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 80125781}
+    - target: {fileID: 1261142511641303510, guid: 98250b17986ea2549bfa49634cb371d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextSentence
+      objectReference: {fileID: 0}
+    - target: {fileID: 269726083451632338, guid: 98250b17986ea2549bfa49634cb371d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 691635928}
+    - target: {fileID: 269726083451632338, guid: 98250b17986ea2549bfa49634cb371d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextSentence
+      objectReference: {fileID: 0}
     - target: {fileID: 3515214524154020040, guid: 98250b17986ea2549bfa49634cb371d2,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1654,16 +1724,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 269726083451632338, guid: 98250b17986ea2549bfa49634cb371d2,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 691635928}
-    - target: {fileID: 269726083451632338, guid: 98250b17986ea2549bfa49634cb371d2,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextSentence
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98250b17986ea2549bfa49634cb371d2, type: 3}
 --- !u!1 &1581854373 stripped
@@ -1672,18 +1732,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1581854372}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1581854374 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2217866255948103272, guid: 98250b17986ea2549bfa49634cb371d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1581854372}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1581854375 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2876020701880912963, guid: 98250b17986ea2549bfa49634cb371d2,
@@ -1886,6 +1934,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 707a037c3353fc2418cca759f7d6c8de, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd04dcdd909a8f942afe83c6b1d7cdd1, type: 3}
+--- !u!114 &1768839914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5288293666145313730, guid: 98250b17986ea2549bfa49634cb371d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1581854372}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1857666924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2105,14 +2165,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1805964766, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: MainCamera
-      value: 
-      objectReference: {fileID: 1944612927}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: Jugador
       value: 
       objectReference: {fileID: 1944612928}
+    - target: {fileID: 1805964766, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 1944612927}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
 --- !u!20 &1944612927 stripped
