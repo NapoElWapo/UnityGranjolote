@@ -10,6 +10,8 @@ public class MinijuegoPescaArco : MonoBehaviour
     private float vel;
     public bool pescarOrbe;
     public GameObject pescado, current_selected_obj,orbeF;
+    public int contadorPecesA=0;
+    LogrosYMisiones contador;
     private void OnEnable()
     {
         pez = pezholder.GetComponent<RectTransform>();
@@ -25,7 +27,10 @@ public class MinijuegoPescaArco : MonoBehaviour
         }
         StartCoroutine(MoverPez());
     }
-
+    void Start()
+    {
+        contador = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
+    }
     private void OnDisable()
     {
         pez.transform.position = posInicio;
@@ -67,6 +72,8 @@ public class MinijuegoPescaArco : MonoBehaviour
                     vel = 0;
                     current_selected_obj = pescado.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
+                    contadorPecesA++;
+                    contador.contadorA = contadorPecesA;
                     StartCoroutine(Delay());
                 }
             }

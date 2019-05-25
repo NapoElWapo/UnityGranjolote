@@ -10,9 +10,11 @@ public class Frio : MonoBehaviour
     MenuInventario conex;
     slot amuleto;
     TiendaUI comprar;
+    LogrosYMisiones conexLM;
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
+        conexLM = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
         comprar = GameObject.Find("TiendaUI").GetComponent<TiendaUI>();
     }
 
@@ -31,6 +33,7 @@ public class Frio : MonoBehaviour
                 if (congelandose == true)
                 {
                     comprar.poderComprarAH = true;
+                    conexLM.congelado = true;
                     imagenFrio.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
                 }
                

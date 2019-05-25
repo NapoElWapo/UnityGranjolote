@@ -18,14 +18,16 @@ public class TiendaUI : MonoBehaviour
 
     slot itemslot1, itemslot2, itemslot3, itemslot4, itemslot5, itemslot6, itemslot7, itemslot8;
     MenuInventario conex;
-    public RectTransform bslot1, bslot2, bslot3, bslot4, bslot5, bslot6, bslot7, bslot8;
+    public RectTransform bslot1, bslot2, bslot3, bslot4, bslot5, bslot6, bslot7, bslot8, precioAF1, precioAF2, precioAH1, precioAH2;
     private int slotSeleccionado = 0;
     public Image sslot1, sslot2, sslot3, sslot4, sslot5, sslot6, sslot7, sslot8;
     public Text stack1, stack2, stack3, stack4, stack5, stack6, stack7, stack8;
+    LogrosYMisiones conexLM;
     // Start is called before the first frame update
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
+        conexLM= GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
     }
 
     // Update is called once per frame
@@ -65,9 +67,21 @@ public class TiendaUI : MonoBehaviour
         sslot8.sprite = itemslot8.Slot_ui_img.sprite;
         stack8.text = itemslot8.Slot_stack.text;
 
-        botonComprarArco.gameObject.SetActive(poderComprarArco);
+        botonComprarArco.gameObject.SetActive(conexLM.m3c);
         botonComprarAmuletoFuego.gameObject.SetActive(poderComprarAF);
         botonComprarAmuletoHielo.gameObject.SetActive(poderComprarAH);
+
+        if(conexLM.m7c)
+        {
+            precioAF1.GetComponent<Text>().text = "Precio: 1500 oro";
+            precioAF2.GetComponent<Text>().text = "Precio: 1500 oro";
+        }
+
+        if (conexLM.m8c)
+        {
+            precioAH1.GetComponent<Text>().text = "Precio: 2000 oro";
+            precioAH2.GetComponent<Text>().text = "Precio: 2000 oro";
+        }
     }
 
     public void Vender()
@@ -837,7 +851,15 @@ public class TiendaUI : MonoBehaviour
                 {
                     current_selected_obj = AF.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
-                    GameMaster.instanciaCompartida.dinero -= 8000;
+                    if(conexLM.m7c)
+                    {
+                        GameMaster.instanciaCompartida.dinero -= 1500;
+                    }
+                    else
+                    {
+                        GameMaster.instanciaCompartida.dinero -= 8000;
+                    }
+                    
                     ToggleProducto4();
                     afc = true;
                 }
@@ -849,7 +871,14 @@ public class TiendaUI : MonoBehaviour
                 {
                     current_selected_obj = AH.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
-                    GameMaster.instanciaCompartida.dinero -= 12000;
+                    if (conexLM.m7c)
+                    {
+                        GameMaster.instanciaCompartida.dinero -= 2000;
+                    }
+                    else
+                    {
+                        GameMaster.instanciaCompartida.dinero -= 12000;
+                    }
                     ToggleProducto5();
                     ahc =true;
                 }

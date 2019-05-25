@@ -10,9 +10,11 @@ public class Calor : MonoBehaviour
     MenuInventario conex;
     slot amuleto;
     TiendaUI comprar;
+    LogrosYMisiones conexML;
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
+        conexML = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
         comprar = GameObject.Find("TiendaUI").GetComponent<TiendaUI>();
     }
 
@@ -31,6 +33,7 @@ public class Calor : MonoBehaviour
                 if (quemandose == true)
                 {
                     comprar.poderComprarAF = true;
+                    conexML.quemado = true;
                     imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
                 }
 

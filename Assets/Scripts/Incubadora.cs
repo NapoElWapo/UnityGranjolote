@@ -15,6 +15,7 @@ public class Incubadora : MonoBehaviour
     MenuInventario conex;
     public bool incuP, incuA, incuF, incuH, incuN, incuO,incubando,incuT;
     public GameObject current_selected_obj,huevoP,huevoA,huevoF,huevoH,huevoN,huevoO,ajoP,ajoA,ajoF,ajoH,ajoN,ajoO;
+    public bool primerP=false, primerA=false, primerF=false, primerH=false, primerN=false, primerO=false;
 
     public float tEspera;
 
@@ -750,6 +751,7 @@ public class Incubadora : MonoBehaviour
                 slotIncu1.sprite = ajoP.GetComponent<ItemInventario>().Inventory_Decal;
                 incubando = false;
                 incuT = true;
+                primerP = true;
             }
         }
         else if (incuA == true)
@@ -761,6 +763,7 @@ public class Incubadora : MonoBehaviour
                 slotIncu1.sprite = ajoA.GetComponent<ItemInventario>().Inventory_Decal;
                 incubando = false;
                 incuT = true;
+                primerA = true;
             }
         }
         else if (incuF == true)
@@ -772,6 +775,7 @@ public class Incubadora : MonoBehaviour
                 slotIncu1.sprite = ajoF.GetComponent<ItemInventario>().Inventory_Decal;
                 incubando = false;
                 incuT = true;
+                primerF = true;
             }
         }
         else if (incuH == true)
@@ -783,6 +787,7 @@ public class Incubadora : MonoBehaviour
                 slotIncu1.sprite = ajoH.GetComponent<ItemInventario>().Inventory_Decal;
                 incubando = false;
                 incuT = true;
+                primerH = true;
             }
         }
         else if (incuN == true)
@@ -794,6 +799,7 @@ public class Incubadora : MonoBehaviour
                 slotIncu1.sprite = ajoN.GetComponent<ItemInventario>().Inventory_Decal;
                 incubando = false;
                 incuT = true;
+                primerN = true;
             }
         }
         else if (incuO == true)
@@ -805,6 +811,7 @@ public class Incubadora : MonoBehaviour
                 slotIncu1.sprite = ajoO.GetComponent<ItemInventario>().Inventory_Decal;
                 incubando = false;
                 incuT = true;
+                primerO = true;
             }
         }
     }
