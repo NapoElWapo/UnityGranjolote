@@ -5,7 +5,7 @@ using UnityEngine;
 public class AjoloteDesecho : MonoBehaviour
 {
 
-    public GameObject boton;
+    public GameObject boton, current_selected_obj;
     public bool corrutina = false;
     public bool resetTim = false;
     public float tiempoDesecho;
@@ -53,5 +53,7 @@ public class AjoloteDesecho : MonoBehaviour
         this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
         corrutina = true;
         resetTim = true;
+        //current_selected_obj = desecho.transform.gameObject;
+        GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
     }
 }

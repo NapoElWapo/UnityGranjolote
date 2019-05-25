@@ -8,9 +8,9 @@ public class AjoloteCriadero : MonoBehaviour
 {
     RectTransform slotActual;
     public RectTransform ajoloteP, ajoloteA, ajoloteF, ajoloteH, ajoloteN, ajoloteD, ajoloteL, nuevoSlot, select1, select2, select3, select4;
-    public RectTransform ajoloteActual, doradoTemp;
+    public RectTransform ajoloteActual, doradoTemp, criaderoUI;
 
-    public GameObject botonesCriadero, criaderoUI, objetoAct, ajoP, ajoA, ajoF, ajoH, ajoN, ajoD, ajoL;
+    public GameObject botonesCriadero, objetoAct, ajoP, ajoA, ajoF, ajoH, ajoN, ajoD, ajoL;
     slot slot1, slot2, slot3, slot4;
 
     public Image sslot1, sslot2, sslot3, sslot4;
@@ -398,10 +398,12 @@ public class AjoloteCriadero : MonoBehaviour
     public void ToggleCriadero()
     {
         UIactivo = !UIactivo;
-        criaderoUI.gameObject.SetActive(UIactivo);
+        //criaderoUI.gameObject.SetActive(UIactivo);
 
         if (UIactivo)
         {
+            criaderoUI.localPosition = new Vector2(0f, 0f);
+
             Cursor.lockState = CursorLockMode.None;
 
             Cursor.visible = true;
@@ -410,15 +412,17 @@ public class AjoloteCriadero : MonoBehaviour
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
             mouseLook.XSensitivity = 0.0F;
             mouseLook.YSensitivity = 0.0F;
-            Time.timeScale = 0f;
+            
+            //Time.timeScale = 0f;
         }
         else if (!UIactivo)
         {
+            criaderoUI.localPosition = new Vector2(4000f, 4000f);
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
             mouseLook.XSensitivity = 2F;
             mouseLook.YSensitivity = 2F;
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
         }
     }
 

@@ -1409,18 +1409,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &132526484 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 132526484, guid: 7a4805917b185d3429f41baee34250b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 5675211461198405185}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec70abf77d5a0645a664795f40a1fa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &140356811
 GameObject:
   m_ObjectHideFlags: 0
@@ -7746,7 +7734,7 @@ MonoBehaviour:
     agarrarObjetivos:
     - cantidad: 1
       tipo: AjoloteOro
-  tmplog: {fileID: 132526484}
+  tmplog: {fileID: 0}
 --- !u!4 &635009459
 Transform:
   m_ObjectHideFlags: 0
@@ -7879,7 +7867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &673636162
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12525,6 +12513,8 @@ MonoBehaviour:
   pezholder: {fileID: 0}
   pescado: {fileID: 0}
   current_selected_obj: {fileID: 0}
+  contadorPecesL: 0
+  contadorConsecutivoPeces: 0
 --- !u!1001 &1124706156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13154,7 +13144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1207603801
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13181,7 +13171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: 0}
+  m_AnchoredPosition: {x: 4000, y: 4000}
   m_SizeDelta: {x: 696.9, y: 406.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1207603802
@@ -18193,7 +18183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647894328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 476.16754, y: -302.56586, z: -546.66986}
+  m_LocalPosition: {x: 429.99054, y: -335.907, z: -569.96533}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18730,8 +18720,8 @@ MonoBehaviour:
   select4: {fileID: 1377469688}
   ajoloteActual: {fileID: 0}
   doradoTemp: {fileID: 0}
+  criaderoUI: {fileID: 1207603801}
   botonesCriadero: {fileID: 1353644274}
-  criaderoUI: {fileID: 673636161}
   objetoAct: {fileID: 0}
   ajoP: {fileID: 885170332}
   ajoA: {fileID: 5237843}
@@ -22008,6 +21998,7 @@ MonoBehaviour:
   pescado: {fileID: 0}
   current_selected_obj: {fileID: 0}
   orbeF: {fileID: 0}
+  contadorPecesA: 0
 --- !u!50 &2010349154
 Rigidbody2D:
   serializedVersion: 4
