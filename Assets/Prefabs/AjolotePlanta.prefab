@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1553041752338700307}
   - component: {fileID: 9170133037535178482}
   - component: {fileID: 9170133037535178493}
-  - component: {fileID: 9170133037535178492}
-  - component: {fileID: 1486068220}
   - component: {fileID: 539682081}
   - component: {fileID: 4909858633316881981}
+  - component: {fileID: 5758718826324800300}
+  - component: {fileID: 2400742153319716233}
   m_Layer: 0
   m_Name: AjolotePlanta
   m_TagString: Item
@@ -74,11 +74,19 @@ MonoBehaviour:
   movimiento: 0
   asustado: 0
   vagar: 0
+  awaEspanta: 0
+  lumbreEspanta: 0
   velocidad: 3
+  velocidadAwado: 0
+  velocidadAlumbrado: 0
   velocidadAsustado: 7
+  velocidadAwadoAsustado: 0
+  velocidadAlumbradoAsustado: 0
   cambioDireccion: 0.3
   maxCambio: 180
   tiempoHarto: 6
+  tiempoHartoAwado: 0
+  tiempoHartoAlumbrado: 0
   contador: 0
 --- !u!95 &9170133037535178493
 Animator:
@@ -99,32 +107,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!135 &9170133037535178492
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9170133037535178481}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 35
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &1486068220
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9170133037535178481}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &539682081
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -157,6 +139,32 @@ MonoBehaviour:
   Stack_value: 1
   Stackeble: 0
   MaxStack: 1
+--- !u!135 &5758718826324800300
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170133037535178481}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 35
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &2400742153319716233
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170133037535178481}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &9170133039184758868
 PrefabInstance:
   m_ObjectHideFlags: 0
