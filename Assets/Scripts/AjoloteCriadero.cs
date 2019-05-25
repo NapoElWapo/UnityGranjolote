@@ -8,15 +8,18 @@ public class AjoloteCriadero : MonoBehaviour
 {
     RectTransform slotActual;
     public RectTransform ajoloteP, ajoloteA, ajoloteF, ajoloteH, ajoloteN, ajoloteD, ajoloteL, nuevoSlot, select1, select2, select3, select4;
-    public RectTransform ajoloteActual, doradoTemp, criaderoUI;
+    public RectTransform ajoloteActual, doradoTemp, criaderoUI, itemsUI, ajolotesUI;
 
-    public GameObject botonesCriadero, objetoAct, ajoP, ajoA, ajoF, ajoH, ajoN, ajoD, ajoL;
-    slot slot1, slot2, slot3, slot4;
+    public GameObject botonesCriadero, objetoAct, ajoP, ajoA, ajoF, ajoH, ajoN, ajoD, ajoL, lataComida, pezComida, gusanoComida;
+    slot Aslot1, Aslot2, Aslot3, Aslot4, itemslot1, itemslot2, itemslot3, itemslot4, itemslot5, itemslot6, itemslot7, itemslot8;
 
-    public Image sslot1, sslot2, sslot3, sslot4;
+    public Image sAslot1, sAslot2, sAslot3, sAslot4, sslot1, sslot2, sslot3, sslot4, sslot5, sslot6, sslot7, sslot8;
 
     MenuInventario inv;
+    AjoloteDesecho ajoDes;
+
     int slot = 0;
+    int slotComida = 0;
     int slotSeleccionado = 0;
     private bool UIactivo;
 
@@ -28,17 +31,41 @@ public class AjoloteCriadero : MonoBehaviour
 
     void Update()
     {
-        slot1 = inv.ajolotes.Find(x => x.Slot_name == "Slot1");
-        sslot1.sprite = slot1.Slot_ui_img.sprite;
+        Aslot1 = inv.ajolotes.Find(x => x.Slot_name == "Slot1");
+        sAslot1.sprite = Aslot1.Slot_ui_img.sprite;
 
-        slot2 = inv.ajolotes.Find(x => x.Slot_name == "Slot2");
-        sslot2.sprite = slot2.Slot_ui_img.sprite;
+        Aslot2 = inv.ajolotes.Find(x => x.Slot_name == "Slot2");
+        sAslot2.sprite = Aslot2.Slot_ui_img.sprite;
 
-        slot3 = inv.ajolotes.Find(x => x.Slot_name == "Slot3");
-        sslot3.sprite = slot3.Slot_ui_img.sprite;
+        Aslot3 = inv.ajolotes.Find(x => x.Slot_name == "Slot3");
+        sAslot3.sprite = Aslot3.Slot_ui_img.sprite;
 
-        slot4 = inv.ajolotes.Find(x => x.Slot_name == "Slot4");
-        sslot4.sprite = slot4.Slot_ui_img.sprite;
+        Aslot4 = inv.ajolotes.Find(x => x.Slot_name == "Slot4");
+        sAslot4.sprite = Aslot4.Slot_ui_img.sprite;
+
+        itemslot1 = inv.coleccionables.Find(x => x.Slot_name == "Slot1");
+        sslot1.sprite = itemslot1.Slot_ui_img.sprite;
+
+        itemslot2 = inv.coleccionables.Find(x => x.Slot_name == "Slot2");
+        sslot2.sprite = itemslot2.Slot_ui_img.sprite;
+
+        itemslot3 = inv.coleccionables.Find(x => x.Slot_name == "Slot3");
+        sslot3.sprite = itemslot3.Slot_ui_img.sprite;
+
+        itemslot4 = inv.coleccionables.Find(x => x.Slot_name == "Slot4");
+        sslot4.sprite = itemslot4.Slot_ui_img.sprite;
+
+        itemslot5 = inv.coleccionables.Find(x => x.Slot_name == "Slot5");
+        sslot5.sprite = itemslot5.Slot_ui_img.sprite;
+
+        itemslot6 = inv.coleccionables.Find(x => x.Slot_name == "Slot6");
+        sslot6.sprite = itemslot6.Slot_ui_img.sprite;
+
+        itemslot7 = inv.coleccionables.Find(x => x.Slot_name == "Slot7");
+        sslot7.sprite = itemslot7.Slot_ui_img.sprite;
+
+        itemslot8 = inv.coleccionables.Find(x => x.Slot_name == "Slot8");
+        sslot8.sprite = itemslot8.Slot_ui_img.sprite;
     }
 
     public void dejarAjolote()
@@ -46,49 +73,49 @@ public class AjoloteCriadero : MonoBehaviour
         switch (slotSeleccionado)
         {
             case 1:
-                if(slot1.RealItemName == "AjoloteDePlanta" && ajoloteActual == ajoloteP)
+                if(Aslot1.RealItemName == "AjoloteDePlanta" && ajoloteActual == ajoloteP)
                 {
                     ponerAjolote();
                     objetoAct = ajoP.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot1.RealItemName == "AjoloteDeAgua" && ajoloteActual == ajoloteA)
+                if (Aslot1.RealItemName == "AjoloteDeAgua" && ajoloteActual == ajoloteA)
                 {
                     ponerAjolote();
                     objetoAct = ajoA.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot1.RealItemName == "AjoloteDeFuego" && ajoloteActual == ajoloteF)
+                if (Aslot1.RealItemName == "AjoloteDeFuego" && ajoloteActual == ajoloteF)
                 {
                     ponerAjolote();
                     objetoAct = ajoF.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot1.RealItemName == "AjoloteDeHielo" && ajoloteActual == ajoloteH)
+                if (Aslot1.RealItemName == "AjoloteDeHielo" && ajoloteActual == ajoloteH)
                 {
                     ponerAjolote();
                     objetoAct = ajoH.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot1.RealItemName == "AjoloteDeNube" && ajoloteActual == ajoloteN)
+                if (Aslot1.RealItemName == "AjoloteDeNube" && ajoloteActual == ajoloteN)
                 {
                     ponerAjolote();
                     objetoAct = ajoN.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot1.RealItemName == "AjoloteDeOro" && ajoloteActual == ajoloteD)
+                if (Aslot1.RealItemName == "AjoloteDeOro" && ajoloteActual == ajoloteD)
                 {
                     ponerAjolote();
                     objetoAct = ajoD.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot1.RealItemName == "AjoloteLegendario" && ajoloteActual == ajoloteL)
+                if (Aslot1.RealItemName == "AjoloteLegendario" && ajoloteActual == ajoloteL)
                 {
                     ponerAjolote();
                     objetoAct = ajoL.transform.gameObject;
@@ -97,49 +124,49 @@ public class AjoloteCriadero : MonoBehaviour
                 break;
 
             case 2:
-                if (slot2.RealItemName == "AjoloteDePlanta" && ajoloteActual == ajoloteP)
+                if (Aslot2.RealItemName == "AjoloteDePlanta" && ajoloteActual == ajoloteP)
                 {
                     ponerAjolote();
                     objetoAct = ajoP.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot2.RealItemName == "AjoloteDeAgua" && ajoloteActual == ajoloteA)
+                if (Aslot2.RealItemName == "AjoloteDeAgua" && ajoloteActual == ajoloteA)
                 {
                     ponerAjolote();
                     objetoAct = ajoA.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot2.RealItemName == "AjoloteDeFuego" && ajoloteActual == ajoloteF)
+                if (Aslot2.RealItemName == "AjoloteDeFuego" && ajoloteActual == ajoloteF)
                 {
                     ponerAjolote();
                     objetoAct = ajoF.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot2.RealItemName == "AjoloteDeHielo" && ajoloteActual == ajoloteH)
+                if (Aslot2.RealItemName == "AjoloteDeHielo" && ajoloteActual == ajoloteH)
                 {
                     ponerAjolote();
                     objetoAct = ajoH.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot2.RealItemName == "AjoloteDeNube" && ajoloteActual == ajoloteN)
+                if (Aslot2.RealItemName == "AjoloteDeNube" && ajoloteActual == ajoloteN)
                 {
                     ponerAjolote();
                     objetoAct = ajoN.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot2.RealItemName == "AjoloteDeOro" && ajoloteActual == ajoloteD)
+                if (Aslot2.RealItemName == "AjoloteDeOro" && ajoloteActual == ajoloteD)
                 {
                     ponerAjolote();
                     objetoAct = ajoD.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot2.RealItemName == "AjoloteLegendario" && ajoloteActual == ajoloteL)
+                if (Aslot2.RealItemName == "AjoloteLegendario" && ajoloteActual == ajoloteL)
                 {
                     ponerAjolote();
                     objetoAct = ajoL.transform.gameObject;
@@ -148,49 +175,49 @@ public class AjoloteCriadero : MonoBehaviour
                 break;
 
             case 3:
-                if (slot3.RealItemName == "AjoloteDePlanta" && ajoloteActual == ajoloteP)
+                if (Aslot3.RealItemName == "AjoloteDePlanta" && ajoloteActual == ajoloteP)
                 {
                     ponerAjolote();
                     objetoAct = ajoP.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot3.RealItemName == "AjoloteDeAgua" && ajoloteActual == ajoloteA)
+                if (Aslot3.RealItemName == "AjoloteDeAgua" && ajoloteActual == ajoloteA)
                 {
                     ponerAjolote();
                     objetoAct = ajoA.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot3.RealItemName == "AjoloteDeFuego" && ajoloteActual == ajoloteF)
+                if (Aslot3.RealItemName == "AjoloteDeFuego" && ajoloteActual == ajoloteF)
                 {
                     ponerAjolote();
                     objetoAct = ajoF.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot3.RealItemName == "AjoloteDeHielo" && ajoloteActual == ajoloteH)
+                if (Aslot3.RealItemName == "AjoloteDeHielo" && ajoloteActual == ajoloteH)
                 {
                     ponerAjolote();
                     objetoAct = ajoH.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot3.RealItemName == "AjoloteDeNube" && ajoloteActual == ajoloteN)
+                if (Aslot3.RealItemName == "AjoloteDeNube" && ajoloteActual == ajoloteN)
                 {
                     ponerAjolote();
                     objetoAct = ajoN.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot3.RealItemName == "AjoloteDeOro" && ajoloteActual == ajoloteD)
+                if (Aslot3.RealItemName == "AjoloteDeOro" && ajoloteActual == ajoloteD)
                 {
                     ponerAjolote();
                     objetoAct = ajoD.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot3.RealItemName == "AjoloteLegendario" && ajoloteActual == ajoloteL)
+                if (Aslot3.RealItemName == "AjoloteLegendario" && ajoloteActual == ajoloteL)
                 {
                     ponerAjolote();
                     objetoAct = ajoL.transform.gameObject;
@@ -199,49 +226,49 @@ public class AjoloteCriadero : MonoBehaviour
                 break;
 
             case 4:
-                if (slot4.RealItemName == "AjoloteDePlanta" && ajoloteActual == ajoloteP)
+                if (Aslot4.RealItemName == "AjoloteDePlanta" && ajoloteActual == ajoloteP)
                 {
                     ponerAjolote();
                     objetoAct = ajoP.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot4.RealItemName == "AjoloteDeAgua" && ajoloteActual == ajoloteA)
+                if (Aslot4.RealItemName == "AjoloteDeAgua" && ajoloteActual == ajoloteA)
                 {
                     ponerAjolote();
                     objetoAct = ajoA.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot4.RealItemName == "AjoloteDeFuego" && ajoloteActual == ajoloteF)
+                if (Aslot4.RealItemName == "AjoloteDeFuego" && ajoloteActual == ajoloteF)
                 {
                     ponerAjolote();
                     objetoAct = ajoF.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot4.RealItemName == "AjoloteDeHielo" && ajoloteActual == ajoloteH)
+                if (Aslot4.RealItemName == "AjoloteDeHielo" && ajoloteActual == ajoloteH)
                 {
                     ponerAjolote();
                     objetoAct = ajoH.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot4.RealItemName == "AjoloteDeNube" && ajoloteActual == ajoloteN)
+                if (Aslot4.RealItemName == "AjoloteDeNube" && ajoloteActual == ajoloteN)
                 {
                     ponerAjolote();
                     objetoAct = ajoN.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot4.RealItemName == "AjoloteDeOro" && ajoloteActual == ajoloteD)
+                if (Aslot4.RealItemName == "AjoloteDeOro" && ajoloteActual == ajoloteD)
                 {
                     ponerAjolote();
                     objetoAct = ajoD.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                 }
 
-                if (slot4.RealItemName == "AjoloteLegendario" && ajoloteActual == ajoloteL)
+                if (Aslot4.RealItemName == "AjoloteLegendario" && ajoloteActual == ajoloteL)
                 {
                     ponerAjolote();
                     objetoAct = ajoL.transform.gameObject;
@@ -426,6 +453,18 @@ public class AjoloteCriadero : MonoBehaviour
         }
     }
 
+    public void MostrarItems()
+    {
+        itemsUI.gameObject.SetActive(true);
+        ajolotesUI.gameObject.SetActive(false);
+    }
+
+    public void MostrarAjolotes()
+    {
+        itemsUI.gameObject.SetActive(false);
+        ajolotesUI.gameObject.SetActive(true);
+    }
+
     public void Seleccionar1()
     {
         slotSeleccionado = 1;
@@ -460,5 +499,85 @@ public class AjoloteCriadero : MonoBehaviour
         select2.gameObject.SetActive(false);
         select3.gameObject.SetActive(false);
         select4.gameObject.SetActive(true);
+    }
+
+    public void AlimentarLata()
+    {
+        foreach (var iterador in inv.coleccionables)
+        {
+            if (iterador.Is_used)
+            {
+                if (iterador.RealItemName == "ComidaGenerica")
+                {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        ajoDes = GameObject.Find("AjoloteSlotC (" + i + ")").GetComponent<RectTransform>().GetChild(2).gameObject.GetComponent<AjoloteDesecho>();
+                        if (!ajoDes.alimentado)
+                        {
+                            ajoDes.timerkk = ajoDes.timerkk * 0.66f;
+                            ajoDes.tiempoVar = ajoDes.tiempoDesecho * 0.66f;
+                            ajoDes.alimentado = true;
+                            ajoDes.feliz = true;
+                            objetoAct = lataComida;
+                            GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void AlimentarPez()
+    {
+
+        foreach (var iterador in inv.coleccionables)
+        {
+            if (iterador.Is_used)
+            {
+                if (iterador.RealItemName == "Pescado")
+                {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        ajoDes = GameObject.Find("AjoloteSlotC (" + i + ")").GetComponent<RectTransform>().GetChild(2).gameObject.GetComponent<AjoloteDesecho>();
+                        if (!ajoDes.alimentado)
+                        {
+                            ajoDes.timerkk = ajoDes.timerkk * 0.66f;
+                            ajoDes.tiempoVar = ajoDes.tiempoDesecho * 0.66f;
+                            ajoDes.alimentado = true;
+                            ajoDes.muyFeliz = true;
+                            objetoAct = pezComida;
+                            GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+    public void AlimentarGusano()
+    {
+        foreach (var iterador in inv.coleccionables)
+        {
+            if (iterador.Is_used)
+            {
+                if (iterador.RealItemName == "Gusano")
+                {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        ajoDes = GameObject.Find("AjoloteSlotC (" + i + ")").GetComponent<RectTransform>().GetChild(2).gameObject.GetComponent<AjoloteDesecho>();
+                        if (!ajoDes.alimentado)
+                        {
+                            ajoDes.timerkk = ajoDes.timerkk - (ajoDes.tiempoDesecho/10);
+                            objetoAct = gusanoComida;
+                            GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

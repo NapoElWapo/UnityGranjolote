@@ -9,7 +9,9 @@ public class AjoloteDesecho : MonoBehaviour
     public bool corrutina = false;
     public bool resetTim = false;
     public float tiempoDesecho;
-    public float timerkk;
+    public float tiempoVar, timerkk;
+
+    public bool alimentado, feliz, muyFeliz;
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +23,20 @@ public class AjoloteDesecho : MonoBehaviour
     void Update()
     {
         Timer();
+        ImagenFeliz();
     }
 
     void Timer()
     {
-        if (resetTim)
+        if (!alimentado && resetTim)
         {
             timerkk = tiempoDesecho;
+            resetTim = false;
+        }
+
+        if(alimentado && resetTim)
+        {
+            timerkk = tiempoVar;
             resetTim = false;
         }
         if (corrutina)
@@ -40,13 +49,6 @@ public class AjoloteDesecho : MonoBehaviour
             }
         }
     }
-    IEnumerator GenerarDesecho()
-    {
-        corrutina = false;
-        yield return new WaitForSecondsRealtime(tiempoDesecho);
-        this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
-        StopCoroutine(GenerarDesecho());
-    }
 
     public void recogerDesecho()
     {
@@ -56,4 +58,20 @@ public class AjoloteDesecho : MonoBehaviour
         //current_selected_obj = desecho.transform.gameObject;
         GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
     }
+
+    void ImagenFeliz()
+    {
+        if (feliz)
+            this.gameObject.transform.GetChild(4).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
+        if(muyFeliz)
+            this.gameObject.transform.GetChild(4).gameObject.transform.GetChild(1).gameObject.SetActive(true);
+
+        if (!feliz)
+            this.gameObject.transform.GetChild(4).gameObject.transform.GetChild(0).gameObject.SetActive(false);
+
+        if (!muyFeliz)
+            this.gameObject.transform.GetChild(4).gameObject.transform.GetChild(1).gameObject.SetActive(false);
+    }
+
 }
