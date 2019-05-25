@@ -342,10 +342,28 @@ public class MenuInventario : MonoBehaviour
                 iterador.RealItemName = last_entry.Nombre;
                 Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
             }
+            else if (iterador.Slot_name == "Slot3" && last_entry.name == "AjoloteEnlatado")
+            {
+                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+                
+                iterador.Is_used = true;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = last_entry.Nombre;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+            }
             else if (iterador.Slot_name == "Slot3" && last_entry.name == "AjoloteSAgua")
             {
                 iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
                 r8 = true;
+                iterador.Is_used = true;
+                iterador.item_inside_type = last_entry.Category;
+                iterador.RealItemName = last_entry.Nombre;
+                Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
+            }
+            else if (iterador.Slot_name == "Slot4" && last_entry.name == "AjoloteApagado")
+            {
+                iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
+                
                 iterador.Is_used = true;
                 iterador.item_inside_type = last_entry.Category;
                 iterador.RealItemName = last_entry.Nombre;

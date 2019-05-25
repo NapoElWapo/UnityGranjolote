@@ -12,6 +12,10 @@ public class AlcaldeDoctor : MonoBehaviour
     public string[] sentences;
     private int index;
     private bool hablando;
+    MenuInventario conexMI;
+    public bool AEnlatado;
+    public string[] CurarAEnlatado;
+    public GameObject current_selected_obj, ASA;
 
     public GameObject continueBotton;
     public GameObject PlayerUI;
@@ -19,6 +23,7 @@ public class AlcaldeDoctor : MonoBehaviour
     void Start()
     {
         hablando = false;
+        conexMI = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
     }
 
     public void Update()
@@ -31,18 +36,35 @@ public class AlcaldeDoctor : MonoBehaviour
         {
             PlayerUI.SetActive(false);
         }
+
+        foreach (var iterador in conexMI.herramientas)
+        {
+            if (iterador.RealItemName == "AjoloteEnlatado")
+            {
+                AEnlatado = true;
+            }
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (hablando == false)
+            if (hablando == false && AEnlatado==false)
             {
                 if (Input.GetButtonDown("e"))
                 {
                     hablando = true;
                     StartCoroutine(Type());
+                }
+               
+            }
+            else if (AEnlatado)
+            {
+                if (Input.GetButtonDown("e"))
+                {
+                    hablando = true;
+                    StartCoroutine(TypeCurar());
                 }
             }
         }
@@ -63,6 +85,29 @@ public class AlcaldeDoctor : MonoBehaviour
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+    }
+
+    IEnumerator TypeCurar()
+    {
+        foreach (char letter in CurarAEnlatado[index].ToCharArray())
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
+            var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            mouseLook.XSensitivity = 0.0F;
+            mouseLook.YSensitivity = 0.0F;
+            Time.timeScale = 1f;
+            textDisplay.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        
+                current_selected_obj = ASA.transform.gameObject;
+                GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
+            
+        
     }
 
     public void NextSentence()

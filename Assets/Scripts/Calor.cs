@@ -11,6 +11,7 @@ public class Calor : MonoBehaviour
     slot amuleto;
     TiendaUI comprar;
     LogrosYMisiones conexML;
+    public GameObject current_selected_obj, ASF,ASFApagado;
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
@@ -33,6 +34,7 @@ public class Calor : MonoBehaviour
                 if (quemandose == true)
                 {
                     comprar.poderComprarAF = true;
+                    ASFApagado.gameObject.SetActive(true);
                     conexML.quemado = true;
                     imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
                 }
@@ -48,6 +50,8 @@ public class Calor : MonoBehaviour
             }
             NPC2.instancia.calor = true;
         }
+
+        
 	}
 
     public void OnTriggerExit(Collider collision)
@@ -76,6 +80,14 @@ public class Calor : MonoBehaviour
         if (quemandose)
         {
             imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
+            foreach (var iterador in conex.herramientas)
+            {
+                if (iterador.RealItemName == "AjoloteApagado")
+                {
+                    current_selected_obj = ASF.transform.gameObject;
+                    GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
+                }
+            }
         }
     }
 }
