@@ -76,6 +76,7 @@ public class MenuInventario : MonoBehaviour
     public string SlotImageName = "SpriteImage";
     public bool llenoR=false,llenoA=false;
     public int contadorA=0, contadorR=0;
+    public int contador10AjoA = 0,contador10AjoP=0,contador10AjoF=0,contador10AjoH=0,contador10AjoN=0,contador10AjoO=0;
     //Clases para cada tipo de botones del inventario -añadidos
     uint indice_a = 0, indice_c = 0, indice_h = 0, indice_p = 0;
 
@@ -462,6 +463,32 @@ public class MenuInventario : MonoBehaviour
                     
                     iterador.item_inside_type = last_entry.Category;
                     iterador.RealItemName = last_entry.Nombre;
+
+                    if(iterador.RealItemName == "AjoloteDePlanta")
+                    {
+                        contador10AjoP += 1;
+                    }
+                    else if(iterador.RealItemName=="AjoloteDeAgua")
+                    {
+                        contador10AjoA += 1;
+                    }
+                    else if (iterador.RealItemName == "AjoloteDeFuego")
+                    {
+                        contador10AjoF += 1;
+                    }
+                    else if (iterador.RealItemName == "AjoloteDeHielo")
+                    {
+                        contador10AjoH += 1;
+                    }
+                    else if (iterador.RealItemName == "AjoloteDeNube")
+                    {
+                        contador10AjoN += 1;
+                    }
+                    else if (iterador.RealItemName == "AjoloteDeOro")
+                    {
+                        contador10AjoO += 1;
+                    }
+
                     Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
                     break;
                   }

@@ -8,22 +8,39 @@ public class HerramientaSeleccionada : MonoBehaviour
 {
     public RectTransform bslot1, bslot2, bslot3, bslot4;
     public Image sslot1, sslot2, sslot3, sslot4;
-    public GameObject lanza, arco,rastrillo, ajoloteSA, ajoloteSF,fuego,agua,lanzaClick1,lanzaClick2,arcoClick,flechaClick1,flechaClick2,rastrillo1;
+    public GameObject lanza, arco,rastrillo, ajoloteSA, ajoloteSF,fuego,agua,agua2,fuego2,hidrobomba,lanzaClick1,lanzaClick2,arcoClick,flechaClick1,flechaClick2,rastrillo1;
     private int slotPosition = 0;
-    public int estaminaS=0, maxEstaminaS=100,nivelAgua=1,nivelFuego=1,nivelNube=1;
-    private bool hayFuego,hayAgua,lanzaComprobar=false,rastrilloComprobar=false,AAComprobar=false,
-        AFComprobar=false,lanzaPesaca=false,arcoPesca=false,rastrilloGusano=false,usando=false;
+    public int nivelAgua=1,nivelFuego=1,nivelNube=1;
+    public float estaminaS = 0, maxEstaminaS = 100;
+    private bool hayFuego, hayAgua, lanzaComprobar = false, rastrilloComprobar = false, AAComprobar = false,
+        AFComprobar = false, lanzaPesaca = false, arcoPesca = false, rastrilloGusano = false, usando = false, hayHidrobomba = false;
+    public bool AAMax = false, AFMax = false, ANMax = false;
     MenuInventario conex;
+    LogrosYMisiones conexLM;
     [SerializeField]
     slot comprobar,nube;
     
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
+        conexLM = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
     }
 
     void Update()
     {
+        if(nivelAgua==3)
+        {
+            conexLM.MaxAgua = true;
+        }
+        else if(nivelFuego==3)
+        {
+            conexLM.MaxFuego = true;
+        }
+        else if(nivelNube==3)
+        {
+            conexLM.MaxNube = true;
+        }
+       
         
         
         if (hayFuego || hayAgua)
@@ -32,10 +49,22 @@ public class HerramientaSeleccionada : MonoBehaviour
             {
                 estaminaS = 0;
             }
+            else if(nivelAgua>=2)
+            {
+                estaminaS =estaminaS - 0.5f ;
+            }
+            else if (nivelFuego >= 2)
+            {
+                estaminaS = estaminaS - 0.5f;
+            }
             else
             {
                 estaminaS--;
             }
+        }
+        else if(hayHidrobomba)
+        {
+            estaminaS = estaminaS - 5f;
         }
         else if (!hayFuego&&!hayAgua)
         {
@@ -211,22 +240,64 @@ public class HerramientaSeleccionada : MonoBehaviour
                 if (comprobar.RealItemName == "AjoloteSAgua")
                 {
                     ajoloteSA.gameObject.SetActive(true);
+                    if (nivelAgua<3)
+                    {
 
-                    if (Input.GetMouseButtonDown(0) && estaminaS != 0)
-                    {
-                        agua.gameObject.SetActive(true);
-                        hayAgua = true;
-                    }
-                    else if (estaminaS == 0)
-                    {
-                        agua.gameObject.SetActive(false);
-                    }
 
-                    if (Input.GetMouseButtonUp(0))
-                    {
-                        agua.gameObject.SetActive(false);
-                        hayAgua = false;
+                        if (Input.GetMouseButtonDown(0) && estaminaS != 0)
+                        {
+                            agua.gameObject.SetActive(true);
+                            hayAgua = true;
+                        }
+                        else if (estaminaS == 0)
+                        {
+                            agua.gameObject.SetActive(false);
+                        }
+
+                        if (Input.GetMouseButtonUp(0))
+                        {
+                            agua.gameObject.SetActive(false);
+                            hayAgua = false;
+                        }
                     }
+                    else if(nivelAgua==3)
+                    {
+                        if (Input.GetMouseButtonDown(0) && estaminaS != 0)
+                        {
+                            agua2.gameObject.SetActive(true);
+                            hayAgua = true;
+                        }
+                        else if (estaminaS == 0)
+                        {
+                            agua2.gameObject.SetActive(false);
+                        }
+
+                        if (Input.GetMouseButtonDown(1) && estaminaS != 0)
+                        {
+                            hidrobomba.gameObject.SetActive(true);
+                            hayHidrobomba = true;
+                        }
+                        else if (estaminaS <= 0)
+                        {
+                            hidrobomba.gameObject.SetActive(false);
+                        }
+                        
+
+                        if (Input.GetMouseButtonUp(0))
+                        {
+                            agua2.gameObject.SetActive(false);
+                            hayAgua = false;
+                        }
+                        else if (Input.GetMouseButtonUp(1))
+                        {
+                            hidrobomba.gameObject.SetActive(false);
+                            hayHidrobomba = false;
+                        }
+                    }
+                    
+
+                    
+                    
                 }
                 bslot1.gameObject.SetActive(false);
                 bslot2.gameObject.SetActive(false);
@@ -245,22 +316,47 @@ public class HerramientaSeleccionada : MonoBehaviour
                 if (comprobar.RealItemName == "AjoloteSFuego")
                 {
                     ajoloteSF.gameObject.SetActive(true);
+                    if (nivelFuego<3)
+                    {
 
-                    if (Input.GetMouseButtonDown(0) && estaminaS != 0)
-                    {
-                        fuego.gameObject.SetActive(true);
-                        hayFuego = true;
-                    }
-                    else if(estaminaS==0)
-                    {
-                        fuego.gameObject.SetActive(false);
-                    }
 
-                    if (Input.GetMouseButtonUp(0))
-                    {
-                        fuego.gameObject.SetActive(false);
-                        hayFuego = false;
+                        if (Input.GetMouseButtonDown(0) && estaminaS != 0)
+                        {
+                            fuego.gameObject.SetActive(true);
+                            hayFuego = true;
+                        }
+                        else if (estaminaS == 0)
+                        {
+                            fuego.gameObject.SetActive(false);
+                        }
+
+                        if (Input.GetMouseButtonUp(0))
+                        {
+                            fuego.gameObject.SetActive(false);
+                            hayFuego = false;
+                        }
                     }
+                    else if(nivelFuego==3)
+                    {
+                        if (Input.GetMouseButtonDown(0) && estaminaS != 0)
+                        {
+                            fuego2.gameObject.SetActive(true);
+                            hayFuego = true;
+                        }
+                        else if (estaminaS == 0)
+                        {
+                            fuego2.gameObject.SetActive(false);
+                        }
+
+                        if (Input.GetMouseButtonUp(0))
+                        {
+                            fuego2.gameObject.SetActive(false);
+                            hayFuego = false;
+                        }
+                    }
+                    
+
+                    
                 }
                 bslot1.gameObject.SetActive(false);
                 bslot2.gameObject.SetActive(false);

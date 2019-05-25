@@ -18,7 +18,7 @@ public class TiendaUI : MonoBehaviour
 
     slot itemslot1, itemslot2, itemslot3, itemslot4, itemslot5, itemslot6, itemslot7, itemslot8;
     MenuInventario conex;
-    public RectTransform bslot1, bslot2, bslot3, bslot4, bslot5, bslot6, bslot7, bslot8, precioAF1, precioAF2, precioAH1, precioAH2;
+    public RectTransform bslot1, bslot2, bslot3, bslot4, bslot5, bslot6, bslot7, bslot8, precioAF1, precioAF2, precioAH1, precioAH2,botonProducto1,botonProducto2,botonProducto3,botonProducto4,botonProducto5;
     private int slotSeleccionado = 0;
     public Image sslot1, sslot2, sslot3, sslot4, sslot5, sslot6, sslot7, sslot8;
     public Text stack1, stack2, stack3, stack4, stack5, stack6, stack7, stack8;

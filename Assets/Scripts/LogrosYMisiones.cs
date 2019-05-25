@@ -51,6 +51,12 @@ public class LogrosYMisiones : MonoBehaviour
         L31, L32, L33, L34;
     int logrosCompletados;
 
+    //Logros de ajolotes maxeados
+    public bool MaxAgua = false, MaxFuego = false, MaxNube = false;
+
+    //Logro30 31
+    public int contadorGusanos;
+
     //Objetos de scripts diferentes para tomar informacion
     MenuInventario conexMI;
     Incubadora conexIncu;
@@ -254,14 +260,189 @@ public class LogrosYMisiones : MonoBehaviour
         }
 
         //Logro2
+        if(conexIncu.primerP)
+        {
+            L2.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
 
         //Logro3
+        if(conexMI.contador10AjoP>=10)
+        {
+            L3.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
 
         //Logro4
+        if (conexMI.r2)
+        {
+            L4.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
 
         //Logro5
+        if (conexIncu.primerA)
+        {
+            L5.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
 
+        //Logro6
+        if (conexMI.contador10AjoA >= 10)
+        {
+            L6.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+        //Logro7
+        if (conexMI.r3)
+        {
+            L7.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
 
+        //Logro8
+        if (conexIncu.primerF)
+        {
+            L8.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro9
+        if (conexMI.contador10AjoF >= 10)
+        {
+            L9.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro10
+        if (conexMI.r4)
+        {
+            L10.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro11
+        if (conexIncu.primerH)
+        {
+            L11.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro12
+        if (conexMI.contador10AjoH >= 10)
+        {
+            L12.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro13
+        if (conexMI.r5)
+        {
+            L13.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro14
+        if (conexIncu.primerN)
+        {
+            L14.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro15
+        if (conexMI.contador10AjoN >= 10)
+        {
+            L15.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro16
+        if (conexMI.r6)
+        {
+            L16.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro17
+        if (conexIncu.primerO)
+        {
+            L17.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro18
+        if (conexMI.contador10AjoO >= 10)
+        {
+            L18.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro19
+        if (conexMI.r7)
+        {
+            L19.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro20
+        if (conexMI.r8)
+        {
+            L20.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro21
+        if(MaxAgua)
+        {
+            L21.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro22
+        if (conexMI.r9)
+        {
+            L22.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro23
+        if (MaxFuego)
+        {
+            L23.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro24
+        if (conexMI.r10)
+        {
+            L24.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro25
+        if (MaxNube)
+        {
+            L25.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro26
+        if(contadorTotalPeces>=15)
+        {
+            L26.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro27
+        if(contadorL>=100)
+        {
+            L27.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro28
+        if (contadorA >= 100)
+        {
+            L28.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro29
+        if (contadorTotalPeces >= 500)
+        {
+            L29.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro30
+        if(contadorGusanos>=15)
+        {
+            L30.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+        //Logro31
+        if (contadorGusanos >= 50)
+        {
+            L31.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        //Logro32
+
+        //Logro33
+
+        //Logro34
 
     }
 
