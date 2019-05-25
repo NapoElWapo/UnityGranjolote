@@ -19,7 +19,7 @@ public class SistemaInventario
     private List<ItemInventario> ajolotes = new List<ItemInventario>();
 
     private ItemInventario selectHerramienta;
-    
+    public bool llenoA;
     public ItemInventario SelectHerramienta
     {
         get { return selectHerramienta; }
@@ -113,7 +113,7 @@ public class SistemaInventario
                 //ajolotes.Add(item);
                 //GameMaster.instanciaCompartida.GUI_controlador.actualizar_ajolotes(item);
                 //break;
-                if (ajolotes.Contains(item))
+                if (!GameMaster.instanciaCompartida.GUI_controlador.llenoA)
                 {
                     if (item.Stackeble)
                     {
@@ -128,15 +128,14 @@ public class SistemaInventario
                         Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());
                         return false;
                     }
-                    else
-                        return true;
-                }
-                else if (GameMaster.instanciaCompartida.GUI_controlador.llenoA == false)
-                {
-                    ajolotes.Add(item);//se agrega si no existe
-                    GameMaster.instanciaCompartida.GUI_controlador.insertar_ajolotes(item);
+                    else 
+                    {
+                        ajolotes.Add(item);//se agrega si no existe
+                        GameMaster.instanciaCompartida.GUI_controlador.insertar_ajolotes(item);
+                        return false;
+                    }
                     
-                    return false;
+
                 }
                 else
                     return true;

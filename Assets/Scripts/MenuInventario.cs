@@ -79,11 +79,12 @@ public class MenuInventario : MonoBehaviour
     public int contador10AjoA = 0,contador10AjoP=0,contador10AjoF=0,contador10AjoH=0,contador10AjoN=0,contador10AjoO=0;
     //Clases para cada tipo de botones del inventario -añadidos
     uint indice_a = 0, indice_c = 0, indice_h = 0, indice_p = 0;
+    
 
     private void Start()
     {
         GameMaster.instanciaCompartida.SetUI(this);
-
+        
         //Buscamos los slots de la ui y los llenamos con sus tipos correspondientes
         //Lo que hace este bucle es buscar todos los objetos con el script slot id para referenciarse ellos despues
         foreach (var iterador_ajolotes in Resources.FindObjectsOfTypeAll(typeof(SlotID)) as SlotID[])
@@ -499,8 +500,9 @@ public class MenuInventario : MonoBehaviour
                     contadorA++;
                     if (contadorA >= 4)
                     {
-                   
+                        
                         llenoA = true;
+                        
                     }
                     else
                     {
