@@ -37,9 +37,8 @@ public class PatrullaAjolote : MonoBehaviour
  
         ajoloteAnimator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
-        sphereCollider = gameObject.GetComponent<SphereCollider>();
+        sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.isTrigger = true;
-        
         direccion = Random.Range(0, 360);
         transform.eulerAngles = new Vector3(0, direccion, 0);  
     }
