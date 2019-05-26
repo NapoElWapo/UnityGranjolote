@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7985830842758092159}
   - component: {fileID: 7985830842758092035}
-  - component: {fileID: 7985830842758092034}
   - component: {fileID: 7985830842758092033}
   - component: {fileID: 7985830842758092032}
   - component: {fileID: 6979313373389113907}
   - component: {fileID: 663718011}
+  - component: {fileID: 3370841092141426532}
   - component: {fileID: 2708604783094208277}
   m_Layer: 0
   m_Name: AjoloteLegendario
@@ -56,30 +56,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &7985830842758092034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7985830842758092158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a734512176be4744af0ab476659a02c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Movimiento: Movimiento
-  Asustado: Asustado
-  harto: 0
-  movimiento: 0
-  asustado: 0
-  vagar: 0
-  velocidad: 5
-  velocidadAsustado: 20
-  cambioDireccion: 0.3
-  maxCambio: 180
-  tiempoHarto: 5
-  contador: 0
 --- !u!95 &7985830842758092033
 Animator:
   serializedVersion: 3
@@ -110,7 +86,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 35
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &6979313373389113907
 SphereCollider:
@@ -138,6 +114,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.7269962, y: 4.14038, z: 8.253685}
   m_Center: {x: -0.0065037305, y: 1.0701901, z: 1.1498171}
+--- !u!114 &3370841092141426532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7985830842758092158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8a1d430a1f7f6478fc640f2502469b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Movimiento: 5
+  Asustado: 20
+  movimiento: 0
+  asustado: 0
+  vagar: 0
+  awaEspanta: 0
+  lumbreEspanta: 0
+  velocidad: 2
+  velocidadAwado: 0
+  velocidadAlumbrado: 0
+  velocidadAsustado: 7
+  velocidadAwadoAsustado: 0
+  velocidadAlumbradoAsustado: 0
+  cambioDireccion: 0.5
+  maxCambio: 180
+  contador: 0
 --- !u!114 &2708604783094208277
 MonoBehaviour:
   m_ObjectHideFlags: 0
