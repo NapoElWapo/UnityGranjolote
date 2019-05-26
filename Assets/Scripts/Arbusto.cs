@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Arbusto : MonoBehaviour
 {
-    Animator m_animator;
+    
     
     private float ex,ey,ez,animador;
     public GameObject arbusto;
 
     void Start()
     {
-        m_animator = GetComponent<Animator>();
-        Debug.Log("arbustingin");
+        
+        
         ex = arbusto.transform.localScale.x;
-        Debug.Log(ex);
+       
         ey = arbusto.transform.localScale.y;
-        Debug.Log(ey);
+        
         ez = arbusto.transform.localScale.z;
-        Debug.Log(ez);
+        
     }
 
     private void OnTriggerStay(Collider other)
