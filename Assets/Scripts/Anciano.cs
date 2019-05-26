@@ -13,6 +13,8 @@ public class Anciano : MonoBehaviour
     private int index;
     private bool hablando;
 
+    public MejorarAjolote mejorasAjo;
+
     /*[SerializeField]
     bool patrolWaiting;
 
@@ -156,6 +158,7 @@ public class Anciano : MonoBehaviour
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+        mejorasAjo.ToggleMejoras();
     }
 
     public void NextSentence()

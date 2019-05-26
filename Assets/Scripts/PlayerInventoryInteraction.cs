@@ -25,6 +25,9 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public string cria1 = "Criadero1";
     public string cria2 = "Criadero2";
 
+    public MejorarAjolote mejorasAjo;
+    public string mejoras = "MejorarAjolotes";
+
     public string cama = "Cama";
 
     public Incubadora incu;
@@ -173,6 +176,12 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 else if (colision_rayo.transform.tag == cria1)
                 {
                     criadero.ToggleCriadero();
+
+                }
+
+                else if (colision_rayo.transform.tag == mejoras)
+                {
+                    mejorasAjo.ToggleMejoras();
 
                 }
             }
