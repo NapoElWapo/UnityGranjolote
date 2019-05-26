@@ -15,6 +15,8 @@ public class Alcalde : MonoBehaviour
     private int index;
     private bool hablando;
 
+    AlcaldeMisiones mostrar;
+
     /*[SerializeField]
     bool patrolWaiting;
 
@@ -59,6 +61,7 @@ public class Alcalde : MonoBehaviour
             }
         }*/
         hablando = false;
+        mostrar = GameObject.Find("AlcaldeMisiones").GetComponent<AlcaldeMisiones>();
     }
 
     public void Update()
@@ -227,6 +230,7 @@ public class Alcalde : MonoBehaviour
         {
             textDisplay.text = "";
             continueBottonMision.SetActive(false);
+            continueBotton.SetActive(false);
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
             mouseLook.XSensitivity = 2F;
@@ -236,6 +240,7 @@ public class Alcalde : MonoBehaviour
             hablando = false;
             //GetComponent<NavMeshAgent>().speed = 5f;
             PlayerUI.SetActive(true);
+            mostrar.ToggleAMisiones();
         }
     }
 }
