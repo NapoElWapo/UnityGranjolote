@@ -158,7 +158,6 @@ public class Anciano : MonoBehaviour
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-        mejorasAjo.ToggleMejoras();
     }
 
     public void NextSentence()
@@ -183,6 +182,7 @@ public class Anciano : MonoBehaviour
             hablando = false;
             //GetComponent<NavMeshAgent>().speed = 5f;
             PlayerUI.SetActive(true);
+            mejorasAjo.ToggleMejoras();
         }
     }
 }

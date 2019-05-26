@@ -173,12 +173,7 @@ public class MejorarAjolote : MonoBehaviour
         }
         else if (!UIactivo)
         {
-            GameObject.Find("AjoYOrbe").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("AjoYOrbe").GetComponent<RectTransform>().GetChild(1).gameObject.SetActive(false);
-            GameObject.Find("AjoYOrbe").GetComponent<RectTransform>().GetChild(2).gameObject.SetActive(false);
-            GameObject.Find("AjoYOrbe").GetComponent<RectTransform>().GetChild(3).gameObject.SetActive(false);
-            GameObject.Find("AjoYOrbe").GetComponent<RectTransform>().GetChild(4).gameObject.SetActive(false);
-            GameObject.Find("AjoYOrbe").GetComponent<RectTransform>().GetChild(5).gameObject.SetActive(false);
+            picarMejora();
 
             mejorasUI.gameObject.SetActive(false);
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;

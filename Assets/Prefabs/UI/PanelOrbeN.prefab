@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5784763512906325663}
-  - component: {fileID: 5321906823242335449}
   - component: {fileID: 8350629476991964481}
   m_Layer: 5
   m_Name: PanelOrbeN
@@ -39,19 +38,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5321906823242335449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659802756642216093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ec620acda2b6a04ea9a51876cb39e3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ActualSlotType: 2
 --- !u!114 &8350629476991964481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,10 +51,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boton: {fileID: 0}
+  current_selected_obj: {fileID: 0}
   corrutina: 0
   resetTim: 0
   tiempoDesecho: 2
+  tiempoVar: 0
   timerkk: 0
+  alimentado: 0
+  feliz: 0
+  muyFeliz: 0
 --- !u!1 &1717948424988044035
 GameObject:
   m_ObjectHideFlags: 0
