@@ -15,14 +15,11 @@ public class RegistrarAjoloteUI : MonoBehaviour
     MenuInventario conex;
     public Text mensaje;
    
-
-    // Start is called before the first frame update
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         ajoslot1 = conex.ajolotes.Find(x => x.Slot_name == "Slot1");
@@ -79,10 +76,8 @@ public class RegistrarAjoloteUI : MonoBehaviour
         switch(slotSeleccionado)
         {
             case 1:
-
                 if(ajoslot1.RealItemName=="AjoloteDePlanta" && conex.r1==false)
-                {
-                   
+                {                
                     mensaje.text = "Nueva especie Registrada";
                     GameMaster.instanciaCompartida.dinero = GameMaster.instanciaCompartida.dinero + 100;
                     conex.r1 = true;
@@ -132,13 +127,10 @@ public class RegistrarAjoloteUI : MonoBehaviour
                     mensaje.text = "Especie ya registrada";
                 }
 
-
                 break;
-
             case 2:
                 if (ajoslot2.RealItemName == "AjoloteDePlanta" && conex.r1 == false)
-                {
-                   
+                {                 
                     mensaje.text = "Nueva especie Registrada";
                     GameMaster.instanciaCompartida.dinero = GameMaster.instanciaCompartida.dinero + 100;
                     conex.r1 = true;
@@ -187,14 +179,11 @@ public class RegistrarAjoloteUI : MonoBehaviour
                 {
                     mensaje.text = "Especie ya registrada";
                 }
-
                 break;
 
             case 3:
-
                 if (ajoslot3.RealItemName == "AjoloteDePlanta" && conex.r1 == false)
-                {
-                   
+                {                  
                     mensaje.text = "Nueva especie Registrada";
                     GameMaster.instanciaCompartida.dinero = GameMaster.instanciaCompartida.dinero + 100;
                     conex.r1 = true;
@@ -243,14 +232,11 @@ public class RegistrarAjoloteUI : MonoBehaviour
                 {
                     mensaje.text = "Especie ya registrada";
                 }
-
                 break;
 
             case 4:
-
                 if (ajoslot4.RealItemName == "AjoloteDePlanta" && conex.r1 == false)
-                {
-                    
+                {                    
                     mensaje.text = "Nueva especie Registrada";
                     GameMaster.instanciaCompartida.dinero = GameMaster.instanciaCompartida.dinero + 100;
                     conex.r1 = true;
@@ -299,16 +285,8 @@ public class RegistrarAjoloteUI : MonoBehaviour
                 {
                     mensaje.text = "Especie ya registrada";
                 }
-
                 break;
         }
-    }
-
-    public void ComprobarRegistro()
-    {
-        
-
-        
     }
 
     public void ToggleRegistro()
@@ -320,7 +298,6 @@ public class RegistrarAjoloteUI : MonoBehaviour
         if (ui == true)
         {
             Cursor.lockState = CursorLockMode.None;
-
             Cursor.visible = true;
 
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
