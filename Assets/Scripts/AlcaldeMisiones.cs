@@ -32,7 +32,10 @@ public class AlcaldeMisiones : MonoBehaviour
     public GameObject current_selected_obj, sombrero, saco, pantalones, huevoP, huevoA, cacasF, ajoA, ajoP, ajoF;
 
     //MarcarProgreso
-    public RectTransform backHP, backHA, backAA, backAP, backAF;
+    public RectTransform backHP, backHA, backAA, backAP, backAF,backCacasF,backSombrero,backSaco,backPantalones;
+
+    //Objetos a spawnear
+    public GameObject pantalonCuevas, sacoVolcan, sombreroNubes;
 
     void Start()
     {
@@ -610,53 +613,109 @@ public class AlcaldeMisiones : MonoBehaviour
     public void Aceptar1()
     {
         aceptada1 = true;
+        panelA1.gameObject.SetActive(false);
+        panelE4.gameObject.SetActive(false);
+        panelE5.gameObject.SetActive(false);
+        panelE6.gameObject.SetActive(false);
+        panelE7.gameObject.SetActive(false);
+        panelE8.gameObject.SetActive(false);
+        panelE9.gameObject.SetActive(false);
+
+        conexLM.m2.gameObject.SetActive(true);
+        
     }
 
     public void Aceptar2()
     {
         aceptada2 = true;
+        panelA2.gameObject.SetActive(false);
+        panelA1.gameObject.SetActive(false);
+        panelE4.gameObject.SetActive(false);
+        panelE5.gameObject.SetActive(false);
+        panelE6.gameObject.SetActive(false);
+        panelE7.gameObject.SetActive(false);
+        panelE8.gameObject.SetActive(false);
+        panelE9.gameObject.SetActive(false);
+        conexLM.m3.gameObject.SetActive(true);
+        conexLM.mision3Alcalde = true;
     }
 
     public void Aceptar3()
     {
         aceptada3 = true;
+        panelA3.gameObject.SetActive(false);
+        panelE4.gameObject.SetActive(true);
+
+        conexLM.m4.gameObject.SetActive(true);
+        pantalonCuevas.gameObject.SetActive(true);
     }
 
     public void Aceptar4()
     {
         aceptada4 = true;
+        panelA4.gameObject.SetActive(false);
+        panelE5.gameObject.SetActive(true);
+
+        conexLM.m5.gameObject.SetActive(true);
+        sacoVolcan.gameObject.SetActive(true);
     }
 
     public void Aceptar5()
     {
         aceptada5 = true;
+        panelA5.gameObject.SetActive(false);
+        panelE6.gameObject.SetActive(true);
+
+        conexLM.m6.gameObject.SetActive(true);
+        sombreroNubes.gameObject.SetActive(true);
     }
 
     public void Aceptar6()
     {
         aceptada6 = true;
+        panelA6.gameObject.SetActive(false);
+        panelE7.gameObject.SetActive(true);
+
+        conexLM.m7.gameObject.SetActive(true);
     }
 
     public void Aceptar7()
     {
         aceptada7 = true;
+        panelA7.gameObject.SetActive(false);
+        panelE8.gameObject.SetActive(true);
+
+        conexLM.m8.gameObject.SetActive(true);
     }
 
     public void Aceptar8()
     {
         aceptada8 = true;
+        panelA8.gameObject.SetActive(false);
+        panelE9.gameObject.SetActive(true);
     }
 
     public void Aceptar9()
     {
         aceptada9 = true;
+        panelA9.gameObject.SetActive(false);
+        panelA1.gameObject.SetActive(false);
+        panelE4.gameObject.SetActive(false);
+        panelE5.gameObject.SetActive(false);
+        panelE6.gameObject.SetActive(false);
+        panelE7.gameObject.SetActive(false);
+        panelE8.gameObject.SetActive(false);
+        panelE9.gameObject.SetActive(false);
+
+        conexLM.m10.gameObject.SetActive(true);
+
     }
 
     public void Entregar()
     {
         switch(valorEntrega)
         {
-            case 3:
+            case 5:
 
                 switch(slotSeleccionado)
                 {
@@ -665,7 +724,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = sombrero.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa1 = false;
+                            backSombrero.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sombreroEntregado = true;
                         }
                         break;
 
@@ -674,7 +734,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = sombrero.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa1 = false;
+                            backSombrero.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sombreroEntregado = true;
                         }
                         break;
 
@@ -683,7 +744,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = sombrero.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa1 = false;
+                            backSombrero.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sombreroEntregado = true;
                         }
                         break;
 
@@ -692,7 +754,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = sombrero.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa1 = false;
+                            backSombrero.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sombreroEntregado = true;
                         }
                         break;
 
@@ -701,7 +764,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = sombrero.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa1 = false;
+                            backSombrero.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sombreroEntregado = true;
                         }
                         break;
 
@@ -710,7 +774,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = sombrero.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa1 = false;
+                            backSombrero.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sombreroEntregado = true;
                         }
                         break;
 
@@ -719,7 +784,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = sombrero.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa1 = false;
+                            backSombrero.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sombreroEntregado = true;
                         }
                         break;
 
@@ -728,7 +794,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = sombrero.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa1 = false;
+                            backSombrero.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sombreroEntregado = true;
                         }
                         break;
                 }
@@ -745,7 +812,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = saco.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa2 = false;
+                            backSaco.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sacoEntregado = true;
                         }
                         break;
 
@@ -754,7 +822,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = saco.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa2 = false;
+                            backSaco.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sacoEntregado = true;
                         }
                         break;
 
@@ -763,7 +832,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = saco.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa2 = false;
+                            backSaco.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sacoEntregado = true;
                         }
                         break;
 
@@ -772,7 +842,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = saco.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa2 = false;
+                            backSaco.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sacoEntregado = true;
                         }
                         break;
 
@@ -781,7 +852,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = saco.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa2 = false;
+                            backSaco.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sacoEntregado = true;
                         }
                         break;
 
@@ -790,7 +862,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = saco.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa2 = false;
+                            backSaco.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sacoEntregado = true;
                         }
                         break;
 
@@ -799,7 +872,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = saco.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa2 = false;
+                            backSaco.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sacoEntregado = true;
                         }
                         break;
 
@@ -808,14 +882,15 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = saco.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa2 = false;
+                            backSaco.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.sacoEntregado = true;
                         }
                         break;
                 }
 
                 break;
 
-            case 5:
+            case 3:
 
                 switch (slotSeleccionado)
                 {
@@ -824,7 +899,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = pantalones.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa3 = false;
+                            backPantalones.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.pantalonEntregado = true;
                         }
                         break;
 
@@ -833,7 +909,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = pantalones.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa3 = false;
+                            backPantalones.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.pantalonEntregado = true;
                         }
                         break;
 
@@ -842,7 +919,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = pantalones.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa3 = false;
+                            backPantalones.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.pantalonEntregado = true;
                         }
                         break;
 
@@ -851,7 +929,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = pantalones.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa3 = false;
+                            backPantalones.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.pantalonEntregado = true;
                         }
                         break;
 
@@ -860,7 +939,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = pantalones.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa3 = false;
+                            backPantalones.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.pantalonEntregado = true;
                         }
                         break;
 
@@ -869,7 +949,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = pantalones.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa3 = false;
+                            backPantalones.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.pantalonEntregado = true;
                         }
                         break;
 
@@ -878,7 +959,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = pantalones.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa3 = false;
+                            backPantalones.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.pantalonEntregado = true;
                         }
                         break;
 
@@ -887,7 +969,8 @@ public class AlcaldeMisiones : MonoBehaviour
                         {
                             current_selected_obj = pantalones.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
-                            activa3 = false;
+                            backPantalones.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.pantalonEntregado = true;
                         }
                         break;
                 }
@@ -904,12 +987,14 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = huevoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoPEntregado = true;
                         }
                         else if (itemslot1.RealItemName == "HuevoAgua")
                         {
                             current_selected_obj = huevoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoAEntregado = true;
                         }
                         break;
 
@@ -919,12 +1004,14 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = huevoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoPEntregado = true;
                         }
                         else if (itemslot2.RealItemName == "HuevoAgua")
                         {
                             current_selected_obj = huevoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoAEntregado = true;
                         }
                         break;
 
@@ -934,12 +1021,14 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = huevoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoPEntregado = true;
                         }
                         else if (itemslot3.RealItemName == "HuevoAgua")
                         {
                             current_selected_obj = huevoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoAEntregado = true;
                         }
                         break;
 
@@ -949,12 +1038,14 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = huevoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoPEntregado = true;
                         }
                         else if (itemslot4.RealItemName == "HuevoAgua")
                         {
                             current_selected_obj = huevoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoAEntregado = true;
                         }
                         break;
 
@@ -964,12 +1055,14 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = huevoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoPEntregado = true;
                         }
                         else if (itemslot5.RealItemName == "HuevoAgua")
                         {
                             current_selected_obj = huevoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoAEntregado = true;
                         }
                         break;
 
@@ -979,12 +1072,14 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = huevoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoPEntregado = true;
                         }
                         else if (itemslot6.RealItemName == "HuevoAgua")
                         {
                             current_selected_obj = huevoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoAEntregado = true;
                         }
                         break;
 
@@ -994,12 +1089,14 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = huevoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoPEntregado = true;
                         }
                         else if (itemslot7.RealItemName == "HuevoAgua")
                         {
                             current_selected_obj = huevoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoAEntregado = true;
                         }
                         break;
 
@@ -1009,12 +1106,14 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = huevoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoPEntregado = true;
                         }
                         else if (itemslot8.RealItemName == "HuevoAgua")
                         {
                             current_selected_obj = huevoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backHA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.huevoAEntregado = true;
                         }
                         break;
                 }
@@ -1034,8 +1133,9 @@ public class AlcaldeMisiones : MonoBehaviour
                                 {
                                     GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                                 }
-                                
-                                activa7 = false;
+
+                                backCacasF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                                conexLM.cacasFEntregadas = true;
                             }
                             
                         }
@@ -1052,7 +1152,8 @@ public class AlcaldeMisiones : MonoBehaviour
                                     GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                                 }
 
-                                activa7 = false;
+                                backCacasF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                                conexLM.cacasFEntregadas = true;
                             }
 
                         }
@@ -1069,7 +1170,8 @@ public class AlcaldeMisiones : MonoBehaviour
                                     GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                                 }
 
-                                activa7 = false;
+                                backCacasF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                                conexLM.cacasFEntregadas = true;
                             }
 
                         }
@@ -1086,7 +1188,8 @@ public class AlcaldeMisiones : MonoBehaviour
                                     GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                                 }
 
-                                activa7 = false;
+                                backCacasF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                                conexLM.cacasFEntregadas = true;
                             }
 
                         }
@@ -1103,7 +1206,8 @@ public class AlcaldeMisiones : MonoBehaviour
                                     GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                                 }
 
-                                activa7 = false;
+                                backCacasF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                                conexLM.cacasFEntregadas = true;
                             }
 
                         }
@@ -1120,7 +1224,8 @@ public class AlcaldeMisiones : MonoBehaviour
                                     GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                                 }
 
-                                activa7 = false;
+                                backCacasF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                                conexLM.cacasFEntregadas = true;
                             }
 
                         }
@@ -1137,7 +1242,8 @@ public class AlcaldeMisiones : MonoBehaviour
                                     GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                                 }
 
-                                activa7 = false;
+                                backCacasF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                                conexLM.cacasFEntregadas = true;
                             }
 
                         }
@@ -1154,7 +1260,8 @@ public class AlcaldeMisiones : MonoBehaviour
                                     GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                                 }
 
-                                activa7 = false;
+                                backCacasF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                                conexLM.cacasFEntregadas = true;
                             }
 
                         }
@@ -1171,18 +1278,21 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = ajoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerPEntregado = true;
                         }
                         else if (ajoSlot1.RealItemName == "AjoloteDeAgua")
                         {
                             current_selected_obj = ajoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerAEntregado = true;
                         }
                         else if (ajoSlot1.RealItemName == "AjoloteDeFuego")
                         {
                             current_selected_obj = ajoF.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerFEntregado = true;
                         }
                         break;
 
@@ -1192,18 +1302,21 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = ajoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerPEntregado = true;
                         }
                         else if (ajoSlot2.RealItemName == "AjoloteDeAgua")
                         {
                             current_selected_obj = ajoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerAEntregado = true;
                         }
                         else if (ajoSlot2.RealItemName == "AjoloteDeFuego")
                         {
                             current_selected_obj = ajoF.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerFEntregado = true;
                         }
                         break;
 
@@ -1213,18 +1326,21 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = ajoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerPEntregado = true;
                         }
                         else if (ajoSlot3.RealItemName == "AjoloteDeAgua")
                         {
                             current_selected_obj = ajoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerAEntregado = true;
                         }
                         else if (ajoSlot3.RealItemName == "AjoloteDeFuego")
                         {
                             current_selected_obj = ajoF.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerFEntregado = true;
                         }
                         break;
 
@@ -1234,18 +1350,21 @@ public class AlcaldeMisiones : MonoBehaviour
                             current_selected_obj = ajoP.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAP.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerPEntregado = true;
                         }
                         else if (ajoSlot4.RealItemName == "AjoloteDeAgua")
                         {
                             current_selected_obj = ajoA.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAA.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerAEntregado = true;
                         }
                         else if (ajoSlot4.RealItemName == "AjoloteDeFuego")
                         {
                             current_selected_obj = ajoF.transform.gameObject;
                             GameMaster.instanciaCompartida.inventario.RemoveItem(current_selected_obj?.GetComponent<ItemInventario>());
                             backAF.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                            conexLM.primerFEntregado = true;
                         }
                         break;
 

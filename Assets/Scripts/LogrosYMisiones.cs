@@ -60,6 +60,7 @@ public class LogrosYMisiones : MonoBehaviour
     //Objetos de scripts diferentes para tomar informacion
     MenuInventario conexMI;
     Incubadora conexIncu;
+    AlcaldeMisiones conexAM;
 
     void Start()
     {
@@ -78,6 +79,7 @@ public class LogrosYMisiones : MonoBehaviour
 
         conexMI = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
         conexIncu = GameObject.Find("Incubadora").GetComponent<Incubadora>();
+        conexAM = GameObject.Find("AlcaldeMisiones").GetComponent<AlcaldeMisiones>();
 
     }
 
@@ -91,7 +93,8 @@ public class LogrosYMisiones : MonoBehaviour
         {
             m1c = true;
             m1.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
-            m2.gameObject.SetActive(true);
+            conexAM.activa1 = true;
+            //m2.gameObject.SetActive(true);
         }
 
         //Mision2
@@ -100,6 +103,8 @@ public class LogrosYMisiones : MonoBehaviour
             if (conexMI.r1 && conexMI.r2 && conexMI.r3 && conexMI.r4 && conexMI.r5)
             {
                 m2c = true;
+                conexAM.activa9 = true;
+                conexAM.activa1 = false;
                 m2.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
             }
         }
@@ -108,13 +113,15 @@ public class LogrosYMisiones : MonoBehaviour
         contadorTotalPeces = contadorL + contadorA;
         if(contadorTotalPeces>=50)
         {
-            m3.gameObject.SetActive(true);
-            mision3Alcalde = true;
+            //m3.gameObject.SetActive(true);
+            conexAM.activa2 = true;
+            //mision3Alcalde = true;
             
         }
       if(mision3Alcalde&&contadorConsecutivo==10)
         {
             m3c = true;
+            conexAM.activa2 = false;
             m3.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
         }
         //Mision4
@@ -124,7 +131,8 @@ public class LogrosYMisiones : MonoBehaviour
             {
                 if(iterador.RealItemName=="AjoloteSAgua")
                 {
-                    m4.gameObject.SetActive(true);
+                    //m4.gameObject.SetActive(true);
+                    conexAM.activa3 = true;
                 }
             }
         }
@@ -132,6 +140,7 @@ public class LogrosYMisiones : MonoBehaviour
         {
             m4c = true;
             m4.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+            conexAM.activa3 = false;
             if (m4c && !recompensaOA)
             {
                 current_selected_obj = orbeMA.transform.gameObject;
@@ -146,7 +155,8 @@ public class LogrosYMisiones : MonoBehaviour
             {
                 if (iterador.RealItemName == "AjoloteSFuego")
                 {
-                    m5.gameObject.SetActive(true);
+                    //m5.gameObject.SetActive(true);
+                    conexAM.activa4 = true;
                 }
             }
         }
@@ -154,6 +164,7 @@ public class LogrosYMisiones : MonoBehaviour
         {
             m5c = true;
             m5.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+            conexAM.activa4 = false;
             if (m5c && !recompensaOF)
             {
                 current_selected_obj = orbeMF.transform.gameObject;
@@ -168,7 +179,8 @@ public class LogrosYMisiones : MonoBehaviour
             {
                 if (iterador.RealItemName == "AjoloteSNube")
                 {
-                    m6.gameObject.SetActive(true);
+                    //m6.gameObject.SetActive(true);
+                    conexAM.activa5 = true;
                 }
             }
         }
@@ -176,6 +188,7 @@ public class LogrosYMisiones : MonoBehaviour
         {
             m6c = true;
             m6.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+            conexAM.activa5 = false;
             if (m6c && !recompensaON)
             {
                 current_selected_obj = orbeMN.transform.gameObject;
@@ -186,21 +199,25 @@ public class LogrosYMisiones : MonoBehaviour
         //Mision7
         if (quemado)
         {
-            m7.gameObject.SetActive(true);
+            //m7.gameObject.SetActive(true);
+            conexAM.activa6 = true;
             if(huevoAEntregado&&huevoPEntregado)
             {
                 m7c = true;
                 m7.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                conexAM.activa6 = false;
             }
         }
         //Mision8
         if (congelado)
         {
-            m8.gameObject.SetActive(true);
+            //m8.gameObject.SetActive(true);
+            conexAM.activa7 = true;
             if(cacasFEntregadas)
             {
                 m8c = true;
                 m8.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                conexAM.activa7 = false;
             }
         }
         //Mision9
@@ -225,12 +242,13 @@ public class LogrosYMisiones : MonoBehaviour
         }
         if(primerPCapturado&&primerACapturado&&primerFCapturado)
         {
-            m9.gameObject.SetActive(true);
+            //m9.gameObject.SetActive(true);
+            conexAM.activa8 = true;
             if (primerPEntregado && primerAEntregado && primerFEntregado)
             {
                 m9c = true;
                 m9.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
-                
+                conexAM.activa8 = false;
                 if(m9c&&!recompensa)
                 {
                     GameMaster.instanciaCompartida.dinero += 1000;
@@ -246,11 +264,12 @@ public class LogrosYMisiones : MonoBehaviour
         //Mision10
         if(m2c)
         {
-            m10.gameObject.SetActive(true);
+            //m10.gameObject.SetActive(true);
             if(conexMI.r7)
             {
                 m10c = true;
                 m10.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+                conexAM.activa9 = false;
             }
         }
 
