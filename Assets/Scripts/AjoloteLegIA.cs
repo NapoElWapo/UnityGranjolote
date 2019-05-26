@@ -1,117 +1,99 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityStandardAssets.Characters.FirstPerson;
 
 public class AjoloteLegIA : MonoBehaviour
 {
-    [SerializeField]
-    bool patrolWaiting;
+    public string Movimiento, Asustado;
 
-    [SerializeField]
-    float totalWaitTime = 3f;
+    public bool movimiento, asustado;
 
-    [SerializeField]
-    float switchProbability = 0.2f;
+    public float velocidad = 2f;
+    public float velocidadAsustado = 7f;
+    public float cambioDireccion = 0.5f;
+    public float maxCambio = 180f;
+    public int contador;
+    Animator ajoloteAnimator;
+    CharacterController controller;
+    SphereCollider sphereCollider;
 
-    [SerializeField]
-    List<Waypoint> patrolPoints;
-
-    NavMeshAgent agent;
-    int currentPatrolIndex;
-    bool traveling;
-    bool waiting;
-    bool patrolForward;
-    float waitTimer;
+    float direccion;
+    Vector3 rotacion;
 
     void Start()
     {
-        agent = this.GetComponent<NavMeshAgent>();
+        movimiento = true;
+        asustado = true;
 
-        if (agent == null)
+        ajoloteAnimator = GetComponent<Animator>();
+        controller = GetComponent<CharacterController>();
+        sphereCollider = GetComponent<SphereCollider>();
+        sphereCollider.isTrigger = true;
+        direccion = Random.Range(0, 360);
+        transform.eulerAngles = new Vector3(0, direccion, 0);
+    }
+
+    void Update()
+    {
+        if (!movimiento)
         {
-            Debug.LogError("El componente nav mesh component no esta agregado al " + gameObject.name);
+            StopCoroutine(NuevaDireccion());
+            ajoloteAnimator.SetBool(Movimiento, false);
         }
-        else
+        if (movimiento)
         {
-            if (patrolPoints != null && patrolPoints.Count >= 2)
-            {
-                currentPatrolIndex = 0;
-                SetDestination();
-            }
-            else
-            {
-                Debug.Log("No hay puntos suficientes");
-            }
+            StartCoroutine(NuevaDireccion());
+            ajoloteAnimator.SetBool(Movimiento, true);
+            transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
+
+            Vector3 adelante = transform.TransformDirection(Vector3.forward);
+            controller.SimpleMove(adelante * velocidad);
         }
     }
 
-    public void Update()
+    void LateUpdate()
     {
-        if (traveling && agent.remainingDistance <= 1.0f)
-        {
-            traveling = false;
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.z = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
+    }
 
-            if (patrolWaiting)
-            {
-                waiting = true;
-                waitTimer = 0f;
-            }
-            else
-            {
-                ChangePatrolPoint();
-                SetDestination();
-            }
-        }
-        if (waiting)
+    IEnumerator NuevaDireccion()
+    {
+        while (true)
         {
-            waitTimer += Time.deltaTime;
-            if (waitTimer >= totalWaitTime)
-            {
-                waiting = false;
-                ChangePatrolPoint();
-                SetDestination();
-            }
+            NuevaDireccionRutina();
+            yield return new WaitForSeconds(cambioDireccion);
+            controller.transform.eulerAngles.z.Equals(0);
+            controller.transform.eulerAngles.x.Equals(0);
         }
     }
 
-    private void SetDestination()
+    void NuevaDireccionRutina()
     {
-        if (patrolPoints != null)
-        {
-            Vector3 targetVector = patrolPoints[currentPatrolIndex].transform.position;
-            agent.SetDestination(targetVector);
-            traveling = true;
-        }
+        float piso = transform.eulerAngles.y - maxCambio;
+        float techo = transform.eulerAngles.y + maxCambio;
+        direccion = Random.Range(piso, techo);
+        rotacion = new Vector3(0, direccion, 0);
     }
 
-    private void ChangePatrolPoint()
+    private void OnTriggerEnter(Collider other)
     {
-        if (UnityEngine.Random.Range(0f, 1f) <= switchProbability)
+        if (other.tag == "Player")
         {
-            patrolForward = !patrolForward;
+            ajoloteAnimator.SetBool(Movimiento, true);
+            ajoloteAnimator.SetBool(Asustado, true);
+            ajoloteAnimator.Play("Armature|correr");
+            //Debug.Log("Triggerea");
         }
-        if (patrolForward)
+        else if (other.tag == "LimiteAjolote")
         {
-            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Count;
-        }
-        else
-        {
-            if (--currentPatrolIndex < 0)
+            contador = 1;
+            if (contador == 1)
             {
-                currentPatrolIndex = patrolPoints.Count - 1;
+                transform.RotateAround(transform.position, transform.up, 180f);
+                contador = 0;
             }
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-                if (Input.GetButtonDown("e"))
-                {
-                }
         }
     }
 }
