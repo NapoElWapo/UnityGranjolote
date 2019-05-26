@@ -180,7 +180,29 @@ public class MenuInventario : MonoBehaviour
         bASF.gameObject.SetActive(r9);
         bASN.gameObject.SetActive(r10);
 
+        foreach (var iterador in coleccionables)
+        {
+            if(!iterador.Is_used)
+            {
+                llenoR = false;
+            }
+            else
+            {
+                llenoR = true;
+            }
+        }
 
+        foreach (var iterador in ajolotes)
+        {
+            if (!iterador.Is_used)
+            {
+                llenoA = false;
+            }
+            else
+            {
+                llenoA = true;
+            }
+        }
     }
 
     public void Inventario()
@@ -256,7 +278,7 @@ public class MenuInventario : MonoBehaviour
                 if (llenoR == false)
                 {
                     iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
-                    contadorR = 0;
+                    
                     iterador.Is_used = true;
                     iterador.item_inside_type = last_entry.Category;
                     iterador.RealItemName = last_entry.Nombre;
@@ -265,18 +287,7 @@ public class MenuInventario : MonoBehaviour
                 }
                 }
 
-                if (iterador.Is_used)
-                {
-                    contadorR++;
-                    if (contadorR >= 8)
-                    {
-                        llenoR = true;
-                    }
-                    else
-                    {
-                        llenoR = false;
-                    }
-                }
+                
             }
         
     }
@@ -472,14 +483,15 @@ public class MenuInventario : MonoBehaviour
             {
                 if (!iterador.Is_used) //buscamos el primer slot libre
                 {
-                contadorA = 0;
-                if (llenoA == false)
-                  {
+                 
+                 if (llenoA == false)
+                 {
+                    
                     iterador.Slot_ui_img.sprite = last_entry.Inventory_Decal;
                     
                     iterador.Is_used = true;
                     
-                    
+
                     iterador.item_inside_type = last_entry.Category;
                     iterador.RealItemName = last_entry.Nombre;
 
@@ -510,23 +522,12 @@ public class MenuInventario : MonoBehaviour
 
                     Debug.Log($"ui inserted  name: {last_entry.Nombre}   category: {last_entry.Category.ToString()}");
                     break;
-                  }
+                 }
+                 
                 }
-            
-            if (iterador.Is_used)
-                {
-                    contadorA++;
-                    if (contadorA >= 4)
-                    {
-                        
-                        llenoA = true;
-                        
-                    }
-                    else
-                    {
-                        llenoA = false;
-                    }
-                }
+                
+
+               
             }
         
     }

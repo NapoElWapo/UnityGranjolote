@@ -13,10 +13,13 @@ public class AjoloteDesecho : MonoBehaviour
 
     public bool alimentado, feliz, muyFeliz;
 
+    Reloj rejol;
+
     // Start is called before the first frame update
     void Start()
     {
         boton = GetComponent<GameObject>();
+        rejol = GameObject.Find("HoraMinuto").GetComponent<Reloj>();
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class AjoloteDesecho : MonoBehaviour
     {
         Timer();
         ImagenFeliz();
+        ChecarReloj();
     }
 
     void Timer()
@@ -62,16 +66,27 @@ public class AjoloteDesecho : MonoBehaviour
     void ImagenFeliz()
     {
         if (feliz)
-            this.gameObject.transform.GetChild(4).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            this.gameObject.transform.GetChild(3).gameObject.SetActive(true);
 
         if(muyFeliz)
-            this.gameObject.transform.GetChild(4).gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            this.gameObject.transform.GetChild(4).gameObject.SetActive(true);
 
         if (!feliz)
-            this.gameObject.transform.GetChild(4).gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            this.gameObject.transform.GetChild(3).gameObject.SetActive(false);
 
         if (!muyFeliz)
-            this.gameObject.transform.GetChild(4).gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            this.gameObject.transform.GetChild(4).gameObject.SetActive(false);
+    }
+
+    void ChecarReloj()
+    {
+        if(GameMaster.instanciaCompartida.hora == 23 && GameMaster.instanciaCompartida.minuto >= 59)
+        {
+            Debug.Log("falso ajolotin");
+            alimentado = false;
+            feliz = false;
+            muyFeliz = false;
+        }
     }
 
 }

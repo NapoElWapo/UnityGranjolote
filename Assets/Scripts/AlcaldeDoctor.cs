@@ -18,6 +18,7 @@ public class AlcaldeDoctor : MonoBehaviour
     public GameObject current_selected_obj, ASA;
 
     public GameObject continueBotton;
+    public GameObject continueBottoncurar;
     public GameObject PlayerUI;
 
     void Start()
@@ -37,6 +38,15 @@ public class AlcaldeDoctor : MonoBehaviour
             PlayerUI.SetActive(false);
         }
 
+        if (textDisplay.text == CurarAEnlatado[index])
+        {
+            continueBottoncurar.SetActive(true);
+        }
+        if (hablando == true)
+        {
+            PlayerUI.SetActive(false);
+        }
+
         foreach (var iterador in conexMI.herramientas)
         {
             if (iterador.RealItemName == "AjoloteEnlatado")
@@ -50,23 +60,25 @@ public class AlcaldeDoctor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (hablando == false && AEnlatado==false)
+
+            if (Input.GetButtonDown("e"))
             {
-                if (Input.GetButtonDown("e"))
+                if (hablando == false && AEnlatado == false)
                 {
                     hablando = true;
                     StartCoroutine(Type());
                 }
-               
-            }
-            else if (AEnlatado)
-            {
-                if (Input.GetButtonDown("e"))
+                else if (AEnlatado)
                 {
+
                     hablando = true;
                     StartCoroutine(TypeCurar());
+
                 }
             }
+            
+            
+            
         }
     }
 
@@ -123,6 +135,30 @@ public class AlcaldeDoctor : MonoBehaviour
         {
             textDisplay.text = "";
             continueBotton.SetActive(false);
+            var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
+            var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            mouseLook.XSensitivity = 2F;
+            mouseLook.YSensitivity = 2F;
+            Time.timeScale = 1f;
+            index = 0;
+            hablando = false;
+            PlayerUI.SetActive(true);
+        }
+    }
+
+    public void NextSentenceA()
+    {
+        continueBottoncurar.SetActive(false);
+        if (index < CurarAEnlatado.Length - 1 )
+        {
+            index++;
+            textDisplay.text = "";
+            StartCoroutine(TypeCurar());
+        }
+        else
+        {
+            textDisplay.text = "";
+            continueBottoncurar.SetActive(false);
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
             mouseLook.XSensitivity = 2F;

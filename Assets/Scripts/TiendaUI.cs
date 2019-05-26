@@ -13,7 +13,7 @@ public class TiendaUI : MonoBehaviour
     public bool poderComprarArco=false, poderComprarAF=false, poderComprarAH=false;
     public int dinero;
     public Text uiDinero;
-
+    private bool comprarComida=true;
     private int ventanaActiva;
 
     slot itemslot1, itemslot2, itemslot3, itemslot4, itemslot5, itemslot6, itemslot7, itemslot8;
@@ -81,6 +81,31 @@ public class TiendaUI : MonoBehaviour
         {
             precioAH1.GetComponent<Text>().text = "Precio: 2000 oro";
             precioAH2.GetComponent<Text>().text = "Precio: 2000 oro";
+        }
+
+        if(lc)
+        {
+            botonProducto1.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        if (ac)
+        {
+            botonProducto2.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        if (rc)
+        {
+            botonProducto3.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        if (afc)
+        {
+            botonProducto4.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
+
+        if (ahc)
+        {
+            botonProducto5.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
         }
     }
 
@@ -886,7 +911,23 @@ public class TiendaUI : MonoBehaviour
 
             case 6:
 
-                if (GameMaster.instanciaCompartida.dinero >= 10)
+                foreach(var iterador in conex.coleccionables)
+                {
+                    if(iterador.RealItemName=="ComidaGenerica")
+                    {
+                        if(iterador.Slot_stack.text=="99")
+                        {
+                            comprarComida = false;
+                        }
+                        else
+                        {
+                            comprarComida = true;
+                        }
+                    }
+                }
+
+
+                if (GameMaster.instanciaCompartida.dinero >= 10 && !conex.llenoA&&comprarComida)
                 {
                     current_selected_obj = comida.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());

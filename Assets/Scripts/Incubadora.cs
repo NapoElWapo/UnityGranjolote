@@ -819,7 +819,7 @@ public class Incubadora : MonoBehaviour
     public void Recoger()
     {
         //slot1
-        if (incuP == true&& incuT==true)
+        if (incuP == true&& incuT==true&&!conex.llenoA)
         {
             current_selected_obj = ajoP.transform.gameObject;
             GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
@@ -827,7 +827,7 @@ public class Incubadora : MonoBehaviour
             incuT = false;
             slotIncu1.sprite = null;
         }
-        else if (incuA == true && incuT == true)
+        else if (incuA == true && incuT == true && !conex.llenoA)
         {
             current_selected_obj = ajoA.transform.gameObject;
             GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
@@ -835,7 +835,7 @@ public class Incubadora : MonoBehaviour
             incuT = false;
             slotIncu1.sprite = null;
         }
-        else if (incuF == true && incuT == true)
+        else if (incuF == true && incuT == true && !conex.llenoA)
         {
             current_selected_obj = ajoF.transform.gameObject;
             GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
@@ -843,7 +843,7 @@ public class Incubadora : MonoBehaviour
             incuT = false;
             slotIncu1.sprite = null;
         }
-        else if (incuH == true && incuT == true)
+        else if (incuH == true && incuT == true && !conex.llenoA)
         {
             current_selected_obj = ajoH.transform.gameObject;
             GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
@@ -851,7 +851,7 @@ public class Incubadora : MonoBehaviour
             incuT = false;
             slotIncu1.sprite = null;
         }
-        else if (incuN == true && incuT == true)
+        else if (incuN == true && incuT == true && !conex.llenoA)
         {
             current_selected_obj = ajoN.transform.gameObject;
             GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
@@ -859,7 +859,7 @@ public class Incubadora : MonoBehaviour
             incuT = false;
             slotIncu1.sprite = null;
         }
-        else if (incuO == true && incuT == true)
+        else if (incuO == true && incuT == true && !conex.llenoA)
         {
             current_selected_obj = ajoO.transform.gameObject;
             GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());

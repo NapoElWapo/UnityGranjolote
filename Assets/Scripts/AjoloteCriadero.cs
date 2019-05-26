@@ -7,7 +7,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class AjoloteCriadero : MonoBehaviour
 {
     RectTransform slotActual;
-    public RectTransform ajoloteP, ajoloteA, ajoloteF, ajoloteH, ajoloteN, ajoloteD, ajoloteL, nuevoSlot, select1, select2, select3, select4;
+    public RectTransform slotHuevo, ajoloteP, ajoloteA, ajoloteF, ajoloteH, ajoloteN, ajoloteD, ajoloteL, nuevoSlot, select1, select2, select3, select4;
     public RectTransform ajoloteActual, doradoTemp, criaderoUI, itemsUI, ajolotesUI;
 
     public GameObject botonesCriadero, objetoAct, ajoP, ajoA, ajoF, ajoH, ajoN, ajoD, ajoL, lataComida, pezComida, gusanoComida;
@@ -21,7 +21,8 @@ public class AjoloteCriadero : MonoBehaviour
     int slot = 0;
     int slotComida = 0;
     int slotSeleccionado = 0;
-    private bool UIactivo;
+    int cantidadAjolotesFelices;
+    private bool UIactivo, hayDorado;
 
 
     void Start()
@@ -66,6 +67,8 @@ public class AjoloteCriadero : MonoBehaviour
 
         itemslot8 = inv.coleccionables.Find(x => x.Slot_name == "Slot8");
         sslot8.sprite = itemslot8.Slot_ui_img.sprite;
+
+        checarReloj();
     }
 
     public void dejarAjolote()
@@ -430,6 +433,7 @@ public class AjoloteCriadero : MonoBehaviour
         if (UIactivo)
         {
             criaderoUI.localPosition = new Vector2(0f, 0f);
+            //criaderoUI.gameObject.SetActive(true);
 
             Cursor.lockState = CursorLockMode.None;
 
@@ -445,6 +449,8 @@ public class AjoloteCriadero : MonoBehaviour
         else if (!UIactivo)
         {
             criaderoUI.localPosition = new Vector2(4000f, 4000f);
+            //criaderoUI.gameObject.SetActive(false);
+
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
             mouseLook.XSensitivity = 2F;
@@ -514,8 +520,8 @@ public class AjoloteCriadero : MonoBehaviour
                         ajoDes = GameObject.Find("AjoloteSlotC (" + i + ")").GetComponent<RectTransform>().GetChild(2).gameObject.GetComponent<AjoloteDesecho>();
                         if (!ajoDes.alimentado)
                         {
-                            ajoDes.timerkk = ajoDes.timerkk * 0.66f;
-                            ajoDes.tiempoVar = ajoDes.tiempoDesecho * 0.66f;
+                            ajoDes.timerkk = ajoDes.timerkk * 0.83f;
+                            ajoDes.tiempoVar = ajoDes.tiempoDesecho * 0.83f;
                             ajoDes.alimentado = true;
                             ajoDes.feliz = true;
                             objetoAct = lataComida;
@@ -578,6 +584,14 @@ public class AjoloteCriadero : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    void checarReloj()
+    {
+        if (GameMaster.instanciaCompartida.hora == 23 && GameMaster.instanciaCompartida.minuto >= 59)
+        {
+            
         }
     }
 }
