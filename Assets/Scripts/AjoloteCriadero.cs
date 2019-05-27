@@ -29,7 +29,7 @@ public class AjoloteCriadero : MonoBehaviour
     public bool UIactivo, hayDorado, checarUnaVez;
     public int dejarHuevo, porcentajeHuevo = 30, dejarHuevoDorado, porcentajeHuevoDorado = 10;
     public int precioCriadero;
-
+    public bool criaderoLleno;
 
     void Start()
     {
@@ -76,6 +76,16 @@ public class AjoloteCriadero : MonoBehaviour
         sslot8.sprite = itemslot8.Slot_ui_img.sprite;
 
         checarReloj();
+
+        if(slot==10)
+        {
+            criaderoLleno = true;
+        }
+        else if(slot<10)
+        {
+            criaderoLleno = false;
+        }
+
     }
 
     public void dejarAjolote()
