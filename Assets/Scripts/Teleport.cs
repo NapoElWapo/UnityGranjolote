@@ -7,12 +7,12 @@ public class Teleport : MonoBehaviour
 {
 
     public GameObject LCJ, LCN1, LCN2, LCNM, LH, LHM,JO,N1O,N2O,NMO,HO,Player;
-    GameObject Jugador = GameObject.FindWithTag("Player");
+   
    
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject Jugador = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame

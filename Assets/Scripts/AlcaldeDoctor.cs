@@ -63,12 +63,13 @@ public class AlcaldeDoctor : MonoBehaviour
 
             if (Input.GetButtonDown("e"))
             {
+                
                 if (hablando == false && AEnlatado == false)
                 {
                     hablando = true;
                     StartCoroutine(Type());
                 }
-                else if (AEnlatado)
+                else if (hablando==false&&AEnlatado)
                 {
 
                     hablando = true;
