@@ -106,6 +106,7 @@ public class MinijuegoPescaArco : MonoBehaviour
 
     IEnumerator Delay()
     {
+       
         yield return new WaitForSecondsRealtime(1.5f);
         panelPesca.gameObject.SetActive(false);
     }

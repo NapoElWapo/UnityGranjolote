@@ -5,7 +5,7 @@ using UnityEngine;
 public class OrbeArco : MonoBehaviour
 {
 
-    public GameObject orbeFuego;
+    public GameObject orbeFuego,lavaPesca;
     public bool pescarConArco=false;
 
 
@@ -20,9 +20,11 @@ public class OrbeArco : MonoBehaviour
         
             if (other.tag == "Agua2")
             {
-
-            orbeFuego.gameObject.SetActive(false);
             pescarConArco = true;
+            lavaPesca.gameObject.SetActive(true);
+            orbeFuego.gameObject.SetActive(false);
+            
+
             }
         
         
