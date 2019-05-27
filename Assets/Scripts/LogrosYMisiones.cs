@@ -64,6 +64,7 @@ public class LogrosYMisiones : MonoBehaviour
     MenuInventario conexMI;
     Incubadora conexIncu;
     AlcaldeMisiones conexAM;
+    public AjoloteCriadero bool1, bool2, bool3, bool4, bool5, bool6, bool7, bool8, bool9, bool10;
 
     void Start()
     {
@@ -474,6 +475,10 @@ public class LogrosYMisiones : MonoBehaviour
         }
 
         //Logro34
+        if(bool1.criaderoLleno&& bool2.criaderoLleno && bool3.criaderoLleno && bool4.criaderoLleno && bool5.criaderoLleno && bool6.criaderoLleno && bool7.criaderoLleno && bool8.criaderoLleno && bool9.criaderoLleno && bool10.criaderoLleno)
+        {
+            L34.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
 
     }
 

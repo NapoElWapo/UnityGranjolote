@@ -56,10 +56,13 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public GameObject current_selected_obj; //Deberia de ser un item base
     public GameObject triggernpc;
 
+    public Teleport TP;
+
     void Start()
     {
         //   controlador_juego = GetComponent<GameMaster>();
         MainCamera = this.GetComponent<Camera>();
+        
     }
 
     void Update()
@@ -67,6 +70,10 @@ public class PlayerInventoryInteraction : MonoBehaviour
         RaycastHit colision_rayo;
         Ray rayo = MainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)); //Optimizar screen w,h
         Debug.DrawRay(rayo.origin, rayo.direction * range);
+        if (GameMaster.instanciaCompartida.hora == 6)
+        {
+            GameMaster.instanciaCompartida.cambioVelocidad = 1;
+        }
         if (Input.GetButtonDown("e"))
         {
             Debug.Log("pew");
@@ -80,73 +87,75 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 }
                 else if (colision_rayo.transform.tag == puertac1)
                 {
-                    GameMaster.instanciaCompartida.Casa1();
-                    GameMaster.instanciaCompartida.nivelanterior = 1;//el 2 equivale a la escena de pruebas, cambiar el numero para que sea overworld
+                    TP.CasaNPC1();
+                    //el 2 equivale a la escena de pruebas, cambiar el numero para que sea overworld
                 }
                 else if (colision_rayo.transform.tag == puertac2)
                 {
-                    GameMaster.instanciaCompartida.Casa2();
-                    GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
+                    TP.CasaNPC2();
+                    //cambio a overworld
 
                 }
                 else if (colision_rayo.transform.tag == puertam)
                 {
-                    GameMaster.instanciaCompartida.CasaMision();
-                    GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
+                    TP.CasaNPCM();
+                    //cambio a overworld
 
                 }
                 else if (colision_rayo.transform.tag == puertach)
                 {
-                    GameMaster.instanciaCompartida.CasaHospital();
-                    GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
+                    TP.CasaHospital();
+                    //cambio a overworld
 
                 }
                 else if (colision_rayo.transform.tag == puertacj)
                 {
-                    GameMaster.instanciaCompartida.CasaJugador();
-                    GameMaster.instanciaCompartida.nivelanterior = 1;//cambio a overworld
+                    TP.CasaJugador();
+                    //cambio a overworld
 
                 }
                 else if (colision_rayo.transform.tag == puertac11)//puerta de la CasaIP
                 {
-                    GameMaster.instanciaCompartida.Jugar();
-                    GameMaster.instanciaCompartida.nivelanterior = 4;//el cuatro es la escena CasaIP
+                    TP.CasaN1O();
+                    //el cuatro es la escena CasaIP
 
                 }
                 else if (colision_rayo.transform.tag == puertac22)
                 {
-                    GameMaster.instanciaCompartida.Jugar();
-                    GameMaster.instanciaCompartida.nivelanterior = 5;
+                    TP.CasaN2O();
+                    
                 }
                 else if (colision_rayo.transform.tag == puertacmm)
                 {
-                    GameMaster.instanciaCompartida.Jugar();
-                    GameMaster.instanciaCompartida.nivelanterior = 6;
+                    TP.CasaNMO();
+                    
                 }
                 else if (colision_rayo.transform.tag == puertachh)
                 {
-                    GameMaster.instanciaCompartida.Jugar();
-                    GameMaster.instanciaCompartida.nivelanterior = 3;
+                    TP.CasaHO();
+                    
                 }
                 else if (colision_rayo.transform.tag == puertacjj)
                 {
-                    GameMaster.instanciaCompartida.Jugar();
-                    GameMaster.instanciaCompartida.nivelanterior = 7;
+                    TP.CasaJO();
+                    
                 }
                 else if (colision_rayo.transform.tag == cama)
                 {
+                    
                     if (GameMaster.instanciaCompartida.hora >= 18)
                     {
-                        GameMaster.instanciaCompartida.cambioTotal = ((((24f - GameMaster.instanciaCompartida.hora) + 6f) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
-                        GameMaster.instanciaCompartida.hora = 6;
-                        GameMaster.instanciaCompartida.minuto = 0f;
+                        
+                        
+                            GameMaster.instanciaCompartida.cambioVelocidad = 150;
                     }
                     else if (GameMaster.instanciaCompartida.hora < 6)
                     {
-                        GameMaster.instanciaCompartida.cambioTotal = (((6f - GameMaster.instanciaCompartida.hora) * 60f) + (60f - GameMaster.instanciaCompartida.minuto));
-                        GameMaster.instanciaCompartida.hora = 6;
-                        GameMaster.instanciaCompartida.minuto = 0f;
+
+
+                        GameMaster.instanciaCompartida.cambioVelocidad = 150;
                     }
+
                 }
                 else if(colision_rayo.transform.tag==Tienda)
                 {

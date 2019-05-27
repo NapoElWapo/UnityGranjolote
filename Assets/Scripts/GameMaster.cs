@@ -53,6 +53,8 @@ public class GameMaster : MonoBehaviour
     public SistemaInventario inventario;
     public MenuInventario GUI_controlador;
 
+    public float cambioVelocidad=1f;
+
     private void Awake()
     {
 
@@ -72,7 +74,7 @@ public class GameMaster : MonoBehaviour
         VolumenMusica(MusicManager.volume);
     }
 
-    void OnLevelWasLoaded(int level)
+    /*void OnLevelWasLoaded(int level)
     {
         if (nivelanterior == 3)
         {
@@ -116,7 +118,7 @@ public class GameMaster : MonoBehaviour
             Jugador.transform.position = Puerta.transform.position;
             Jugador.SetActive(true);
         }
-    }
+    }*/
     public void Jugar()
     {
         SceneManager.LoadScene(NombreEscena.Mundo);//cambiar dependiendo a que escena quieres ir al darle jugar
@@ -127,7 +129,7 @@ public class GameMaster : MonoBehaviour
         SceneManager.LoadScene(NombreEscena.MenuP);
     }
 
-    public void Casa1()
+    /*public void Casa1()
     {
         SceneManager.LoadScene(NombreEscena.CasaN);
     }
@@ -149,7 +151,7 @@ public class GameMaster : MonoBehaviour
     public void CasaHospital()
     {
         SceneManager.LoadScene(NombreEscena.Hospital);
-    }
+    }*/
 
     public void VolumenMusica(float newVolumen)
     {
@@ -170,7 +172,7 @@ public class GameMaster : MonoBehaviour
 
     void Update()
     {
-        minuto += Time.deltaTime;
+        minuto += Time.deltaTime*cambioVelocidad;
 
         if (minuto >= 60)
         {

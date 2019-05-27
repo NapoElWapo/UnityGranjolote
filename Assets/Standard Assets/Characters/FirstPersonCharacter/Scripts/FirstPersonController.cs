@@ -52,7 +52,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public bool dobleSalto=false;
         public int saltos=0;
         private int contadorSaltos;
-
+        
 
 
         public MouseLook MouseLook { get { return m_MouseLook; } }
@@ -167,7 +167,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				
 				Debug.Log("Moriste");
                 
-                SceneManager.LoadScene(3);
+                //SceneManager.LoadScene(3);
                 health = 100;
 				
 			}

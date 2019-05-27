@@ -7,7 +7,7 @@ public class MinijuegoPescaArco : MonoBehaviour
     public RectTransform pez, posFinal, panelPesca, holder, pescaHolder, finalholder, pezholder,orbe,pescadin;
 
     private Vector2 posInicio;
-    private float vel;
+    public float vel = 300;
     public bool pescarOrbe;
     public GameObject pescado, current_selected_obj,orbeF;
     public int contadorPecesA=0;

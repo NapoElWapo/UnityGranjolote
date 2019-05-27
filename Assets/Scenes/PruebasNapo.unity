@@ -492,6 +492,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1953241844}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &37227755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37227750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.022422481, y: 0.003108989, z: 0.063601024}
+  m_Center: {x: -0.012621059, y: 5.456391e-10, z: 0.0249857}
 --- !u!1 &38809685 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2768624980347815775, guid: 4b7ae54c4bde98d4ebaf02224362a8a9,
@@ -899,8 +912,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178848024}
-  m_LocalRotation: {x: -0.07921907, y: 0.70596397, z: 0.07998149, w: 0.699244}
-  m_LocalPosition: {x: 63.988464, y: -15.911025, z: 240.46796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 208.93591, y: -163.09276, z: -930.2359}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4531,6 +4544,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MinijuegoPescar
+      objectReference: {fileID: 0}
+    - target: {fileID: 175976648072357002, guid: 98c033d3b06350940b3ccd2831aa60cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 175976648072357003, guid: 98c033d3b06350940b3ccd2831aa60cc,
         type: 3}
@@ -8505,7 +8523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386381646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 102.4, y: -7.7201304, z: 160.5}
+  m_LocalPosition: {x: 292.90356, y: -186.31491, z: -734.7572}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9941,87 +9959,75 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2671218140461889470, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694541, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_Name
       value: MinijuegoPescarA
       objectReference: {fileID: 0}
-    - target: {fileID: 5335775136962265935, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694542, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 166.75922
       objectReference: {fileID: 0}
-    - target: {fileID: 5335775136962265935, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694542, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.83766913
       objectReference: {fileID: 0}
-    - target: {fileID: 5335775136962265935, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694542, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 368.99496
       objectReference: {fileID: 0}
-    - target: {fileID: 5335775136962265935, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694542, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5335775136962265935, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694542, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5335775136962265935, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694542, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5335775136962265935, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694542, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5335775136962265935, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694542, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
-    - target: {fileID: 5335775136962265935, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694542, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5335775136962265935, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694542, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5335775136962265935, guid: f956f20321998cc47a7bdcf88127f96f,
-        type: 3}
+    - target: {fileID: 2138694542, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1571760461, guid: f956f20321998cc47a7bdcf88127f96f, type: 3}
+    - target: {fileID: 1571760460, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1571760460, guid: f956f20321998cc47a7bdcf88127f96f, type: 3}
+    - target: {fileID: 996352520, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: pescado
       value: 
       objectReference: {fileID: 3175648820657704550}
-    - target: {fileID: 1571760460, guid: f956f20321998cc47a7bdcf88127f96f, type: 3}
+    - target: {fileID: 996352520, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
       propertyPath: orbeF
       value: 
       objectReference: {fileID: 3175648820657704551}
-    - target: {fileID: 1571760459, guid: f956f20321998cc47a7bdcf88127f96f, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 996352520, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
+      propertyPath: pescarOrbe
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f956f20321998cc47a7bdcf88127f96f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 7ed10160763669d4a83f077ac2c9416d, type: 3}
 --- !u!1 &1571760459 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1571760459, guid: f956f20321998cc47a7bdcf88127f96f,
+  m_CorrespondingSourceObject: {fileID: 1571760459, guid: 7ed10160763669d4a83f077ac2c9416d,
     type: 3}
   m_PrefabInstance: {fileID: 1571760457}
   m_PrefabAsset: {fileID: 0}
@@ -10323,8 +10329,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647894328}
-  m_LocalRotation: {x: -0.07921907, y: 0.70596397, z: 0.07998149, w: 0.699244}
-  m_LocalPosition: {x: 63.988464, y: -44.711895, z: 240.46796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 292.90356, y: -215.11578, z: -734.7572}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19185,6 +19191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InventarioUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675211460662991338, guid: 7a4805917b185d3429f41baee34250b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5675211460662991340, guid: 7a4805917b185d3429f41baee34250b8,
         type: 3}
