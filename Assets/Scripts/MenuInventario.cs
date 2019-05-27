@@ -58,6 +58,7 @@ public class MenuInventario : MonoBehaviour
     private bool vap = false, vaa = false, vaf = false, vah = false, van = false, vao = false, val = false, vasa = false, vasf = false, vasn = false, vad = false;
     public int dinero, ajoloteActivo;
     public Text uiDinero;
+    public Text DescripcionM;
 
     //Estas son las preterminadas configuradas en el editor (cambiar esto para beneficio muto)
 
@@ -71,7 +72,7 @@ public class MenuInventario : MonoBehaviour
     public List<slot> pasivas = new List<slot>();
 
     public slotComparer SeekForCategory = new slotComparer();
-
+    
     public string EnumerationName = "Slot";
     public string SlotImageName = "SpriteImage";
     public bool llenoR=false,llenoA=false;
@@ -700,5 +701,70 @@ public class MenuInventario : MonoBehaviour
             }
         }
 
-    
+        public void MostrarMisionDescripcion1()
+        {
+            DescripcionM.text = "Hola joven\n \n Para iniciar tu aventura necesitas aprender sobre este mundo, yo te dire lo basico \n\n Ve a la tienda y compra una lanza" +
+            " para que puedas pescar en un lago, yo te recomiendo el bosque, podras conseguir peces, a los ajolotes les encantan los peces \n\n Compra un rastrillo de tierra" +
+            " cuando veas tierra levantada significa que hay gusanos, y los gusanos son muy nutritivos para los ajolotes \n\n Hablando de ajolotes son una muy buena fuente de ingreso" +
+            " comprame un criadero te lo dare a buen precio pero los demas te costaran cada vez mas, si logras capturar un ajolote puedes ponerlo en el criadero" +
+            " los desechos que generan son muy valiosos ¿sabes? \n\n Entonces consigue un ajolote y alimentalo en el criadero para iniciar tu aventura";
+        }
+
+        public void MostrarMisionDescripcion2()
+        {
+            DescripcionM.text = "Hay 5 tipos diferentes de ajolotes en esta region, equipamos tu casa con un analizador para que los registres \n\n" +
+            "te daremos dinero y se agregara su informacion a tu ajolotipedia, registra: \n\n Ajolote de planta \n Ajolote de agua \n Ajolote de fuego" +
+            " \n Ajolote de hielo \n Ajolote de nube";
+        }
+
+    public void MostrarMisionDescripcion3()
+    {
+        DescripcionM.text = "Hmmmmm veo que eres bueno con la lanza, trata de pescar 10 peces de manera consecutiva y pondre a la venta mi arco pescador en la tienda" +
+            " a ver si como crias pescas";
     }
+
+    public void MostrarMisionDescripcion4()
+    {
+        DescripcionM.text = "Joven!!!!, un dia que andaba en las cuevas acuaticas perdi mi pantalon preferido No.1 de la VIDA, te dare una reliquia si lo encuentras y me lo traes" +
+            " te lo pido por favor joven, traeme mis pantalones preferidos :c";
+    }
+
+    public void MostrarMisionDescripcion5()
+    {
+        DescripcionM.text = "JOVEN!!! fui a buscar un poco de tierra para mi plantita en el volcan, pero como hacia mucho calor me quite mi saco preferido, y cuando sali " +
+            "lo deje en algun lado, ya no pude entrar desde que cayo esa roca, te dare otra reliquia si me recuperas mi saco ¿puedes traerme mi saco preferido por favor joven? :'c";
+    }
+
+    public void MostrarMisionDescripcion6()
+    {
+        DescripcionM.text = "JOOOOOOOOOOOOOOOOOOOOOOOOOVEEEEEEEEEEEEN!!!!!! fui a pasear hace rato y aparecio un vendaval muy fuerte que me deja casi pelon, " +
+            "pero no me dejo pelon, si no que me dejo sin mi sombrero favorito, trate de ver donde cayo, pero parece que no cayo y no lo encuentro por todo " +
+            "el suelo, si lo encuentras te dare mi ultima reliquia, POR FAVOR JOVEN TRAEME MI SOMBRERO FAVORITO DE REGRESO :'''(((((";
+    }
+
+    public void MostrarMisionDescripcion7()
+    {
+        DescripcionM.text = "En estos dias si que le entra hambre a uno, ¿no crees? que tal si me traes un huevo de ajolote de planta y otro de agua" +
+            "¿Que que voy a hacer con ellos?, no te preocupes quiero criarlos y desayunar con ellos, dicen que desayunar con alguien mas hace mas sabrosa la comida," +
+            "si me haces este favor bajare el precio del amuleto contra el fuego, ¿Que te parece?";
+    }
+
+    public void MostrarMisionDescripcion8()
+    {
+        DescripcionM.text = "Ya estaba prendiendo mi horno para prepararme un pan que me enseño a hacer mi madre, pero me di cuanta que nomas no prendia reevise y el combustible " +
+            "que uso se acabo, puedes traerme mas combustible, creo que los desechos de los ajolotes de fuego me serviran a la perfeccion " +
+            "si me ayudas con esto te bajare el precio del amuleto contra el hielo, ¿Como te quedo el oclayo?";
+    }
+
+    public void MostrarMisionDescripcion9()
+    {
+        DescripcionM.text = "Joven quiero enseñarle a la gente del pueblo sobre su fauna y como veo que eres alguien ya familiarizado con ella, ¿Me puedes traer " +
+            "un ajolote de planta, agua y fuego?, te pagare con 1000 de oro, muvhas gracias joven";
+    }
+
+    public void MostrarMisionDescripcion10()
+    {
+        DescripcionM.text = "Joven, la verdad al inicio te estabamos probando, la verdad es que hay otra clase de ajolote, es un ajolote que se cuenta solo en leyendas " +
+            "segun eso, se encuentra al fondo de las cuevas, es un recurso muy importante para la ciencia, si lo registras no te pedire nada mas joven, gracias";
+    }
+}

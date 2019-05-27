@@ -15,8 +15,11 @@ public class AjoloteCriadero : MonoBehaviour
 
     public Image sAslot1, sAslot2, sAslot3, sAslot4, sslot1, sslot2, sslot3, sslot4, sslot5, sslot6, sslot7, sslot8;
 
+    
+
     MenuInventario inv;
     AjoloteDesecho ajoDes;
+    LogrosYMisiones conexLM;
 
     int slot = 0;
     int slotComida = 0;
@@ -31,6 +34,7 @@ public class AjoloteCriadero : MonoBehaviour
     void Start()
     {
         inv = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
+        conexLM = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
     }
 
     void Update()
@@ -465,6 +469,7 @@ public class AjoloteCriadero : MonoBehaviour
     {
         if(GameMaster.instanciaCompartida.dinero >= precioCriadero)
         {
+            conexLM.criaderosComprados += 1;
             GameMaster.instanciaCompartida.dinero -= precioCriadero;
             comprarCriaderoPanel.gameObject.SetActive(false);
         }
@@ -554,6 +559,7 @@ public class AjoloteCriadero : MonoBehaviour
             {
                 if (iterador.RealItemName == "Pescado")
                 {
+                    conexLM.alimenteAjolote = true;
                     for (int i = 0; i < 10; i++)
                     {
                         ajoDes = GameObject.Find("AjoloteSlotC (" + i + ") C" + numeroCriadero).GetComponent<RectTransform>().GetChild(2).gameObject.GetComponent<AjoloteDesecho>();

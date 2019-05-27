@@ -57,6 +57,9 @@ public class LogrosYMisiones : MonoBehaviour
     //Logro30 31
     public int contadorGusanos;
 
+    //Logro 32 33
+    public int criaderosComprados;
+
     //Objetos de scripts diferentes para tomar informacion
     MenuInventario conexMI;
     Incubadora conexIncu;
@@ -459,8 +462,16 @@ public class LogrosYMisiones : MonoBehaviour
         }
 
         //Logro32
+        if (criaderosComprados >= 2)
+        {
+            L32.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
 
         //Logro33
+        if (criaderosComprados == 10)
+        {
+            L33.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        }
 
         //Logro34
 
