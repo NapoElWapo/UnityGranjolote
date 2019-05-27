@@ -21,9 +21,17 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public string puertachh = "PPH";
     public string puertacjj = "PPJ";
 
-    public AjoloteCriadero criadero;
+    public AjoloteCriadero criadero1, criadero2, criadero3, criadero4, criadero5, criadero6, criadero7, criadero8, criadero9, criadero10;
     public string cria1 = "Criadero1";
     public string cria2 = "Criadero2";
+    public string cria3 = "Criadero3";
+    public string cria4 = "Criadero4";
+    public string cria5 = "Criadero5";
+    public string cria6 = "Criadero6";
+    public string cria7 = "Criadero7";
+    public string cria8 = "Criadero8";
+    public string cria9 = "Criadero9";
+    public string cria10 = "Criadero10";
 
     public MejorarAjolote mejorasAjo;
     public string mejoras = "MejorarAjolotes";
@@ -175,7 +183,61 @@ public class PlayerInventoryInteraction : MonoBehaviour
 
                 else if (colision_rayo.transform.tag == cria1)
                 {
-                    criadero.ToggleCriadero();
+                    criadero1.ToggleCriadero();
+
+                }
+
+                else if (colision_rayo.transform.tag == cria2)
+                {
+                    criadero2.ToggleCriadero();
+
+                }
+
+                else if (colision_rayo.transform.tag == cria3)
+                {
+                    criadero3.ToggleCriadero();
+
+                }
+
+                else if (colision_rayo.transform.tag == cria4)
+                {
+                    criadero4.ToggleCriadero();
+
+                }
+
+                else if (colision_rayo.transform.tag == cria5)
+                {
+                    criadero5.ToggleCriadero();
+
+                }
+
+                else if (colision_rayo.transform.tag == cria6)
+                {
+                    criadero6.ToggleCriadero();
+
+                }
+
+                else if (colision_rayo.transform.tag == cria7)
+                {
+                    criadero7.ToggleCriadero();
+
+                }
+
+                else if (colision_rayo.transform.tag == cria8)
+                {
+                    criadero8.ToggleCriadero();
+
+                }
+
+                else if (colision_rayo.transform.tag == cria9)
+                {
+                    criadero9.ToggleCriadero();
+
+                }
+
+                else if (colision_rayo.transform.tag == cria10)
+                {
+                    criadero10.ToggleCriadero();
 
                 }
 
