@@ -39,7 +39,7 @@ public class GameMaster : MonoBehaviour
 
     public bool mostrarTiendaUI = false;
 
-    public int hora = 20;
+    public int hora = 12;
     public float minuto;
     public float horaActual, cambioTotal;
 
