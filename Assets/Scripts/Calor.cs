@@ -51,8 +51,17 @@ public class Calor : MonoBehaviour
             NPC2.instancia.calor = true;
         }
 
-        
-	}
+        foreach (var iterador in conex.herramientas)
+        {
+            if (iterador.RealItemName == "AjoloteApagado")
+            {
+                current_selected_obj = ASF.transform.gameObject;
+                GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
+            }
+        }
+
+
+    }
 
     public void OnTriggerExit(Collider collision)
     {
@@ -80,14 +89,7 @@ public class Calor : MonoBehaviour
         if (quemandose)
         {
             imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
-            foreach (var iterador in conex.herramientas)
-            {
-                if (iterador.RealItemName == "AjoloteApagado")
-                {
-                    current_selected_obj = ASF.transform.gameObject;
-                    GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
-                }
-            }
+            
         }
     }
 }

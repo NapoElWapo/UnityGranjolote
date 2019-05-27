@@ -12,6 +12,7 @@ public class MinijuegoPescaArco : MonoBehaviour
     public GameObject pescado, current_selected_obj,orbeF;
     public int contadorPecesA=0;
     LogrosYMisiones contador;
+    OrbeArco OrbeArcoB;
     private void OnEnable()
     {
         pez = pezholder.GetComponent<RectTransform>();
@@ -19,7 +20,7 @@ public class MinijuegoPescaArco : MonoBehaviour
         panelPesca = pescaHolder.GetComponent<RectTransform>();
         posInicio = holder.transform.position;
         pescadin.gameObject.SetActive(true);
-        if (pescarOrbe)
+        if (OrbeArcoB.pescarConArco)
         {
             pescadin.gameObject.SetActive(false);
             orbe.gameObject.SetActive(true);
@@ -30,6 +31,7 @@ public class MinijuegoPescaArco : MonoBehaviour
     void Start()
     {
         contador = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
+        OrbeArcoB = GameObject.Find("OrbeArco").GetComponent<OrbeArco>();
     }
     private void OnDisable()
     {
@@ -41,7 +43,7 @@ public class MinijuegoPescaArco : MonoBehaviour
     {
         while (true)
         {
-            if(!pescarOrbe)
+            if(!OrbeArcoB.pescarConArco)
                 vel = (Random.Range(3, 10) * 100);
 
             while (Vector2.Distance(pez.transform.position, posFinal.transform.position) > 0)
@@ -64,7 +66,7 @@ public class MinijuegoPescaArco : MonoBehaviour
     {
         if (collision.gameObject.tag == "ExitoPesca")
         {
-            if (!pescarOrbe)
+            if (!OrbeArcoB.pescarConArco)
             {
                 if (Input.GetButtonDown("e"))
                 {
@@ -77,7 +79,7 @@ public class MinijuegoPescaArco : MonoBehaviour
                     StartCoroutine(Delay());
                 }
             }
-            if (pescarOrbe)
+            if (OrbeArcoB.pescarConArco)
             {
                 if (Input.GetButtonDown("e"))
                 {
@@ -86,7 +88,7 @@ public class MinijuegoPescaArco : MonoBehaviour
                     current_selected_obj = orbeF.transform.gameObject;
                     
                     GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
-                    pescarOrbe = false;
+                    OrbeArcoB.pescarConArco = false;
                     StartCoroutine(Delay());
                 }
             }
@@ -104,6 +106,7 @@ public class MinijuegoPescaArco : MonoBehaviour
 
     IEnumerator Delay()
     {
+       
         yield return new WaitForSecondsRealtime(1.5f);
         panelPesca.gameObject.SetActive(false);
     }
