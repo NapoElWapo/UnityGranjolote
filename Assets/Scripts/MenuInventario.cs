@@ -545,7 +545,7 @@ public class MenuInventario : MonoBehaviour
                         iterador_ajolotes.RealItemName = null;
                         iterador_ajolotes.Is_used = false;
                         iterador_ajolotes.Slot_ui_img.sprite = null;
-                        
+                        iterador_ajolotes.Slot_stack.text = last_entry.Stack_value.ToString();
                         iterador_ajolotes.item_inside_type = last_entry.Category;
                        
                         
