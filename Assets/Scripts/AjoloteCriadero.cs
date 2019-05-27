@@ -8,9 +8,9 @@ public class AjoloteCriadero : MonoBehaviour
 {
     RectTransform slotActual;
     public RectTransform slotHuevo, ajoloteP, ajoloteA, ajoloteF, ajoloteH, ajoloteN, ajoloteD, ajoloteL, huevoP, huevoA, huevoF, huevoH, huevoN, huevoD, huevoActual, nuevoSlot, select1, select2, select3, select4;
-    public RectTransform ajoloteActual, checarAjolote, doradoTemp, criaderoUI, itemsUI, ajolotesUI;
+    public RectTransform ajoloteActual, checarAjolote, checarHuevo, doradoTemp, criaderoUI, itemsUI, ajolotesUI, recogerHuevoBoton, comprarCriaderoPanel;
 
-    public GameObject botonesCriadero, objetoAct, ajoP, ajoA, ajoF, ajoH, ajoN, ajoD, ajoL, lataComida, pezComida, gusanoComida;
+    public GameObject botonesCriadero, objetoAct, ajoP, ajoA, ajoF, ajoH, ajoN, ajoD, ajoL, hueP, hueA, hueF, hueH, hueN, hueD, lataComida, pezComida, gusanoComida;
     slot Aslot1, Aslot2, Aslot3, Aslot4, itemslot1, itemslot2, itemslot3, itemslot4, itemslot5, itemslot6, itemslot7, itemslot8;
 
     public Image sAslot1, sAslot2, sAslot3, sAslot4, sslot1, sslot2, sslot3, sslot4, sslot5, sslot6, sslot7, sslot8;
@@ -355,15 +355,6 @@ public class AjoloteCriadero : MonoBehaviour
 
     void ponerAjolote()
     {
-        /*
-        if (slot < 10 && ajoloteActual == ajoloteD)
-        {
-            slotActual = GameObject.Find("AjoloteSlotC (" + slot + ") C" + numeroCriadero).GetComponent<RectTransform>();
-            Instantiate(ajoloteActual, slotActual.transform);
-            slot++;
-            ajoloteActual = doradoTemp;
-        }
-        */
         if (slot < 10 && ajoloteActual != null)
         {
             slotActual = GameObject.Find("AjoloteSlotC (" + slot + ") C" + numeroCriadero).GetComponent<RectTransform>();
@@ -431,17 +422,6 @@ public class AjoloteCriadero : MonoBehaviour
         ajoloteActual = ajoloteN;
     }
 
-    public void CriaderoTipoDorado()
-    {
-        /*
-        if (ajoloteActual != ajoloteD)
-        {
-            doradoTemp = ajoloteActual;
-            ajoloteActual = ajoloteD;
-        }
-        */
-    }
-
     public void CriaderoTipoLegendario()
     {
         ajoloteActual = ajoloteL;
@@ -483,7 +463,11 @@ public class AjoloteCriadero : MonoBehaviour
 
     public void ComprarCriadero()
     {
-
+        if(GameMaster.instanciaCompartida.dinero >= precioCriadero)
+        {
+            GameMaster.instanciaCompartida.dinero -= precioCriadero;
+            comprarCriaderoPanel.gameObject.SetActive(false);
+        }
     }
 
     public void MostrarItems()
@@ -646,21 +630,24 @@ public class AjoloteCriadero : MonoBehaviour
 
     void ponerHuevo()
     {
+        if(hayDorado)
+            dejarHuevoDorado = Random.Range(1, 100);
+
+        if (!hayDorado)
+            dejarHuevoDorado = 100;
+
         slotHuevo = GameObject.Find("HuevoSlot C" + numeroCriadero).GetComponent<RectTransform>();
         dejarHuevo = Random.Range(1, 100);
+
         if (dejarHuevo <= porcentajeHuevo)
         {
-            if (hayDorado)
+            if (dejarHuevoDorado <= porcentajeHuevoDorado)
             {
-                dejarHuevoDorado = Random.Range(1, 100);
-                if (dejarHuevoDorado <= porcentajeHuevoDorado)
-                {
-                    Instantiate(huevoD, slotHuevo.transform);
-                }
-                hayDorado = false;
+                Instantiate(huevoD, slotHuevo.transform);
+                recogerHuevoBoton.gameObject.SetActive(true);
             }
 
-            if(!hayDorado)
+            else
             {
                 for (int i = 0; i < 10; i++)
                 {
@@ -669,34 +656,40 @@ public class AjoloteCriadero : MonoBehaviour
                     if (checarAjolote.name == "PanelAjoloteP(Clone)")
                     {
                         huevoActual = huevoP;
+                        recogerHuevoBoton.gameObject.SetActive(true);
                         break;
                     }
 
                     if (checarAjolote.name == "PanelAjoloteA(Clone)")
                     {
                         huevoActual = huevoA;
+                        recogerHuevoBoton.gameObject.SetActive(true);
                         break;
                     }
 
                     if (checarAjolote.name == "PanelAjoloteF(Clone)")
                     {
                         huevoActual = huevoF;
+                        recogerHuevoBoton.gameObject.SetActive(true);
                         break;
                     }
 
                     if (checarAjolote.name == "PanelAjoloteH(Clone)")
                     {
                         huevoActual = huevoH;
+                        recogerHuevoBoton.gameObject.SetActive(true);
                         break;
                     }
 
                     if (checarAjolote.name == "PanelAjoloteN(Clone)")
                     {
                         huevoActual = huevoN;
+                        recogerHuevoBoton.gameObject.SetActive(true);
                         break;
                     }
                 }
                 Instantiate(huevoActual, slotHuevo.transform);
+                
             }
         }
         cantidadAjolotesFelices = 0;
@@ -705,6 +698,45 @@ public class AjoloteCriadero : MonoBehaviour
 
     public void RecogerHuevo()
     {
+        checarHuevo = GameObject.Find("HuevoSlot C" + numeroCriadero).GetComponent<RectTransform>().GetChild(2).gameObject.GetComponent<RectTransform>();
 
+        if (checarHuevo.name == "PanelHuevoP(Clone)")
+        {
+            objetoAct = hueP.transform.gameObject;
+            GameMaster.instanciaCompartida.inventario.AddItem(objetoAct?.GetComponent<ItemInventario>());
+        }
+
+        if (checarHuevo.name == "PanelHuevoA(Clone)")
+        {
+            objetoAct = hueA.transform.gameObject;
+            GameMaster.instanciaCompartida.inventario.AddItem(objetoAct?.GetComponent<ItemInventario>());
+        }
+
+        if (checarHuevo.name == "PanelHuevoF(Clone)")
+        {
+            objetoAct = hueF.transform.gameObject;
+            GameMaster.instanciaCompartida.inventario.AddItem(objetoAct?.GetComponent<ItemInventario>());
+        }
+
+        if (checarHuevo.name == "PanelHuevoH(Clone)")
+        {
+            objetoAct = hueH.transform.gameObject;
+            GameMaster.instanciaCompartida.inventario.AddItem(objetoAct?.GetComponent<ItemInventario>());
+        }
+
+        if (checarHuevo.name == "PanelHuevoN(Clone)")
+        {
+            objetoAct = hueN.transform.gameObject;
+            GameMaster.instanciaCompartida.inventario.AddItem(objetoAct?.GetComponent<ItemInventario>());
+        }
+
+        if (checarHuevo.name == "PanelHuevoD(Clone)")
+        {
+            objetoAct = hueD.transform.gameObject;
+            GameMaster.instanciaCompartida.inventario.AddItem(objetoAct?.GetComponent<ItemInventario>());
+        }
+
+        Destroy(checarHuevo.gameObject);
+        recogerHuevoBoton.gameObject.SetActive(false);
     }
 }
