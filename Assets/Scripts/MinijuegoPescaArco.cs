@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MinijuegoPescaArco : MonoBehaviour
 {
-    public RectTransform pez, posFinal, panelPesca, holder, pescaHolder, finalholder, pezholder,orbe,pescadin;
+    public RectTransform pez, posFinal, panelPesca, holder;
 
     private Vector2 posInicio;
     public float vel = 300;
@@ -12,18 +12,31 @@ public class MinijuegoPescaArco : MonoBehaviour
     public GameObject pescado, current_selected_obj,orbeF;
     public int contadorPecesA=0;
     LogrosYMisiones contador;
-    OrbeArco OrbeArcoB;
+    public OrbeArco OrbeArcoB;
     private void OnEnable()
     {
+        /*
         pez = pezholder.GetComponent<RectTransform>();
         posFinal = finalholder.GetComponent<RectTransform>();
         panelPesca = pescaHolder.GetComponent<RectTransform>();
         posInicio = holder.transform.position;
         pescadin.gameObject.SetActive(true);
+        */
+        pez = GameObject.Find("ArcoPececin").GetComponent<RectTransform>();
+        posFinal = GameObject.Find("ArcoFalloPesca").GetComponent<RectTransform>();
+        panelPesca = GameObject.Find("ArcoMiniPesca").GetComponent<RectTransform>();
+        //holder = GameObject.Find("HolderPecesin").GetComponent<RectTransform>();
+        posInicio = pez.transform.position;
+        GameObject.Find("ArcoPececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(true);
         if (OrbeArcoB.pescarConArco)
         {
+            /*
             pescadin.gameObject.SetActive(false);
             orbe.gameObject.SetActive(true);
+            */
+            GameObject.Find("ArcoPececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
+            GameObject.Find("ArcoPececin").GetComponent<RectTransform>().GetChild(1).gameObject.SetActive(true);
+
             vel = 500;
         }
         StartCoroutine(MoverPez());
@@ -31,11 +44,12 @@ public class MinijuegoPescaArco : MonoBehaviour
     void Start()
     {
         contador = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
-        OrbeArcoB = GameObject.Find("OrbeArco").GetComponent<OrbeArco>();
+        //OrbeArcoB = GameObject.Find("OrbeArco").GetComponent<OrbeArco>();
     }
     private void OnDisable()
     {
-        pez.transform.position = posInicio;
+        //pez.transform.position = posInicio;
+        pez.transform.position = holder.transform.position;
         StopCoroutine(MoverPez());
     }
 
@@ -70,7 +84,7 @@ public class MinijuegoPescaArco : MonoBehaviour
             {
                 if (Input.GetButtonDown("e"))
                 {
-                    pescadin.gameObject.SetActive(false);
+                    GameObject.Find("ArcoPececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
                     vel = 0;
                     current_selected_obj = pescado.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
@@ -83,7 +97,7 @@ public class MinijuegoPescaArco : MonoBehaviour
             {
                 if (Input.GetButtonDown("e"))
                 {
-                    orbe.gameObject.SetActive(false);
+                    GameObject.Find("ArcoPececin").GetComponent<RectTransform>().GetChild(1).gameObject.SetActive(false);
                     vel = 0;
                     current_selected_obj = orbeF.transform.gameObject;
                     

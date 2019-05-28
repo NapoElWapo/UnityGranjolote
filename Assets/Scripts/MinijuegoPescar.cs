@@ -10,13 +10,23 @@ public class MinijuegoPescar : MonoBehaviour
     private float vel;
     public int contadorPecesL=0;
     public int contadorConsecutivoPeces = 0;
+    public float timer = 0f;
+    bool esperaTimer;
     LogrosYMisiones contador;
     private void OnEnable()
     {
+        /*
         pez = pezholder.GetComponent<RectTransform>();
         posFinal = finalholder.GetComponent<RectTransform>();
         panelPesca = pescaHolder.GetComponent<RectTransform>();
         posInicio = holder.transform.position;
+        */
+        
+        pez = GameObject.Find("Pececin").GetComponent<RectTransform>();
+        posFinal = GameObject.Find("FalloPesca").GetComponent<RectTransform>();
+        panelPesca = GameObject.Find("MiniPesca").GetComponent<RectTransform>();
+        //holder = GameObject.Find("HolderPecesin").GetComponent<RectTransform>();
+        posInicio = pez.transform.position;
         GameObject.Find("Pececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(true);
         StartCoroutine(MoverPez());
     }
@@ -26,7 +36,8 @@ public class MinijuegoPescar : MonoBehaviour
     }
     private void OnDisable()
     {
-        pez.transform.position = posInicio;
+        //pez.transform.position = posInicio;
+        pez.transform.position = holder.transform.position;
         StopCoroutine(MoverPez());
     }
 
@@ -64,7 +75,8 @@ public class MinijuegoPescar : MonoBehaviour
                 vel = 0;
                 contadorConsecutivoPeces++;
                 contador.contadorConsecutivo = contadorConsecutivoPeces;
-                StartCoroutine(Delay());
+                StartCoroutine(DelayCR());
+                //Delay();
             }
         }
 
@@ -78,9 +90,10 @@ public class MinijuegoPescar : MonoBehaviour
             }
         }
     }
-
-    IEnumerator Delay()
+    
+    IEnumerator DelayCR()
     {
+        //Delay();
         yield return new WaitForSecondsRealtime(1.5f);
         current_selected_obj = pescado.transform.gameObject;
         GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
@@ -88,4 +101,25 @@ public class MinijuegoPescar : MonoBehaviour
         contador.contadorL = contadorPecesL;
         panelPesca.gameObject.SetActive(false);
     }
+    
+    /*
+    void Delay()
+    {
+        esperaTimer = true;
+        if(esperaTimer)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 1.5f)
+            {
+                esperaTimer = false;
+                current_selected_obj = pescado.transform.gameObject;
+                GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
+                contadorPecesL++;
+                contador.contadorL = contadorPecesL;
+                
+                panelPesca.gameObject.SetActive(false);
+            }
+        }
+    }
+    */
 }
