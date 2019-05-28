@@ -74,51 +74,7 @@ public class GameMaster : MonoBehaviour
         VolumenMusica(MusicManager.volume);
     }
 
-    /*void OnLevelWasLoaded(int level)
-    {
-        if (nivelanterior == 3)
-        {
-            Jugador = GameObject.FindWithTag("Player");
-            Puerta = GameObject.FindWithTag("PuertaH");
-            Jugador.SetActive(false);
-            Jugador.transform.position = Puerta.transform.position;
-            Jugador.SetActive(true);
-        }
-        if (nivelanterior == 4)//si la ultima casa fue la CasaIP hace esto
-        {
-
-            Jugador = GameObject.FindWithTag("Player");//encuentra al jugador
-            Puerta = GameObject.FindWithTag("Puerta1");//decide de cual puerta salio y agarra su collider
-            Jugador.SetActive(false);
-            Jugador.transform.position = Puerta.transform.position;//le da la posicion del jugador la misma que el collider
-            Jugador.SetActive(true);
-
-        }
-        if(nivelanterior == 5)
-        {
-            Jugador = GameObject.FindWithTag("Player");
-            Puerta = GameObject.FindWithTag("Puerta2");
-            Jugador.SetActive(false);
-            Jugador.transform.position = Puerta.transform.position;
-            Jugador.SetActive(true);
-        }
-        if (nivelanterior == 6)
-        {
-            Jugador = GameObject.FindWithTag("Player");
-            Puerta = GameObject.FindWithTag("PuertaM1");
-            Jugador.SetActive(false);
-            Jugador.transform.position = Puerta.transform.position;
-            Jugador.SetActive(true);
-        }
-        if (nivelanterior == 7)
-        {
-            Jugador = GameObject.FindWithTag("Player");
-            Puerta = GameObject.FindWithTag("PuertaJ");
-            Jugador.SetActive(false);
-            Jugador.transform.position = Puerta.transform.position;
-            Jugador.SetActive(true);
-        }
-    }*/
+   
     public void Jugar()
     {
         SceneManager.LoadScene(NombreEscena.Mundo);//cambiar dependiendo a que escena quieres ir al darle jugar
@@ -129,29 +85,7 @@ public class GameMaster : MonoBehaviour
         SceneManager.LoadScene(NombreEscena.MenuP);
     }
 
-    /*public void Casa1()
-    {
-        SceneManager.LoadScene(NombreEscena.CasaN);
-    }
-
-    public void Casa2()
-    {
-        SceneManager.LoadScene(NombreEscena.CasaN2);
-    }
-
-    public void CasaMision()
-    {
-        SceneManager.LoadScene(NombreEscena.CasaM);
-    }
-
-    public void CasaJugador()
-    {
-        SceneManager.LoadScene(NombreEscena.CasaJ);
-    }
-    public void CasaHospital()
-    {
-        SceneManager.LoadScene(NombreEscena.Hospital);
-    }*/
+    
 
     public void VolumenMusica(float newVolumen)
     {

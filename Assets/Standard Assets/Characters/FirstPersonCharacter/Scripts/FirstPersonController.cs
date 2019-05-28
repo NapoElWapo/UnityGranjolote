@@ -52,6 +52,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public bool dobleSalto=false;
         public int saltos=0;
         private int contadorSaltos;
+        public bool muerto;
         
 
 
@@ -163,14 +164,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				health = maxHealth;
 			}
 			if(health <= 0)
-			{	health = 0;
-				
-				Debug.Log("Moriste");
-                
+			{
+
+                health = 0;
+                muerto = true;
                 //SceneManager.LoadScene(3);
                 health = 100;
-				
-			}
+               
+            }
+            
 		//}
 
             m_MoveDir.x = desiredMove.x*speed;
