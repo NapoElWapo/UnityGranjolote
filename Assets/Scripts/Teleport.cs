@@ -20,7 +20,7 @@ public class Teleport : MonoBehaviour
     {
         GameObject Jugador = GameObject.FindWithTag("Player");
         FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
-        if (playerScript.health<=0)
+        if (playerScript.muerto==true)
         {
             Debug.Log("Me muerooooo");
             
@@ -28,6 +28,7 @@ public class Teleport : MonoBehaviour
             Jugador.SetActive(false);
             Jugador.transform.position = LHM.transform.position;
             Jugador.SetActive(true);
+            playerScript.muerto = false;
         }
     }
 
