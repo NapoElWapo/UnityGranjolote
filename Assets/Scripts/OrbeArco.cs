@@ -12,7 +12,10 @@ public class OrbeArco : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!pescarConArco)
+        {
+            lavaPesca.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

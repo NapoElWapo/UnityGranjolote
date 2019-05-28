@@ -26,6 +26,7 @@ public class MinijuegoPescaArco : MonoBehaviour
         posFinal = GameObject.Find("ArcoFalloPesca").GetComponent<RectTransform>();
         panelPesca = GameObject.Find("ArcoMiniPesca").GetComponent<RectTransform>();
         //holder = GameObject.Find("HolderPecesin").GetComponent<RectTransform>();
+
         posInicio = pez.transform.position;
         GameObject.Find("ArcoPececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(true);
         if (OrbeArcoB.pescarConArco)
