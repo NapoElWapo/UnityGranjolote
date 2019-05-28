@@ -750,6 +750,8 @@ public class TiendaUI : MonoBehaviour
 
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            var velocidadC = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_WalkSpeed = 0f;
+            var velocidadR = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_RunSpeed = 0f;
             mouseLook.XSensitivity = 0.0F;
             mouseLook.YSensitivity = 0.0F;
             Time.timeScale = 0f;
@@ -758,6 +760,8 @@ public class TiendaUI : MonoBehaviour
         {
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            var velocidadC = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_WalkSpeed = 15f;
+            var velocidadR = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_RunSpeed = 30f;
             mouseLook.XSensitivity = 2F;
             mouseLook.YSensitivity = 2F;
             Time.timeScale = 1f;

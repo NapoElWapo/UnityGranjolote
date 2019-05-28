@@ -339,23 +339,35 @@ public class AlcaldeMisiones : MonoBehaviour
 
         if (mostrar)
         {
+            panelE4.gameObject.SetActive(false);
+            panelE5.gameObject.SetActive(false);
+            panelE6.gameObject.SetActive(false);
+            panelE7.gameObject.SetActive(false);
+            panelE8.gameObject.SetActive(false);
+            panelE9.gameObject.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
 
             Cursor.visible = true;
 
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            var velocidadC = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_WalkSpeed=0f;
+            var velocidadR = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_RunSpeed=0f;
+           
             mouseLook.XSensitivity = 0.0F;
             mouseLook.YSensitivity = 0.0F;
-            Time.timeScale = 0f;
+            
+           
         }
         else if (!mostrar)
         {
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            var velocidadC = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_WalkSpeed = 15f;
+            var velocidadR = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_RunSpeed = 30f;
             mouseLook.XSensitivity = 2F;
             mouseLook.YSensitivity = 2F;
-            Time.timeScale = 1f;
+            
         }
 
 
@@ -646,6 +658,11 @@ public class AlcaldeMisiones : MonoBehaviour
         panelA3.gameObject.SetActive(false);
         panelE4.gameObject.SetActive(true);
 
+        panelE5.gameObject.SetActive(false);
+        panelE6.gameObject.SetActive(false);
+        panelE7.gameObject.SetActive(false);
+        panelE8.gameObject.SetActive(false);
+        panelE9.gameObject.SetActive(false);
         conexLM.m4.gameObject.SetActive(true);
         pantalonCuevas.gameObject.SetActive(true);
     }
@@ -655,7 +672,12 @@ public class AlcaldeMisiones : MonoBehaviour
         aceptada4 = true;
         panelA4.gameObject.SetActive(false);
         panelE5.gameObject.SetActive(true);
+        panelE4.gameObject.SetActive(false);
 
+        panelE6.gameObject.SetActive(false);
+        panelE7.gameObject.SetActive(false);
+        panelE8.gameObject.SetActive(false);
+        panelE9.gameObject.SetActive(false);
         conexLM.m5.gameObject.SetActive(true);
         sacoVolcan.gameObject.SetActive(true);
     }
@@ -665,7 +687,12 @@ public class AlcaldeMisiones : MonoBehaviour
         aceptada5 = true;
         panelA5.gameObject.SetActive(false);
         panelE6.gameObject.SetActive(true);
+        panelE4.gameObject.SetActive(false);
+        panelE5.gameObject.SetActive(false);
 
+        panelE7.gameObject.SetActive(false);
+        panelE8.gameObject.SetActive(false);
+        panelE9.gameObject.SetActive(false);
         conexLM.m6.gameObject.SetActive(true);
         sombreroNubes.gameObject.SetActive(true);
     }
@@ -674,6 +701,12 @@ public class AlcaldeMisiones : MonoBehaviour
     {
         aceptada6 = true;
         panelA6.gameObject.SetActive(false);
+        panelE4.gameObject.SetActive(false);
+        panelE5.gameObject.SetActive(false);
+        panelE6.gameObject.SetActive(false);
+
+        panelE8.gameObject.SetActive(false);
+        panelE9.gameObject.SetActive(false);
         panelE7.gameObject.SetActive(true);
 
         conexLM.m7.gameObject.SetActive(true);
@@ -683,6 +716,12 @@ public class AlcaldeMisiones : MonoBehaviour
     {
         aceptada7 = true;
         panelA7.gameObject.SetActive(false);
+        panelE4.gameObject.SetActive(false);
+        panelE5.gameObject.SetActive(false);
+        panelE6.gameObject.SetActive(false);
+        panelE7.gameObject.SetActive(false);
+
+        panelE9.gameObject.SetActive(false);
         panelE8.gameObject.SetActive(true);
 
         conexLM.m8.gameObject.SetActive(true);
@@ -692,6 +731,11 @@ public class AlcaldeMisiones : MonoBehaviour
     {
         aceptada8 = true;
         panelA8.gameObject.SetActive(false);
+        panelE4.gameObject.SetActive(false);
+        panelE5.gameObject.SetActive(false);
+        panelE6.gameObject.SetActive(false);
+        panelE7.gameObject.SetActive(false);
+        panelE8.gameObject.SetActive(false);
         panelE9.gameObject.SetActive(true);
     }
 

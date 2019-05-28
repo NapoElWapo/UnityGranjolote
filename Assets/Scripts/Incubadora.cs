@@ -15,7 +15,7 @@ public class Incubadora : MonoBehaviour
     MenuInventario conex;
     public bool incuP, incuA, incuF, incuH, incuN, incuO,incubando,incuT;
     public GameObject current_selected_obj,huevoP,huevoA,huevoF,huevoH,huevoN,huevoO,ajoP,ajoA,ajoF,ajoH,ajoN,ajoO;
-    public bool primerP=false, primerA=false, primerF=false, primerH=false, primerN=false, primerO=false;
+    public bool primerP=false, primerA=false, primerF=false, primerH=false, primerN=false, primerO=false,mostrar=false;
 
     public float tEspera;
 
@@ -869,74 +869,41 @@ public class Incubadora : MonoBehaviour
         }
     }
 
-    public void Incubadora1()
-    {
-        Debug.Log("Si entra");
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
-        var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
-        mouseLook.XSensitivity = 0.0F;
-        mouseLook.YSensitivity = 0.0F;
-        Time.timeScale = 0f;
-        GameMaster.instanciaCompartida.mostrarIncubadora1 = true;
-        GameMaster.instanciaCompartida.mostrarIncubadora2 = false;
-        GameMaster.instanciaCompartida.mostrarIncubadora3 = false;
-
-        incubadora1.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarIncubadora1);
-        incubadora2.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarIncubadora2);
-        incubadora3.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarIncubadora3);
-    }
-
-    public void Incubadora2()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
-        var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
-        mouseLook.XSensitivity = 0.0F;
-        mouseLook.YSensitivity = 0.0F;
-        Time.timeScale = 0f;
-        GameMaster.instanciaCompartida.mostrarIncubadora1 = false;
-        GameMaster.instanciaCompartida.mostrarIncubadora2 = true;
-        GameMaster.instanciaCompartida.mostrarIncubadora3 = false;
-
-        incubadora1.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarIncubadora1);
-        incubadora2.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarIncubadora2);
-        incubadora3.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarIncubadora3);
-    }
-
-    public void Incubadora3()
-    {
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
-        var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
-        mouseLook.XSensitivity = 0.0F;
-        mouseLook.YSensitivity = 0.0F;
-        Time.timeScale = 0f;
-        GameMaster.instanciaCompartida.mostrarIncubadora1 = false;
-        GameMaster.instanciaCompartida.mostrarIncubadora2 = false;
-        GameMaster.instanciaCompartida.mostrarIncubadora3 = true;
-
-        incubadora1.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarIncubadora1);
-        incubadora2.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarIncubadora2);
-        incubadora3.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarIncubadora3);
-    }
-
     public void ToggleIncubadora()
     {
-        GameMaster.instanciaCompartida.mostrarIncubadoraUI = !GameMaster.instanciaCompartida.mostrarIncubadoraUI;
-        incubadoraUI.gameObject.SetActive(GameMaster.instanciaCompartida.mostrarIncubadoraUI);
 
-        var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
-        var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
-        mouseLook.XSensitivity = 2F;
-        mouseLook.YSensitivity = 2F;
-        Time.timeScale = 1f;
-    } 
+
+        mostrar = !mostrar;
+       
+
+        if (mostrar)
+        {
+            
+            Cursor.lockState = CursorLockMode.None;
+
+            Cursor.visible = true;
+
+            var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
+            var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            var velocidadC = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_WalkSpeed = 0f;
+            var velocidadR = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_RunSpeed = 0f;
+
+            mouseLook.XSensitivity = 0.0F;
+            mouseLook.YSensitivity = 0.0F;
+
+
+        }
+        else if (!mostrar)
+        {
+            var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
+            var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
+            var velocidadC = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_WalkSpeed = 15f;
+            var velocidadR = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_RunSpeed = 30f;
+            mouseLook.XSensitivity = 2F;
+            mouseLook.YSensitivity = 2F;
+
+        }
+
+
+    }
 }

@@ -165,18 +165,9 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 else if (colision_rayo.transform.tag == incubadora1)
                 {
                     incu.ToggleIncubadora();
-                    incu.Incubadora1();                   
+                                   
                 }
-                else if (colision_rayo.transform.tag == incubadora2)
-                {
-                    incu.ToggleIncubadora();
-                    incu.Incubadora2();                   
-                }
-                else if (colision_rayo.transform.tag == incubadora3)
-                {
-                    incu.ToggleIncubadora();
-                    incu.Incubadora3();                    
-                }               
+               
                 else  if (colision_rayo.transform.tag == npc)
                 {
                     if (Input.GetKeyDown(KeyCode.E))
