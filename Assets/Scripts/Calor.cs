@@ -51,14 +51,7 @@ public class Calor : MonoBehaviour
             NPC2.instancia.calor = true;
         }
 
-        foreach (var iterador in conex.herramientas)
-        {
-            if (iterador.RealItemName == "AjoloteApagado")
-            {
-                current_selected_obj = ASF.transform.gameObject;
-                GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
-            }
-        }
+        
 
 
     }
@@ -70,6 +63,18 @@ public class Calor : MonoBehaviour
             GameObject Jugador = GameObject.FindWithTag("Player");
             FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
             playerScript.dolor = false;
+        }
+    }
+
+    public void OnTriggerEnter(Collider collision)
+    {
+        foreach (var iterador in conex.herramientas)
+        {
+            if (iterador.RealItemName == "AjoloteApagado")
+            {
+                current_selected_obj = ASF.transform.gameObject;
+                GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
+            }
         }
     }
 
