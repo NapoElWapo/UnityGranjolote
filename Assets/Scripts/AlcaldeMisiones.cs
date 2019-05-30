@@ -35,7 +35,7 @@ public class AlcaldeMisiones : MonoBehaviour
     public RectTransform backHP, backHA, backAA, backAP, backAF,backCacasF,backSombrero,backSaco,backPantalones;
 
     //Objetos a spawnear
-    public GameObject pantalonCuevas, sacoVolcan, sombreroNubes;
+    public GameObject pantalonCuevas, sacoVolcan, sombreroNubes, ajoloteLegendario;
 
     Notificaciones conexN;
     
@@ -761,7 +761,7 @@ public class AlcaldeMisiones : MonoBehaviour
         panelE7.gameObject.SetActive(false);
         panelE8.gameObject.SetActive(false);
         panelE9.gameObject.SetActive(false);
-
+        ajoloteLegendario.gameObject.SetActive(true);
         conexLM.m10.gameObject.SetActive(true);
         conexN.popD();
 
