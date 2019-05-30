@@ -37,12 +37,15 @@ public class AlcaldeMisiones : MonoBehaviour
     //Objetos a spawnear
     public GameObject pantalonCuevas, sacoVolcan, sombreroNubes;
 
+    Notificaciones conexN;
+    
+
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
         conexLM = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
         conexAl = GameObject.Find("Alcalde").GetComponent<Alcalde>();
-
+        conexN = GameObject.Find("NotificacionesDeslizantes").GetComponent<Notificaciones>();
 
     }
 
@@ -633,6 +636,7 @@ public class AlcaldeMisiones : MonoBehaviour
         panelE8.gameObject.SetActive(false);
         panelE9.gameObject.SetActive(false);
 
+        conexN.popD();
         conexLM.m2.gameObject.SetActive(true);
         
     }
@@ -650,6 +654,7 @@ public class AlcaldeMisiones : MonoBehaviour
         panelE9.gameObject.SetActive(false);
         conexLM.m3.gameObject.SetActive(true);
         conexLM.mision3Alcalde = true;
+        conexN.popD();
     }
 
     public void Aceptar3()
@@ -665,6 +670,7 @@ public class AlcaldeMisiones : MonoBehaviour
         panelE9.gameObject.SetActive(false);
         conexLM.m4.gameObject.SetActive(true);
         pantalonCuevas.gameObject.SetActive(true);
+        conexN.popD();
     }
 
     public void Aceptar4()
@@ -680,6 +686,7 @@ public class AlcaldeMisiones : MonoBehaviour
         panelE9.gameObject.SetActive(false);
         conexLM.m5.gameObject.SetActive(true);
         sacoVolcan.gameObject.SetActive(true);
+        conexN.popD();
     }
 
     public void Aceptar5()
@@ -695,6 +702,7 @@ public class AlcaldeMisiones : MonoBehaviour
         panelE9.gameObject.SetActive(false);
         conexLM.m6.gameObject.SetActive(true);
         sombreroNubes.gameObject.SetActive(true);
+        conexN.popD();
     }
 
     public void Aceptar6()
@@ -710,6 +718,7 @@ public class AlcaldeMisiones : MonoBehaviour
         panelE7.gameObject.SetActive(true);
 
         conexLM.m7.gameObject.SetActive(true);
+        conexN.popD();
     }
 
     public void Aceptar7()
@@ -725,6 +734,7 @@ public class AlcaldeMisiones : MonoBehaviour
         panelE8.gameObject.SetActive(true);
 
         conexLM.m8.gameObject.SetActive(true);
+        conexN.popD();
     }
 
     public void Aceptar8()
@@ -737,6 +747,7 @@ public class AlcaldeMisiones : MonoBehaviour
         panelE7.gameObject.SetActive(false);
         panelE8.gameObject.SetActive(false);
         panelE9.gameObject.SetActive(true);
+        conexN.popD();
     }
 
     public void Aceptar9()
@@ -752,6 +763,7 @@ public class AlcaldeMisiones : MonoBehaviour
         panelE9.gameObject.SetActive(false);
 
         conexLM.m10.gameObject.SetActive(true);
+        conexN.popD();
 
     }
 

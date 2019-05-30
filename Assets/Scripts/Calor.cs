@@ -11,12 +11,15 @@ public class Calor : MonoBehaviour
     slot amuleto;
     TiendaUI comprar;
     LogrosYMisiones conexML;
+    Notificaciones conexN;
+    private bool noti;
     public GameObject current_selected_obj, ASF,ASFApagado;
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
         conexML = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
         comprar = GameObject.Find("TiendaUI").GetComponent<TiendaUI>();
+        conexN = GameObject.Find("NotificacionesDeslizantes").GetComponent<Notificaciones>();
     }
 
     private void OnTriggerStay(Collider collision)
@@ -34,6 +37,11 @@ public class Calor : MonoBehaviour
                 if (quemandose == true)
                 {
                     comprar.poderComprarAF = true;
+                    if (noti == false)
+                    {
+                        conexN.popO();
+                        noti = true;
+                    }
                     ASFApagado.gameObject.SetActive(true);
                     conexML.quemado = true;
                     imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
