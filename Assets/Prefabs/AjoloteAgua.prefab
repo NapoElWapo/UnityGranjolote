@@ -74,11 +74,19 @@ MonoBehaviour:
   movimiento: 0
   asustado: 0
   vagar: 0
+  awaEspanta: 0
+  lumbreEspanta: 0
   velocidad: 3
+  velocidadAwado: 0
+  velocidadAlumbrado: 0
   velocidadAsustado: 7
+  velocidadAwadoAsustado: 0
+  velocidadAlumbradoAsustado: 0
   cambioDireccion: 0.3
   maxCambio: 180
   tiempoHarto: 6
+  tiempoHartoAwado: 0
+  tiempoHartoAlumbrado: 0
   contador: 0
 --- !u!95 &6590182306021657613
 Animator:
@@ -137,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107d0bd93fcf1eb449dc62762d9425e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory_Decal: {fileID: 21300000, guid: 80ea3292f921a6647b32a00101a5b153, type: 3}
+  Inventory_Decal: {fileID: 21300000, guid: df789ec35aa74f144b643aa3c9ea42c1, type: 3}
   Nombre: AjoloteDeAgua
   Descripcion: gluglu
   Category: 4

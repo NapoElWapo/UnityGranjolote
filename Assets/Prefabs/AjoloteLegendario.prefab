@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107d0bd93fcf1eb449dc62762d9425e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory_Decal: {fileID: 21300000, guid: 5f2579dd44c535943b54155d89607c9b, type: 3}
+  Inventory_Decal: {fileID: 21300000, guid: 9497fdccd16c25040a0e4afef7a6fa7f, type: 3}
   Nombre: AjoloteLegendario
   Descripcion: Legendario
   Category: 4
@@ -161,6 +161,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7985830842758092159}
     m_Modifications:
+    - target: {fileID: 100000, guid: b63a7c286d8919447af1b97070f8fdfb, type: 3}
+      propertyPath: m_Name
+      value: AjoloteLegendario
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b63a7c286d8919447af1b97070f8fdfb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -204,10 +208,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: b63a7c286d8919447af1b97070f8fdfb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: b63a7c286d8919447af1b97070f8fdfb, type: 3}
-      propertyPath: m_Name
-      value: AjoloteLegendario
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: b63a7c286d8919447af1b97070f8fdfb, type: 3}
       propertyPath: m_Materials.Array.data[0]
