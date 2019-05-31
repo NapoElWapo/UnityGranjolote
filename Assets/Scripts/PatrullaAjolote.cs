@@ -23,7 +23,7 @@ public class PatrullaAjolote : MonoBehaviour
     Animator ajoloteAnimator;
     CharacterController controller;
     SphereCollider sphereCollider;
-    
+
 
     float direccion;
     Vector3 rotacion;
@@ -34,41 +34,41 @@ public class PatrullaAjolote : MonoBehaviour
         movimiento = false;
         asustado = false;
         vagar = false;
- 
+
         ajoloteAnimator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.isTrigger = true;
         direccion = Random.Range(0, 360);
-        transform.eulerAngles = new Vector3(0, direccion, 0);  
+        transform.eulerAngles = new Vector3(0, direccion, 0);
     }
 
     void Update()
     {
-        if(!vagar)
+        if (!vagar)
         {
             StartCoroutine(Vagar());
         }
-        if (!harto&&!movimiento)
+        if (!harto && !movimiento)
         {
             StopCoroutine(NuevaDireccion());
             ajoloteAnimator.SetBool(Movimiento, false);
         }
-        if (!harto&&movimiento)
+        if (!harto && movimiento)
         {
             StartCoroutine(NuevaDireccion());
             ajoloteAnimator.SetBool(Movimiento, true);
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
-            
+
             Vector3 adelante = transform.TransformDirection(Vector3.forward);
             controller.SimpleMove(adelante * velocidad);
         }
-        else if(harto)
+        else if (harto)
         {
             ajoloteAnimator.SetBool(Asustado, true);
             ajoloteAnimator.SetBool(Movimiento, true);
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
-            
+
             Vector3 adelante = transform.TransformDirection(Vector3.forward);
             controller.SimpleMove(adelante * velocidadAsustado);
             StartCoroutine(Delay());
@@ -82,7 +82,7 @@ public class PatrullaAjolote : MonoBehaviour
         rotationVector.z = 0;
         transform.rotation = Quaternion.Euler(rotationVector);
     }
-    
+
     IEnumerator Vagar()
     {
         vagar = true;
@@ -124,6 +124,7 @@ public class PatrullaAjolote : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {   
+        /*
         if(other.tag=="Player")
         {
             ajoloteAnimator.SetBool(Movimiento, true);
@@ -142,7 +143,7 @@ public class PatrullaAjolote : MonoBehaviour
                 harto = true;
         }
 
-        if (other.tag == "Fuego" || other.tag == "Fuego")
+        if (other.tag == "Fuego" || other.tag == "Fuego2")
         {
             velocidad = velocidadAlumbrado;
             velocidadAsustado = velocidadAlumbradoAsustado;
@@ -150,16 +151,46 @@ public class PatrullaAjolote : MonoBehaviour
             if (lumbreEspanta)
                 harto = true;
         }
-
-        else if(other.tag=="LimiteAjolote" )
+        */
+        if (other.tag == "LimiteAjolote")
         {
+            transform.RotateAround(transform.position, transform.up, 180f);
+            /*
             contador = 1;
             if(contador==1)
             {
                 transform.RotateAround(transform.position, transform.up, 180f);
                 contador = 0;
             }
-            
+            */
+
         }
+
+    }
+
+    public void TriggerJugador()
+    {
+        ajoloteAnimator.SetBool(Movimiento, true);
+        ajoloteAnimator.SetBool(Asustado, true);
+        this.harto = true;
+        ajoloteAnimator.Play("Armature|correr");
+    }
+
+    public void TriggerAgua()
+    {
+        velocidad = velocidadAwado;
+        velocidadAsustado = velocidadAwadoAsustado;
+        tiempoHarto = tiempoHartoAwado;
+        if (awaEspanta)
+            harto = true;
+    }
+
+    public void TriggerFuego()
+    {
+        velocidad = velocidadAlumbrado;
+        velocidadAsustado = velocidadAlumbradoAsustado;
+        tiempoHarto = tiempoHartoAlumbrado;
+        if (lumbreEspanta)
+            harto = true;
     }
 }
