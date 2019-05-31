@@ -23,6 +23,8 @@ public class PatrullaAjolote : MonoBehaviour
     Animator ajoloteAnimator;
     CharacterController controller;
     SphereCollider sphereCollider;
+    public SpawnAjolote spawn;
+    public string buscarSpawn;
 
 
     float direccion;
@@ -41,6 +43,7 @@ public class PatrullaAjolote : MonoBehaviour
         sphereCollider.isTrigger = true;
         direccion = Random.Range(0, 360);
         transform.eulerAngles = new Vector3(0, direccion, 0);
+        spawn = GameObject.Find("SpawnerA" + buscarSpawn).GetComponent<SpawnAjolote>();
     }
 
     void Update()
@@ -109,6 +112,7 @@ public class PatrullaAjolote : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(tiempoHarto);
+        spawn.cantidadActual--;
         Destroy(this.gameObject);
     }
 

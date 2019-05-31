@@ -212,7 +212,6 @@ public class MejorarAjolote : MonoBehaviour
 
     public void MejorarAjoloteEspecial()
     {
-        this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(4).gameObject.SetActive(false);
         if (ajoAI && orbeAI)
         {
             GameObject.Find("AjoYOrbe").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
@@ -236,5 +235,7 @@ public class MejorarAjolote : MonoBehaviour
             ajolotines.nivelNube++;
             GameMaster.instanciaCompartida.inventario.RemoveItem(orbeNubecita?.GetComponent<ItemInventario>());
         }
+        //this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(4).gameObject.SetActive(false);
+        GameObject.Find("MejorarAjoloteBoton").SetActive(false);
     }
 }

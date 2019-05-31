@@ -4312,6 +4312,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0777777, y: 32.429466, z: 70.89217}
   m_Center: {x: 0.99806243, y: 12.907127, z: 45.42861}
+--- !u!1 &110478278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 110478279}
+  - component: {fileID: 110478280}
+  m_Layer: 0
+  m_Name: SpawnerAFuego
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &110478279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110478278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1347084066}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &110478280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110478278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458e44973a6fa664d9e184a694239056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ajolote: {fileID: 5470905984373730739, guid: 0041bebb264e4fb46bd7f61536a4c98b, type: 3}
+  ajoloteDorado: {fileID: 2230911047828784416, guid: 3f9aeffddb12ce741ba1126e2fcf30d5,
+    type: 3}
+  tiempoSpawn: 15
+  porcentajeSpawn: 30
+  porcentajeDorado: 10
+  Spawnea: 0
+  SpawnDorado: 0
+  cantidadActual: 0
+  spawnPoints:
+  - {fileID: 300087754}
 --- !u!1001 &111449193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11212,7 +11266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249165817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 498.18442, y: -296.4222, z: -699.31964}
+  m_LocalPosition: {x: 328.2098, y: -284.3826, z: -772.9526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13951,6 +14005,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 514361662}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &294246456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 294246457}
+  - component: {fileID: 294246458}
+  m_Layer: 0
+  m_Name: SpawnerANube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &294246457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294246456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1347084066}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &294246458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294246456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458e44973a6fa664d9e184a694239056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ajolote: {fileID: 756052811972049262, guid: 81a6699d23da98c4c9d452b11b6d5467, type: 3}
+  ajoloteDorado: {fileID: 2230911047828784416, guid: 3f9aeffddb12ce741ba1126e2fcf30d5,
+    type: 3}
+  tiempoSpawn: 15
+  porcentajeSpawn: 30
+  porcentajeDorado: 10
+  Spawnea: 0
+  SpawnDorado: 0
+  cantidadActual: 0
+  spawnPoints:
+  - {fileID: 136382782}
 --- !u!1001 &296219190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37781,6 +37889,61 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412adacd363c2174584da49f78d7c546, type: 3}
+--- !u!1 &848171594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 848171595}
+  - component: {fileID: 848171596}
+  m_Layer: 0
+  m_Name: SpawnerAPlanta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &848171595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848171594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1347084066}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &848171596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848171594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458e44973a6fa664d9e184a694239056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ajolote: {fileID: 9170133037535178481, guid: cdacab59cf3631249bf61d11611c1986, type: 3}
+  ajoloteDorado: {fileID: 2230911047828784416, guid: 3f9aeffddb12ce741ba1126e2fcf30d5,
+    type: 3}
+  tiempoSpawn: 15
+  porcentajeSpawn: 30
+  porcentajeDorado: 10
+  Spawnea: 0
+  SpawnDorado: 0
+  cantidadActual: 0
+  spawnPoints:
+  - {fileID: 2069986561}
+  - {fileID: 1786864869}
 --- !u!1001 &848670265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57933,10 +58096,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1347084066}
-  - component: {fileID: 1347084071}
-  - component: {fileID: 1347084070}
-  - component: {fileID: 1347084069}
-  - component: {fileID: 1347084068}
   - component: {fileID: 1347084067}
   m_Layer: 0
   m_Name: SpawnManager
@@ -57955,7 +58114,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 848171595}
+  - {fileID: 1467390473}
+  - {fileID: 1422571184}
+  - {fileID: 110478279}
+  - {fileID: 294246457}
   m_Father: {fileID: 0}
   m_RootOrder: 76
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -57979,97 +58143,9 @@ MonoBehaviour:
   porcentajeDorado: 10
   Spawnea: 0
   SpawnDorado: 0
+  cantidadActual: 0
   spawnPoints:
   - {fileID: 136382782}
---- !u!114 &1347084068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347084065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458e44973a6fa664d9e184a694239056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ajolote: {fileID: 4354111485687829452, guid: d13cce25acdffcb4aac63915abb86764, type: 3}
-  ajoloteDorado: {fileID: 2230911047828784416, guid: 3f9aeffddb12ce741ba1126e2fcf30d5,
-    type: 3}
-  tiempoSpawn: 15
-  porcentajeSpawn: 30
-  porcentajeDorado: 10
-  Spawnea: 0
-  SpawnDorado: 0
-  spawnPoints:
-  - {fileID: 1434785240}
---- !u!114 &1347084069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347084065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458e44973a6fa664d9e184a694239056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ajolote: {fileID: 5470905984373730739, guid: 0041bebb264e4fb46bd7f61536a4c98b, type: 3}
-  ajoloteDorado: {fileID: 2230911047828784416, guid: 3f9aeffddb12ce741ba1126e2fcf30d5,
-    type: 3}
-  tiempoSpawn: 15
-  porcentajeSpawn: 30
-  porcentajeDorado: 10
-  Spawnea: 0
-  SpawnDorado: 0
-  spawnPoints:
-  - {fileID: 300087754}
---- !u!114 &1347084070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347084065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458e44973a6fa664d9e184a694239056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ajolote: {fileID: 6590182306021657614, guid: 5ee7fb0374008e24ba0054930a91a1e5, type: 3}
-  ajoloteDorado: {fileID: 2230911047828784416, guid: 3f9aeffddb12ce741ba1126e2fcf30d5,
-    type: 3}
-  tiempoSpawn: 15
-  porcentajeSpawn: 30
-  porcentajeDorado: 10
-  Spawnea: 0
-  SpawnDorado: 0
-  spawnPoints:
-  - {fileID: 779237426}
---- !u!114 &1347084071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347084065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458e44973a6fa664d9e184a694239056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ajolote: {fileID: 9170133037535178481, guid: cdacab59cf3631249bf61d11611c1986, type: 3}
-  ajoloteDorado: {fileID: 2230911047828784416, guid: 3f9aeffddb12ce741ba1126e2fcf30d5,
-    type: 3}
-  tiempoSpawn: 15
-  porcentajeSpawn: 30
-  porcentajeDorado: 10
-  Spawnea: 0
-  SpawnDorado: 0
-  spawnPoints:
-  - {fileID: 2069986561}
-  - {fileID: 1786864869}
 --- !u!4 &1350673439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2068717750712770752, guid: cd666f70fedd4f84590756c222dcbc30,
@@ -61425,6 +61501,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1133f531f45b6b4eb67f770f5600bfe, type: 3}
+--- !u!1 &1422571183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1422571184}
+  - component: {fileID: 1422571185}
+  m_Layer: 0
+  m_Name: SpawnerAHielo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1422571184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422571183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1347084066}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1422571185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422571183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458e44973a6fa664d9e184a694239056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ajolote: {fileID: 4354111485687829452, guid: d13cce25acdffcb4aac63915abb86764, type: 3}
+  ajoloteDorado: {fileID: 2230911047828784416, guid: 3f9aeffddb12ce741ba1126e2fcf30d5,
+    type: 3}
+  tiempoSpawn: 15
+  porcentajeSpawn: 30
+  porcentajeDorado: 10
+  Spawnea: 0
+  SpawnDorado: 0
+  cantidadActual: 0
+  spawnPoints:
+  - {fileID: 1434785240}
 --- !u!1001 &1422896288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63391,6 +63521,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97cebcae0ac41324ba649989ee95dd66, type: 3}
+--- !u!1 &1467390472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1467390473}
+  - component: {fileID: 1467390474}
+  m_Layer: 0
+  m_Name: SpawnerAAgua
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1467390473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467390472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1347084066}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1467390474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467390472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458e44973a6fa664d9e184a694239056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ajolote: {fileID: 6590182306021657614, guid: 5ee7fb0374008e24ba0054930a91a1e5, type: 3}
+  ajoloteDorado: {fileID: 2230911047828784416, guid: 3f9aeffddb12ce741ba1126e2fcf30d5,
+    type: 3}
+  tiempoSpawn: 15
+  porcentajeSpawn: 30
+  porcentajeDorado: 10
+  Spawnea: 0
+  SpawnDorado: 0
+  cantidadActual: 0
+  spawnPoints:
+  - {fileID: 779237426}
 --- !u!1 &1468072678
 GameObject:
   m_ObjectHideFlags: 0
@@ -86839,94 +87023,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6479655480184131465, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
         type: 3}
-      propertyPath: orbeF
-      value: 
-      objectReference: {fileID: 619254260, guid: b59a34df6b5efee4b868c803aa684db0,
-        type: 3}
-    - target: {fileID: 6479655480184131465, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
       propertyPath: OrbeArcoB
       value: 
       objectReference: {fileID: 689699053}
-    - target: {fileID: 6479655481395054031, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 166
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655481395054031, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655481183399421, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 380
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655481183399421, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 165
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655481133075705, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655481475761090, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 165
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655481475761090, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 49
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655480506425134, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 389
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655480506425134, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 162
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655481530301884, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655481133075704, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655481110249642, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1.2800293
-      objectReference: {fileID: 0}
     - target: {fileID: 6479655481530301880, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655481467207889, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.019989014
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655480505542103, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -251.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479655480505542103, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 76.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7423dc9f5162a6f4bad9d1a5cfee5e74, type: 3}
@@ -95123,7 +95226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144902980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 490.01697, y: -255.69281, z: -699.84674}
+  m_LocalPosition: {x: 320.47852, y: -238.45386, z: -773.45154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3836068197389889631}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 90.2, y: -1.3, z: 287.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -344,7 +344,7 @@ MonoBehaviour:
   pescarOrbe: 0
   pescado: {fileID: 3175648819475417285, guid: 76024cf47a466404cb975ea0b3287cb7, type: 3}
   current_selected_obj: {fileID: 0}
-  orbeF: {fileID: 0}
+  orbeF: {fileID: 619254260, guid: b59a34df6b5efee4b868c803aa684db0, type: 3}
   contadorPecesA: 0
   OrbeArcoB: {fileID: 0}
 --- !u!1 &6479655480223022673
@@ -530,7 +530,7 @@ RectTransform:
   m_GameObject: {fileID: 6479655480391000473}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 6479655480505542103}
   m_RootOrder: 0
@@ -568,7 +568,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6348e52f221042446be4967dddb7ea22, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7eea52d9130e8af4191a1dd49d87b32b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -615,7 +615,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -252, y: -1.2799926}
+  m_AnchoredPosition: {x: -251.99998, y: -1.2799926}
   m_SizeDelta: {x: 76.4, y: 36.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6479655480505542057
@@ -760,7 +760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 631.942, y: 263.8}
+  m_AnchoredPosition: {x: 631, y: 264}
   m_SizeDelta: {x: 95.9, y: 60.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &6479655480506425135
@@ -850,7 +850,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.7999878, y: 1.2799988}
+  m_AnchoredPosition: {x: 3.7999878, y: 1.2800293}
   m_SizeDelta: {x: -465.1, y: -392.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6479655481110249632
@@ -1109,7 +1109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 631.942, y: 263.8}
+  m_AnchoredPosition: {x: 632, y: 264}
   m_SizeDelta: {x: 95.9, y: 60.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &6479655481183399423
@@ -1226,7 +1226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.659729, y: 160}
+  m_AnchoredPosition: {x: 87, y: 265}
   m_SizeDelta: {x: 76.4, y: 36.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6479655481395054017
@@ -1423,7 +1423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.659729, y: 160}
+  m_AnchoredPosition: {x: 87, y: 265}
   m_SizeDelta: {x: 76.4, y: 36.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6479655481475761092
@@ -1481,7 +1481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6479655481530301884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1663,7 +1663,7 @@ RectTransform:
   m_GameObject: {fileID: 6479655481684341532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 6479655480184131464}
   m_RootOrder: 0
@@ -1701,7 +1701,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6348e52f221042446be4967dddb7ea22, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7eea52d9130e8af4191a1dd49d87b32b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
