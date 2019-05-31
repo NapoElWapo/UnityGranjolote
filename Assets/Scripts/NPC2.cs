@@ -46,13 +46,13 @@ public class NPC2 : MonoBehaviour
     public GameObject continueBottonFrio;
     public GameObject PlayerUI;
 
-    //public GameObject si;
-    //public GameObject no;
+    Animator npc2Animator;
 
     void Start()
     {
         instancia = this;
         agent = this.GetComponent<NavMeshAgent>();
+        npc2Animator = GetComponent<Animator>();
 
         if (agent == null)
         {
@@ -78,7 +78,7 @@ public class NPC2 : MonoBehaviour
         if (traveling && agent.remainingDistance <= 1.0f)
          {
              traveling = false;
-
+             npc2Animator.Play("Armature|Iddle");
              if (patrolWaiting)
              {
                  waiting = true;
@@ -86,6 +86,7 @@ public class NPC2 : MonoBehaviour
              }
              else
              {
+                npc2Animator.Play("Armature|Caminar");
                  ChangePatrolPoint();
                  SetDestination();
              }

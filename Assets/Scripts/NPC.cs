@@ -35,11 +35,14 @@ public class NPC : MonoBehaviour
     public GameObject continueBotton;
     public GameObject PlayerUI;
 
+    Animator npcAnimator;
+
     void Start()
     {
         agent = this.GetComponent<NavMeshAgent>();
+        npcAnimator = GetComponent<Animator>();
 
-        if(agent == null)
+        if (agent == null)
         {
             Debug.LogError("El componente nav mesh component no esta agregado al " + gameObject.name);
         }
@@ -63,20 +66,21 @@ public class NPC : MonoBehaviour
         if (traveling && agent.remainingDistance <= 1.0f)
         {
             traveling = false;
-
+            npcAnimator.Play("Armature|Iddle");
             if (patrolWaiting)
-            {
+            {              
                 waiting = true;
                 waitTimer = 0f;
             }
             else
             {
+                npcAnimator.Play("Armature|Caminar");
                 ChangePatrolPoint();
                 SetDestination();
             }
         }
         if (waiting)
-        {
+        {  
             waitTimer += Time.deltaTime;
             if (waitTimer >= totalWaitTime)
             {
@@ -114,7 +118,7 @@ public class NPC : MonoBehaviour
 
     private void SetDestination()
     {
-        if(patrolPoints != null)
+        if (patrolPoints != null)
         {
             Vector3 targetVector = patrolPoints[currentPatrolIndex].transform.position;
             agent.SetDestination(targetVector);
