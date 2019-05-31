@@ -30,8 +30,18 @@ public class PatrullaAjolote : MonoBehaviour
     float direccion;
     Vector3 rotacion;
 
+    WaitForSeconds[] seconds;
+
     void Start()
     {
+        seconds = new WaitForSeconds[]
+        {
+            new WaitForSeconds(Random.Range(2, 6)),
+            new WaitForSeconds(Random.Range(2, 6)),
+            new WaitForSeconds(Random.Range(2, 6)),
+            new WaitForSeconds(Random.Range(2, 6)),
+            new WaitForSeconds(Random.Range(2, 6)),
+        };
         harto = false;
         movimiento = false;
         asustado = false;
@@ -46,6 +56,11 @@ public class PatrullaAjolote : MonoBehaviour
         spawn = GameObject.Find("SpawnerA" + buscarSpawn).GetComponent<SpawnAjolote>();
     }
 
+    // * Vagar() no debe llamarse a cada rato en update
+    // * NuevaDireccion() no debe llamarse en update
+    // * NO LLAMAR CORUTINAS EN UPDATE
+
+
     void Update()
     {
         if (!vagar)
@@ -54,11 +69,13 @@ public class PatrullaAjolote : MonoBehaviour
         }
         if (!harto && !movimiento)
         {
+            Debug.LogWarning("Se esta deteniendo nueva direccion");
             StopCoroutine(NuevaDireccion());
             ajoloteAnimator.SetBool(Movimiento, false);
         }
         if (!harto && movimiento)
         {
+            Debug.LogWarning("Se esta llamando nueva direccion");
             StartCoroutine(NuevaDireccion());
             ajoloteAnimator.SetBool(Movimiento, true);
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
@@ -88,14 +105,16 @@ public class PatrullaAjolote : MonoBehaviour
 
     IEnumerator Vagar()
     {
+        Debug.LogWarning("Se esta llamando vagar");
         vagar = true;
-        int esperaCaminar = Random.Range(2, 5);
-        int tiempoCaminar = Random.Range(2, 6);
+        int esperaCaminar = Random.Range(0, 5);
+        int tiempoCaminar = Random.Range(0, 5);
         movimiento = false;
-        yield return new WaitForSeconds(esperaCaminar);
+        yield return seconds[esperaCaminar];
         movimiento = true;
-        yield return new WaitForSeconds(tiempoCaminar);
+        yield return seconds[tiempoCaminar];
         vagar = false;
+        Debug.LogWarning("Se esta deteniendo vagar");
     }
 
     IEnumerator NuevaDireccion()
@@ -127,7 +146,7 @@ public class PatrullaAjolote : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {   
+    {
         /*
         if(other.tag=="Player")
         {
