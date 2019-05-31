@@ -33,21 +33,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -68,21 +68,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -103,21 +103,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -138,21 +138,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -173,21 +173,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -208,21 +208,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -243,21 +243,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -278,21 +278,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(050, 50, 50, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -313,21 +313,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -348,21 +348,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -383,21 +383,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -418,21 +418,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -453,21 +453,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(true);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -488,21 +488,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(true);
         tuto15.gameObject.SetActive(false);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
-        b15.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+        b15.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
 
     }
 
@@ -523,21 +523,21 @@ public class ManualUI : MonoBehaviour
         tuto13.gameObject.SetActive(false);
         tuto14.gameObject.SetActive(false);
         tuto15.gameObject.SetActive(true);
-        b1.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b2.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b3.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b4.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b5.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b6.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b7.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b8.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b9.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b10.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b11.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b12.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b13.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b14.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        b15.GetComponent<Image>().color = new Color32(50, 50, 50, 255);
+        b1.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b2.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b3.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b4.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b5.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b6.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b7.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b8.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b9.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b10.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b11.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b12.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b13.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b14.GetComponent<Image>().color = new Color32(202, 115, 66, 255);
+        b15.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
 
     }
 
