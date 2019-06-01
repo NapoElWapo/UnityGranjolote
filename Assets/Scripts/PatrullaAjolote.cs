@@ -6,7 +6,7 @@ public class PatrullaAjolote : MonoBehaviour
 {
     public string Movimiento, Asustado;
 
-    public bool harto, movimiento, asustado, vagar, awaEspanta, lumbreEspanta;
+    public bool harto, movimiento, asustado, vagar, awaEspanta, lumbreEspanta, CrDireccion, llamarCrDireccion;
 
     public float velocidad = 2f;
     public float velocidadAwado;
@@ -69,14 +69,16 @@ public class PatrullaAjolote : MonoBehaviour
         }
         if (!harto && !movimiento)
         {
-            Debug.LogWarning("Se esta deteniendo nueva direccion");
+            Debug.LogWarning("Se esta deteniendo nueva direccion en update");
             StopCoroutine(NuevaDireccion());
             ajoloteAnimator.SetBool(Movimiento, false);
         }
         if (!harto && movimiento)
         {
-            Debug.LogWarning("Se esta llamando nueva direccion");
-            StartCoroutine(NuevaDireccion());
+            //Debug.LogWarning("Se esta llamando nueva direccion");
+            if(llamarCrDireccion)
+                StartCoroutine(NuevaDireccion());
+
             ajoloteAnimator.SetBool(Movimiento, true);
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotacion, Time.deltaTime * cambioDireccion);
 
@@ -110,8 +112,11 @@ public class PatrullaAjolote : MonoBehaviour
         int esperaCaminar = Random.Range(0, 5);
         int tiempoCaminar = Random.Range(0, 5);
         movimiento = false;
+        CrDireccion = false;
         yield return seconds[esperaCaminar];
         movimiento = true;
+        llamarCrDireccion = true;
+        CrDireccion = true;
         yield return seconds[tiempoCaminar];
         vagar = false;
         Debug.LogWarning("Se esta deteniendo vagar");
@@ -119,13 +124,16 @@ public class PatrullaAjolote : MonoBehaviour
 
     IEnumerator NuevaDireccion()
     {
-        while (true)
+        llamarCrDireccion = false;
+        Debug.LogWarning("Se esta llamando nueva direccion");
+        while (CrDireccion)
         {
             NuevaDireccionRutina();
             yield return new WaitForSeconds(cambioDireccion);
             controller.transform.eulerAngles.z.Equals(0);
             controller.transform.eulerAngles.x.Equals(0);
         }
+        Debug.LogWarning("Se esta deteniendo nueva direccion");
     }
 
     IEnumerator Delay()
