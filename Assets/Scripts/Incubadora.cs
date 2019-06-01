@@ -874,15 +874,15 @@ public class Incubadora : MonoBehaviour
 
 
         mostrar = !mostrar;
-       
 
+        incubadoraUI.gameObject.SetActive(mostrar);
         if (mostrar)
         {
             
             Cursor.lockState = CursorLockMode.None;
 
             Cursor.visible = true;
-
+            
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
             var velocidadC = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_WalkSpeed = 0f;

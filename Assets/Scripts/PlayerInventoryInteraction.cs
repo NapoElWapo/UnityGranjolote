@@ -40,9 +40,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
 
     public Incubadora incu;
     public string incubadora1 = "Incubadora1";
-    public string incubadora2 = "Incubadora2";
-    public string incubadora3 = "Incubadora3";
-
+   
     public string npc = "NPC";
 
     public TiendaUI tien;
