@@ -58,10 +58,6 @@ public class Calor : MonoBehaviour
             }
             NPC2.instancia.calor = true;
         }
-
-        
-
-
     }
 
     public void OnTriggerExit(Collider collision)
@@ -101,8 +97,7 @@ public class Calor : MonoBehaviour
         }
         if (quemandose)
         {
-            imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);
-            
+            imagenCalor.GetComponent<CanvasGroup>().alpha = 1f - (playerScript.health * .01f);       
         }
     }
 }

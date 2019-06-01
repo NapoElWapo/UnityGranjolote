@@ -295,6 +295,7 @@ public class NPC2 : MonoBehaviour
             hablando = false;
             GetComponent<NavMeshAgent>().speed = 5f;
             PlayerUI.SetActive(true);
+            calor = false;
         }
     }
 
@@ -320,6 +321,7 @@ public class NPC2 : MonoBehaviour
             hablando = false;
             GetComponent<NavMeshAgent>().speed = 5f;
             PlayerUI.SetActive(true);
+            frio = false;
         }
     }
 }
