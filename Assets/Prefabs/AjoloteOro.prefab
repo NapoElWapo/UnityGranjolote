@@ -132,20 +132,22 @@ MonoBehaviour:
   movimiento: 0
   asustado: 0
   vagar: 0
-  awaEspanta: 0
-  lumbreEspanta: 0
+  awaEspanta: 1
+  lumbreEspanta: 1
   velocidad: 5
-  velocidadAwado: 0
-  velocidadAlumbrado: 0
+  velocidadAwado: 15
+  velocidadAlumbrado: 15
   velocidadAsustado: 10
-  velocidadAwadoAsustado: 0
-  velocidadAlumbradoAsustado: 0
+  velocidadAwadoAsustado: 40
+  velocidadAlumbradoAsustado: 40
   cambioDireccion: 0.3
   maxCambio: 180
   tiempoHarto: 3
-  tiempoHartoAwado: 0
-  tiempoHartoAlumbrado: 0
+  tiempoHartoAwado: 2
+  tiempoHartoAlumbrado: 2
   contador: 0
+  spawn: {fileID: 0}
+  buscarSpawn: 
 --- !u!95 &2230911047828784423
 Animator:
   serializedVersion: 3
