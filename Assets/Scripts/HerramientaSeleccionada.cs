@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
-
+[System.Serializable]
 public class HerramientaSeleccionada : MonoBehaviour
 {
+    
     public RectTransform bslot1, bslot2, bslot3, bslot4;
+    
     public Image sslot1, sslot2, sslot3, sslot4;
+   
     public GameObject lanza, arco,rastrillo, ajoloteSA, ajoloteSF,fuego,agua,agua2,fuego2,hidrobomba,lanzaClick1,lanzaClick2,arcoClick,flechaClick1,flechaClick2,rastrillo1;
+   
     private int slotPosition = 0;
     public int nivelAgua=1,nivelFuego=1,nivelNube=1;
+   
     public float estaminaS = 0, maxEstaminaS = 100;
     private bool hayFuego, hayAgua, lanzaComprobar = false, rastrilloComprobar = false, AAComprobar = false,
         AFComprobar = false, lanzaPesaca = false, arcoPesca = false, rastrilloGusano = false, usando = false, hayHidrobomba = false;
+   
     public bool AAMax = false, AFMax = false, ANMax = false;
     MenuInventario conex;
     LogrosYMisiones conexLM;
-    [SerializeField]
+   
     slot comprobar,nube;
     
     void Start()
