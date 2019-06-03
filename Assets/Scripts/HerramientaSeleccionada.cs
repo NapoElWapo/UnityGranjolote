@@ -6,6 +6,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class HerramientaSeleccionada : MonoBehaviour
 {
+    public AudioSource sonidosAjolotesS;
+    public AudioClip sonidoAgua, sonidoFuego;
     public RectTransform bslot1, bslot2, bslot3, bslot4;
     public Image sslot1, sslot2, sslot3, sslot4;
     public GameObject lanza, arco,rastrillo, ajoloteSA, ajoloteSF,fuego,agua,agua2,fuego2,hidrobomba,lanzaClick1,lanzaClick2,arcoClick,flechaClick1,flechaClick2,rastrillo1;
@@ -248,16 +250,21 @@ public class HerramientaSeleccionada : MonoBehaviour
 
                         if (Input.GetMouseButtonDown(0) && estaminaS != 0)
                         {
+                            sonidosAjolotesS.volume = 1f;
+                            sonidosAjolotesS.clip = sonidoAgua;
+                            sonidosAjolotesS.Play();
                             agua.gameObject.SetActive(true);
                             hayAgua = true;
                         }
                         else if (estaminaS == 0)
                         {
+                            sonidosAjolotesS.Stop();
                             agua.gameObject.SetActive(false);
                         }
 
                         if (Input.GetMouseButtonUp(0))
                         {
+                            sonidosAjolotesS.Stop();
                             agua.gameObject.SetActive(false);
                             hayAgua = false;
                         }
@@ -266,32 +273,42 @@ public class HerramientaSeleccionada : MonoBehaviour
                     {
                         if (Input.GetMouseButtonDown(0) && estaminaS != 0)
                         {
+                            sonidosAjolotesS.volume = 1f;
+                            sonidosAjolotesS.clip = sonidoAgua;
+                            sonidosAjolotesS.Play();
                             agua2.gameObject.SetActive(true);
                             hayAgua = true;
                         }
                         else if (estaminaS == 0)
                         {
+                            sonidosAjolotesS.Stop();
                             agua2.gameObject.SetActive(false);
                         }
 
                         if (Input.GetMouseButtonDown(1) && estaminaS != 0)
                         {
+                            sonidosAjolotesS.volume = 1f;
+                            sonidosAjolotesS.clip = sonidoAgua;
+                            sonidosAjolotesS.Play();
                             hidrobomba.gameObject.SetActive(true);
                             hayHidrobomba = true;
                         }
                         else if (estaminaS <= 0)
                         {
+                            sonidosAjolotesS.Stop();
                             hidrobomba.gameObject.SetActive(false);
                         }
                         
 
                         if (Input.GetMouseButtonUp(0))
                         {
+                            sonidosAjolotesS.Stop();
                             agua2.gameObject.SetActive(false);
                             hayAgua = false;
                         }
                         else if (Input.GetMouseButtonUp(1))
                         {
+                            sonidosAjolotesS.Stop();
                             hidrobomba.gameObject.SetActive(false);
                             hayHidrobomba = false;
                         }
@@ -324,16 +341,21 @@ public class HerramientaSeleccionada : MonoBehaviour
 
                         if (Input.GetMouseButtonDown(0) && estaminaS != 0)
                         {
+                            sonidosAjolotesS.volume = 1f;
+                            sonidosAjolotesS.clip = sonidoFuego;
+                            sonidosAjolotesS.Play();
                             fuego.gameObject.SetActive(true);
                             hayFuego = true;
                         }
                         else if (estaminaS == 0)
                         {
+                            sonidosAjolotesS.Stop();
                             fuego.gameObject.SetActive(false);
                         }
 
                         if (Input.GetMouseButtonUp(0))
                         {
+                            sonidosAjolotesS.Stop();
                             fuego.gameObject.SetActive(false);
                             hayFuego = false;
                         }
@@ -342,16 +364,21 @@ public class HerramientaSeleccionada : MonoBehaviour
                     {
                         if (Input.GetMouseButtonDown(0) && estaminaS != 0)
                         {
+                            sonidosAjolotesS.volume = 1f;
+                            sonidosAjolotesS.clip = sonidoFuego;
+                            sonidosAjolotesS.Play();
                             fuego2.gameObject.SetActive(true);
                             hayFuego = true;
                         }
                         else if (estaminaS == 0)
                         {
+                            sonidosAjolotesS.Stop();
                             fuego2.gameObject.SetActive(false);
                         }
 
                         if (Input.GetMouseButtonUp(0))
                         {
+                            sonidosAjolotesS.Stop();
                             fuego2.gameObject.SetActive(false);
                             hayFuego = false;
                         }

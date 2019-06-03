@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MinijuegoPescaArco : MonoBehaviour
 {
+    public AudioSource sonidosPesca;
+    public AudioClip fallo, exito;
+
     public RectTransform pez, posFinal, panelPesca, holder;
 
     private Vector2 posInicio;
@@ -45,6 +48,7 @@ public class MinijuegoPescaArco : MonoBehaviour
     void Start()
     {
         contador = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
+        sonidosPesca.volume = 1f;
         //OrbeArcoB = GameObject.Find("OrbeArco").GetComponent<OrbeArco>();
     }
     private void OnDisable()
@@ -73,7 +77,13 @@ public class MinijuegoPescaArco : MonoBehaviour
     {
         if (collision.gameObject.tag == "FalloPesca")
         {
-            panelPesca.gameObject.SetActive(false);
+            sonidosPesca.clip = fallo;
+            sonidosPesca.Play();
+            GameObject.Find("ArcoPececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
+            vel = 0;
+            pez.transform.position = holder.transform.position;
+            //panelPesca.gameObject.SetActive(false);
+            StartCoroutine(Delay());
         }
     }
 
@@ -85,8 +95,12 @@ public class MinijuegoPescaArco : MonoBehaviour
             {
                 if (Input.GetButtonDown("e"))
                 {
+                    sonidosPesca.clip = exito;
+                    sonidosPesca.Play();
+
                     GameObject.Find("ArcoPececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
                     vel = 0;
+                    pez.transform.position = holder.transform.position;
                     current_selected_obj = pescado.transform.gameObject;
                     GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
                     contadorPecesA++;
@@ -98,8 +112,12 @@ public class MinijuegoPescaArco : MonoBehaviour
             {
                 if (Input.GetButtonDown("e"))
                 {
+                    sonidosPesca.clip = exito;
+                    sonidosPesca.Play();
+
                     GameObject.Find("ArcoPececin").GetComponent<RectTransform>().GetChild(1).gameObject.SetActive(false);
                     vel = 0;
+                    pez.transform.position = holder.transform.position;
                     current_selected_obj = orbeF.transform.gameObject;
                     
                     GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
@@ -112,9 +130,15 @@ public class MinijuegoPescaArco : MonoBehaviour
 
         else if (collision.gameObject.tag == "AguaPesca")
         {
-            if (Input.GetKeyDown("e"))
+            if (Input.GetButtonDown("e"))
             {
-                panelPesca.gameObject.SetActive(false);
+                sonidosPesca.clip = fallo;
+                sonidosPesca.Play();
+                GameObject.Find("ArcoPececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
+                vel = 0;
+                pez.transform.position = holder.transform.position;
+                StartCoroutine(Delay());
+                //panelPesca.gameObject.SetActive(false);
             }
         }
     }

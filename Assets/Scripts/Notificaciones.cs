@@ -5,13 +5,16 @@ using UnityEngine;
 public class Notificaciones : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public AudioSource sonidoNotificaciones;
+    public AudioClip notificacion;
     public GameObject popUpMisiones,popUpAlcalde,popUpMC,popUpLC,popUpT;
     LogrosYMisiones conexLM;
     AlcaldeMisiones conexAM;
 
     void Start()
     {
+        sonidoNotificaciones.clip = notificacion;
+        sonidoNotificaciones.volume = 1f;
         StartCoroutine(MostrarPM());
         conexAM = GameObject.Find("AlcaldeMisiones").GetComponent<AlcaldeMisiones>();
         conexLM = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
@@ -49,6 +52,7 @@ public class Notificaciones : MonoBehaviour
 
     IEnumerator MostrarPM()
     {
+        sonidoNotificaciones.Play();
         Animator animator = popUpMisiones.GetComponent<Animator>();
         bool mostrar = animator.GetBool("Mostrar");
         animator.SetBool("Mostrar", true);
@@ -58,6 +62,7 @@ public class Notificaciones : MonoBehaviour
 
     IEnumerator MostrarMA()
     {
+        sonidoNotificaciones.Play();
         Animator animator = popUpAlcalde.GetComponent<Animator>();
         bool mostrar = animator.GetBool("Mostrar");
         animator.SetBool("Mostrar", true);
@@ -67,6 +72,7 @@ public class Notificaciones : MonoBehaviour
 
     IEnumerator MostrarMC()
     {
+        sonidoNotificaciones.Play();
         Animator animator = popUpMC.GetComponent<Animator>();
         bool mostrar = animator.GetBool("Mostrar");
         animator.SetBool("Mostrar", true);
@@ -76,6 +82,7 @@ public class Notificaciones : MonoBehaviour
 
     IEnumerator MostrarLC()
     {
+        sonidoNotificaciones.Play();
         Animator animator = popUpLC.GetComponent<Animator>();
         bool mostrar = animator.GetBool("Mostrar");
         animator.SetBool("Mostrar", true);
@@ -85,6 +92,7 @@ public class Notificaciones : MonoBehaviour
 
     IEnumerator MostrarT()
     {
+        sonidoNotificaciones.Play();
         Animator animator = popUpT.GetComponent<Animator>();
         bool mostrar = animator.GetBool("Mostrar");
         animator.SetBool("Mostrar", true);

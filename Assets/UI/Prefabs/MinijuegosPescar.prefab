@@ -65,6 +65,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6479655481475761090}
+  - {fileID: 6479655480506425134}
   - {fileID: 6479655481467207889}
   - {fileID: 6479655480505542103}
   m_Father: {fileID: 6479655481530301884}
@@ -212,6 +214,7 @@ GameObject:
   - component: {fileID: 6479655480184131467}
   - component: {fileID: 6479655480184131466}
   - component: {fileID: 6479655480184131465}
+  - component: {fileID: 5645114557603241111}
   m_Layer: 5
   m_Name: ArcoPececin
   m_TagString: Pecesito
@@ -233,7 +236,7 @@ RectTransform:
   - {fileID: 6479655481684341533}
   - {fileID: 6479655481605263079}
   m_Father: {fileID: 6479655481110249642}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -336,6 +339,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b445767222587446a8ba1c5529250a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidosPesca: {fileID: 5645114557603241111}
+  fallo: {fileID: 8300000, guid: c7923217f15b319409816c5a9d507025, type: 3}
+  exito: {fileID: 8300000, guid: dff4d78ac6cfb0f43b7c09c4790c20db, type: 3}
   pez: {fileID: 6479655480184131464}
   posFinal: {fileID: 6479655481183399421}
   panelPesca: {fileID: 6479655481133075705}
@@ -347,6 +353,102 @@ MonoBehaviour:
   orbeF: {fileID: 619254260, guid: b59a34df6b5efee4b868c803aa684db0, type: 3}
   contadorPecesA: 0
   OrbeArcoB: {fileID: 0}
+--- !u!82 &5645114557603241111
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6479655480184131511}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6479655480223022673
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,8 +476,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6479655481395054031}
-  - {fileID: 6479655481183399421}
   - {fileID: 6479655481133075705}
   m_Father: {fileID: 534829282802530122}
   m_RootOrder: 0
@@ -412,7 +512,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6479655481110249642}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -591,6 +691,7 @@ GameObject:
   - component: {fileID: 6479655480505542058}
   - component: {fileID: 6479655480505542059}
   - component: {fileID: 6479655480505542060}
+  - component: {fileID: 3191924983307705109}
   m_Layer: 5
   m_Name: Pececin
   m_TagString: Pecesito
@@ -611,7 +712,7 @@ RectTransform:
   m_Children:
   - {fileID: 6479655480391000474}
   m_Father: {fileID: 6479655479928870223}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -714,6 +815,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4eb4dc5eb684b4591ce29394578be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidosPesca: {fileID: 3191924983307705109}
+  fallo: {fileID: 8300000, guid: c7923217f15b319409816c5a9d507025, type: 3}
+  exito: {fileID: 8300000, guid: dff4d78ac6cfb0f43b7c09c4790c20db, type: 3}
   pez: {fileID: 6479655480505542103}
   posFinal: {fileID: 6479655480506425134}
   panelPesca: {fileID: 6479655481530301884}
@@ -726,6 +830,102 @@ MonoBehaviour:
   contadorPecesL: 0
   contadorConsecutivoPeces: 0
   timer: 1.5
+--- !u!82 &3191924983307705109
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6479655480505542102}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6479655480506425133
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,16 +952,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6479655480506425133}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -287.2}
-  m_LocalScale: {x: 1.16625, y: 1.16625, z: 1.16625}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6479655481205378045}
+  m_Father: {fileID: 6479655479928870223}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 631, y: 264}
-  m_SizeDelta: {x: 95.9, y: 60.2}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 47.04239, y: -1.108485}
+  m_SizeDelta: {x: 95.900024, y: 60.039246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &6479655480506425135
 BoxCollider2D:
@@ -843,6 +1043,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6479655481395054031}
+  - {fileID: 6479655481183399421}
   - {fileID: 6479655480304709696}
   - {fileID: 6479655480184131464}
   m_Father: {fileID: 6479655481133075705}
@@ -1008,7 +1210,7 @@ RectTransform:
   m_Children:
   - {fileID: 6479655481110249642}
   m_Father: {fileID: 6479655480223022674}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1101,16 +1303,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6479655481183399420}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -287.2}
-  m_LocalScale: {x: 1.16625, y: 1.16625, z: 1.16625}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6479655480223022674}
+  m_Father: {fileID: 6479655481110249642}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 632, y: 264}
-  m_SizeDelta: {x: 95.9, y: 60.2}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 48.4498, y: -1.108551}
+  m_SizeDelta: {x: 95.899994, y: 60.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &6479655481183399423
 BoxCollider2D:
@@ -1186,8 +1388,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6479655481475761090}
-  - {fileID: 6479655480506425134}
   - {fileID: 6479655481530301884}
   m_Father: {fileID: 534829282802530122}
   m_RootOrder: 1
@@ -1218,15 +1418,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6479655481395054030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -287.2}
-  m_LocalScale: {x: 0.65125, y: 0.65125, z: 0.65125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5584137, y: 0.5584137, z: 0.5584137}
   m_Children: []
-  m_Father: {fileID: 6479655480223022674}
+  m_Father: {fileID: 6479655481110249642}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87, y: 265}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -84.859955, y: -0.25106812}
   m_SizeDelta: {x: 76.4, y: 36.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6479655481395054017
@@ -1298,7 +1498,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6479655479928870223}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1415,16 +1615,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6479655481475761089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -287.2}
-  m_LocalScale: {x: 0.65125, y: 0.65125, z: 0.65125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5584136, y: 0.5584136, z: 0.5584136}
   m_Children: []
-  m_Father: {fileID: 6479655481205378045}
+  m_Father: {fileID: 6479655479928870223}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87, y: 265}
-  m_SizeDelta: {x: 76.4, y: 36.2}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -84.359924, y: -0.25100708}
+  m_SizeDelta: {x: 76.50003, y: 36.40924}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6479655481475761092
 CanvasRenderer:
@@ -1495,7 +1695,7 @@ RectTransform:
   m_Children:
   - {fileID: 6479655479928870223}
   m_Father: {fileID: 6479655481205378045}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MinijuegoPescar : MonoBehaviour
 {
+    public AudioSource sonidosPesca;
+    public AudioClip fallo, exito;
+
     public RectTransform pez, posFinal, panelPesca,holder,pescaHolder,finalholder,pezholder;
     public GameObject pescado, current_selected_obj;
     private Vector2 posInicio;
@@ -32,6 +35,8 @@ public class MinijuegoPescar : MonoBehaviour
     }
     void Start()
     {
+        //sonidosPesca.volume = GameMaster.instanciaCompartida.volumenEfectos;
+        sonidosPesca.volume = 1f;
         contador = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
     }
     private void OnDisable()
@@ -58,9 +63,15 @@ public class MinijuegoPescar : MonoBehaviour
     {
         if (collision.gameObject.tag == "FalloPesca")
         {
-            panelPesca.gameObject.SetActive(false);
+            sonidosPesca.clip = fallo;
+            sonidosPesca.Play();
+            GameObject.Find("Pececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
+            vel = 0;
+            pez.transform.position = holder.transform.position;
+            //panelPesca.gameObject.SetActive(false);
             contadorConsecutivoPeces = 0;
             contador.contadorConsecutivo = contadorConsecutivoPeces;
+            StartCoroutine(DelayCR());
         }
     }
 
@@ -70,11 +81,17 @@ public class MinijuegoPescar : MonoBehaviour
         {
             if (Input.GetButtonDown("e"))
             {
-                
+                sonidosPesca.clip = exito;
+                sonidosPesca.Play();
                 GameObject.Find("Pececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
                 vel = 0;
+                pez.transform.position = holder.transform.position;
                 contadorConsecutivoPeces++;
                 contador.contadorConsecutivo = contadorConsecutivoPeces;
+                current_selected_obj = pescado.transform.gameObject;
+                GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
+                contadorPecesL++;
+                contador.contadorL = contadorPecesL;
                 StartCoroutine(DelayCR());
                 //Delay();
             }
@@ -84,42 +101,23 @@ public class MinijuegoPescar : MonoBehaviour
         {
             if (Input.GetButtonDown("e"))
             {
-                panelPesca.gameObject.SetActive(false);
-                contadorConsecutivoPeces=0;
+                sonidosPesca.clip = fallo;
+                sonidosPesca.Play();
+                GameObject.Find("Pececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(false);
+                vel = 0;
+                pez.transform.position = holder.transform.position;
+                //panelPesca.gameObject.SetActive(false);
+                contadorConsecutivoPeces =0;
                 contador.contadorConsecutivo = contadorConsecutivoPeces;
+                StartCoroutine(DelayCR());
             }
         }
     }
     
     IEnumerator DelayCR()
     {
-        //Delay();
         yield return new WaitForSecondsRealtime(1.5f);
-        current_selected_obj = pescado.transform.gameObject;
-        GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
-        contadorPecesL++;
-        contador.contadorL = contadorPecesL;
         panelPesca.gameObject.SetActive(false);
     }
     
-    /*
-    void Delay()
-    {
-        esperaTimer = true;
-        if(esperaTimer)
-        {
-            timer += Time.deltaTime;
-            if (timer >= 1.5f)
-            {
-                esperaTimer = false;
-                current_selected_obj = pescado.transform.gameObject;
-                GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
-                contadorPecesL++;
-                contador.contadorL = contadorPecesL;
-                
-                panelPesca.gameObject.SetActive(false);
-            }
-        }
-    }
-    */
 }
