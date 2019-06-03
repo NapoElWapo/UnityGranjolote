@@ -44,5 +44,6 @@ public class AjoloteCongelado : MonoBehaviour
         ajo1.gameObject.SetActive(false);
         flamable.gameObject.SetActive(false);
         ajo2.gameObject.SetActive(true);
+        hielo.transform.position -= new Vector3(0, 20f, 0);
     }
 }
