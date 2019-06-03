@@ -13,6 +13,7 @@ public class MejorarAjolote : MonoBehaviour
 
     public bool ajoAI, ajoFI, ajoNI, orbeAI, orbeFI, orbeNI, UIactivo;
     MenuInventario conexMI;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -168,6 +169,7 @@ public class MejorarAjolote : MonoBehaviour
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
             mouseLook.XSensitivity = 0.0F;
             mouseLook.YSensitivity = 0.0F;
+            ajolotines.menuAbierto = true;
 
             //Time.timeScale = 0f;
         }
@@ -180,6 +182,7 @@ public class MejorarAjolote : MonoBehaviour
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
             mouseLook.XSensitivity = 2F;
             mouseLook.YSensitivity = 2F;
+            ajolotines.menuAbierto = false;
             //Time.timeScale = 1f;
         }
     }

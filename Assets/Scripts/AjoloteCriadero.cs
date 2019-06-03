@@ -30,7 +30,7 @@ public class AjoloteCriadero : MonoBehaviour
     public int dejarHuevo, porcentajeHuevo = 30, dejarHuevoDorado, porcentajeHuevoDorado = 10;
     public int precioCriadero;
     public bool criaderoLleno;
-
+    public int criaderollenito = 0;
     void Start()
     {
         inv = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
@@ -80,10 +80,13 @@ public class AjoloteCriadero : MonoBehaviour
         if(slot==10)
         {
             criaderoLleno = true;
+            criaderollenito = 1;
         }
         else if(slot<10)
         {
+            criaderollenito = 0;
             criaderoLleno = false;
+
         }
 
     }

@@ -80,8 +80,8 @@ public class MenuInventario : MonoBehaviour
     public int contador10AjoA = 0,contador10AjoP=0,contador10AjoF=0,contador10AjoH=0,contador10AjoN=0,contador10AjoO=0;
     //Clases para cada tipo de botones del inventario -añadidos
     uint indice_a = 0, indice_c = 0, indice_h = 0, indice_p = 0;
-    
 
+    public HerramientaSeleccionada conexH;
     private void Start()
     {
         GameMaster.instanciaCompartida.SetUI(this);
@@ -156,7 +156,7 @@ public class MenuInventario : MonoBehaviour
                 mouseLook.YSensitivity = 2F;
                 ToggleInventario();
                 inventario_ui.SetActive(false);
-               
+                conexH.menuAbierto = false;
                 menuCerrado = false;
             }
             else
@@ -168,7 +168,7 @@ public class MenuInventario : MonoBehaviour
                 mouseLook.XSensitivity = 0.0F;
                 mouseLook.YSensitivity = 0.0F;
                 inventario_ui.SetActive(true);
-                
+                conexH.menuAbierto = true;
                 menuCerrado = true;
             }
         }

@@ -17,7 +17,7 @@ public class AlcaldeMisiones : MonoBehaviour
     //Toggle
     public RectTransform AlcaldeMisionesUI;
     private bool mostrar;
-
+    public HerramientaSeleccionada conexH;
     //Variables para mostrar las misiones disponibles
     public RectTransform MD1, MD2, MD3, MD4, MD5, MD6, MD7, MD8, MD9;
     public bool activa1=false, activa2=false, activa3=false, activa4=false, activa5=false, activa6=false, activa7=false, activa8=false, activa9=false;
@@ -359,7 +359,7 @@ public class AlcaldeMisiones : MonoBehaviour
            
             mouseLook.XSensitivity = 0.0F;
             mouseLook.YSensitivity = 0.0F;
-            
+            conexH.menuAbierto = true;
            
         }
         else if (!mostrar)
@@ -370,7 +370,7 @@ public class AlcaldeMisiones : MonoBehaviour
             var velocidadR = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_RunSpeed = 30f;
             mouseLook.XSensitivity = 2F;
             mouseLook.YSensitivity = 2F;
-            
+            conexH.menuAbierto = false;
         }
 
 

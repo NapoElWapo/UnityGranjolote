@@ -23,6 +23,7 @@ public class TiendaUI : MonoBehaviour
     public Image sslot1, sslot2, sslot3, sslot4, sslot5, sslot6, sslot7, sslot8;
     public Text stack1, stack2, stack3, stack4, stack5, stack6, stack7, stack8;
     LogrosYMisiones conexLM;
+    public HerramientaSeleccionada conexH;
     // Start is called before the first frame update
     void Start()
     {
@@ -755,6 +756,7 @@ public class TiendaUI : MonoBehaviour
             mouseLook.XSensitivity = 0.0F;
             mouseLook.YSensitivity = 0.0F;
             Time.timeScale = 0f;
+            conexH.menuAbierto = true;
         }
         else if(GameMaster.instanciaCompartida.mostrarTiendaUI == false)
         {
@@ -765,6 +767,7 @@ public class TiendaUI : MonoBehaviour
             mouseLook.XSensitivity = 2F;
             mouseLook.YSensitivity = 2F;
             Time.timeScale = 1f;
+            conexH.menuAbierto = false;
         }
 
         

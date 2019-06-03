@@ -72,6 +72,8 @@ public class LogrosYMisiones : MonoBehaviour
         popl15, popl16, popl17, popl18, popl19, popl20, popl21, popl22, popl23, popl24, popl25, popl26, popl27, popl28, popl29, popl30, popl31, popl32, popl33, popl34,
         popa3,popa4,popa5,popa6,popa7,popa8,popa9;
 
+    public Image barra1, barra2, barra3, barra4, barra5, barra6, barra7, barra8, barra9, barra10, barra11, barra12, barra13, barra14;
+
     void Start()
     {
         //Se hacen las conexiones directas a las variables de los scripts
@@ -747,6 +749,20 @@ public class LogrosYMisiones : MonoBehaviour
             }
         }
 
+        barra1.fillAmount = conexMI.contador10AjoP*0.1f;
+        barra2.fillAmount = conexMI.contador10AjoA * 0.1f;
+        barra3.fillAmount = conexMI.contador10AjoF * 0.1f;
+        barra4.fillAmount = conexMI.contador10AjoH * 0.1f;
+        barra5.fillAmount = conexMI.contador10AjoN * 0.1f;
+        barra6.fillAmount = conexMI.contador10AjoO * 0.1f;
+        barra7.fillAmount = contadorTotalPeces * 0.067f;
+        barra8.fillAmount = contadorL * 0.01f;
+        barra9.fillAmount = contadorA * 0.01f;
+        barra10.fillAmount = contadorTotalPeces * 0.002f;
+        barra11.fillAmount = contadorGusanos * 0.1f;
+        barra12.fillAmount = contadorGusanos * 0.02f;
+        barra13.fillAmount = criaderosComprados * 0.1f;
+        barra14.fillAmount = (bool1.criaderollenito + bool2.criaderollenito + bool3.criaderollenito + bool4.criaderollenito + bool5.criaderollenito + bool6.criaderollenito + bool7.criaderollenito + bool8.criaderollenito + bool9.criaderollenito + bool10.criaderollenito) * 0.1f;
     }
 
     public void BotonMisiones()

@@ -16,11 +16,12 @@ public class HerramientaSeleccionada : MonoBehaviour
     public float estaminaS = 0, maxEstaminaS = 100;
     private bool hayFuego, hayAgua, lanzaComprobar = false, rastrilloComprobar = false, AAComprobar = false,
         AFComprobar = false, lanzaPesaca = false, arcoPesca = false, rastrilloGusano = false, usando = false, hayHidrobomba = false;
-    public bool AAMax = false, AFMax = false, ANMax = false;
+    public bool AAMax = false, AFMax = false, ANMax = false,menuAbierto;
     MenuInventario conex;
     LogrosYMisiones conexLM;
     [SerializeField]
     slot comprobar,nube;
+    
     
     void Start()
     {
@@ -175,7 +176,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                     
 
 
-                    if (Input.GetMouseButtonDown(1)&&usando==false)
+                    if (Input.GetMouseButtonDown(0)&&usando==false&&!menuAbierto)
                     {
 
                         usando = true;
@@ -193,7 +194,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                         lanza.gameObject.SetActive(false);
                         arco.gameObject.SetActive(true);
                     }
-                    if (Input.GetMouseButtonDown(1)&&usando==false)
+                    if (Input.GetMouseButtonDown(0)&&usando==false && !menuAbierto)
                     {
 
                         usando = true;
@@ -217,7 +218,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                         rastrillo.gameObject.SetActive(true);
                     }
 
-                    if (Input.GetMouseButtonDown(1)&&usando==false)
+                    if (Input.GetMouseButtonDown(0)&&usando==false && !menuAbierto)
                     {
 
                         usando = true;
@@ -248,7 +249,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                     {
 
 
-                        if (Input.GetMouseButtonDown(0) && estaminaS != 0)
+                        if (Input.GetMouseButtonDown(0) && estaminaS != 0 && !menuAbierto)
                         {
                             sonidosAjolotesS.volume = 1f;
                             sonidosAjolotesS.clip = sonidoAgua;
@@ -271,7 +272,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                     }
                     else if(nivelAgua==3)
                     {
-                        if (Input.GetMouseButtonDown(0) && estaminaS != 0)
+                        if (Input.GetMouseButtonDown(0) && estaminaS != 0 && !menuAbierto)
                         {
                             sonidosAjolotesS.volume = 1f;
                             sonidosAjolotesS.clip = sonidoAgua;
@@ -285,7 +286,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                             agua2.gameObject.SetActive(false);
                         }
 
-                        if (Input.GetMouseButtonDown(1) && estaminaS != 0)
+                        if (Input.GetMouseButtonDown(1) && estaminaS != 0 && !menuAbierto)
                         {
                             sonidosAjolotesS.volume = 1f;
                             sonidosAjolotesS.clip = sonidoAgua;
