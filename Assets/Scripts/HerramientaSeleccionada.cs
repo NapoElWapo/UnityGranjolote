@@ -23,7 +23,7 @@ public class HerramientaSeleccionada : MonoBehaviour
     public bool AAMax = false, AFMax = false, ANMax = false;
     MenuInventario conex;
     LogrosYMisiones conexLM;
-    [SerializeField]
+   
     slot comprobar,nube;
     
     void Start()
