@@ -17,42 +17,59 @@ public static class NombreEscena
     public const string PN = "PruebasNapo";
     public const string PL = "PruebasLuisFer";
 }
-
+[System.Serializable]
 [RequireComponent(typeof(AudioSource))]
 public class GameMaster : MonoBehaviour
 {
+    [System.NonSerialized]
     public static GameMaster instanciaCompartida;
+    [System.NonSerialized]
     public float volumenMusica = 0, volumenEfectos = 0;
+    [System.NonSerialized]
+
     public bool mostrarOpciones = false;
+    [System.NonSerialized]
     public bool mostrarInventario = false;
+    [System.NonSerialized]
     public bool mostrarMochila = false;
+    [System.NonSerialized]
     public bool mostrarAjolotepedia = false;
+    [System.NonSerialized]
     public bool mostrarLogrosMisiones = false;
+    [System.NonSerialized]
     public bool mostrarMapa = false;
-
+    [System.NonSerialized]
     public bool mostrarIncubadoraUI = false;
+    [System.NonSerialized]
     public bool mostrarIIncubadora = false;
+    [System.NonSerialized]
     public bool mostrarAIncubadora = false;
+    [System.NonSerialized]
     public bool mostrarIncubadora1 = false;
+    [System.NonSerialized]
     public bool mostrarIncubadora2 = false;
+    [System.NonSerialized]
     public bool mostrarIncubadora3 = false;
-
+    [System.NonSerialized]
     public bool mostrarTiendaUI = false;
 
     public int hora = 12;
     public float minuto;
     public float horaActual, cambioTotal;
-
+    [System.NonSerialized]
     public GameObject Jugador;
+    [System.NonSerialized]
     public GameObject Puerta;
+    [System.NonSerialized]
     public AudioSource MusicManager;
     public int dinero = 1000;
-    
-    public int nivelanterior=0;
 
+    [System.NonSerialized]
+    public int nivelanterior=0;
+   
     public SistemaInventario inventario;
     public MenuInventario GUI_controlador;
-
+    [System.NonSerialized]
     public float cambioVelocidad=1f;
 
     private void Awake()

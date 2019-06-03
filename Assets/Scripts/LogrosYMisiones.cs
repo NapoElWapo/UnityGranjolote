@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+[System.Serializable]
 public class LogrosYMisiones : MonoBehaviour
 {
     //botones de la interfaz
+    [System.NonSerialized]
     public RectTransform panelMisiones, panelLogros;
-
+    [System.NonSerialized]
     //Items que se pueden otorgar al terminar una mision
     public GameObject current_selected_obj, orbeMA, orbeMF, orbeMN;
 
+    [System.NonSerialized]
     //Misiones
     public RectTransform m1, m2, m3, m4, m5, m6, m7, m8, m9, m10;
     int misionesCompletadas;
+
     public bool m1c, m2c, m3c, m4c, m5c, m6c, m7c, m8c, m9c, m10c;
 
     //Booleanos externos
@@ -45,6 +48,7 @@ public class LogrosYMisiones : MonoBehaviour
     public bool primerACapturado = false, primerPCapturado = false, primerFCapturado=false,primerAEntregado=false,primerPEntregado=false,primerFEntregado=false;
     private bool recompensa=false;
     //Logros
+    [System.NonSerialized]
     public RectTransform L1, L2, L3, L4, L5, L6, L7, L8, L9, L10,
         L11, L12, L13, L14, L15, L16, L17, L18, L19, L20,
         L21, L22, L23, L24, L25, L26, L27, L28, L29, L30,
@@ -64,6 +68,7 @@ public class LogrosYMisiones : MonoBehaviour
     MenuInventario conexMI;
     Incubadora conexIncu;
     AlcaldeMisiones conexAM;
+    [System.NonSerialized]
     public AjoloteCriadero bool1, bool2, bool3, bool4, bool5, bool6, bool7, bool8, bool9, bool10;
 
     //Variables de notificaciones
