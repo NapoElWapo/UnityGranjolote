@@ -4,56 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
-[System.Serializable]
 public class AlcaldeMisiones : MonoBehaviour
 {
     //Variables para poder seleccionar item a entregar
-    [System.NonSerialized]
     slot itemslot1, itemslot2, itemslot3, itemslot4, itemslot5, itemslot6, itemslot7, itemslot8,ajoSlot1,ajoSlot2,ajoSlot3,ajoSlot4;
-    [System.NonSerialized]
     MenuInventario conex;
-    [System.NonSerialized]
     public Image sslot1, sslot2, sslot3, sslot4, sslot5, sslot6, sslot7, sslot8,saslot1,saslot2,saslot3,saslot4;
-    [System.NonSerialized]
     public Text stack1, stack2, stack3, stack4, stack5, stack6, stack7, stack8;
-    [System.NonSerialized]
     public RectTransform bslot1, bslot2, bslot3, bslot4, bslot5, bslot6, bslot7, bslot8,baslot1,baslot2,baslot3,baslot4;
-    [System.NonSerialized]
     private int slotSeleccionado = 0;
 
     //Toggle
-    [System.NonSerialized]
     public RectTransform AlcaldeMisionesUI;
     private bool mostrar;
 
     //Variables para mostrar las misiones disponibles
-    [System.NonSerialized]
     public RectTransform MD1, MD2, MD3, MD4, MD5, MD6, MD7, MD8, MD9;
-
     public bool activa1=false, activa2=false, activa3=false, activa4=false, activa5=false, activa6=false, activa7=false, activa8=false, activa9=false;
-   
     Alcalde conexAl;
     LogrosYMisiones conexLM;
 
     //Variables para mostrar de aceptar mision y entrega de objetos
-    [System.NonSerialized]
     public RectTransform panelA1, panelA2, panelA3, panelA4, panelA5, panelA6, panelA7, panelA8, panelA9, panelE4, panelE5, panelE6, panelE7, panelE8, panelE9;
-
     public bool aceptada1=false, aceptada2=false, aceptada3=false, aceptada4=false, aceptada5=false, aceptada6=false, aceptada7=false, aceptada8=false, aceptada9=false;
-
     private int valorEntrega = 0;
-    [System.NonSerialized]
 
     public GameObject current_selected_obj, sombrero, saco, pantalones, huevoP, huevoA, cacasF, ajoA, ajoP, ajoF;
 
     //MarcarProgreso
-    [System.NonSerialized]
-
     public RectTransform backHP, backHA, backAA, backAP, backAF,backCacasF,backSombrero,backSaco,backPantalones;
 
     //Objetos a spawnear
-    [System.NonSerialized]
-
     public GameObject pantalonCuevas, sacoVolcan, sombreroNubes, ajoloteLegendario;
 
     Notificaciones conexN;

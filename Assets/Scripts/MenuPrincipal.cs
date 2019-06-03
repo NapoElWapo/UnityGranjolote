@@ -2,18 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-[System.Serializable]
 public class MenuPrincipal : MonoBehaviour
 {
-    [System.NonSerialized]
     public RectTransform opcionesPanel;
-    [System.NonSerialized]
     public Slider volumenMusicaSlider;
-    [System.NonSerialized]
     public Slider volumenEfectosSlider;
-    [System.NonSerialized]
-    public SaveGameSystem controlador_guardado;
 
     void Start()
     {
@@ -21,20 +14,8 @@ public class MenuPrincipal : MonoBehaviour
         volumenEfectosSlider.value = GameMaster.instanciaCompartida.volumenEfectos;
     }
 
-    public void cargarUltimaPartida()
-    {
-        GameObject.FindObjectOfType<SaveGameSystem>().loadGame = true;
-        GameMaster.instanciaCompartida.Jugar();
-    }
-
-
-    
-   
-    //Esta de aqui se encarga de hacer el nuevo juego
     public void jugar()
     {
-        //controlador_guardado.LoadGame(true);
-        GameObject.FindObjectOfType<SaveGameSystem>().loadGame = false;
         GameMaster.instanciaCompartida.Jugar();
     }
 

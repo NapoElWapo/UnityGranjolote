@@ -8,7 +8,6 @@ using System;
 public class ItemInventario :MonoBehaviour, IEquatable<ItemInventario>
 {
     [Header("Configuracion del item")]
-    [System.NonSerialized]
     public Sprite Inventory_Decal;
     [SerializeField]
     public string Nombre;

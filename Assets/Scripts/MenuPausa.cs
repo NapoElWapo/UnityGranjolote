@@ -61,15 +61,9 @@ public class MenuPausa : MonoBehaviour
 
     public void GuardarYSalir()
     {
-        GameObject.FindObjectOfType<SaveGameSystem>().SaveGame();
-       
         GameMaster.instanciaCompartida.GuardarYSalir();   
     }
 
-    public void GuardarProgreso()
-    {
-        GameObject.FindObjectOfType<SaveGameSystem>().SaveGame();
-    }
     void Pausa()
     {
         var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
