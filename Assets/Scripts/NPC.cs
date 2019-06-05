@@ -39,6 +39,7 @@ public class NPC : MonoBehaviour
 
     void Start()
     {
+        patrolWaiting = true;
         agent = this.GetComponent<NavMeshAgent>();
         npcAnimator = GetComponent<Animator>();
 

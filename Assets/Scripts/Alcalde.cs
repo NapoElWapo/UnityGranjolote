@@ -17,80 +17,18 @@ public class Alcalde : MonoBehaviour
 
     AlcaldeMisiones mostrar;
 
-    /*[SerializeField]
-    bool patrolWaiting;
-
-    [SerializeField]
-    float totalWaitTime = 3f;
-
-    [SerializeField]
-    float switchProbability = 0.2f;
-
-    [SerializeField]
-    List<Waypoint> patrolPoints;
-
-    NavMeshAgent agent;
-    int currentPatrolIndex;
-    bool traveling;
-    bool waiting;
-    bool patrolForward;
-    float waitTimer;*/
-
     public GameObject continueBotton;
     public GameObject continueBottonMision;
     public GameObject PlayerUI;
 
     void Start()
     {
-        /*agent = this.GetComponent<NavMeshAgent>();
-
-        if (agent == null)
-        {
-            Debug.LogError("El componente nav mesh component no esta agregado al " + gameObject.name);
-        }
-        else
-        {
-            if (patrolPoints != null && patrolPoints.Count >= 2)
-            {
-                currentPatrolIndex = 0;
-                SetDestination();
-            }
-            else
-            {
-                Debug.Log("No hay puntos suficientes");
-            }
-        }*/
         hablando = false;
         mostrar = GameObject.Find("AlcaldeMisiones").GetComponent<AlcaldeMisiones>();
     }
 
     public void Update()
     {
-        /* if (traveling && agent.remainingDistance <= 1.0f)
-         {
-             traveling = false;
-
-             if (patrolWaiting)
-             {
-                 waiting = true;
-                 waitTimer = 0f;
-             }
-             else
-             {
-                 ChangePatrolPoint();
-                 SetDestination();
-             }
-         }
-         if (waiting)
-         {
-             waitTimer += Time.deltaTime;
-             if (waitTimer >= totalWaitTime)
-             {
-                 waiting = false;
-                 ChangePatrolPoint();
-                 SetDestination();
-             }
-         }*/
         if (textDisplay.text == sentences[index])
         {
             continueBotton.SetActive(true);
@@ -105,35 +43,6 @@ public class Alcalde : MonoBehaviour
         }
     }
 
-    /*private void SetDestination()
-    {
-        if (patrolPoints != null)
-        {
-            Vector3 targetVector = patrolPoints[currentPatrolIndex].transform.position;
-            agent.SetDestination(targetVector);
-            traveling = true;
-        }
-    }
-
-    private void ChangePatrolPoint()
-    {
-        if (UnityEngine.Random.Range(0f, 1f) <= switchProbability)
-        {
-            patrolForward = !patrolForward;
-        }
-        if (patrolForward)
-        {
-            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Count;
-        }
-        else
-        {
-            if (--currentPatrolIndex < 0)
-            {
-                currentPatrolIndex = patrolPoints.Count - 1;
-            }
-        }
-    }*/
-
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -144,7 +53,6 @@ public class Alcalde : MonoBehaviour
                 {
                     if (mision == false)
                     {
-                        //GetComponent<NavMeshAgent>().speed = 0f;
                         hablando = true;
                         StartCoroutine(Type());
                     }
@@ -195,7 +103,6 @@ public class Alcalde : MonoBehaviour
             Time.timeScale = 1f;
             index = 0;
             hablando = false;
-            //GetComponent<NavMeshAgent>().speed = 5f;
             PlayerUI.SetActive(true);
         }
     }
@@ -238,7 +145,6 @@ public class Alcalde : MonoBehaviour
             Time.timeScale = 1f;
             index = 0;
             hablando = false;
-            //GetComponent<NavMeshAgent>().speed = 5f;
             PlayerUI.SetActive(true);
             mostrar.ToggleAMisiones();
         }

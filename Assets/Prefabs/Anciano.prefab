@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4310256005600382040}
   - component: {fileID: 7838490958133986558}
   - component: {fileID: 4398353497478553606}
+  - component: {fileID: 8656502800298541577}
   m_Layer: 0
   m_Name: Anciano
   m_TagString: Untagged
@@ -125,6 +126,25 @@ MonoBehaviour:
   mejorasAjo: {fileID: 0}
   continueBotton: {fileID: 0}
   PlayerUI: {fileID: 0}
+--- !u!95 &8656502800298541577
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390334582182484344}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d00fc528cc77d73488b5f6addbb036b4, type: 3}
+  m_Controller: {fileID: 9100000, guid: accacc4135e394a4f8d3d6435b303745, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1392812619682293258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196,7 +216,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7401bdaadc11ba74291062bafec22f04, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: d00fc528cc77d73488b5f6addbb036b4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d00fc528cc77d73488b5f6addbb036b4, type: 3}
 --- !u!4 &1392812619682692234 stripped
 Transform:

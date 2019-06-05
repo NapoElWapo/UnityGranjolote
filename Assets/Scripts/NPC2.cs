@@ -50,6 +50,7 @@ public class NPC2 : MonoBehaviour
 
     void Start()
     {
+        patrolWaiting = true;
         instancia = this;
         agent = this.GetComponent<NavMeshAgent>();
         npc2Animator = GetComponent<Animator>();
@@ -124,10 +125,6 @@ public class NPC2 : MonoBehaviour
             Vector3 targetVector = patrolPoints[currentPatrolIndex].transform.position;
             agent.SetDestination(targetVector);
             traveling = true;
-            if (GameMaster.instanciaCompartida.hora >= 20)
-            {
-                //this.SetActive(false);
-            }
         }
         else if (GameMaster.instanciaCompartida.hora >= 8)
         {

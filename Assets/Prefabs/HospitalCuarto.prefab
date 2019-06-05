@@ -217,6 +217,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.72117174
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: d197dc46cdbe86345b26388088fb924a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: accacc4135e394a4f8d3d6435b303745, type: 2}
     - target: {fileID: 13700000, guid: d197dc46cdbe86345b26388088fb924a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -290,6 +294,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.7321973
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 892ea96c7a86da34ab0e75626d0b6d92, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: accacc4135e394a4f8d3d6435b303745, type: 2}
     - target: {fileID: 13700000, guid: 892ea96c7a86da34ab0e75626d0b6d92, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -762,6 +770,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enfermera
       objectReference: {fileID: 0}
+    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
+        type: 3}
+      propertyPath: textDisplay
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
+        type: 3}
+      propertyPath: continueBotton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
+        type: 3}
+      propertyPath: PlayerUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
+        type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: Gracias por su preferencia
+      objectReference: {fileID: 0}
     - target: {fileID: 5359994014631072418, guid: f6cbc41eb7b06c84f8b125dd3a042572,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -815,6 +843,11 @@ PrefabInstance:
     - target: {fileID: 5359994014631072418, guid: f6cbc41eb7b06c84f8b125dd3a042572,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359994014631072420, guid: f6cbc41eb7b06c84f8b125dd3a042572,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5359994014631072423, guid: f6cbc41eb7b06c84f8b125dd3a042572,
@@ -881,31 +914,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: -0.10496664
-      objectReference: {fileID: 0}
-    - target: {fileID: 5359994014631072420, guid: f6cbc41eb7b06c84f8b125dd3a042572,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
-        type: 3}
-      propertyPath: textDisplay
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
-        type: 3}
-      propertyPath: continueBotton
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
-        type: 3}
-      propertyPath: PlayerUI
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5359994014631072425, guid: f6cbc41eb7b06c84f8b125dd3a042572,
-        type: 3}
-      propertyPath: sentences.Array.data[1]
-      value: Gracias por su preferencia
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6cbc41eb7b06c84f8b125dd3a042572, type: 3}
@@ -1265,6 +1273,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlcaldeDoctor
       objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: CurarAEnlatado.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: ASA
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: PlayerUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: textDisplay
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: continueBotton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: CurarAEnlatado.Array.data[0]
+      value: Balgame dios que le paso a ese pobre ajolote
+      objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: CurarAEnlatado.Array.data[1]
+      value: permitemelo tantito para curarlo
+      objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: CurarAEnlatado.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
+        type: 3}
+      propertyPath: continueBottoncurar
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 798878318512664591, guid: c5aba06c92ed8a34d94e575a48403480,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1389,51 +1442,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.x
       value: 0.034219027
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: CurarAEnlatado.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: ASA
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: PlayerUI
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: textDisplay
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: continueBotton
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: CurarAEnlatado.Array.data[0]
-      value: Balgame dios que le paso a ese pobre ajolote
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: CurarAEnlatado.Array.data[1]
-      value: permitemelo tantito para curarlo
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: CurarAEnlatado.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 798878318512664596, guid: c5aba06c92ed8a34d94e575a48403480,
-        type: 3}
-      propertyPath: continueBottoncurar
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5aba06c92ed8a34d94e575a48403480, type: 3}
