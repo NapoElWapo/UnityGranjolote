@@ -48,7 +48,7 @@ public class MinijuegoPescaArco : MonoBehaviour
     void Start()
     {
         contador = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
-        sonidosPesca.volume = 1f;
+        sonidosPesca.volume = GameMaster.instanciaCompartida.volumenEfectos;
         //OrbeArcoB = GameObject.Find("OrbeArco").GetComponent<OrbeArco>();
     }
     private void OnDisable()

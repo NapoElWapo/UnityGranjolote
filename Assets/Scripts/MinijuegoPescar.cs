@@ -36,7 +36,7 @@ public class MinijuegoPescar : MonoBehaviour
     void Start()
     {
         //sonidosPesca.volume = GameMaster.instanciaCompartida.volumenEfectos;
-        sonidosPesca.volume = 1f;
+        sonidosPesca.volume = GameMaster.instanciaCompartida.volumenEfectos;
         contador = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
     }
     private void OnDisable()

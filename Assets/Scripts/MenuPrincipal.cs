@@ -40,7 +40,7 @@ public class MenuPrincipal : MonoBehaviour
     }
     public void VolumenEfectos()
     {
-        GameMaster.instanciaCompartida.VolumenMusica(volumenEfectosSlider.value);
+        GameMaster.instanciaCompartida.VolumenEfectos(volumenEfectosSlider.value);
     }
 
     public void ToggleOpciones()

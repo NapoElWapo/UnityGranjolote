@@ -82,52 +82,96 @@ public class MenuInventario : MonoBehaviour
     uint indice_a = 0, indice_c = 0, indice_h = 0, indice_p = 0;
 
     public HerramientaSeleccionada conexH;
+
+    public SlotID ajos1, ajos2, ajos3, ajos4, herrs1, herrs2, herr3, herr4, pass1, pass2, pass3, cols1, cols2, cols3, cols4, cols5, cols6, cols7, cols8;
     private void Start()
     {
-        GameMaster.instanciaCompartida.SetUI(this);
+        GameMaster.instanciaCompartida.SetUI(this);       
+
+        ajolotes.Add(new slot(EnumerationName + (++indice_a).ToString(),
+                            null,
+                            ajos1.transform.Find(SlotImageName).GetComponent<Image>()
+                            , false));
+        ajolotes.Add(new slot(EnumerationName + (++indice_a).ToString(),
+                           null,
+                           ajos2.transform.Find(SlotImageName).GetComponent<Image>()
+                           , false));
+        ajolotes.Add(new slot(EnumerationName + (++indice_a).ToString(),
+                           null,
+                           ajos3.transform.Find(SlotImageName).GetComponent<Image>()
+                           , false));
+        ajolotes.Add(new slot(EnumerationName + (++indice_a).ToString(),
+                           null,
+                           ajos4.transform.Find(SlotImageName).GetComponent<Image>()
+                           , false));
+
+
         
-        //Buscamos los slots de la ui y los llenamos con sus tipos correspondientes
-        //Lo que hace este bucle es buscar todos los objetos con el script slot id para referenciarse ellos despues
-        foreach (var iterador_ajolotes in Resources.FindObjectsOfTypeAll(typeof(SlotID)) as SlotID[])
-        {
-            Debug.Log("procesando :" + iterador_ajolotes.name);
-            //Les asignamos el tag correspondiente a Slot+N
-            // iterador_ajolotes.gameObject.GetComponentInChildren<>
-            switch (iterador_ajolotes.ActualSlotType)
-            {
+                        coleccionables.Add(new slot(EnumerationName + (++indice_c).ToString(),
+                           cols1.gameObject.GetComponentInChildren<Text>(true),
+                           cols1.transform.Find(SlotImageName).GetComponent<Image>()
+                           , false));
+        coleccionables.Add(new slot(EnumerationName + (++indice_c).ToString(),
+                          cols2.gameObject.GetComponentInChildren<Text>(true),
+                          cols2.transform.Find(SlotImageName).GetComponent<Image>()
+                          , false));
+        coleccionables.Add(new slot(EnumerationName + (++indice_c).ToString(),
+                          cols3.gameObject.GetComponentInChildren<Text>(true),
+                          cols3.transform.Find(SlotImageName).GetComponent<Image>()
+                          , false));
+        coleccionables.Add(new slot(EnumerationName + (++indice_c).ToString(),
+                          cols4.gameObject.GetComponentInChildren<Text>(true),
+                          cols4.transform.Find(SlotImageName).GetComponent<Image>()
+                          , false));
+        coleccionables.Add(new slot(EnumerationName + (++indice_c).ToString(),
+                          cols5.gameObject.GetComponentInChildren<Text>(true),
+                          cols5.transform.Find(SlotImageName).GetComponent<Image>()
+                          , false));
+        coleccionables.Add(new slot(EnumerationName + (++indice_c).ToString(),
+                          cols6.gameObject.GetComponentInChildren<Text>(true),
+                          cols6.transform.Find(SlotImageName).GetComponent<Image>()
+                          , false));
+        coleccionables.Add(new slot(EnumerationName + (++indice_c).ToString(),
+                          cols7.gameObject.GetComponentInChildren<Text>(true),
+                          cols7.transform.Find(SlotImageName).GetComponent<Image>()
+                          , false));
+        coleccionables.Add(new slot(EnumerationName + (++indice_c).ToString(),
+                          cols8.gameObject.GetComponentInChildren<Text>(true),
+                          cols8.transform.Find(SlotImageName).GetComponent<Image>()
+                          , false));
 
-                case SlotObjType.Ajolotes:
+        herramientas.Add(new slot(EnumerationName + (++indice_h).ToString(),
+                          null,
+                          herrs1.transform.Find(SlotImageName).GetComponent<Image>()
+                          , false));
+        herramientas.Add(new slot(EnumerationName + (++indice_h).ToString(),
+                          null,
+                          herrs2.transform.Find(SlotImageName).GetComponent<Image>()
+                          , false));
+        herramientas.Add(new slot(EnumerationName + (++indice_h).ToString(),
+                          null,
+                          herr3.transform.Find(SlotImageName).GetComponent<Image>()
+                          , false));
+        herramientas.Add(new slot(EnumerationName + (++indice_h).ToString(),
+                          null,
+                          herr4.transform.Find(SlotImageName).GetComponent<Image>()
+                          , false));
+        pasivas.Add(new slot(EnumerationName + (++indice_p).ToString(),
+                           null,
+                           pass1.transform.Find(SlotImageName).GetComponent<Image>()
+                           , false));
+        pasivas.Add(new slot(EnumerationName + (++indice_p).ToString(),
+                           null,
+                           pass2.transform.Find(SlotImageName).GetComponent<Image>()
+                           , false));
+        pasivas.Add(new slot(EnumerationName + (++indice_p).ToString(),
+                           null,
+                           pass3.transform.Find(SlotImageName).GetComponent<Image>()
+                           , false));
+        
 
-                    ajolotes.Add(new slot(EnumerationName + (++indice_a).ToString(),
-                        null,
-                        iterador_ajolotes.transform.Find(SlotImageName).GetComponent<Image>()
-                        , false));
-                    break;
-
-                case SlotObjType.Coleccionables:
-                    coleccionables.Add(new slot(EnumerationName + (++indice_c).ToString(),
-                       iterador_ajolotes.gameObject.GetComponentInChildren<Text>(true),
-                       iterador_ajolotes.transform.Find(SlotImageName).GetComponent<Image>()
-                       , false));
-                    break;
-
-                case SlotObjType.Herramientas:
-                    herramientas.Add(new slot(EnumerationName + (++indice_h).ToString(),
-                       null,
-                       iterador_ajolotes.transform.Find(SlotImageName).GetComponent<Image>()
-                       , false));
-                    break;
-
-                case SlotObjType.Pasivas:
-                    pasivas.Add(new slot(EnumerationName + (++indice_p).ToString(),
-                       null,
-                       iterador_ajolotes.transform.Find(SlotImageName).GetComponent<Image>()
-                       , false));
-                    break;
-            }
-        }
-
-        Debug.Log("inventory initialized");
+                    
+        
     }
 
     void Update()

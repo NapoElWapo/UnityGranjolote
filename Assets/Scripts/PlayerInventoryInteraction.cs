@@ -55,6 +55,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
     public GameObject triggernpc;
 
     public Teleport TP;
+    public SpawnAjolote SP, SA, SF, SH, SN;
 
     void Start()
     {
@@ -82,6 +83,28 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 {
                     current_selected_obj = colision_rayo.transform.gameObject;
                     current_selected_obj.SetActive(GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>()));
+
+                    if (current_selected_obj.name == "AjolotePlanta(Clone)")
+                    {
+                        SP.cantidadActual--;
+                    }
+                    else if (current_selected_obj.name == "AjoloteAgua(Clone)")
+                    {
+                        SA.cantidadActual--;
+                    }
+                    else if (current_selected_obj.name == "AjoloteFuego(Clone)")
+                    {
+                        SF.cantidadActual--;
+                    }
+                    else if (current_selected_obj.name == "AjoloteHielo(Clone)")
+                    {
+                        SH.cantidadActual--;
+                    }
+                    else if (current_selected_obj.name == "AjoloteNube(Clone)")
+                    {
+                        SN.cantidadActual--;
+                    }
+                    
                 }
                 else if (colision_rayo.transform.tag == puertac1)
                 {

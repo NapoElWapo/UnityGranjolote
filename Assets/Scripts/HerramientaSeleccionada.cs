@@ -252,7 +252,7 @@ public class HerramientaSeleccionada : MonoBehaviour
 
                         if (Input.GetMouseButtonDown(0) && estaminaS != 0 && !menuAbierto)
                         {
-                            sonidosAjolotesS.volume = 1f;
+                            sonidosAjolotesS.volume = GameMaster.instanciaCompartida.volumenEfectos;
                             sonidosAjolotesS.clip = sonidoAgua;
                             sonidosAjolotesS.Play();
                             agua.gameObject.SetActive(true);
@@ -275,7 +275,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                     {
                         if (Input.GetMouseButtonDown(0) && estaminaS != 0 && !menuAbierto)
                         {
-                            sonidosAjolotesS.volume = 1f;
+                            sonidosAjolotesS.volume = GameMaster.instanciaCompartida.volumenEfectos;
                             sonidosAjolotesS.clip = sonidoAgua;
                             sonidosAjolotesS.Play();
                             agua2.gameObject.SetActive(true);
@@ -289,7 +289,7 @@ public class HerramientaSeleccionada : MonoBehaviour
 
                         if (Input.GetMouseButtonDown(1) && estaminaS != 0 && !menuAbierto)
                         {
-                            sonidosAjolotesS.volume = 1f;
+                            sonidosAjolotesS.volume = GameMaster.instanciaCompartida.volumenEfectos;
                             sonidosAjolotesS.clip = sonidoAgua;
                             sonidosAjolotesS.Play();
                             hidrobomba.gameObject.SetActive(true);
@@ -343,7 +343,7 @@ public class HerramientaSeleccionada : MonoBehaviour
 
                         if (Input.GetMouseButtonDown(0) && estaminaS != 0)
                         {
-                            sonidosAjolotesS.volume = 1f;
+                            sonidosAjolotesS.volume = GameMaster.instanciaCompartida.volumenEfectos;
                             sonidosAjolotesS.clip = sonidoFuego;
                             sonidosAjolotesS.Play();
                             fuego.gameObject.SetActive(true);
@@ -366,7 +366,7 @@ public class HerramientaSeleccionada : MonoBehaviour
                     {
                         if (Input.GetMouseButtonDown(0) && estaminaS != 0)
                         {
-                            sonidosAjolotesS.volume = 1f;
+                            sonidosAjolotesS.volume = GameMaster.instanciaCompartida.volumenEfectos;
                             sonidosAjolotesS.clip = sonidoFuego;
                             sonidosAjolotesS.Play();
                             fuego2.gameObject.SetActive(true);

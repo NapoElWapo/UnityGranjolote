@@ -14,7 +14,7 @@ public class Notificaciones : MonoBehaviour
     void Start()
     {
         sonidoNotificaciones.clip = notificacion;
-        sonidoNotificaciones.volume = 1f;
+        sonidoNotificaciones.volume = GameMaster.instanciaCompartida.volumenEfectos;
         StartCoroutine(MostrarPM());
         conexAM = GameObject.Find("AlcaldeMisiones").GetComponent<AlcaldeMisiones>();
         conexLM = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
