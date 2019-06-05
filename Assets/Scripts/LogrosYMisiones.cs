@@ -93,6 +93,7 @@ public class LogrosYMisiones : MonoBehaviour
         conexIncu = GameObject.Find("Incubadora").GetComponent<Incubadora>();
         conexAM = GameObject.Find("AlcaldeMisiones").GetComponent<AlcaldeMisiones>();
         conexN = GameObject.Find("NotificacionesDeslizantes").GetComponent<Notificaciones>();
+        Debug.LogError("el start funciona2");
     }
 
     // Update is called once per frame
