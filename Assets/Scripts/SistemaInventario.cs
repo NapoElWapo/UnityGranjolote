@@ -79,7 +79,7 @@ public class SistemaInventario
                 }
                 else
                     return true;
-                break;
+                
 
             case ItemCategory.herramientas:
 
@@ -139,7 +139,7 @@ public class SistemaInventario
                 }
                 else
                     return true;
-                break;
+                
         }
         return false;       
     }       

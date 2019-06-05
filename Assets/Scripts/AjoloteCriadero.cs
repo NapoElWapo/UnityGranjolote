@@ -22,7 +22,6 @@ public class AjoloteCriadero : MonoBehaviour
     LogrosYMisiones conexLM;
 
     int slot = 0;
-    int slotComida = 0;
     int slotSeleccionado = 0;
     public int cantidadAjolotesFelices;
     public int numeroCriadero;

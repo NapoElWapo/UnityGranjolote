@@ -10,7 +10,7 @@ public class Lago : MonoBehaviour
     void Start()
     {
         pescaLanza = GameObject.Find("MiniPesca").GetComponent<GameObject>();
-        pescaLanza = GameObject.Find("ArcoMiniPesca").GetComponent<GameObject>();
+        pescaArco = GameObject.Find("ArcoMiniPesca").GetComponent<GameObject>();
     }
 
     // Update is called once per frame

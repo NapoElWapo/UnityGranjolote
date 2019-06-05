@@ -14,8 +14,8 @@ public class HerramientaSeleccionada : MonoBehaviour
     private int slotPosition = 0;
     public int nivelAgua=1,nivelFuego=1,nivelNube=1;
     public float estaminaS = 0, maxEstaminaS = 100;
-    private bool hayFuego, hayAgua, lanzaComprobar = false, rastrilloComprobar = false, AAComprobar = false,
-        AFComprobar = false, lanzaPesaca = false, arcoPesca = false, rastrilloGusano = false, usando = false, hayHidrobomba = false;
+    private bool hayFuego, hayAgua, lanzaComprobar , rastrilloComprobar , AAComprobar ,
+        AFComprobar , lanzaPesaca = false, arcoPesca = false, rastrilloGusano = false, usando = false, hayHidrobomba = false;
     public bool AAMax = false, AFMax = false, ANMax = false,menuAbierto;
     MenuInventario conex;
     LogrosYMisiones conexLM;
@@ -27,6 +27,7 @@ public class HerramientaSeleccionada : MonoBehaviour
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
         conexLM = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
+        Debug.LogError("el start funciona");
     }
 
     void Update()
