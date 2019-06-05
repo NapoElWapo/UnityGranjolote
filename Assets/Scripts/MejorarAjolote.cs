@@ -5,7 +5,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class MejorarAjolote : MonoBehaviour
 {
-    public RectTransform especialA, especialF, especialN, orbeA, orbeF, orbeN, mejorasUI;
+    public RectTransform especialA, especialF, especialN, orbeA, orbeF, orbeN, mejorasUI, mejorarBoton;
     RectTransform espacioAjolote, espacioOrbe;
 
     public GameObject orbeAwita, orbeFueguito, orbeNubecita;
@@ -19,6 +19,7 @@ public class MejorarAjolote : MonoBehaviour
     {
         conexMI = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
         ajolotines = GameObject.Find("JugadorUI").GetComponent<HerramientaSeleccionada>();
+        mejorarBoton = GameObject.Find("MejorarAjoloteBoton").GetComponent<RectTransform>();
 
     }
 
@@ -221,6 +222,10 @@ public class MejorarAjolote : MonoBehaviour
             GameObject.Find("AjoYOrbe").GetComponent<RectTransform>().GetChild(3).gameObject.SetActive(false);
             ajolotines.nivelAgua++;
             GameMaster.instanciaCompartida.inventario.RemoveItem(orbeAwita?.GetComponent<ItemInventario>());
+            picarMejora();
+            //mejorarBoton.gameObject.SetActive(false);
+            //this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(4).gameObject.SetActive(false);
+            GameObject.Find("MejorarAjoloteBoton").SetActive(false);
         }
 
         if (ajoFI && orbeFI)
@@ -229,6 +234,10 @@ public class MejorarAjolote : MonoBehaviour
             GameObject.Find("AjoYOrbe").GetComponent<RectTransform>().GetChild(4).gameObject.SetActive(false);
             ajolotines.nivelFuego++;
             GameMaster.instanciaCompartida.inventario.RemoveItem(orbeFueguito?.GetComponent<ItemInventario>());
+            picarMejora();
+            //mejorarBoton.gameObject.SetActive(false);
+            //this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(4).gameObject.SetActive(false);
+            GameObject.Find("MejorarAjoloteBoton").SetActive(false);
         }
 
         if (ajoNI && orbeNI)
@@ -237,7 +246,13 @@ public class MejorarAjolote : MonoBehaviour
             GameObject.Find("AjoYOrbe").GetComponent<RectTransform>().GetChild(5).gameObject.SetActive(false);
             ajolotines.nivelNube++;
             GameMaster.instanciaCompartida.inventario.RemoveItem(orbeNubecita?.GetComponent<ItemInventario>());
+            picarMejora();
+           // mejorarBoton.gameObject.SetActive(false);
+            //this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(4).gameObject.SetActive(false);
+            GameObject.Find("MejorarAjoloteBoton").SetActive(false);
         }
+        picarMejora();
+        //mejorarBoton.gameObject.SetActive(false);
         //this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(4).gameObject.SetActive(false);
         GameObject.Find("MejorarAjoloteBoton").SetActive(false);
     }
