@@ -7,12 +7,15 @@ public class Teleport : MonoBehaviour
 {
 
     public GameObject LCJ, LCN1, LCN2, LCNM, LH, LHM,JO,N1O,N2O,NMO,HO,Player;
+
+    public GameObject sol, luna, luzInterior;
    
    
     // Start is called before the first frame update
     void Start()
     {
         GameObject Jugador = GameObject.FindWithTag("Player");
+        luzInterior = GameObject.Find("LuzInterior").GetComponent<GameObject>();
     }
 
     // Update is called once per frame
@@ -23,7 +26,10 @@ public class Teleport : MonoBehaviour
         if (playerScript.muerto==true)
         {
             Debug.Log("Me muerooooo");
-            
+            sol.gameObject.SetActive(false);
+            luna.gameObject.SetActive(false);
+            luzInterior.gameObject.SetActive(true);
+
             Jugador = GameObject.FindWithTag("Player");
             Jugador.SetActive(false);
             Jugador.transform.position = LHM.transform.position;
@@ -34,6 +40,9 @@ public class Teleport : MonoBehaviour
 
     public void CasaJugador()
     {
+        sol.gameObject.SetActive(false);
+        luna.gameObject.SetActive(false);
+        luzInterior.gameObject.SetActive(true);
 
         Player = GameObject.FindWithTag("Player");
         Player.SetActive(false);
@@ -43,6 +52,9 @@ public class Teleport : MonoBehaviour
 
     public void CasaNPC1()
     {
+        sol.gameObject.SetActive(false);
+        luna.gameObject.SetActive(false);
+        luzInterior.gameObject.SetActive(true);
 
         Player = GameObject.FindWithTag("Player");
         Player.SetActive(false);
@@ -52,6 +64,9 @@ public class Teleport : MonoBehaviour
 
     public void CasaNPC2()
     {
+        sol.gameObject.SetActive(false);
+        luna.gameObject.SetActive(false);
+        luzInterior.gameObject.SetActive(true);
 
         Player = GameObject.FindWithTag("Player");
         Player.SetActive(false);
@@ -61,6 +76,9 @@ public class Teleport : MonoBehaviour
 
     public void CasaNPCM()
     {
+        sol.gameObject.SetActive(false);
+        luna.gameObject.SetActive(false);
+        luzInterior.gameObject.SetActive(true);
 
         Player = GameObject.FindWithTag("Player");
         Player.SetActive(false);
@@ -70,6 +88,9 @@ public class Teleport : MonoBehaviour
 
     public void CasaHospital()
     {
+        sol.gameObject.SetActive(false);
+        luna.gameObject.SetActive(false);
+        luzInterior.gameObject.SetActive(true);
 
         Player = GameObject.FindWithTag("Player");
         Player.SetActive(false);
@@ -79,6 +100,9 @@ public class Teleport : MonoBehaviour
 
     public void CasaHospitalMuerte()
     {
+        sol.gameObject.SetActive(false);
+        luna.gameObject.SetActive(false);
+        luzInterior.gameObject.SetActive(true);
 
         Player = GameObject.FindWithTag("Player");
         Player.SetActive(false);
@@ -88,6 +112,9 @@ public class Teleport : MonoBehaviour
 
     public void CasaJO()
     {
+        sol.gameObject.SetActive(true);
+        luna.gameObject.SetActive(true);
+        luzInterior.gameObject.SetActive(false);
 
         Player = GameObject.FindWithTag("Player");
         Player.SetActive(false);
@@ -97,6 +124,9 @@ public class Teleport : MonoBehaviour
 
     public void CasaN1O()
     {
+        sol.gameObject.SetActive(true);
+        luna.gameObject.SetActive(true);
+        luzInterior.gameObject.SetActive(false);
 
         Player = GameObject.FindWithTag("Player");
         Player.SetActive(false);
@@ -106,6 +136,9 @@ public class Teleport : MonoBehaviour
 
     public void CasaN2O()
     {
+        sol.gameObject.SetActive(true);
+        luna.gameObject.SetActive(true);
+        luzInterior.gameObject.SetActive(false);
 
         Player = GameObject.FindWithTag("Player");
         Player.SetActive(false);
@@ -115,6 +148,9 @@ public class Teleport : MonoBehaviour
 
     public void CasaNMO()
     {
+        sol.gameObject.SetActive(true);
+        luna.gameObject.SetActive(true);
+        luzInterior.gameObject.SetActive(false);
 
         Player = GameObject.FindWithTag("Player");
         Player.SetActive(false);
@@ -124,6 +160,9 @@ public class Teleport : MonoBehaviour
 
     public void CasaHO()
     {
+        sol.gameObject.SetActive(true);
+        luna.gameObject.SetActive(true);
+        luzInterior.gameObject.SetActive(false);
 
         Player = GameObject.FindWithTag("Player");
         Player.SetActive(false);
