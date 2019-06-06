@@ -25,7 +25,7 @@ public class AjoloteCriadero : MonoBehaviour
     int slotSeleccionado = 0;
     public int cantidadAjolotesFelices;
     public int numeroCriadero;
-    public bool UIactivo, hayDorado, checarUnaVez;
+    public bool UIactivoCria, hayDorado, checarUnaVez;
     public int dejarHuevo, porcentajeHuevo = 30, dejarHuevoDorado, porcentajeHuevoDorado = 10;
     public int precioCriadero;
     public bool criaderoLleno;
@@ -445,10 +445,10 @@ public class AjoloteCriadero : MonoBehaviour
 
     public void ToggleCriadero()
     {
-        UIactivo = !UIactivo;
+        UIactivoCria = !UIactivoCria;
         //criaderoUI.gameObject.SetActive(UIactivo);
 
-        if (UIactivo)
+        if (UIactivoCria)
         {
             criaderoUI.localPosition = new Vector2(0f, 0f);
             //criaderoUI.gameObject.SetActive(true);
@@ -466,7 +466,7 @@ public class AjoloteCriadero : MonoBehaviour
             
             //Time.timeScale = 0f;
         }
-        else if (!UIactivo)
+        else if (!UIactivoCria)
         {
             criaderoUI.localPosition = new Vector2(1000f, 1000f);
             //criaderoUI.gameObject.SetActive(false);
