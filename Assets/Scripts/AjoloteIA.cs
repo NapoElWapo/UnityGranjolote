@@ -39,7 +39,6 @@ public class AjoloteIA : MonoBehaviour
         int rotacionIoD = Random.Range(1, 2);
         int esperaCaminar = Random.Range(1, 4);
         int tiempoCaminar = Random.Range(1, 5);
-
         vagando = true;
 
         yield return new WaitForSeconds(esperaCaminar);

@@ -16,6 +16,7 @@ public class MinijuegoPescaArco : MonoBehaviour
     public int contadorPecesA=0;
     LogrosYMisiones contador;
     public OrbeArco OrbeArcoB;
+
     private void OnEnable()
     {
         /*
@@ -45,12 +46,14 @@ public class MinijuegoPescaArco : MonoBehaviour
         }
         StartCoroutine(MoverPez());
     }
+
     void Start()
     {
         contador = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
         sonidosPesca.volume = GameMaster.instanciaCompartida.volumenEfectos;
         //OrbeArcoB = GameObject.Find("OrbeArco").GetComponent<OrbeArco>();
     }
+
     private void OnDisable()
     {
         //pez.transform.position = posInicio;
@@ -73,6 +76,7 @@ public class MinijuegoPescaArco : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.02f);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "FalloPesca")

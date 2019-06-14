@@ -13,6 +13,7 @@ public class Frio : MonoBehaviour
     LogrosYMisiones conexLM;
     Notificaciones conexN;
     private bool noti;
+
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
@@ -25,7 +26,6 @@ public class Frio : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            
             if (resistencia==false)
             {
                 GameObject Jugador = GameObject.FindWithTag("Player");

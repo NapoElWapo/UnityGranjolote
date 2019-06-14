@@ -4,25 +4,21 @@ using UnityEngine;
 
 public class AjoloteDesecho : MonoBehaviour
 {
-
     public GameObject boton, current_selected_obj;
     public bool corrutina = false;
     public bool resetTim = false;
     public float tiempoDesecho;
     public float tiempoVar, timerkk;
-
     public bool alimentado, feliz, muyFeliz;
 
     Reloj rejol;
 
-    // Start is called before the first frame update
     void Start()
     {
         boton = GetComponent<GameObject>();
         rejol = GameObject.Find("HoraMinuto").GetComponent<Reloj>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Timer();
@@ -37,7 +33,6 @@ public class AjoloteDesecho : MonoBehaviour
             timerkk = tiempoDesecho;
             resetTim = false;
         }
-
         if(alimentado && resetTim)
         {
             timerkk = tiempoVar;
@@ -88,5 +83,4 @@ public class AjoloteDesecho : MonoBehaviour
             muyFeliz = false;
         }
     }
-
 }

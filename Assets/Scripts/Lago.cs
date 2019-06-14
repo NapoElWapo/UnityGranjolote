@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class Lago : MonoBehaviour
 {
-
     public GameObject pescaLanza, pescaArco;
 
     void Start()
     {
         pescaLanza = GameObject.Find("MiniPesca").GetComponent<GameObject>();
         pescaArco = GameObject.Find("ArcoMiniPesca").GetComponent<GameObject>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OnTriggerEnter(Collider other)
@@ -29,6 +22,5 @@ public class Lago : MonoBehaviour
         {
             pescaArco.gameObject.SetActive(true);
         }
-
     }
 }
