@@ -38,6 +38,7 @@ public class MenuPrincipal : MonoBehaviour
     {
         GameMaster.instanciaCompartida.VolumenMusica(volumenMusicaSlider.value);
     }
+
     public void VolumenEfectos()
     {
         GameMaster.instanciaCompartida.VolumenEfectos(volumenEfectosSlider.value);

@@ -5,27 +5,21 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Teleport : MonoBehaviour
 {
-
     public GameObject LCJ, LCN1, LCN2, LCNM, LH, LHM,JO,N1O,N2O,NMO,HO,Player;
-
     public GameObject sol, luna, luzInterior;
    
-   
-    // Start is called before the first frame update
     void Start()
     {
         GameObject Jugador = GameObject.FindWithTag("Player");
         luzInterior = GameObject.Find("LuzInterior").GetComponent<GameObject>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         GameObject Jugador = GameObject.FindWithTag("Player");
         FirstPersonController playerScript = Jugador.GetComponent<FirstPersonController>();
         if (playerScript.muerto==true)
         {
-            Debug.Log("Me muerooooo");
             sol.gameObject.SetActive(false);
             luna.gameObject.SetActive(false);
             luzInterior.gameObject.SetActive(true);
@@ -169,5 +163,4 @@ public class Teleport : MonoBehaviour
         Player.transform.position = HO.transform.position;
         Player.SetActive(true);
     }
-
 }

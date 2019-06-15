@@ -23,7 +23,6 @@ public class ItemInventario :MonoBehaviour, IEquatable<ItemInventario>
     [SerializeField]
     public int MaxStack;
    
-
     public bool Equals(ItemInventario other)
     {
        return this.Nombre.Contains(other.Nombre);

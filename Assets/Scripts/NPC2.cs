@@ -129,7 +129,6 @@ public class NPC2 : MonoBehaviour
         else if (GameMaster.instanciaCompartida.hora >= 8)
         {
             totalWaitTime = 10f;
-            //this.SetActive(true);
         }
     }
 

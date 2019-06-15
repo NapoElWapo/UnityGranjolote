@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Gusanos : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject montonTierra, current_selected_obj, gusano;
     LogrosYMisiones conexLM;
 
@@ -12,6 +11,7 @@ public class Gusanos : MonoBehaviour
     {
         conexLM = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Rastrillo")

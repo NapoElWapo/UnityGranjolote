@@ -749,7 +749,6 @@ public class LogrosYMisiones : MonoBehaviour
                 popl34 = true;
             }
         }
-
         barra1.fillAmount = conexMI.contador10AjoP*0.1f;
         barra2.fillAmount = conexMI.contador10AjoA * 0.1f;
         barra3.fillAmount = conexMI.contador10AjoF * 0.1f;
@@ -777,8 +776,4 @@ public class LogrosYMisiones : MonoBehaviour
         panelMisiones.gameObject.SetActive(false);
         panelLogros.gameObject.SetActive(true);
     }
-
-   
-
-
 }

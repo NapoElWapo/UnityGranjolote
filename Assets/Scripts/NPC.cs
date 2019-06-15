@@ -105,15 +105,10 @@ public class NPC : MonoBehaviour
             Vector3 targetVector = patrolPoints[currentPatrolIndex].transform.position;
             agent.SetDestination(targetVector);
             traveling = true;
-            if(GameMaster.instanciaCompartida.hora >=20)
-            {
-                //this.SetActive(false);
-            }
         }
         else if(GameMaster.instanciaCompartida.hora >= 8)
         {
             totalWaitTime = 10f;
-            //this.SetActive(true);
         }
     }
 

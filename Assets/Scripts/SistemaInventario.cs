@@ -20,6 +20,7 @@ public class SistemaInventario
 
     private ItemInventario selectHerramienta;
     public bool llenoA;
+
     public ItemInventario SelectHerramienta
     {
         get { return selectHerramienta; }
@@ -28,8 +29,7 @@ public class SistemaInventario
  
     public SistemaInventario()
     {
-        global_clear();
-    
+        global_clear();   
     }
 
     public void global_clear()
@@ -38,13 +38,10 @@ public class SistemaInventario
         pasivas.Clear();
         herramientas.Clear();
         ajolotes.Clear();
-
     }
-
     //Agrega un elemento del inventario y si ya existe aumenta el stack del elemento de la lista 
     public bool AddItem(ItemInventario item)
-    {
-       
+    {      
         switch (item.Category)
         {
             case ItemCategory.recolectables:
@@ -56,9 +53,7 @@ public class SistemaInventario
                     {
                         var tmp_obj = recolectables.Find(x => x.Nombre.Contains(item.Nombre));
                         Debug.Log("updating slot..");
-                    
 
-                    //
                     tmp_obj.Stack_value ++;
                     if (tmp_obj.Stack_value > item.MaxStack) 
                         return true;
@@ -119,8 +114,6 @@ public class SistemaInventario
                     {
                         Debug.Log("updating slot..");
                         var tmp_obj = ajolotes.Find(x => x.Nombre.Contains(item.Nombre));
-
-                        //
                         tmp_obj.Stack_value += item.Stack_value;
                         if (tmp_obj.Stack_value > item.MaxStack)
                             return true;
@@ -133,13 +126,10 @@ public class SistemaInventario
                         ajolotes.Add(item);//se agrega si no existe
                         GameMaster.instanciaCompartida.GUI_controlador.insertar_ajolotes(item);
                         return false;
-                    }
-                    
-
+                    }                    
                 }
                 else
-                    return true;
-                
+                    return true;                
         }
         return false;       
     }       
@@ -171,15 +161,9 @@ public class SistemaInventario
                         {
                             recolectables.Remove(item);
                             GameMaster.instanciaCompartida.GUI_controlador.quitar_recolectables(tmp_obj);
-                        }
-                            
-                           
-                            
-
-                        GameMaster.instanciaCompartida.GUI_controlador.actualizar_recolectables(tmp_obj);
-                        
-                        Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());
-                        
+                        }                                                                                   
+                        GameMaster.instanciaCompartida.GUI_controlador.actualizar_recolectables(tmp_obj);                        
+                        Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());                        
                     }
                     else
                     {
@@ -187,9 +171,7 @@ public class SistemaInventario
                         recolectables.Remove(item);
                         GameMaster.instanciaCompartida.GUI_controlador.quitar_recolectables(tmp_obj);
                         
-                    }
-                   
-                       
+                    }                                        
                 }
                 
                 break;
@@ -202,8 +184,7 @@ public class SistemaInventario
                     if (tmp_obj.Stack_value < 1)
                     {
                         herramientas.Remove(item);
-                        GameMaster.instanciaCompartida.GUI_controlador.quitar_herramientas(tmp_obj);
-                        
+                        GameMaster.instanciaCompartida.GUI_controlador.quitar_herramientas(tmp_obj);                       
                     }
                 }
                 break;
@@ -212,8 +193,7 @@ public class SistemaInventario
                 if(pasivas.Contains(item))
                 {
                     pasivas.Remove(item);//se agrega si no existe
-                    GameMaster.instanciaCompartida.GUI_controlador.quitar_pasivas(item);
-                    
+                    GameMaster.instanciaCompartida.GUI_controlador.quitar_pasivas(item);                    
                 }
                 
                 break;
@@ -225,24 +205,17 @@ public class SistemaInventario
                     {
                         Debug.Log("updating slot..");
                         var tmp_obj = ajolotes.Find(x => x.Nombre.Contains(item.Nombre));
-
-                        //
                         tmp_obj.Stack_value --;
                         if (tmp_obj.Stack_value < 1)
                             ajolotes.Remove(item);
-
-                        Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());
-                       
+                        Debug.Log("objeto actualizado desde invetory sistem" + tmp_obj.ToString());                       
                     }
                     else
                     {
                         ajolotes.Remove(item);//se agrega si no existe
-                        GameMaster.instanciaCompartida.GUI_controlador.quitar_ajolotes(item);
-                        
+                        GameMaster.instanciaCompartida.GUI_controlador.quitar_ajolotes(item);                       
                     }
-
-                }
-               
+                }              
                 break;
         }
     }
