@@ -155,46 +155,9 @@ public class PatrullaAjolote : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        /*
-        if(other.tag=="Player")
-        {
-            ajoloteAnimator.SetBool(Movimiento, true);
-            ajoloteAnimator.SetBool(Asustado, true);
-            this.harto = true;
-            ajoloteAnimator.Play("Armature|correr");
-            //Debug.Log("Triggerea");
-        }
-
-        if(other.tag == "Agua"|| other.tag == "Agua2")
-        {
-            velocidad = velocidadAwado;
-            velocidadAsustado = velocidadAwadoAsustado;
-            tiempoHarto = tiempoHartoAwado;
-            if (awaEspanta)
-                harto = true;
-        }
-
-        if (other.tag == "Fuego" || other.tag == "Fuego2")
-        {
-            velocidad = velocidadAlumbrado;
-            velocidadAsustado = velocidadAlumbradoAsustado;
-            tiempoHarto = tiempoHartoAlumbrado;
-            if (lumbreEspanta)
-                harto = true;
-        }
-        */
         if (other.tag == "LimiteAjolote")
         {
             transform.RotateAround(transform.position, transform.up, 180f);
-            /*
-            contador = 1;
-            if(contador==1)
-            {
-                transform.RotateAround(transform.position, transform.up, 180f);
-                contador = 0;
-            }
-            */
-
         }
 
     }
