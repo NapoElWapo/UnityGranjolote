@@ -10,6 +10,7 @@ public class Barras : MonoBehaviour
     private Image barra;
     public int tipoDeBarra;
     HerramientaSeleccionada conex;
+
     void Start()
     {
         conex = GameObject.Find("JugadorUI").GetComponent<HerramientaSeleccionada>();

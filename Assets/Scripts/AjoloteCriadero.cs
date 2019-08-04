@@ -15,8 +15,6 @@ public class AjoloteCriadero : MonoBehaviour
 
     public Image sAslot1, sAslot2, sAslot3, sAslot4, sslot1, sslot2, sslot3, sslot4, sslot5, sslot6, sslot7, sslot8;
 
-    
-
     MenuInventario inv;
     AjoloteDesecho ajoDes;
     LogrosYMisiones conexLM;
@@ -30,6 +28,7 @@ public class AjoloteCriadero : MonoBehaviour
     public int precioCriadero;
     public bool criaderoLleno;
     public int criaderollenito = 0;
+
     void Start()
     {
         inv = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
@@ -85,9 +84,7 @@ public class AjoloteCriadero : MonoBehaviour
         {
             criaderollenito = 0;
             criaderoLleno = false;
-
         }
-
     }
 
     public void dejarAjolote()
@@ -395,8 +392,6 @@ public class AjoloteCriadero : MonoBehaviour
         ajoloteActual = doradoTemp;
     }
 
-
-
     void quitarAjolote()
     {
         if (slot > 0)
@@ -447,14 +442,11 @@ public class AjoloteCriadero : MonoBehaviour
     {
         UIactivoCria = !UIactivoCria;
         //criaderoUI.gameObject.SetActive(UIactivo);
-
         if (UIactivoCria)
         {
             criaderoUI.localPosition = new Vector2(0f, 0f);
             //criaderoUI.gameObject.SetActive(true);
-
             Cursor.lockState = CursorLockMode.None;
-
             Cursor.visible = true;
 
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
@@ -462,15 +454,13 @@ public class AjoloteCriadero : MonoBehaviour
             var velocidadC = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_WalkSpeed = 0f;
             var velocidadR = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_RunSpeed = 0f;
             mouseLook.XSensitivity = 0.0F;
-            mouseLook.YSensitivity = 0.0F;
-            
+            mouseLook.YSensitivity = 0.0F;           
             //Time.timeScale = 0f;
         }
         else if (!UIactivoCria)
         {
             criaderoUI.localPosition = new Vector2(1000f, 1000f);
             //criaderoUI.gameObject.SetActive(false);
-
             var mousestate = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
             var mouseLook = GameObject.Find("FPSController").GetComponent<FirstPersonController>().MouseLook;
             var velocidadC = GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_WalkSpeed = 15f;
@@ -568,7 +558,6 @@ public class AjoloteCriadero : MonoBehaviour
 
     public void AlimentarPez()
     {
-
         foreach (var iterador in inv.coleccionables)
         {
             if (iterador.Is_used)
@@ -614,7 +603,6 @@ public class AjoloteCriadero : MonoBehaviour
                             GameMaster.instanciaCompartida.inventario.RemoveItem(objetoAct?.GetComponent<ItemInventario>());
                             break;
                         }
-
                     }
                 }
             }
@@ -641,13 +629,11 @@ public class AjoloteCriadero : MonoBehaviour
                 {
                     hayDorado = true;
                 }
-            }
-            
+            }            
         }
 
         else if (cantidadAjolotesFelices >= 2)
             ponerHuevo();
-
     }
 
     void ponerHuevo()
@@ -668,7 +654,6 @@ public class AjoloteCriadero : MonoBehaviour
                 Instantiate(huevoD, slotHuevo.transform);
                 recogerHuevoBoton.gameObject.SetActive(true);
             }
-
             else
             {
                 for (int i = 0; i < 10; i++)
@@ -710,8 +695,7 @@ public class AjoloteCriadero : MonoBehaviour
                         break;
                     }
                 }
-                Instantiate(huevoActual, slotHuevo.transform);
-                
+                Instantiate(huevoActual, slotHuevo.transform);                
             }
         }
         cantidadAjolotesFelices = 0;
@@ -757,7 +741,6 @@ public class AjoloteCriadero : MonoBehaviour
             objetoAct = hueD.transform.gameObject;
             GameMaster.instanciaCompartida.inventario.AddItem(objetoAct?.GetComponent<ItemInventario>());
         }
-
         Destroy(checarHuevo.gameObject);
         recogerHuevoBoton.gameObject.SetActive(false);
     }

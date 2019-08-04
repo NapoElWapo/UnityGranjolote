@@ -14,16 +14,13 @@ public class MejorarAjolote : MonoBehaviour
     public bool ajoAI, ajoFI, ajoNI, orbeAI, orbeFI, orbeNI, UIactivo;
     MenuInventario conexMI;
     
-    // Start is called before the first frame update
     void Start()
     {
         conexMI = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
         ajolotines = GameObject.Find("JugadorUI").GetComponent<HerramientaSeleccionada>();
         mejorarBoton = GameObject.Find("MejorarAjoloteBoton").GetComponent<RectTransform>();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         PuedeMejorar();

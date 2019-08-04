@@ -37,7 +37,6 @@ public class AlcaldeDoctor : MonoBehaviour
         {
             PlayerUI.SetActive(false);
         }
-
         if (textDisplay.text == CurarAEnlatado[index])
         {
             continueBottoncurar.SetActive(true);
@@ -46,7 +45,6 @@ public class AlcaldeDoctor : MonoBehaviour
         {
             PlayerUI.SetActive(false);
         }
-
         foreach (var iterador in conexMI.herramientas)
         {
             if (iterador.RealItemName == "AjoloteEnlatado")
@@ -60,10 +58,8 @@ public class AlcaldeDoctor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-
             if (Input.GetButtonDown("e"))
-            {
-                
+            {               
                 if (hablando == false && AEnlatado == false)
                 {
                     hablando = true;
@@ -71,15 +67,10 @@ public class AlcaldeDoctor : MonoBehaviour
                 }
                 else if (hablando==false&&AEnlatado)
                 {
-
                     hablando = true;
                     StartCoroutine(TypeCurar());
-
                 }
-            }
-            
-            
-            
+            }   
         }
     }
 
@@ -115,12 +106,8 @@ public class AlcaldeDoctor : MonoBehaviour
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-
-        
-                current_selected_obj = ASA.transform.gameObject;
-                GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
-            
-        
+        current_selected_obj = ASA.transform.gameObject;
+        GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>());
     }
 
     public void NextSentence()

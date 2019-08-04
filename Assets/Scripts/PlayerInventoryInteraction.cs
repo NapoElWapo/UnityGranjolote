@@ -60,8 +60,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
     void Start()
     {
         //   controlador_juego = GetComponent<GameMaster>();
-        MainCamera = this.GetComponent<Camera>();
-        
+        MainCamera = this.GetComponent<Camera>();    
     }
 
     void Update()
@@ -75,7 +74,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
         }
         if (Input.GetButtonDown("e"))
         {
-            Debug.Log("pew");
+            //Debug.Log("pew");
             if (Physics.Raycast(rayo, out colision_rayo, range))
             {
                  //   Debug.Log(colision_rayo.transform.tag);
@@ -83,7 +82,6 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 {
                     current_selected_obj = colision_rayo.transform.gameObject;
                     current_selected_obj.SetActive(GameMaster.instanciaCompartida.inventario.AddItem(current_selected_obj?.GetComponent<ItemInventario>()));
-
                     if (current_selected_obj.name == "AjolotePlanta(Clone)")
                     {
                         SP.cantidadActual--;
@@ -103,8 +101,7 @@ public class PlayerInventoryInteraction : MonoBehaviour
                     else if (current_selected_obj.name == "AjoloteNube(Clone)")
                     {
                         SN.cantidadActual--;
-                    }
-                    
+                    }                   
                 }
                 else if (colision_rayo.transform.tag == puertac1)
                 {
@@ -115,68 +112,53 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 {
                     TP.CasaNPC2();
                     //cambio a overworld
-
                 }
                 else if (colision_rayo.transform.tag == puertam)
                 {
                     TP.CasaNPCM();
                     //cambio a overworld
-
                 }
                 else if (colision_rayo.transform.tag == puertach)
                 {
                     TP.CasaHospital();
                     //cambio a overworld
-
                 }
                 else if (colision_rayo.transform.tag == puertacj)
                 {
                     TP.CasaJugador();
                     //cambio a overworld
-
                 }
                 else if (colision_rayo.transform.tag == puertac11)//puerta de la CasaIP
                 {
                     TP.CasaN1O();
                     //el cuatro es la escena CasaIP
-
                 }
                 else if (colision_rayo.transform.tag == puertac22)
                 {
-                    TP.CasaN2O();
-                    
+                    TP.CasaN2O();                  
                 }
                 else if (colision_rayo.transform.tag == puertacmm)
                 {
-                    TP.CasaNMO();
-                    
+                    TP.CasaNMO();                   
                 }
                 else if (colision_rayo.transform.tag == puertachh)
                 {
-                    TP.CasaHO();
-                    
+                    TP.CasaHO();                    
                 }
                 else if (colision_rayo.transform.tag == puertacjj)
                 {
-                    TP.CasaJO();
-                    
+                    TP.CasaJO();                    
                 }
                 else if (colision_rayo.transform.tag == cama)
-                {
-                    
+                {                   
                     if (GameMaster.instanciaCompartida.hora >= 18)
-                    {
-                        
-                        
+                    {                                          
                             GameMaster.instanciaCompartida.cambioVelocidad = 150;
                     }
                     else if (GameMaster.instanciaCompartida.hora < 6)
                     {
-
-
                         GameMaster.instanciaCompartida.cambioVelocidad = 150;
                     }
-
                 }
                 else if(colision_rayo.transform.tag==Tienda)
                 {
@@ -185,87 +167,56 @@ public class PlayerInventoryInteraction : MonoBehaviour
                 //Abrir Incubadoras
                 else if (colision_rayo.transform.tag == incubadora1)
                 {
-                    incu.ToggleIncubadora();
-                                   
-                }
-               
-                else  if (colision_rayo.transform.tag == npc)
-                {
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                            Debug.Log("It's dangerous to go alone! Take this.");
-                    }
-                }
+                    incu.ToggleIncubadora();                                   
+                }              
                 else if (colision_rayo.transform.tag == Anaizador)
                 {
                     registroUI.ToggleRegistro();
-                   
+                  
                 }
-
                 else if (colision_rayo.transform.tag == cria1)
                 {
                     criadero1.ToggleCriadero();
-
                 }
-
                 else if (colision_rayo.transform.tag == cria2)
                 {
                     criadero2.ToggleCriadero();
-
                 }
-
                 else if (colision_rayo.transform.tag == cria3)
                 {
                     criadero3.ToggleCriadero();
-
                 }
-
                 else if (colision_rayo.transform.tag == cria4)
                 {
                     criadero4.ToggleCriadero();
-
                 }
-
                 else if (colision_rayo.transform.tag == cria5)
                 {
                     criadero5.ToggleCriadero();
-
                 }
-
                 else if (colision_rayo.transform.tag == cria6)
                 {
                     criadero6.ToggleCriadero();
-
                 }
-
                 else if (colision_rayo.transform.tag == cria7)
                 {
                     criadero7.ToggleCriadero();
-
                 }
-
                 else if (colision_rayo.transform.tag == cria8)
                 {
                     criadero8.ToggleCriadero();
-
                 }
-
                 else if (colision_rayo.transform.tag == cria9)
                 {
                     criadero9.ToggleCriadero();
-
                 }
-
                 else if (colision_rayo.transform.tag == cria10)
                 {
                     criadero10.ToggleCriadero();
-
                 }
-
                 else if (colision_rayo.transform.tag == mejoras)
                 {
                     mejorasAjo.ToggleMejoras();
-
                 }
             }
         } 

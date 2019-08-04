@@ -16,6 +16,7 @@ public class MinijuegoPescar : MonoBehaviour
     public float timer = 0f;
     bool esperaTimer;
     LogrosYMisiones contador;
+
     private void OnEnable()
     {
         /*
@@ -33,12 +34,14 @@ public class MinijuegoPescar : MonoBehaviour
         GameObject.Find("Pececin").GetComponent<RectTransform>().GetChild(0).gameObject.SetActive(true);
         StartCoroutine(MoverPez());
     }
+
     void Start()
     {
         //sonidosPesca.volume = GameMaster.instanciaCompartida.volumenEfectos;
         sonidosPesca.volume = GameMaster.instanciaCompartida.volumenEfectos;
         contador = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
     }
+
     private void OnDisable()
     {
         //pez.transform.position = posInicio;
@@ -59,6 +62,7 @@ public class MinijuegoPescar : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.02f);
         } 
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "FalloPesca")
@@ -119,5 +123,4 @@ public class MinijuegoPescar : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.5f);
         panelPesca.gameObject.SetActive(false);
     }
-    
 }

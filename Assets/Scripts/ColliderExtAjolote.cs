@@ -6,7 +6,7 @@ public class ColliderExtAjolote : MonoBehaviour
 {
     public PatrullaAjolote ajolote;
     SphereCollider colliderExt;
-    // Start is called before the first frame update
+
     void Start()
     {
         //ajolote = GetComponent<PatrullaAjolote>();
@@ -17,7 +17,6 @@ public class ColliderExtAjolote : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.tag == "Player")
         {
             ajolote.TriggerJugador();
@@ -32,6 +31,5 @@ public class ColliderExtAjolote : MonoBehaviour
         {
             ajolote.TriggerFuego();
         }
-
     }
 }

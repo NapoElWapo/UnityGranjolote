@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class OrbeArco : MonoBehaviour
 {
-
     public GameObject orbeFuego,lavaPesca;
     public bool pescarConArco=false;
 
-
-    // Update is called once per frame
     void Update()
     {
         if (!pescarConArco)
@@ -19,8 +16,7 @@ public class OrbeArco : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        
+    {    
             if (other.tag == "Agua2")
             {
             pescarConArco = true;
@@ -28,10 +24,6 @@ public class OrbeArco : MonoBehaviour
             orbeFuego.gameObject.SetActive(false);
             
 
-            }
-        
-        
-    }
-
-    
+            }             
+    }  
 }

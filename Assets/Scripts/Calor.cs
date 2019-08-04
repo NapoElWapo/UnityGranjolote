@@ -14,6 +14,7 @@ public class Calor : MonoBehaviour
     Notificaciones conexN;
     private bool noti;
     public GameObject current_selected_obj, ASF,ASFApagado;
+
     void Start()
     {
         conex = GameObject.Find("InventarioUI").GetComponent<MenuInventario>();
@@ -23,8 +24,7 @@ public class Calor : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider collision)
-	{
-        
+	{ 
         if (collision.gameObject.CompareTag("Player"))
 		{
             quemandose = true;

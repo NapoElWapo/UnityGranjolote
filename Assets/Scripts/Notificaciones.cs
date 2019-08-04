@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Notificaciones : MonoBehaviour
 {
-    // Start is called before the first frame update
     public AudioSource sonidoNotificaciones;
     public AudioClip notificacion;
     public GameObject popUpMisiones,popUpAlcalde,popUpMC,popUpLC,popUpT;
@@ -20,11 +19,6 @@ public class Notificaciones : MonoBehaviour
         conexLM = GameObject.Find("InventarioUI").GetComponent<LogrosYMisiones>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void popM()
     {
         StartCoroutine(MostrarMC());
